@@ -14,8 +14,11 @@ public class Move_Controller : MonoBehaviour {
     //Ссылки на компоненты
     private CharacterController ch_controller;
 
+    //Ссылки на объекты
+    public Joystick joystick;
 
-	void Start () {
+
+    void Start () {
         ch_controller = GetComponent<CharacterController>();
 	}
 	
@@ -30,6 +33,11 @@ public class Move_Controller : MonoBehaviour {
         moveVector = Vector3.zero;
         moveVector.x = Input.GetAxis("Horizontal") * speed;
         moveVector.z = Input.GetAxis("Vertical") * speed;
+        if (moveVector.x == 0 && moveVector.z == 0)
+        {
+            moveVector.x = joystick.Horizontal * speed;
+            moveVector.z = joystick.Vertical * speed;
+        }
 
         //Повороты персонажа в сторону движения
         if (Vector3.Angle(Vector3.forward, moveVector) > 1f || Vector3.Angle(Vector3.forward, moveVector) == 0) {
