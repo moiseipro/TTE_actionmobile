@@ -163,4 +163,13 @@ public class Upgrade_Item : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Object")
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        }
+    }
 }

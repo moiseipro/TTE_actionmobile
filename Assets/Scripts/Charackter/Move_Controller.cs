@@ -24,7 +24,7 @@ public class Move_Controller : MonoBehaviour {
     void Start () {
         ch_controller = GetComponent<CharacterController>();
         ch_animator = GetComponent<Animator>();
-	}
+    }
 	
 	void Update () {
         GamingGravity();

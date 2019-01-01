@@ -36,6 +36,7 @@ public class Bullet_Options : MonoBehaviour {
         else if (other.tag == "Enemy" ){
             if (hpBullet < 1) Destroy(this.gameObject);
             else hpBullet -= 1;
+            other.SendMessage("AddDamage", damage);
         }
     }
 }

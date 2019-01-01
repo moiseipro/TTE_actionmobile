@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectIsSee: 0
   ObjectEquipt: 0
   mat: {fileID: 2100000, guid: e2e63880eab216d4c8ff60fa64cb6092, type: 2}
 --- !u!114 &114657529650459948
@@ -157,3 +158,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: Stand
+  Rang: 0
+  turnValue: 0
+  turnAngleValue: 0
+  reloadResist: 0
+  bulletSpeed: 0
+  bulletFallSpeed: 0
+  bulletHP: 0
+  bulletDamage: 0

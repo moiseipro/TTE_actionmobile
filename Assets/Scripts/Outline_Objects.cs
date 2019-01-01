@@ -32,20 +32,37 @@ public class Outline_Objects : MonoBehaviour {
 
     //Находит объект попавший в сферу
     void DrawSphere() {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusSphere);
-        int i = 0, b = 0;
-        Transform PredItem = null;
-        while (i < hitColliders.Length)
+        /*Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusSphere);
+        foreach (Collider hitCol in hitColliders)
         {
-            if (hitColliders[i].tag == "Item" && hitColliders[i].GetComponent<GUIcontroller>().ObjectEquipt == false) {
-                if (PredItem == null) PredItem = hitColliders[i].GetComponent<Transform>();
-                Debug.Log(hitColliders[i].name + " найден");
-                hitColliders[i].GetComponent<GUIcontroller>().ObjectSee(PredItem, b);
+            if (hitCol.tag == "Item" && hitCol.GetComponent<GUIcontroller>().ObjectEquipt == false && hitCol.GetComponent<GUIcontroller>().ObjectIsSee == false) {
+                PredItem = hitCol.GetComponent<Transform>();
+                Debug.Log(hitCol.name + " найден");
+                hitCol.GetComponent<GUIcontroller>().ObjectSee(PredItem, b);
                 b++;
             }
-            i++;
-        }
+        }*/
 
+    }
+
+    Transform PredItem = null;
+
+    private void OnTriggerEnter(Collider hitCol)
+    {
+        if (hitCol.tag == "Item" && hitCol.GetComponent<GUIcontroller>().ObjectEquipt == false && hitCol.GetComponent<GUIcontroller>().ObjectIsSee == false)
+        {
+            PredItem = hitCol.GetComponent<Transform>();
+            Debug.Log(hitCol.name + " найден");
+            hitCol.GetComponent<GUIcontroller>().ObjectSee(PredItem);
+        }
+    }
+    private void OnTriggerExit(Collider hitCol)
+    {
+        if (hitCol.tag == "Item" && hitCol.GetComponent<GUIcontroller>().ObjectEquipt == false && hitCol.GetComponent<GUIcontroller>().ObjectIsSee == true)
+        {
+            Debug.Log(hitCol.name + " потерян");
+            hitCol.GetComponent<GUIcontroller>().ObjectIsSee = false;
+        }
     }
 
     //Рисует сферу вокруг точки

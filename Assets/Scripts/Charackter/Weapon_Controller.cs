@@ -35,7 +35,7 @@ public class Weapon_Controller : MonoBehaviour {
     //Скорость падения пули
     public int bulletHP = 0;
     //Урон пули
-    public int bulletDamage = 0;
+    public int bulletDamage = 1;
 
     private bool reload = false; //Перезарядка
 
@@ -54,7 +54,7 @@ public class Weapon_Controller : MonoBehaviour {
                 Bull.GetComponent<Bullet_Options>().speed = bulletSpeed;
                 Bull.GetComponent<Bullet_Options>().rotationSpeed = bulletFallSpeed;
                 Bull.GetComponent<Bullet_Options>().hpBullet = bulletHP;
-                Bull.GetComponent<Bullet_Options>().damage = bulletDamage;
+                Bull.GetComponent<Bullet_Options>().damage += bulletDamage;
                 Destroy(Bull, 5f);
             } else {
                 for (int i = 0; i < turnType; i++)

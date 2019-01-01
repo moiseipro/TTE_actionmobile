@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4196490799996040}
   - component: {fileID: 33559807426162942}
   - component: {fileID: 23245833193133234}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HandLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4950290435748140}
   - component: {fileID: 33897380320013814}
   - component: {fileID: 23955243126933812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HandRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4331493193255452}
   - component: {fileID: 33572079836013472}
   - component: {fileID: 23948566195798712}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nozzle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4766145871155164}
   - component: {fileID: 33647943483110542}
   - component: {fileID: 23057317146363638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stand3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,13 +89,13 @@ GameObject:
   - component: {fileID: 4892599206075142}
   - component: {fileID: 33058860827014976}
   - component: {fileID: 23545329187218940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AimLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1272267411560582
 GameObject:
   m_ObjectHideFlags: 1
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4220096911445320}
   - component: {fileID: 33995956800121066}
   - component: {fileID: 23506090954731108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Aim2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4567782547561384}
   - component: {fileID: 33326730416219386}
   - component: {fileID: 23614213501436948}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Aim1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,11 +140,10 @@ GameObject:
   - component: {fileID: 4160112936990094}
   - component: {fileID: 95582354090062852}
   - component: {fileID: 143019716011842806}
-  - component: {fileID: 135278805961672382}
   - component: {fileID: 114138514269002170}
-  - component: {fileID: 114238552215190354}
   - component: {fileID: 114185511300188418}
-  m_Layer: 0
+  - component: {fileID: 114921818268909786}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -161,7 +160,7 @@ GameObject:
   - component: {fileID: 4000675458794862}
   - component: {fileID: 33237349573661314}
   - component: {fileID: 23445914972928610}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -178,7 +177,7 @@ GameObject:
   - component: {fileID: 4916098687039544}
   - component: {fileID: 33002364876947760}
   - component: {fileID: 23073327047956754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stand2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +194,7 @@ GameObject:
   - component: {fileID: 4703552101076514}
   - component: {fileID: 33717474295425272}
   - component: {fileID: 23626566526692922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nozzle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,13 +211,13 @@ GameObject:
   - component: {fileID: 4617629497935828}
   - component: {fileID: 33548601110145224}
   - component: {fileID: 23145347193017618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightDop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1533532569410138
 GameObject:
   m_ObjectHideFlags: 1
@@ -229,13 +228,13 @@ GameObject:
   - component: {fileID: 4608552993920960}
   - component: {fileID: 33627491739143516}
   - component: {fileID: 23868080288850094}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftDomPurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1542665637616242
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +245,7 @@ GameObject:
   - component: {fileID: 4174618776289788}
   - component: {fileID: 33444131606264444}
   - component: {fileID: 23276676179322850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,13 +262,13 @@ GameObject:
   - component: {fileID: 4632837400627976}
   - component: {fileID: 33332303476416748}
   - component: {fileID: 23893996614911462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nozzle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1652296726601326
 GameObject:
   m_ObjectHideFlags: 1
@@ -280,7 +279,7 @@ GameObject:
   - component: {fileID: 4936390451560846}
   - component: {fileID: 33034997632430914}
   - component: {fileID: 23591457402974064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nozzle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +296,7 @@ GameObject:
   - component: {fileID: 4644340284997548}
   - component: {fileID: 33154781679110340}
   - component: {fileID: 23295934748329382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nozzle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,13 +313,13 @@ GameObject:
   - component: {fileID: 4627258256777656}
   - component: {fileID: 33310226071541418}
   - component: {fileID: 23808729825037108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stand1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1835687328142270
 GameObject:
   m_ObjectHideFlags: 1
@@ -331,7 +330,7 @@ GameObject:
   - component: {fileID: 4640481617545704}
   - component: {fileID: 33982950985570024}
   - component: {fileID: 23158738792908694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Aim3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +347,7 @@ GameObject:
   - component: {fileID: 4832758480783360}
   - component: {fileID: 33392195855075870}
   - component: {fileID: 23915579569281294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Nozzle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +364,7 @@ GameObject:
   - component: {fileID: 4797052039339488}
   - component: {fileID: 33430959087254548}
   - component: {fileID: 23547835601019834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftDopRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +489,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533532569410138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0015, y: 0.0025, z: 0.0025}
+  m_LocalPosition: {x: -0.0015, y: 0.0025, z: 0.0035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000675458794862}
@@ -1517,7 +1516,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 68150d57dcbe6ad4ba1e6fdd60f06c52, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1534,7 +1533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2792682094fdf84d813e8bb9ac2066e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.3
+  speed: 3.5
   jump: 5
   joystickMove: {fileID: 0}
   joystickFire: {fileID: 0}
@@ -1552,12 +1551,20 @@ MonoBehaviour:
   Bullets: {fileID: 1780477826425054, guid: b33917471018fd847b2d0e5125421c16, type: 2}
   Weapon: {fileID: 1500421697145216}
   UpgradeAim: {fileID: 0}
+  UpgradeBottomAim: {fileID: 0}
   UpgradeNozzle: {fileID: 0}
   UpgradeStand: {fileID: 0}
   UpgradeLeft: {fileID: 0}
   UpgradeRight: {fileID: 0}
-  TimeReload: 0.2
---- !u!114 &114238552215190354
+  WeaponLevel: 1
+  timeReload: 0.8
+  turnType: 1
+  turnAngle: 0
+  bulletSpeed: 6
+  bulletFallSpeed: 6
+  bulletHP: 0
+  bulletDamage: 1
+--- !u!114 &114921818268909786
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1568,19 +1575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79861fc079b78e4ab71169d2eb16475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadiusSphere: 2
---- !u!135 &135278805961672382
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1301870341732256}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
+  RadiusSphere: 3
 --- !u!143 &143019716011842806
 CharacterController:
   m_ObjectHideFlags: 1
