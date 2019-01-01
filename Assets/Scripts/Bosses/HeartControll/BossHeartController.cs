@@ -9,6 +9,7 @@ public class BossHeartController : MonoBehaviour {
 
     public GameObject healthBadge;
     public Mesh[] meshesHeart;
+    public GameObject[] partOfBoss;
 
     // Use this for initialization
     void Start () {
@@ -30,6 +31,13 @@ public class BossHeartController : MonoBehaviour {
         {
             health = 0;
             Debug.Log("СМЭРТЬ");
+            for(int i = 0; i < Random.Range(10,20); i++)
+            {
+                GameObject part = GameObject.Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
+                part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5,5), Random.Range(1, 7), Random.Range(-5, 5)),ForceMode.Impulse);
+                Destroy(part, Random.Range(5f, 15f));
+            }
+            Destroy(gameObject);
         }
         if (health / maxHealth * 100 > 70) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[0];
         else if(health / maxHealth * 100 > 50) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[1];

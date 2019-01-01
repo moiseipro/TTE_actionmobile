@@ -226,7 +226,7 @@ Animator:
   m_GameObject: {fileID: 1460822715454076}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8154ec7d3c6d7e340b6a1913bd1efc3f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d98017d919d65d49aab06586b8694cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 40
   healthBadge: {fileID: 1400922444074922}
   meshesHeart:
   - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
@@ -272,3 +272,6 @@ MonoBehaviour:
   - {fileID: 4300002, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300000, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 0}
+  partOfBoss:
+  - {fileID: 1617417445301354, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
+  - {fileID: 1940708856470386, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}
