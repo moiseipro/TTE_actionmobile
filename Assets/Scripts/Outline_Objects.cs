@@ -5,8 +5,9 @@ using UnityEngine;
 public class Outline_Objects : MonoBehaviour {
 
     public float RadiusSphere = 1f;
+    
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         //Включает скрипт обводки, если объект касается тригера
         if (other.GetComponent<Outline>())
@@ -22,27 +23,35 @@ public class Outline_Objects : MonoBehaviour {
         {
             other.GetComponent<Outline>().enabled = false;
         }
+    }*/
+
+    private void Update()
+    {
+        DrawSphere();
     }
 
-    /* Находит объект попавший в сферу
+    //Находит объект попавший в сферу
     void DrawSphere() {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusSphere);
-        int i = 0;
+        int i = 0, b = 0;
+        Transform PredItem = null;
         while (i < hitColliders.Length)
         {
-            if (hitColliders[i].tag == "Object") {
-                VisionObject.Add(hitColliders[i].gameObject);
+            if (hitColliders[i].tag == "Item" && hitColliders[i].GetComponent<GUIcontroller>().ObjectEquipt == false) {
+                if (PredItem == null) PredItem = hitColliders[i].GetComponent<Transform>();
                 Debug.Log(hitColliders[i].name + " найден");
+                hitColliders[i].GetComponent<GUIcontroller>().ObjectSee(PredItem, b);
+                b++;
             }
             i++;
         }
 
     }
 
-      Рисует сферу вокруг точки
+    //Рисует сферу вокруг точки
     void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1,1,0.015f,0.3f);
         Gizmos.DrawSphere(transform.position, RadiusSphere);
-    }*/
+    }
 }

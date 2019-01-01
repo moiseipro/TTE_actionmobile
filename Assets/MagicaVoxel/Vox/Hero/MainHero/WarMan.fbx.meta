@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 91ab10c07ba3838449eb0dd5bd97ffd3
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CharackterWarMan.001
+    100002: CharackterWarMan.002
+    100004: CharackterWarMan.003
+    100006: CharackterWarMan.004
+    100008: CharackterWarMan.005
+    100010: CharackterWarMan.006
+    100012: CharackterWarMan.007
+    100014: CharackterWarMan.008
+    100016: CharackterWarMan.009
+    100018: CharackterWarMan.010
+    100020: CharackterWarMan.011
+    100022: CharackterWarMan.012
+    100024: CharackterWarMan.013
+    100026: CharackterWarMan.014
+    100028: CharackterWarMan.015
+    100030: CharackterWarMan.016
+    100032: CharackterWarMan.017
+    100034: CharackterWarMan.018
+    100036: CharackterWarMan.019
+    100038: CharackterWarMan.020
+    100040: CharackterWarMan.021
+    100042: CharackterWarMan.022
+    100044: CharackterWarMan.023
+    100046: //RootNode
+    400000: CharackterWarMan.001
+    400002: CharackterWarMan.002
+    400004: CharackterWarMan.003
+    400006: CharackterWarMan.004
+    400008: CharackterWarMan.005
+    400010: CharackterWarMan.006
+    400012: CharackterWarMan.007
+    400014: CharackterWarMan.008
+    400016: CharackterWarMan.009
+    400018: CharackterWarMan.010
+    400020: CharackterWarMan.011
+    400022: CharackterWarMan.012
+    400024: CharackterWarMan.013
+    400026: CharackterWarMan.014
+    400028: CharackterWarMan.015
+    400030: CharackterWarMan.016
+    400032: CharackterWarMan.017
+    400034: CharackterWarMan.018
+    400036: CharackterWarMan.019
+    400038: CharackterWarMan.020
+    400040: CharackterWarMan.021
+    400042: CharackterWarMan.022
+    400044: CharackterWarMan.023
+    400046: //RootNode
+    2100000: palette
+    2300000: CharackterWarMan.001
+    2300002: CharackterWarMan.002
+    2300004: CharackterWarMan.003
+    2300006: CharackterWarMan.004
+    2300008: CharackterWarMan.005
+    2300010: CharackterWarMan.006
+    2300012: CharackterWarMan.007
+    2300014: CharackterWarMan.008
+    2300016: CharackterWarMan.009
+    2300018: CharackterWarMan.010
+    2300020: CharackterWarMan.011
+    2300022: CharackterWarMan.012
+    2300024: CharackterWarMan.013
+    2300026: CharackterWarMan.014
+    2300028: CharackterWarMan.015
+    2300030: CharackterWarMan.016
+    2300032: CharackterWarMan.017
+    2300034: CharackterWarMan.018
+    2300036: CharackterWarMan.019
+    2300038: CharackterWarMan.020
+    2300040: CharackterWarMan.021
+    2300042: CharackterWarMan.022
+    2300044: CharackterWarMan.023
+    3300000: CharackterWarMan.001
+    3300002: CharackterWarMan.002
+    3300004: CharackterWarMan.003
+    3300006: CharackterWarMan.004
+    3300008: CharackterWarMan.005
+    3300010: CharackterWarMan.006
+    3300012: CharackterWarMan.007
+    3300014: CharackterWarMan.008
+    3300016: CharackterWarMan.009
+    3300018: CharackterWarMan.010
+    3300020: CharackterWarMan.011
+    3300022: CharackterWarMan.012
+    3300024: CharackterWarMan.013
+    3300026: CharackterWarMan.014
+    3300028: CharackterWarMan.015
+    3300030: CharackterWarMan.016
+    3300032: CharackterWarMan.017
+    3300034: CharackterWarMan.018
+    3300036: CharackterWarMan.019
+    3300038: CharackterWarMan.020
+    3300040: CharackterWarMan.021
+    3300042: CharackterWarMan.022
+    3300044: CharackterWarMan.023
+    4300000: CharackterWarMan.023
+    4300002: CharackterWarMan.022
+    4300004: CharackterWarMan.021
+    4300006: CharackterWarMan.020
+    4300008: CharackterWarMan.019
+    4300010: CharackterWarMan.018
+    4300012: CharackterWarMan.017
+    4300014: CharackterWarMan.016
+    4300016: CharackterWarMan.015
+    4300018: CharackterWarMan.014
+    4300020: CharackterWarMan.013
+    4300022: CharackterWarMan.012
+    4300024: CharackterWarMan.011
+    4300026: CharackterWarMan.010
+    4300028: CharackterWarMan.009
+    4300030: CharackterWarMan.008
+    4300032: CharackterWarMan.007
+    4300034: CharackterWarMan.006
+    4300036: CharackterWarMan.005
+    4300038: CharackterWarMan.004
+    4300040: CharackterWarMan.003
+    4300042: CharackterWarMan.002
+    4300044: CharackterWarMan.001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.001
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 7d3e3a289963b0d4e8fbd7c8605caf23
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Camera
+    100004: Lamp
+    100006: TheStatueAnswers.001
+    100008: TheStatueAnswers.003
+    100010: TheStatueAnswers.004
+    100012: TheStatueAnswers.005
+    100014: TheStatueAnswers.006
+    100016: TheStatueAnswers.007
+    100018: TheStatueAnswers.008
+    100020: TheStatueAnswers.009
+    100022: TheStatueAnswers.010
+    100024: TheStatueAnswers.011
+    100026: TheStatueAnswers.012
+    100028: TheStatueAnswers.013
+    100030: TheStatueAnswers.014
+    100032: TheStatueAnswers.015
+    100034: TheStatueAnswers.016
+    400000: //RootNode
+    400002: Camera
+    400004: Lamp
+    400006: TheStatueAnswers.001
+    400008: TheStatueAnswers.003
+    400010: TheStatueAnswers.004
+    400012: TheStatueAnswers.005
+    400014: TheStatueAnswers.006
+    400016: TheStatueAnswers.007
+    400018: TheStatueAnswers.008
+    400020: TheStatueAnswers.009
+    400022: TheStatueAnswers.010
+    400024: TheStatueAnswers.011
+    400026: TheStatueAnswers.012
+    400028: TheStatueAnswers.013
+    400030: TheStatueAnswers.014
+    400032: TheStatueAnswers.015
+    400034: TheStatueAnswers.016
+    2000000: Camera
+    2100000: palette
+    2300000: TheStatueAnswers.001
+    2300002: TheStatueAnswers.003
+    2300004: TheStatueAnswers.004
+    2300006: TheStatueAnswers.005
+    2300008: TheStatueAnswers.006
+    2300010: TheStatueAnswers.007
+    2300012: TheStatueAnswers.008
+    2300014: TheStatueAnswers.009
+    2300016: TheStatueAnswers.010
+    2300018: TheStatueAnswers.011
+    2300020: TheStatueAnswers.012
+    2300022: TheStatueAnswers.013
+    2300024: TheStatueAnswers.014
+    2300026: TheStatueAnswers.015
+    2300028: TheStatueAnswers.016
+    3300000: TheStatueAnswers.001
+    3300002: TheStatueAnswers.003
+    3300004: TheStatueAnswers.004
+    3300006: TheStatueAnswers.005
+    3300008: TheStatueAnswers.006
+    3300010: TheStatueAnswers.007
+    3300012: TheStatueAnswers.008
+    3300014: TheStatueAnswers.009
+    3300016: TheStatueAnswers.010
+    3300018: TheStatueAnswers.011
+    3300020: TheStatueAnswers.012
+    3300022: TheStatueAnswers.013
+    3300024: TheStatueAnswers.014
+    3300026: TheStatueAnswers.015
+    3300028: TheStatueAnswers.016
+    4300000: TheStatueAnswers.016
+    4300002: TheStatueAnswers.015
+    4300004: TheStatueAnswers.014
+    4300006: TheStatueAnswers.013
+    4300008: TheStatueAnswers.012
+    4300010: TheStatueAnswers.011
+    4300012: TheStatueAnswers.010
+    4300014: TheStatueAnswers.009
+    4300016: TheStatueAnswers.008
+    4300018: TheStatueAnswers.007
+    4300020: TheStatueAnswers.006
+    4300022: TheStatueAnswers.005
+    4300024: TheStatueAnswers.004
+    4300026: TheStatueAnswers.003
+    4300028: TheStatueAnswers.001
+    10800000: Lamp
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
