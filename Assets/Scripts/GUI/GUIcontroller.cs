@@ -16,8 +16,8 @@ public class GUIcontroller : MonoBehaviour {
     public bool ObjectEquipt = false;
 
     //Размеры панели
-    float WidthPanel = 380f;
-    float HeightPanel = 180f;
+    float WidthPanel = 600f;
+    float HeightPanel = 400f;
     float ItemsValue;
 
     public Material mat;
@@ -26,7 +26,6 @@ public class GUIcontroller : MonoBehaviour {
     void Start () {
         PredItem = GetComponent<Transform>();
         ThisObject = GetComponent<Transform>();
-        customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().customButton;
     }
 	
 	// Update is called once per frame
@@ -37,6 +36,15 @@ public class GUIcontroller : MonoBehaviour {
     public void ObjectSee(Transform posItem) {
         ObjectIsSee = true;
         PredItem = posItem;
+        if (GetComponent<Upgrade_Item>().Rang > 1.5){
+            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().buttonUI3;
+        } else if (GetComponent<Upgrade_Item>().Rang > 1.1) {
+            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().buttonUI2;
+        } else if (GetComponent<Upgrade_Item>().Rang > 0.7) {
+            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().buttonUI1;
+        } else if (GetComponent<Upgrade_Item>().Rang >= 0.5) {
+            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().customButton;
+        }
     }
 
     void OnGUI()

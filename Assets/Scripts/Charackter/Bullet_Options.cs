@@ -32,7 +32,7 @@ public class Bullet_Options : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("entered " + other);
-        if (other.tag == "Object") Destroy(this.gameObject);
+        if (other.tag == "Object") Destroy(this.gameObject,0.1f);
         else if (other.tag == "Enemy" ){
             if (hpBullet < 1) Destroy(this.gameObject);
             else hpBullet -= 1;

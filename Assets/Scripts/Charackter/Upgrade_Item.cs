@@ -170,6 +170,15 @@ public class Upgrade_Item : MonoBehaviour {
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            if (Rang > 1.5){
+                GetComponent<Outline>().OutlineColor = Color.yellow;
+            } else if (Rang > 1.1) {
+                GetComponent<Outline>().OutlineColor = Color.blue;
+            } else if (Rang > 0.7) {
+                GetComponent<Outline>().OutlineColor = Color.green;
+            } else if (Rang >= 0.5) {
+                GetComponent<Outline>().OutlineColor = Color.white;
+            }
         }
     }
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class BossHeartController : MonoBehaviour {
 
     public float maxHealth;
-    private float health;
+    [HideInInspector] public float health;
     private bool dead = false;
+    public int bossLevel = 1;
 
     public GameObject healthBadge;
     public Mesh[] meshesHeart;
@@ -24,7 +25,7 @@ public class BossHeartController : MonoBehaviour {
 
     public IEnumerator AddDamage(float dam)
     {
-        if (health > 1) {
+        if (health > 0) {
             health -= dam;
             Debug.Log(health);
         }

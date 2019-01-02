@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GUICustomStyle : MonoBehaviour {
 
-    public GUIStyle customButton;
+    public GUIStyle customButton, buttonUI1, buttonUI2, buttonUI3;
 
     // Use this for initialization
     void Start () {

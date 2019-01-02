@@ -158,11 +158,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: Aim
-  Rang: 0.5
+  Rang: 0.57
   turnValue: 0
-  turnAngleValue: 0
+  turnAngleValue: -6
   reloadResist: 0
-  bulletSpeed: 0
-  bulletFallSpeed: 0
+  bulletSpeed: 0.5
+  bulletFallSpeed: -8
   bulletHP: 0
   bulletDamage: 0

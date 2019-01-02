@@ -146,10 +146,10 @@ MonoBehaviour:
   upgradeType: Aim
   Rang: 0.5
   turnValue: 0
-  turnAngleValue: 0
+  turnAngleValue: -7
   reloadResist: 0
   bulletSpeed: 0
-  bulletFallSpeed: 0
+  bulletFallSpeed: -12
   bulletHP: 0
   bulletDamage: 0
 --- !u!114 &114505713912741302

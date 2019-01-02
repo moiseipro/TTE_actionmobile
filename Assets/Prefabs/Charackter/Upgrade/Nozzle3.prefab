@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101317881511698}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.3529997, z: 0.9}
+  m_LocalPosition: {x: 7.478, y: 1.3529997, z: 4.32}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,12 +129,12 @@ MonoBehaviour:
   upgradeType: Nozzle
   Rang: 0.5
   turnValue: 0
-  turnAngleValue: 0
-  reloadResist: 0
+  turnAngleValue: 5
+  reloadResist: -0.1
   bulletSpeed: 2
-  bulletFallSpeed: 0
+  bulletFallSpeed: 1.5
   bulletHP: 1
-  bulletDamage: 0
+  bulletDamage: 1
 --- !u!114 &114144693087440266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectIsSee: 0
   ObjectEquipt: 0
   mat: {fileID: 2100000, guid: e2e63880eab216d4c8ff60fa64cb6092, type: 2}
 --- !u!114 &114145040970213692
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   outlineWidth: 6
   precomputeOutline: 0
   bakeKeys: []

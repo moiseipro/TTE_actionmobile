@@ -27,22 +27,6 @@ public class Outline_Objects : MonoBehaviour {
 
     private void Update()
     {
-        DrawSphere();
-    }
-
-    //Находит объект попавший в сферу
-    void DrawSphere() {
-        /*Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusSphere);
-        foreach (Collider hitCol in hitColliders)
-        {
-            if (hitCol.tag == "Item" && hitCol.GetComponent<GUIcontroller>().ObjectEquipt == false && hitCol.GetComponent<GUIcontroller>().ObjectIsSee == false) {
-                PredItem = hitCol.GetComponent<Transform>();
-                Debug.Log(hitCol.name + " найден");
-                hitCol.GetComponent<GUIcontroller>().ObjectSee(PredItem, b);
-                b++;
-            }
-        }*/
-
     }
 
     Transform PredItem = null;

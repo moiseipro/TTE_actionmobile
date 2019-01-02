@@ -127,14 +127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: Nozzle
-  Rang: 0.5
+  Rang: 1.16
   turnValue: 0
   turnAngleValue: 0
-  reloadResist: 0
+  reloadResist: -0.15
   bulletSpeed: 2
   bulletFallSpeed: 0
   bulletHP: 1
-  bulletDamage: 0
+  bulletDamage: 1
 --- !u!114 &114858956177831456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 0, b: 1, a: 1}
   outlineWidth: 6
   precomputeOutline: 0
   bakeKeys: []
