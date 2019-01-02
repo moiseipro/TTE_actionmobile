@@ -52,6 +52,7 @@ public class GUIcontroller : MonoBehaviour {
             if(GUI.Button(positionItem, name, customButton))
             {
                 GetComponent<Upgrade_Item>().TakeItem();
+                ObjectIsSee = false;
             }
         }
         

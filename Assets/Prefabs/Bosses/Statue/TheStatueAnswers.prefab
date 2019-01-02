@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 54353269243861620}
   - component: {fileID: 65583970576269794}
   - component: {fileID: 114584987402250282}
+  - component: {fileID: 114540915502634622}
   m_Layer: 0
   m_Name: TheStatueAnswers
   m_TagString: Enemy
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746645506671686}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 4.2955728, y: -7.401, z: 9.852608}
+  m_LocalPosition: {x: 4.04, y: -7.401, z: 10.05}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4784431146439690}
@@ -253,6 +254,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114540915502634622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746645506671686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16dc33bad0d7c604083dff00ff2cd95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114584987402250282
 MonoBehaviour:
   m_ObjectHideFlags: 1

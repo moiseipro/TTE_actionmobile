@@ -35,7 +35,7 @@ public class Weapon_Controller : MonoBehaviour {
     //Скорость падения пули
     public int bulletHP = 0;
     //Урон пули
-    public int bulletDamage = 1;
+    public float bulletDamage = 1;
 
     private bool reload = false; //Перезарядка
 

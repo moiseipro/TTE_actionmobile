@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249796664729420}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.81, y: 1.2029998, z: -1.3870001}
+  m_LocalPosition: {x: -1.37, y: 1.2029998, z: -1.3870001}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectIsSee: 0
   ObjectEquipt: 0
   mat: {fileID: 2100000, guid: e2e63880eab216d4c8ff60fa64cb6092, type: 2}
 --- !u!114 &114404863351823112
@@ -157,3 +158,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: BAim
+  Rang: 0.5
+  turnValue: 0
+  turnAngleValue: 0
+  reloadResist: 0
+  bulletSpeed: 0
+  bulletFallSpeed: 0
+  bulletHP: 0
+  bulletDamage: 0

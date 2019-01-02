@@ -6,6 +6,7 @@ public class BossHeartController : MonoBehaviour {
 
     public float maxHealth;
     private float health;
+    private bool dead = false;
 
     public GameObject healthBadge;
     public Mesh[] meshesHeart;
@@ -21,22 +22,29 @@ public class BossHeartController : MonoBehaviour {
 		
 	}
 
-    public void AddDamage(float dam)
+    public IEnumerator AddDamage(float dam)
     {
         if (health > 1) {
             health -= dam;
             Debug.Log(health);
         }
-        if (health < 1)
+        if (health < 1 && !dead)
         {
             health = 0;
+            dead = true;
             Debug.Log("СМЭРТЬ");
-            for(int i = 0; i < Random.Range(10,20); i++)
+            gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            for (int i = 0; i < Random.Range(8, 15); i++)
             {
-                GameObject part = GameObject.Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
-                part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5,5), Random.Range(1, 7), Random.Range(-5, 5)),ForceMode.Impulse);
+                GameObject part = Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
+                float randomScale = Random.Range(100, 200);
+                part.GetComponent<Transform>().localScale = new Vector3(randomScale, randomScale, randomScale);
+                part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
                 Destroy(part, Random.Range(5f, 15f));
+                yield return new WaitForSeconds(0.2f);
             }
+            GameObject Item = Instantiate(GameObject.FindWithTag("Manager").GetComponent<DropItemController>().DropItem(), gameObject.transform.position + Vector3.up, transform.rotation);
+            Item.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
             Destroy(gameObject);
         }
         if (health / maxHealth * 100 > 70) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[0];

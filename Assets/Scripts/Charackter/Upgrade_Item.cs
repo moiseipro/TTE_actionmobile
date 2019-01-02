@@ -11,7 +11,7 @@ public class Upgrade_Item : MonoBehaviour {
     [Header("Тип предмета")]
     public string upgradeType;
     [Header("Редкость предмета")]
-    [Range(0.5f, 1.5f)]
+    [Range(0.5f, 2f)]
     public float Rang;
     [Header("Характеристики предмета")]
     [Tooltip("Кол-во выпускаемых одновременно патронов")]
@@ -27,7 +27,7 @@ public class Upgrade_Item : MonoBehaviour {
     [Tooltip("Сколько врагов пуля может пронзить")]
     public int bulletHP;
     [Tooltip("Урон пули")]
-    public int bulletDamage;
+    public float bulletDamage;
 
     public void TakeItem()
     {
@@ -132,9 +132,9 @@ public class Upgrade_Item : MonoBehaviour {
         Player.GetComponent<Weapon_Controller>().bulletSpeed += bulletSpeed * Rang;
         Player.GetComponent<Weapon_Controller>().bulletFallSpeed += bulletFallSpeed * Rang;
         Player.GetComponent<Weapon_Controller>().bulletHP += bulletHP;
-        Player.GetComponent<Weapon_Controller>().timeReload += reloadResist;
+        Player.GetComponent<Weapon_Controller>().timeReload += reloadResist * Rang;
         Player.GetComponent<Weapon_Controller>().turnAngle += turnAngleValue;
-        Player.GetComponent<Weapon_Controller>().bulletDamage += bulletDamage;
+        Player.GetComponent<Weapon_Controller>().bulletDamage += bulletDamage * Rang;
     }
 
     void OldUpgradeSub(Upgrade_Item oldUpgradeItem)
@@ -147,9 +147,9 @@ public class Upgrade_Item : MonoBehaviour {
         Player.GetComponent<Weapon_Controller>().bulletSpeed -= oldUpgradeItem.bulletSpeed * oldUpgradeItem.Rang;
         Player.GetComponent<Weapon_Controller>().bulletFallSpeed -= oldUpgradeItem.bulletFallSpeed * oldUpgradeItem.Rang;
         Player.GetComponent<Weapon_Controller>().bulletHP -= oldUpgradeItem.bulletHP;
-        Player.GetComponent<Weapon_Controller>().timeReload -= oldUpgradeItem.reloadResist;
+        Player.GetComponent<Weapon_Controller>().timeReload -= oldUpgradeItem.reloadResist * oldUpgradeItem.Rang;
         Player.GetComponent<Weapon_Controller>().turnAngle -= oldUpgradeItem.turnAngleValue;
-        Player.GetComponent<Weapon_Controller>().bulletDamage -= oldUpgradeItem.bulletDamage;
+        Player.GetComponent<Weapon_Controller>().bulletDamage -= oldUpgradeItem.bulletDamage * oldUpgradeItem.Rang;
         oldUpgradeItem.transform.SetParent(null);
     }
 
