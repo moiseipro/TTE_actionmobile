@@ -5,10 +5,11 @@ using UnityEngine;
 public class StatueController : MonoBehaviour {
 
     public GameObject[] totems;
+    private List<GameObject> calledTotems = new List<GameObject>();
     private BossHeartController bossHeart;
 
     int maxTotems; // Максимальное количество тотемов
-    int calledTotems = 0; //Вызвано тотемов
+    //int calledTotems = 0; //Вызвано тотемов
 
     float health;
     float reloadTimeTotems = 10f;
@@ -30,7 +31,7 @@ public class StatueController : MonoBehaviour {
     }
 	
 	void Update () {
-        if (calledTotems < maxTotems)
+        if (calledTotems.Count < maxTotems)
         {
             if (facesTotemReload == false) CallTotem(2);
         }
@@ -38,13 +39,22 @@ public class StatueController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullet")
+        if (other.tag == "Bullet" && other.GetComponent<Bullet_Options>().type !=-1)
         {
-            if (calledTotems < maxTotems)
+            if (calledTotems.Count < maxTotems)
             {
                 if (guardTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.5f) CallTotem(1);
-                else if (atackTotemReload == false) CallTotem(0);
-                else if (facesTotemReload == false) CallTotem(2);
+                else if (atackTotemReload == false) {
+                    CallTotem(0);
+                }
+                //else if (facesTotemReload == false) CallTotem(2);
+            }
+            foreach (GameObject totem in calledTotems)
+            {
+                if (totem != null && totem.GetComponent<TitemController>().totemName == "atack")
+                {
+                    totem.GetComponent<TitemController>().atackTotem();
+                }
             }
         }
     }
@@ -65,7 +75,8 @@ public class StatueController : MonoBehaviour {
     public void CallTotem(int totemID)
     {
         GameObject totem = Instantiate(totems[totemID], GenerateTotemSpawn(), transform.rotation);
-        calledTotems++;
+        calledTotems.Add(totem);
+        totem.GetComponent<TitemController>().id = calledTotems.Count-1;
         if(totemID == 0) atackTotemReload = true;
         else if(totemID == 1) guardTotemReload = true;
         else if (totemID == 2) facesTotemReload = true;
@@ -75,6 +86,16 @@ public class StatueController : MonoBehaviour {
         else if (totemID == 6) healTotemReload = true;
         else if (totemID == 7) lampTotemReload = true;
         StartCoroutine(ReloadTotem(totemID));
+    }
+
+    public void DeliteTotem(int idtotem)
+    {
+        //calledTotems[idtotem] = null;
+        calledTotems.RemoveAt(idtotem);
+        for(int i=0; i< calledTotems.Count; i++)
+        {
+            calledTotems[i].GetComponent<TitemController>().id = i;
+        }
     }
 
     Vector3 GenerateTotemSpawn()

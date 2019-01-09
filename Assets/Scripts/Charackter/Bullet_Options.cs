@@ -25,7 +25,8 @@ public class Bullet_Options : MonoBehaviour {
 
     //Полет пули
     void Move() {
-        gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if(type == 3) gameObject.transform.Translate((Vector3.forward+new Vector3(Random.Range(-1,2),0, Random.Range(0, 2))) * speed * Time.deltaTime);
+        else gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
         gameObject.transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
     }
 
@@ -33,9 +34,16 @@ public class Bullet_Options : MonoBehaviour {
     {
         Debug.Log("entered " + other);
         if (other.tag == "Object") Destroy(this.gameObject,0.1f);
-        else if (other.tag == "Enemy" ){
+        else if (other.tag == "Enemy" && type!=-1){
             if (hpBullet < 1) Destroy(this.gameObject);
-            else hpBullet -= 1;
+            else {
+                hpBullet -= 1;
+                if (type == 4) {
+                    gameObject.transform.position = other.transform.position + Vector3.up;
+                    gameObject.transform.Rotate(Vector3.up * Random.Range(0, 360f));
+                    gameObject.transform.Rotate(Vector3.right * -10);
+                }
+            }
             other.SendMessage("AddDamage", damage);
         }
     }

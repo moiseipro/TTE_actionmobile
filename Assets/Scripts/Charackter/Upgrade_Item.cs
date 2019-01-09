@@ -10,6 +10,8 @@ public class Upgrade_Item : MonoBehaviour {
 
     [Header("Тип предмета")]
     public string upgradeType;
+    [Header("Название предмета")]
+    public string upgradeName;
     [Header("Редкость предмета")]
     [Range(0.5f, 2f)]
     public float Rang;
@@ -91,7 +93,7 @@ public class Upgrade_Item : MonoBehaviour {
                 NewUpgradeSum();
             }
         }
-        if (upgradeType == "Nozzle")
+        if (upgradeType == "Nozzle" || upgradeType.Contains("Nozzle"))
         {
             if (Player.GetComponent<Weapon_Controller>().UpgradeNozzle == null)
             {

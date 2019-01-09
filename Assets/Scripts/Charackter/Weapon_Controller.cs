@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon_Controller : MonoBehaviour {
 
-    public GameObject Bullets;
+    public GameObject[] Bullets;
     public GameObject Weapon;
     [Tooltip("Объект прицела надетый на оружие")]
     public GameObject UpgradeAim;
@@ -36,7 +36,9 @@ public class Weapon_Controller : MonoBehaviour {
     public int bulletHP = 0;
     //Урон пули
     public float bulletDamage = 1;
+    
 
+    int bulletID; // Вид пули
     private bool reload = false; //Перезарядка
 
     void Start () {
@@ -47,9 +49,10 @@ public class Weapon_Controller : MonoBehaviour {
     {
         if ((GetComponent<Move_Controller>().joystickFire.Horizontal != 0 || GetComponent<Move_Controller>().joystickFire.Vertical != 0) && !reload)
         {
+            
             float currentTurnAngle = turnAngle/2f;
             if (turnType == 1){
-                GameObject Bull = GameObject.Instantiate(Bullets, Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
+                GameObject Bull = GameObject.Instantiate(Bullets[bulletID], Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
                 Bull.transform.Rotate(0, Random.Range(-currentTurnAngle,currentTurnAngle), 0, Space.Self);
                 Bull.GetComponent<Bullet_Options>().speed = bulletSpeed;
                 Bull.GetComponent<Bullet_Options>().rotationSpeed = bulletFallSpeed;
@@ -59,7 +62,7 @@ public class Weapon_Controller : MonoBehaviour {
             } else {
                 for (int i = 0; i < turnType; i++)
                 {
-                    GameObject Bull = GameObject.Instantiate(Bullets, Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
+                    GameObject Bull = GameObject.Instantiate(Bullets[bulletID], Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
                     Bull.transform.Rotate(0, Random.Range(-currentTurnAngle, currentTurnAngle), 0, Space.Self);
                     Bull.GetComponent<Bullet_Options>().speed = bulletSpeed;
                     Bull.GetComponent<Bullet_Options>().rotationSpeed = bulletFallSpeed;
@@ -108,6 +111,10 @@ public class Weapon_Controller : MonoBehaviour {
             Vector3 pos = new Vector3(0f, 0.0025f, 0.0065f);
             UpgradeNozzle.transform.localPosition = Vector3.Lerp(UpgradeNozzle.transform.localPosition, pos, 5f * Time.deltaTime);
             UpgradeNozzle.transform.rotation = Quaternion.Lerp(UpgradeNozzle.transform.rotation, Weapon.transform.rotation, 5f * Time.deltaTime);
+            if (UpgradeNozzle.GetComponent<Upgrade_Item>().upgradeType.Contains("4")) bulletID = 3;
+            else if (UpgradeNozzle.GetComponent<Upgrade_Item>().upgradeType.Contains("5")) bulletID = 2;
+            else if (UpgradeNozzle.GetComponent<Upgrade_Item>().upgradeType.Contains("6")) bulletID = 1;
+            else bulletID = 0;
         }
         if (UpgradeBottomAim != null)
         {

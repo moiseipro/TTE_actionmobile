@@ -16,8 +16,8 @@ public class GUIcontroller : MonoBehaviour {
     public bool ObjectEquipt = false;
 
     //Размеры панели
-    float WidthPanel = 600f;
-    float HeightPanel = 400f;
+    float WidthPanel;
+    float HeightPanel = 300f;
     float ItemsValue;
 
     public Material mat;
@@ -26,6 +26,7 @@ public class GUIcontroller : MonoBehaviour {
     void Start () {
         PredItem = GetComponent<Transform>();
         ThisObject = GetComponent<Transform>();
+        WidthPanel = HeightPanel * 1.5f;
     }
 	
 	// Update is called once per frame
@@ -55,9 +56,9 @@ public class GUIcontroller : MonoBehaviour {
         predItemScreenPos.x += 180f;
         if (cameraRelative.z > 0 && ObjectIsSee == true && ObjectEquipt == false)
         {
-            positionItem = new Rect((predItemScreenPos.x + WidthPanel) - (WidthPanel+50), (Screen.height - predItemScreenPos.y - HeightPanel - 50f), WidthPanel, HeightPanel);
-            positionLine = new Rect((predItemScreenPos.x + WidthPanel) - 180f, (predItemScreenPos.y + 50f), WidthPanel, HeightPanel);
-            if(GUI.Button(positionItem, name, customButton))
+            positionItem = new Rect(predItemScreenPos.x - WidthPanel, (Screen.height - predItemScreenPos.y - HeightPanel -50f), WidthPanel, HeightPanel);
+            positionLine = new Rect(predItemScreenPos.x - WidthPanel/2f, predItemScreenPos.y +50f, WidthPanel, HeightPanel);
+            if(GUI.Button(positionItem, GetComponent<Upgrade_Item>().upgradeName, customButton))
             {
                 GetComponent<Upgrade_Item>().TakeItem();
                 ObjectIsSee = false;
