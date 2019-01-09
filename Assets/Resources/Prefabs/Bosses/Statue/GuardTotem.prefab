@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1747342166052442}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.41, y: 0.69000053, z: -4.5070596}
+  m_LocalPosition: {x: 0.9312641, y: 0.6899986, z: 5.8369384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeTotems: {fileID: 0}
-  totemName: 
-  maxHealth: 0
+  totemName: guard
+  maxHealth: 40
   id: 0
   damage: 0

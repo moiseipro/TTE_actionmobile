@@ -26,6 +26,16 @@ public class TitemController : MonoBehaviour {
             linerender.material = Resources.Load("Materials/Statue/LaserFacesTotem") as Material;
             linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
             linerender.SetPosition(1, gameObject.transform.position + Vector3.up);
+        } else if (totemName == "guard")
+        {
+            linerender = gameObject.AddComponent<LineRenderer>();
+            linerender.widthMultiplier = 0.2f;
+            linerender.numCornerVertices = 10;
+            linerender.material = Resources.Load("Materials/Statue/LaserGuardTotem") as Material;
+            linerender.positionCount = 3;
+            linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
+            linerender.SetPosition(1, gameObject.transform.position + Vector3.up);
+            linerender.SetPosition(2, gameObject.transform.position + Vector3.up);
         }
     }
 	
@@ -33,6 +43,8 @@ public class TitemController : MonoBehaviour {
 	void Update () {
 		if(totemName == "faces") {
             facesTotem();
+        } else if (totemName == "guard") {
+            guardTotem();
         }
 	}
 
@@ -52,6 +64,13 @@ public class TitemController : MonoBehaviour {
             linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
             linerender.SetPosition(1, Vector3.Lerp(linerender.GetPosition(1), linerender.GetPosition(0), Time.deltaTime * 20f));
         }
+    }
+
+    public void guardTotem()
+    {
+        linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
+        linerender.SetPosition(1, Vector3.Lerp(linerender.GetPosition(1), gameObject.transform.position + new Vector3(0, GameObject.Find("HPcontainer").transform.position.y, 0), Time.deltaTime * 20f));
+        linerender.SetPosition(2, Vector3.Lerp(linerender.GetPosition(2), GameObject.Find("HPcontainer").transform.position, Time.deltaTime * 20f));
     }
 
     public bool RayCastDirection(Vector3 dir) {
@@ -79,6 +98,7 @@ public class TitemController : MonoBehaviour {
             health = 0;
             Debug.Log("СМЭРТЬ");
             GameObject.Find("TheStatueAnswers").GetComponent<StatueController>().DeliteTotem(id);
+            if(totemName == "guard") GameObject.Find("TheStatueAnswers").GetComponent<StatueController>().bossHeart.immortality = false;
             Destroy(gameObject);
         }
     }

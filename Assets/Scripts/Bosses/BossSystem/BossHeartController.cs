@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class BossHeartController : MonoBehaviour {
 
+    [Header("Жизни и дополнительная броня")]
     public float maxHealth;
     [HideInInspector] public float health;
-    private bool dead = false;
+    public float maxArmor;
+    [HideInInspector] public float armor;
+    [HideInInspector] public bool immortality = false;
+    [HideInInspector] public bool dead = false;
     public int bossLevel = 1;
 
+    [Header("Дополнительные атрибуты")]
     public GameObject healthBadge;
     public Mesh[] meshesHeart;
     public GameObject[] partOfBoss;
@@ -16,18 +21,26 @@ public class BossHeartController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         health = maxHealth;
-	}
+        armor = maxArmor;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        UpdateHpContainers();
+    }
 
     public IEnumerator AddDamage(float dam)
     {
-        if (health > 0) {
-            health -= dam;
-            Debug.Log(health);
+        if (immortality == false)
+        {
+            if(armor > 0)
+            {
+                armor -= dam;
+                Debug.Log(armor);
+            } else if (health > 0) {
+                health -= dam;
+                Debug.Log(health);
+            }
         }
         if (health < 1 && !dead)
         {
@@ -48,11 +61,30 @@ public class BossHeartController : MonoBehaviour {
             Item.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
             Destroy(gameObject);
         }
-        if (health / maxHealth * 100 > 70) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[0];
-        else if(health / maxHealth * 100 > 50) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[1];
-        else if (health / maxHealth * 100 > 30) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[2];
-        else if(health / maxHealth * 100 <= 30 && health / maxHealth * 100 > 1) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[3];
-        else healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[4];
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
     }
+
+    public void UpdateHpContainers()
+    {
+        if (immortality == true)
+        {
+            healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[8];
+        }
+        else if (armor > 0)
+        {
+            if (armor / maxArmor * 100 > 70) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[4];
+            else if (armor / maxArmor * 100 > 50) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[5];
+            else if (armor / maxArmor * 100 > 30) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[6];
+            else if (armor / maxArmor * 100 <= 30 && health / maxHealth * 100 > 1) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[7];
+        }
+        else
+        {
+            if (health / maxHealth * 100 > 70) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[0];
+            else if (health / maxHealth * 100 > 50) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[1];
+            else if (health / maxHealth * 100 > 30) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[2];
+            else if (health / maxHealth * 100 <= 30 && health / maxHealth * 100 > 1) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[3];
+            else healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = null;
+        }
+    }
+
 }

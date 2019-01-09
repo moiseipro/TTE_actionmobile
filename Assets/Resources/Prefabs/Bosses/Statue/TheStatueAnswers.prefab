@@ -287,6 +287,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   health: 0
+  maxArmor: 0
+  armor: 0
+  immortality: 0
   bossLevel: 1
   healthBadge: {fileID: 1400922444074922}
   meshesHeart:
@@ -294,7 +297,11 @@ MonoBehaviour:
   - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300002, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300000, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
-  - {fileID: 0}
+  - {fileID: 4300006, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300004, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300002, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300000, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300000, guid: f625186e5c45b364399b8d191e292c9a, type: 3}
   partOfBoss:
   - {fileID: 1617417445301354, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
   - {fileID: 1940708856470386, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}

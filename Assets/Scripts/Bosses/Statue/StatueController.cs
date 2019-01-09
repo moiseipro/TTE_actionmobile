@@ -6,7 +6,7 @@ public class StatueController : MonoBehaviour {
 
     public GameObject[] totems;
     private List<GameObject> calledTotems = new List<GameObject>();
-    private BossHeartController bossHeart;
+    [HideInInspector] public BossHeartController bossHeart;
 
     int maxTotems; // Максимальное количество тотемов
     //int calledTotems = 0; //Вызвано тотемов
@@ -35,6 +35,7 @@ public class StatueController : MonoBehaviour {
         {
             if (facesTotemReload == false) CallTotem(2);
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,9 +52,28 @@ public class StatueController : MonoBehaviour {
             }
             foreach (GameObject totem in calledTotems)
             {
-                if (totem != null && totem.GetComponent<TitemController>().totemName == "atack")
+                if (totem != null)
                 {
-                    totem.GetComponent<TitemController>().atackTotem();
+                    if (totem.GetComponent<TitemController>().totemName == "atack")
+                    {
+                        totem.GetComponent<TitemController>().atackTotem();
+                    } else if (totem.GetComponent<TitemController>().totemName == "guard")
+                    {
+                        bossHeart.immortality = true;
+                    }
+                    else
+                    {
+                        
+                    }
+                }
+            }
+            if (bossHeart.dead == true && calledTotems != null)
+            {
+                maxTotems = 0;
+                for (int i = 0; i < calledTotems.Count; i++)
+                {
+                    Destroy(calledTotems[i].gameObject);
+                    DeliteTotem(i);
                 }
             }
         }

@@ -127,5 +127,6 @@ MonoBehaviour:
   attributeTotems: {fileID: 1780477826425054, guid: b33917471018fd847b2d0e5125421c16,
     type: 2}
   totemName: atack
-  maxHealth: 50
+  maxHealth: 20
+  id: 0
   damage: 5
