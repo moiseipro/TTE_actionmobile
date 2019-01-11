@@ -6,6 +6,7 @@ public class Move_Controller : MonoBehaviour {
 
     //Характеристики движения
     public float speed;
+    [HideInInspector] public float speedDebaf;
     public float jump;
     private float gravity;
 
@@ -36,14 +37,14 @@ public class Move_Controller : MonoBehaviour {
         //Перемещение персонажа по осям
         moveVector = Vector3.zero;
         rotVector = Vector3.zero;
-        moveVector.x = Input.GetAxis("Horizontal") * speed;
-        moveVector.z = Input.GetAxis("Vertical") * speed;
+        moveVector.x = Input.GetAxis("Horizontal") * (speed - speedDebaf);
+        moveVector.z = Input.GetAxis("Vertical") * (speed - speedDebaf);
         rotVector.x = joystickFire.Horizontal;
         rotVector.z = joystickFire.Vertical;
         if (moveVector.x == 0 && moveVector.z == 0)
         {
-            moveVector.x = joystickMove.Horizontal * speed;
-            moveVector.z = joystickMove.Vertical * speed;
+            moveVector.x = joystickMove.Horizontal * (speed - speedDebaf);
+            moveVector.z = joystickMove.Vertical* (speed - speedDebaf);
         }
 
         //Повороты персонажа в сторону стрельбы
@@ -64,7 +65,7 @@ public class Move_Controller : MonoBehaviour {
 
         ch_animator.SetFloat("Direction", moveVector.magnitude); // Управление анимацией бега через длину вектора
         //Debug.Log(ch_animator.GetFloat("Direction"));
-        ch_controller.Move(moveVector * Time.deltaTime); //Движения по направлению
+        ch_controller.Move((moveVector) * Time.deltaTime); //Движения по направлению
     }
 
     //Метод гравитации
@@ -72,5 +73,10 @@ public class Move_Controller : MonoBehaviour {
         if (!ch_controller.isGrounded) gravity -= 15f * Time.deltaTime;
         else gravity = -1f;
         if (Input.GetKeyDown(KeyCode.Space) && ch_controller.isGrounded) gravity = jump; //Используется для тестирования.
+    }
+
+    public Vector3 GetVectorMove()
+    {
+        return moveVector;
     }
 }

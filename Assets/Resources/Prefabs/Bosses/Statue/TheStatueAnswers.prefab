@@ -275,7 +275,7 @@ MonoBehaviour:
   - {fileID: 1582719648097384, guid: b937b3ee0e597bc4d9bbfb435b2b806c, type: 2}
   - {fileID: 1557383508400708, guid: 4a86c3b024c5284449aed08b9bc5e3cc, type: 2}
   bossHeart: {fileID: 0}
-  maxTotems: 0
+  maxTotems: 5
 --- !u!114 &114584987402250282
 MonoBehaviour:
   m_ObjectHideFlags: 1

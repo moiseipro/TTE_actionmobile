@@ -55,9 +55,10 @@ GameObject:
   - component: {fileID: 4500172692619084}
   - component: {fileID: 33501140267661606}
   - component: {fileID: 23001982040900190}
-  - component: {fileID: 114985432715209528}
+  - component: {fileID: 114879560155054790}
   - component: {fileID: 54543080561885552}
   - component: {fileID: 65616169935644880}
+  - component: {fileID: 95090453346204878}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Enemy
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585427802441400}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.535573, y: -7.228778, z: 6.0046077}
+  m_LocalPosition: {x: -2.088, y: 1.458, z: -4.168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4652599751603712}
@@ -254,12 +255,30 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585427802441400}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.3, z: 0.6}
+  m_Size: {x: 0.6, y: 0.6, z: 0.6}
   m_Center: {x: 0, y: -0.02222222, z: 0.050000332}
---- !u!114 &114985432715209528
+--- !u!95 &95090453346204878
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585427802441400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfff71e3df2bea349b9a9b279228003c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114879560155054790
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,10 +286,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1585427802441400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e7ddd1a997cd643a82b87c90c32703, type: 3}
+  m_Script: {fileID: 11500000, guid: b1861aca67b22e54ebfbb1bbbfdc0ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributeTotems: {fileID: 0}
-  totemName: 
-  maxHealth: 0
+  maxHealth: 10
   damage: 0

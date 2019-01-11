@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1557383508400708}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.485573, y: -7.401, z: 6.1046076}
+  m_LocalPosition: {x: -0.6215942, y: 0.69000006, z: -4.2169003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,7 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e7ddd1a997cd643a82b87c90c32703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributeTotems: {fileID: 0}
-  totemName: 
-  maxHealth: 0
-  damage: 0
+  attributeTotems: {fileID: 1585427802441400, guid: f5c2e05ae12fb0f4882ab68d24a428fc,
+    type: 2}
+  totemName: lamp
+  maxHealth: 25
+  id: 0
+  damage: 2
+  periodDamage: 0

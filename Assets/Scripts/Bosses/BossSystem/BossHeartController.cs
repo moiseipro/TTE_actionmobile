@@ -44,7 +44,7 @@ public class BossHeartController : MonoBehaviour {
         }
         if (health < 1 && !dead)
         {
-            health = 0;
+            Mathf.Clamp(health, 0, maxHealth);
             dead = true;
             Debug.Log("СМЭРТЬ");
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
@@ -85,6 +85,13 @@ public class BossHeartController : MonoBehaviour {
             else if (health / maxHealth * 100 <= 30 && health / maxHealth * 100 > 1) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[3];
             else healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = null;
         }
+    }
+
+    public void HealBoss(float amount)
+    {
+        health += amount;
+        Mathf.Clamp(health, 0, maxHealth);
+        Debug.Log("Босс вылечен: "+health);
     }
 
 }

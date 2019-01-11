@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114509821440552360}
   - component: {fileID: 54156062809525188}
   - component: {fileID: 65037588669475762}
+  - component: {fileID: 95663908070143718}
   m_Layer: 0
   m_Name: HealTotem
   m_TagString: Enemy
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582719648097384}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.385572, y: -7.401, z: 6.804608}
+  m_LocalPosition: {x: -1.197, y: 0.69000053, z: -4.784998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4590293004917880}
@@ -186,6 +187,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.5, z: 1.1}
   m_Center: {x: 0, y: 0.7500001, z: -0.00000011920929}
+--- !u!95 &95663908070143718
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582719648097384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d6d3f95480b1464487f9f291beb2607, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114509821440552360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,7 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e7ddd1a997cd643a82b87c90c32703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributeTotems: {fileID: 0}
-  totemName: 
-  maxHealth: 0
+  attributeTotems: {fileID: 1876769154253984}
+  totemName: heal
+  maxHealth: 30
+  id: 0
   damage: 0
+  periodDamage: 0

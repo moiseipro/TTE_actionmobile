@@ -26,7 +26,7 @@ public class StatueController : MonoBehaviour {
 
     void Start () {
         bossHeart = GetComponent<BossHeartController>();
-        maxTotems = 3 + bossHeart.bossLevel;
+        maxTotems = maxTotems + bossHeart.bossLevel;
         StartCoroutine(ReloadTotem(2));
     }
 	
@@ -54,6 +54,10 @@ public class StatueController : MonoBehaviour {
                 CallTotem(0);
             } else if (facesTotemReload == false) CallTotem(2);
             else if (poisonTotemReload == false) CallTotem(3);
+            else if (skullTotemReload == false) CallTotem(4);
+            else if (tunderTotemReload == false) CallTotem(5);
+            else if (healTotemReload == false) CallTotem(6);
+            else if (lampTotemReload == false) CallTotem(7);
             foreach (GameObject totem in calledTotems)
             {
                 if (totem != null)

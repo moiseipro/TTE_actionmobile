@@ -366,7 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2792682094fdf84d813e8bb9ac2066e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 4.5
+  speedDebaf: 0
   jump: 5
   joystickMove: {fileID: 0}
   joystickFire: {fileID: 0}
@@ -412,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8dd5f3e17fb9c428e1e6691960128a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHearts: 3
+  startHearts: 7
   curHealth: 0
   heartImages:
   - {fileID: 0}
