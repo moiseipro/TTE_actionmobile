@@ -53,7 +53,10 @@ public class TitemController : MonoBehaviour {
             facesTotem();
         } else if (totemName == "guard") {
             guardTotem();
+        } else if (totemName == "poison") {
+            RenderSpherePoison();
         }
+
 	}
 
     public void atackTotem() {
@@ -101,18 +104,21 @@ public class TitemController : MonoBehaviour {
         return dir * -laserRange + gameObject.transform.position + Vector3.up;
     }
 
-    void OnTriggerStay(Collider other)
+    void RenderSpherePoison()
     {
-        if(totemName == "poison" && other.tag == "Player" && periodDamage == false)
+        foreach(Collider col in Physics.OverlapSphere(transform.position, 3f))
         {
-            periodDamage = true;
-            Debug.Log("Отрава");
-            other.GetComponent<HeartSystem>().TakeDamage(-damage);
-            StartCoroutine(PlayerDamagePerTime());
+            if(periodDamage == false && col.tag == "Player")
+            {
+                periodDamage = true;
+                Debug.Log("Отрава");
+                col.GetComponent<HeartSystem>().TakeDamage(-damage);
+                StartCoroutine(PlayerDamagePerTime());
+            }
         }
     }
 
-        public IEnumerator PlayerDamagePerTime()
+    public IEnumerator PlayerDamagePerTime()
     {
         yield return new WaitForSeconds(1f);
         periodDamage = false;

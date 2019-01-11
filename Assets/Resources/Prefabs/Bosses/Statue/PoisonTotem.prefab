@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114303435073359980}
   - component: {fileID: 54548289554296978}
   - component: {fileID: 65736202237205588}
-  - component: {fileID: 135596191574753920}
   m_Layer: 0
   m_Name: PoisonTotem
   m_TagString: Enemy
@@ -131,15 +130,3 @@ MonoBehaviour:
   id: 0
   damage: 1
   periodDamage: 0
---- !u!135 &135596191574753920
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347216349656030}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.39
-  m_Center: {x: 0, y: 0, z: 0}

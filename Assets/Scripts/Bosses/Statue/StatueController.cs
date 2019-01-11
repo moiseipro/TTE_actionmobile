@@ -31,7 +31,16 @@ public class StatueController : MonoBehaviour {
     }
 	
 	void FixedUpdate () {
-        
+        foreach (GameObject totem in calledTotems)
+        {
+            if (totem != null)
+            {
+                if (totem.GetComponent<TitemController>().totemName == "guard")
+                {
+                    bossHeart.immortality = true;
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,6 +53,7 @@ public class StatueController : MonoBehaviour {
             {
                 CallTotem(0);
             } else if (facesTotemReload == false) CallTotem(2);
+            else if (poisonTotemReload == false) CallTotem(3);
             foreach (GameObject totem in calledTotems)
             {
                 if (totem != null)
@@ -51,10 +61,6 @@ public class StatueController : MonoBehaviour {
                     if (totem.GetComponent<TitemController>().totemName == "atack")
                     {
                         totem.GetComponent<TitemController>().atackTotem();
-                    }
-                    else if (totem.GetComponent<TitemController>().totemName == "guard")
-                    {
-                        bossHeart.immortality = true;
                     }
                 }
             }
@@ -89,7 +95,10 @@ public class StatueController : MonoBehaviour {
         {
             GameObject totem = Instantiate(totems[totemID], GenerateTotemSpawn(), Quaternion.identity);
             calledTotems.Add(totem);
-            totem.GetComponent<TitemController>().id = calledTotems.Count - 1;
+            for (int i = 0; i < calledTotems.Count; i++)
+            {
+                calledTotems[i].GetComponent<TitemController>().id = i;
+            }
             if (totemID == 0) atackTotemReload = true;
             else if (totemID == 1) guardTotemReload = true;
             else if (totemID == 2) facesTotemReload = true;

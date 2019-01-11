@@ -33,22 +33,28 @@ public class Bullet_Options : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("entered " + other);
-        if (other.tag == "Object" || other.tag == "Map") Destroy(this.gameObject,0.1f);
-        else if (other.tag == "Enemy" && type!=-1){
+
+        if (other.tag == "Object" || other.tag == "Map") Destroy(this.gameObject, 0.1f);
+        else if (other.tag == "Enemy" && type != -1)
+        {
             if (hpBullet < 1) Destroy(this.gameObject);
-            else {
+            else
+            {
                 hpBullet -= 1;
-                if (type == 4) {
+                if (type == 4)
+                {
                     gameObject.transform.position = other.transform.position + Vector3.up;
                     gameObject.transform.Rotate(Vector3.up * Random.Range(0, 360f));
                     gameObject.transform.Rotate(Vector3.right * -10);
                 }
             }
             other.SendMessage("AddDamage", damage);
-        } else if(other.tag == "Player" && type == -1)
+        }
+        else if (other.tag == "Player" && type == -1)
         {
             other.GetComponent<HeartSystem>().TakeDamage(-(int)damage);
             Destroy(this.gameObject);
         }
+        
     }
 }
