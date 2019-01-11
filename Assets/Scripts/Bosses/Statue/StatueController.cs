@@ -48,16 +48,16 @@ public class StatueController : MonoBehaviour {
         if (other.tag == "Bullet" && other.GetComponent<Bullet_Options>().type != -1)
         {
 
-            if (guardTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.5f) CallTotem(1);
+            if (guardTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.1f) CallTotem(1);
+            else if (healTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.5f) CallTotem(6);
             else if (atackTotemReload == false)
             {
                 CallTotem(0);
             } else if (facesTotemReload == false) CallTotem(2);
             else if (poisonTotemReload == false) CallTotem(3);
-            else if (skullTotemReload == false) CallTotem(4);
             else if (tunderTotemReload == false) CallTotem(5);
-            else if (healTotemReload == false) CallTotem(6);
-            else if (lampTotemReload == false) CallTotem(7);
+            else if (skullTotemReload == false) CallTotem(4);
+            else if (lampTotemReload == false ) CallTotem(7);
             foreach (GameObject totem in calledTotems)
             {
                 if (totem != null)

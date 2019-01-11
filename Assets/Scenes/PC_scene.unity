@@ -1285,11 +1285,6 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8154ec7d3c6d7e340b6a1913bd1efc3f, type: 2}
-    - target: {fileID: 114540915502634622, guid: 8edf86fee528a6540ad60eb1aa115538,
-        type: 2}
-      propertyPath: maxTotems
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8edf86fee528a6540ad60eb1aa115538, type: 2}
   m_IsPrefabAsset: 0
@@ -2949,6 +2944,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca9ab8630de0b948876fbaa7c4343e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossPrefabs:
+  - {fileID: 1746645506671686, guid: 8edf86fee528a6540ad60eb1aa115538, type: 2}
+  mapPrefabs: []
+  objectPrefab: []
 --- !u!1001 &1514310119
 Prefab:
   m_ObjectHideFlags: 0

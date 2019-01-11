@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
 
+    public GameObject[] bossPrefabs;
+    public GameObject[] mapPrefabs;
+    public GameObject[] objectPrefab;
+
+
 	// Use this for initialization
 	void Start () {
 		
