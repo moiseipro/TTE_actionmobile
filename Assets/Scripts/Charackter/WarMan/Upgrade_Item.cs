@@ -168,7 +168,7 @@ public class Upgrade_Item : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Object")
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "Map")
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             gameObject.GetComponent<BoxCollider>().isTrigger = true;

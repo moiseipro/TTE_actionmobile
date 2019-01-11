@@ -8,7 +8,7 @@ public class StatueController : MonoBehaviour {
     private List<GameObject> calledTotems = new List<GameObject>();
     [HideInInspector] public BossHeartController bossHeart;
 
-    int maxTotems; // Максимальное количество тотемов
+    public int maxTotems; // Максимальное количество тотемов
     //int calledTotems = 0; //Вызвано тотемов
 
     float health;
@@ -30,26 +30,20 @@ public class StatueController : MonoBehaviour {
         StartCoroutine(ReloadTotem(2));
     }
 	
-	void Update () {
-        if (calledTotems.Count < maxTotems)
-        {
-            if (facesTotemReload == false) CallTotem(2);
-        }
+	void FixedUpdate () {
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullet" && other.GetComponent<Bullet_Options>().type !=-1)
+        if (other.tag == "Bullet" && other.GetComponent<Bullet_Options>().type != -1)
         {
-            if (calledTotems.Count < maxTotems)
+
+            if (guardTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.5f) CallTotem(1);
+            else if (atackTotemReload == false)
             {
-                if (guardTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.5f) CallTotem(1);
-                else if (atackTotemReload == false) {
-                    CallTotem(0);
-                }
-                //else if (facesTotemReload == false) CallTotem(2);
-            }
+                CallTotem(0);
+            } else if (facesTotemReload == false) CallTotem(2);
             foreach (GameObject totem in calledTotems)
             {
                 if (totem != null)
@@ -57,20 +51,17 @@ public class StatueController : MonoBehaviour {
                     if (totem.GetComponent<TitemController>().totemName == "atack")
                     {
                         totem.GetComponent<TitemController>().atackTotem();
-                    } else if (totem.GetComponent<TitemController>().totemName == "guard")
+                    }
+                    else if (totem.GetComponent<TitemController>().totemName == "guard")
                     {
                         bossHeart.immortality = true;
-                    }
-                    else
-                    {
-                        
                     }
                 }
             }
             if (bossHeart.dead == true && calledTotems != null)
             {
                 maxTotems = 0;
-                for (int i = 0; i < calledTotems.Count; i++)
+                for (int i = calledTotems.Count-1; i >=0; i--)
                 {
                     Destroy(calledTotems[i].gameObject);
                     DeliteTotem(i);
@@ -94,18 +85,21 @@ public class StatueController : MonoBehaviour {
 
     public void CallTotem(int totemID)
     {
-        GameObject totem = Instantiate(totems[totemID], GenerateTotemSpawn(), transform.rotation);
-        calledTotems.Add(totem);
-        totem.GetComponent<TitemController>().id = calledTotems.Count-1;
-        if(totemID == 0) atackTotemReload = true;
-        else if(totemID == 1) guardTotemReload = true;
-        else if (totemID == 2) facesTotemReload = true;
-        else if (totemID == 3) poisonTotemReload = true;
-        else if (totemID == 4) skullTotemReload = true;
-        else if (totemID == 5) tunderTotemReload = true;
-        else if (totemID == 6) healTotemReload = true;
-        else if (totemID == 7) lampTotemReload = true;
-        StartCoroutine(ReloadTotem(totemID));
+        if (calledTotems.Count < maxTotems)
+        {
+            GameObject totem = Instantiate(totems[totemID], GenerateTotemSpawn(), Quaternion.identity);
+            calledTotems.Add(totem);
+            totem.GetComponent<TitemController>().id = calledTotems.Count - 1;
+            if (totemID == 0) atackTotemReload = true;
+            else if (totemID == 1) guardTotemReload = true;
+            else if (totemID == 2) facesTotemReload = true;
+            else if (totemID == 3) poisonTotemReload = true;
+            else if (totemID == 4) skullTotemReload = true;
+            else if (totemID == 5) tunderTotemReload = true;
+            else if (totemID == 6) healTotemReload = true;
+            else if (totemID == 7) lampTotemReload = true;
+            StartCoroutine(ReloadTotem(totemID));
+        }
     }
 
     public void DeliteTotem(int idtotem)

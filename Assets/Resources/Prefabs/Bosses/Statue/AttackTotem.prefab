@@ -129,4 +129,4 @@ MonoBehaviour:
   totemName: atack
   maxHealth: 20
   id: 0
-  damage: 5
+  damage: 1

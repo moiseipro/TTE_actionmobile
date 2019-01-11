@@ -32,8 +32,8 @@ public class Bullet_Options : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered " + other);
-        if (other.tag == "Object") Destroy(this.gameObject,0.1f);
+        //Debug.Log("entered " + other);
+        if (other.tag == "Object" || other.tag == "Map") Destroy(this.gameObject,0.1f);
         else if (other.tag == "Enemy" && type!=-1){
             if (hpBullet < 1) Destroy(this.gameObject);
             else {
@@ -45,6 +45,10 @@ public class Bullet_Options : MonoBehaviour {
                 }
             }
             other.SendMessage("AddDamage", damage);
+        } else if(other.tag == "Player" && type == -1)
+        {
+            other.GetComponent<HeartSystem>().TakeDamage(-(int)damage);
+            Destroy(this.gameObject);
         }
     }
 }

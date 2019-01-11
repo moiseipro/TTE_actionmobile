@@ -12,7 +12,9 @@ public class TitemController : MonoBehaviour {
     [HideInInspector]
     public int id;
 
-    public float damage;
+    public int damage;
+    public bool periodDamage = false;
+    float laserRange = 30f;
 
     private LineRenderer linerender;
 
@@ -24,8 +26,14 @@ public class TitemController : MonoBehaviour {
             linerender = gameObject.AddComponent<LineRenderer>();
             linerender.widthMultiplier = 0.2f;
             linerender.material = Resources.Load("Materials/Statue/LaserFacesTotem") as Material;
+            linerender.positionCount = 6;
+            linerender.loop = true;
             linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
-            linerender.SetPosition(1, gameObject.transform.position + Vector3.up);
+            linerender.SetPosition(1, LineRendererCastDirection(Vector3.forward));
+            linerender.SetPosition(2, LineRendererCastDirection(Vector3.back));
+            linerender.SetPosition(3, gameObject.transform.position + Vector3.up);
+            linerender.SetPosition(4, LineRendererCastDirection(Vector3.right));
+            linerender.SetPosition(5, LineRendererCastDirection(Vector3.left));
         } else if (totemName == "guard")
         {
             linerender = gameObject.AddComponent<LineRenderer>();
@@ -59,11 +67,10 @@ public class TitemController : MonoBehaviour {
     }
 
     public void facesTotem() {
-        if(!RayCastDirection(Vector3.forward) && !RayCastDirection(Vector3.left) && !RayCastDirection(Vector3.back) && !RayCastDirection(Vector3.right))
-        {
-            linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
-            linerender.SetPosition(1, Vector3.Lerp(linerender.GetPosition(1), linerender.GetPosition(0), Time.deltaTime * 20f));
-        }
+        RayCastDirection(Vector3.forward);
+        RayCastDirection(Vector3.left);
+        RayCastDirection(Vector3.back);
+        RayCastDirection(Vector3.right);
     }
 
     public void guardTotem()
@@ -73,16 +80,42 @@ public class TitemController : MonoBehaviour {
         linerender.SetPosition(2, Vector3.Lerp(linerender.GetPosition(2), GameObject.Find("HPcontainer").transform.position, Time.deltaTime * 20f));
     }
 
-    public bool RayCastDirection(Vector3 dir) {
+    public void RayCastDirection(Vector3 dir) {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(dir), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "Player")
+        if (periodDamage == false && Physics.Raycast(transform.position + Vector3.up * 1.8f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "Player")
         {
-            Debug.Log("Did Hit: " + hit.transform.gameObject.tag);
-            linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
-            linerender.SetPosition(1, Vector3.Lerp(linerender.GetPosition(1),hit.point, Time.deltaTime * 20f));
-            return true;
+            periodDamage = true;
+            Debug.Log("Жжется");
+            hit.transform.gameObject.GetComponent<HeartSystem>().TakeDamage(-damage);
+            StartCoroutine(PlayerDamagePerTime());
         }
-        return false;
+    }
+    public Vector3 LineRendererCastDirection(Vector3 dir)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + Vector3.up * 1.8f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && (hit.transform.gameObject.tag == "Object" || hit.transform.gameObject.tag == "Enemy" || hit.transform.gameObject.tag == "Map"))
+        {
+            if (dir == Vector3.left || dir == Vector3.right) return new Vector3(hit.point.x, transform.position.y + 1f, transform.position.z);
+            else if(dir == Vector3.forward || dir == Vector3.back) return new Vector3(transform.position.x, transform.position.y + 1f, hit.point.z);
+        }
+        return dir * -laserRange + gameObject.transform.position + Vector3.up;
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if(totemName == "poison" && other.tag == "Player" && periodDamage == false)
+        {
+            periodDamage = true;
+            Debug.Log("Отрава");
+            other.GetComponent<HeartSystem>().TakeDamage(-damage);
+            StartCoroutine(PlayerDamagePerTime());
+        }
+    }
+
+        public IEnumerator PlayerDamagePerTime()
+    {
+        yield return new WaitForSeconds(1f);
+        periodDamage = false;
     }
 
     public void AddDamage(float dam)

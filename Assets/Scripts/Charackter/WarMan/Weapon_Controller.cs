@@ -52,7 +52,7 @@ public class Weapon_Controller : MonoBehaviour {
             
             float currentTurnAngle = turnAngle/2f;
             if (turnType == 1){
-                GameObject Bull = GameObject.Instantiate(Bullets[bulletID], Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
+                GameObject Bull = Instantiate(Bullets[bulletID], Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
                 Bull.transform.Rotate(0, Random.Range(-currentTurnAngle,currentTurnAngle), 0, Space.Self);
                 Bull.GetComponent<Bullet_Options>().speed = bulletSpeed;
                 Bull.GetComponent<Bullet_Options>().rotationSpeed = bulletFallSpeed;
@@ -62,7 +62,7 @@ public class Weapon_Controller : MonoBehaviour {
             } else {
                 for (int i = 0; i < turnType; i++)
                 {
-                    GameObject Bull = GameObject.Instantiate(Bullets[bulletID], Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
+                    GameObject Bull = Instantiate(Bullets[bulletID], Weapon.transform.position + Weapon.transform.forward * 0.9f, transform.rotation);
                     Bull.transform.Rotate(0, Random.Range(-currentTurnAngle, currentTurnAngle), 0, Space.Self);
                     Bull.GetComponent<Bullet_Options>().speed = bulletSpeed;
                     Bull.GetComponent<Bullet_Options>().rotationSpeed = bulletFallSpeed;

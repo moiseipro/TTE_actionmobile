@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114303435073359980}
   - component: {fileID: 54548289554296978}
   - component: {fileID: 65736202237205588}
+  - component: {fileID: 135596191574753920}
   m_Layer: 0
   m_Name: PoisonTotem
   m_TagString: Enemy
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347216349656030}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.607573, y: -7.401, z: 6.309608}
+  m_LocalPosition: {x: -0.48333785, y: 0.69000053, z: -4.7181726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,6 +126,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeTotems: {fileID: 0}
-  totemName: 
-  maxHealth: 0
-  damage: 0
+  totemName: poison
+  maxHealth: 20
+  id: 0
+  damage: 1
+  periodDamage: 0
+--- !u!135 &135596191574753920
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347216349656030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.39
+  m_Center: {x: 0, y: 0, z: 0}
