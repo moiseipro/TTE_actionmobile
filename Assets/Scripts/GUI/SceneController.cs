@@ -8,6 +8,7 @@ public class SceneController : MonoBehaviour {
     public GameObject[] bossPrefabs;
     public GameObject[] mapPrefabs;
     public GameObject[] objectPrefab;
+    public GameObject[] playerPrefabs;
 
 
 	// Use this for initialization

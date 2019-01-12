@@ -16,6 +16,7 @@ public class HeartSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        heartImages = GameObject.Find("HealthBar").transform.GetComponentsInChildren<Image>();
         curHealth = startHearts * healthPerHeart;
         maxHealth = maxHeart * healthPerHeart;
         CheckHealthAmount();
