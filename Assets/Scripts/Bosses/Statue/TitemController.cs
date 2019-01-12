@@ -83,7 +83,7 @@ public class TitemController : MonoBehaviour {
 
     void healTotem()
     {
-        Vector3 vect = GameObject.Find("TheStatueAnswers").transform.position - transform.position;
+        Vector3 vect = GameObject.FindWithTag("Boss").transform.position - transform.position;
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up * 1.8f, transform.TransformDirection(vect.normalized), out hit, Mathf.Infinity))
         {
@@ -91,7 +91,7 @@ public class TitemController : MonoBehaviour {
             {
                 linerender.SetPosition(0, attributeTotems.transform.position);
                 linerender.SetPosition(1, Vector3.Lerp(linerender.GetPosition(1), new Vector3(hit.transform.position.x, attributeTotems.transform.position.y, hit.transform.position.z), Time.deltaTime * 20f));
-            } else if(hit.transform.gameObject.name == "TheStatueAnswers")
+            } else if(hit.transform.gameObject.tag == "Boss")
             {
                 linerender.SetPosition(0, attributeTotems.transform.position);
                 linerender.SetPosition(1, Vector3.Lerp(linerender.GetPosition(1), new Vector3(hit.transform.position.x, attributeTotems.transform.position.y, hit.transform.position.z), Time.deltaTime * 20f));
@@ -181,10 +181,15 @@ public class TitemController : MonoBehaviour {
         {
             health = 0;
             Debug.Log("тотем СМЭРТЬ");
-            GameObject.Find("TheStatueAnswers").GetComponent<StatueController>().DeliteTotem(id);
-            if(totemName == "guard") GameObject.Find("TheStatueAnswers").GetComponent<StatueController>().bossHeart.immortality = false;
-            else if(totemName == "skull") GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speedDebaf -= GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
-            Destroy(gameObject);
+            GameObject.FindWithTag("Boss").GetComponent<StatueController>().DeliteTotem(id);
+            DeadTotem();
         }
+    }
+
+    public void DeadTotem()
+    {
+        if (totemName == "guard") GameObject.FindWithTag("Boss").GetComponent<StatueController>().bossHeart.immortality = false;
+        else if (totemName == "skull") GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speedDebaf -= GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
+        Destroy(gameObject);
     }
 }

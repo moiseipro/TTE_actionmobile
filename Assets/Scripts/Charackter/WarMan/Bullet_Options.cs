@@ -35,7 +35,7 @@ public class Bullet_Options : MonoBehaviour {
         //Debug.Log("entered " + other);
 
         if (other.tag == "Object" || other.tag == "Map") Destroy(this.gameObject, 0.1f);
-        else if (other.tag == "Enemy" && type != -1)
+        else if ((other.tag == "Enemy" || other.tag == "Boss") && type != -1)
         {
             if (hpBullet < 1) Destroy(this.gameObject);
             else

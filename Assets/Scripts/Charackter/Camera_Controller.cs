@@ -8,7 +8,10 @@ public class Camera_Controller : MonoBehaviour {
     public Vector3 offset;// Смещение камеры относительно персонажа
     private Vector3 NewPos;
     public float camSpeed = 2f; // Скорость следования камеры за персонажем
-	
+
+    private void Start()
+    {
+    }
 
     void LateUpdate(){
         /*NewPos.y = offset.y;

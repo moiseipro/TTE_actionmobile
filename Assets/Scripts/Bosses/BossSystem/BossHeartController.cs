@@ -44,7 +44,7 @@ public class BossHeartController : MonoBehaviour {
         }
         if (health < 1 && !dead)
         {
-            Mathf.Clamp(health, 0, maxHealth);
+            health = Mathf.Clamp(health, 0, maxHealth);
             dead = true;
             Debug.Log("СМЭРТЬ");
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
@@ -90,7 +90,7 @@ public class BossHeartController : MonoBehaviour {
     public void HealBoss(float amount)
     {
         health += amount;
-        Mathf.Clamp(health, 0, maxHealth);
+        health = Mathf.Clamp(health, 0, maxHealth);
         Debug.Log("Босс вылечен: "+health);
     }
 

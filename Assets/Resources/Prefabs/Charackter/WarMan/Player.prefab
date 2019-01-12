@@ -395,9 +395,9 @@ MonoBehaviour:
   UpgradeLeft: {fileID: 0}
   UpgradeRight: {fileID: 0}
   WeaponLevel: 1
-  timeReload: 0.8
+  timeReload: 0.6
   turnType: 1
-  turnAngle: 30
+  turnAngle: 20
   bulletSpeed: 6
   bulletFallSpeed: 20
   bulletHP: 0
@@ -416,16 +416,16 @@ MonoBehaviour:
   startHearts: 7
   curHealth: 0
   heartImages:
-  - {fileID: 114858249914227896, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114633685974548902, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114301689965576274, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114421750083232168, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114874868275616258, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114276716549271022, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114719216475182060, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114455662976503244, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114780761632218942, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
-  - {fileID: 114201890142563290, guid: 6de09f0dcb0967c428fe32cb653fb179, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   heartSprite:
   - {fileID: 21300004, guid: 686d57cdfda45c842aa753344c7fae38, type: 3}
   - {fileID: 21300002, guid: 686d57cdfda45c842aa753344c7fae38, type: 3}

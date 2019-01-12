@@ -27,7 +27,7 @@ public class FlyController : MonoBehaviour {
     public void AddDamage(float damage)
     {
         health -= damage;
-        Mathf.Clamp(health,0,maxHealth);
+        health = Mathf.Clamp(health,0,maxHealth);
         if (health < 1)
         {
             Destroy(gameObject);

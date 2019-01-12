@@ -367,4 +367,6 @@ MonoBehaviour:
   - {fileID: 1647227025362206, guid: bec6ac6c69d3595428a3bc6c96408b82, type: 2}
   - {fileID: 1152131434714614, guid: fd37f184be4a5684caaa4ece78615997, type: 2}
   objectPrefab: []
-  playerPrefabs: []
+  playerPrefabs:
+  - {fileID: 1301870341732256, guid: 08968e53b273e254bbb170494247f00b, type: 2}
+  mainCamera: {fileID: 0}
