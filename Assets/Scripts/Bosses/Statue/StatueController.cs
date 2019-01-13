@@ -50,10 +50,8 @@ public class StatueController : MonoBehaviour {
 
             if (guardTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.1f) CallTotem(1);
             else if (healTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.5f) CallTotem(6);
-            else if (atackTotemReload == false)
-            {
-                CallTotem(0);
-            } else if (facesTotemReload == false) CallTotem(2);
+            else if (atackTotemReload == false) CallTotem(0);
+            else if (facesTotemReload == false) CallTotem(2);
             else if (poisonTotemReload == false) CallTotem(3);
             else if (tunderTotemReload == false) CallTotem(5);
             else if (skullTotemReload == false) CallTotem(4);
@@ -122,6 +120,7 @@ public class StatueController : MonoBehaviour {
         for(int i=0; i< calledTotems.Count; i++)
         {
             calledTotems[i].GetComponent<TitemController>().id = i;
+            if (calledTotems[i].GetComponent<TitemController>().totemName == "faces") calledTotems[i].GetComponent<TitemController>().facesTotemLaser();
         }
     }
 

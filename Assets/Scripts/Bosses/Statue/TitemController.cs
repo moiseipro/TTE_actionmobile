@@ -28,12 +28,7 @@ public class TitemController : MonoBehaviour {
             linerender.material = Resources.Load("Materials/Statue/LaserFacesTotem") as Material;
             linerender.positionCount = 6;
             linerender.loop = true;
-            linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
-            linerender.SetPosition(1, LineRendererCastDirection(Vector3.forward));
-            linerender.SetPosition(2, LineRendererCastDirection(Vector3.back));
-            linerender.SetPosition(3, gameObject.transform.position + Vector3.up);
-            linerender.SetPosition(4, LineRendererCastDirection(Vector3.right));
-            linerender.SetPosition(5, LineRendererCastDirection(Vector3.left));
+            facesTotemLaser();
         } else if (totemName == "heal")
         {
             linerender = gameObject.AddComponent<LineRenderer>();
@@ -79,6 +74,16 @@ public class TitemController : MonoBehaviour {
         RayCastDirection(Vector3.left);
         RayCastDirection(Vector3.back);
         RayCastDirection(Vector3.right);
+    }
+
+    public void facesTotemLaser()
+    {
+        linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
+        linerender.SetPosition(1, LineRendererCastDirection(Vector3.forward));
+        linerender.SetPosition(2, LineRendererCastDirection(Vector3.back));
+        linerender.SetPosition(3, gameObject.transform.position + Vector3.up);
+        linerender.SetPosition(4, LineRendererCastDirection(Vector3.right));
+        linerender.SetPosition(5, LineRendererCastDirection(Vector3.left));
     }
 
     void healTotem()
@@ -130,7 +135,7 @@ public class TitemController : MonoBehaviour {
 
     void RayCastDirection(Vector3 dir) {
         RaycastHit hit;
-        if (periodDamage == false && Physics.Raycast(transform.position + Vector3.up * 1.8f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "Player")
+        if (periodDamage == false && Physics.Raycast(transform.position + Vector3.up * 1.3f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "Player")
         {
             periodDamage = true;
             Debug.Log("Жжется");
@@ -141,7 +146,7 @@ public class TitemController : MonoBehaviour {
     public Vector3 LineRendererCastDirection(Vector3 dir)
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up * 1.8f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && (hit.transform.gameObject.tag == "Object" || hit.transform.gameObject.tag == "Enemy" || hit.transform.gameObject.tag == "Map"))
+        if (Physics.Raycast(transform.position + Vector3.up * 1.3f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && (hit.transform.gameObject.tag == "Object" || hit.transform.gameObject.tag == "Enemy" || hit.transform.gameObject.tag == "Map" || hit.transform.gameObject.tag == "Boss"))
         {
             if (dir == Vector3.left || dir == Vector3.right) return new Vector3(hit.point.x, transform.position.y + 1f, transform.position.z);
             else if(dir == Vector3.forward || dir == Vector3.back) return new Vector3(transform.position.x, transform.position.y + 1f, hit.point.z);
