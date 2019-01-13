@@ -1107,6 +1107,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 23619291617497558, guid: 6cf8e755dd1fd704fa61f61b2529b3a1,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae1ff5bbcfdcbc0419d40886250a07a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cf8e755dd1fd704fa61f61b2529b3a1, type: 2}
   m_IsPrefabAsset: 0
@@ -1339,7 +1344,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ae1ff5bbcfdcbc0419d40886250a07a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1441,7 +1446,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ae1ff5bbcfdcbc0419d40886250a07a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1807,7 +1812,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4518469901518258, guid: 86a7d46af54b3614c9fed0df204f254a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 4518469901518258, guid: 86a7d46af54b3614c9fed0df204f254a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1878,6 +1883,15 @@ Prefab:
     - target: {fileID: 4539130632109690, guid: ec3585fe1baccc34898b1837c300d773, type: 2}
       propertyPath: m_RootOrder
       value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044953149602004, guid: ec3585fe1baccc34898b1837c300d773, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114918626271941826, guid: ec3585fe1baccc34898b1837c300d773,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3585fe1baccc34898b1837c300d773, type: 2}

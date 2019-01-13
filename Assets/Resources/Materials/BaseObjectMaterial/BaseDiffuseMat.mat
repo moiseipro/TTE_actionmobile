@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: BaseDiffuseMat
-  m_Shader: {fileID: 10703, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 181c415ba9eab444680dfd671db82e5f, type: 3}
   m_ShaderKeywords: COLOR_ON PHONG_ON _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -18,6 +18,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_7D49C105:
+        m_Texture: {fileID: 2800000, guid: 387a32eb3262ab848b3e0bf2599ab7c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C5504EBB:
+        m_Texture: {fileID: 2800000, guid: f04b926d43544ac41a96938213f2be83, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
