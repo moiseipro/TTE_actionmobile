@@ -28,7 +28,7 @@ public class TitemController : MonoBehaviour {
             linerender.material = Resources.Load("Materials/Statue/LaserFacesTotem") as Material;
             linerender.positionCount = 6;
             linerender.loop = true;
-            facesTotemLaser();
+            StartCoroutine(facesTotemLaser());
         } else if (totemName == "heal")
         {
             linerender = gameObject.AddComponent<LineRenderer>();
@@ -45,11 +45,11 @@ public class TitemController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (totemName == "faces") {
+        if (totemName == "faces" && periodDamage == false) {
             facesTotem();
         } else if (totemName == "heal") {
             healTotem();
-        } else if (totemName == "poison") {
+        } else if (totemName == "poison" && periodDamage == false) {
             RenderSpherePoison();
         } else if (totemName == "thunder") {
             thunderTotem();
@@ -76,14 +76,18 @@ public class TitemController : MonoBehaviour {
         RayCastDirection(Vector3.right);
     }
 
-    public void facesTotemLaser()
+    public IEnumerator facesTotemLaser()
     {
-        linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
-        linerender.SetPosition(1, LineRendererCastDirection(Vector3.forward));
-        linerender.SetPosition(2, LineRendererCastDirection(Vector3.back));
-        linerender.SetPosition(3, gameObject.transform.position + Vector3.up);
-        linerender.SetPosition(4, LineRendererCastDirection(Vector3.right));
-        linerender.SetPosition(5, LineRendererCastDirection(Vector3.left));
+        while (health > 1)
+        {
+            linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
+            linerender.SetPosition(1, LineRendererCastDirection(Vector3.forward));
+            linerender.SetPosition(2, LineRendererCastDirection(Vector3.back));
+            linerender.SetPosition(3, gameObject.transform.position + Vector3.up);
+            linerender.SetPosition(4, LineRendererCastDirection(Vector3.right));
+            linerender.SetPosition(5, LineRendererCastDirection(Vector3.left));
+            yield return new WaitForSeconds(1f);
+        }
     }
 
     void healTotem()
@@ -135,7 +139,7 @@ public class TitemController : MonoBehaviour {
 
     void RayCastDirection(Vector3 dir) {
         RaycastHit hit;
-        if (periodDamage == false && Physics.Raycast(transform.position + Vector3.up * 1.3f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "Player")
+        if (Physics.Raycast(transform.position + Vector3.up * 1.3f, transform.TransformDirection(dir), out hit, Mathf.Infinity) && hit.transform.gameObject.tag == "Player")
         {
             periodDamage = true;
             Debug.Log("Жжется");
@@ -158,7 +162,7 @@ public class TitemController : MonoBehaviour {
     {
         foreach(Collider col in Physics.OverlapSphere(transform.position, 3f))
         {
-            if(periodDamage == false && col.tag == "Player")
+            if(col.tag == "Player")
             {
                 periodDamage = true;
                 Debug.Log("Отрава");

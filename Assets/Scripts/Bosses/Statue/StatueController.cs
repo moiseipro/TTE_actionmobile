@@ -120,17 +120,29 @@ public class StatueController : MonoBehaviour {
         for(int i=0; i< calledTotems.Count; i++)
         {
             calledTotems[i].GetComponent<TitemController>().id = i;
-            if (calledTotems[i].GetComponent<TitemController>().totemName == "faces") calledTotems[i].GetComponent<TitemController>().facesTotemLaser();
+            if (calledTotems[i].GetComponent<TitemController>().totemName == "faces") StartCoroutine(calledTotems[i].GetComponent<TitemController>().facesTotemLaser());
         }
     }
 
     Vector3 GenerateTotemSpawn()
     {
         Vector3 spawnVec;
+        bool cold;
         do
         {
+            cold = false;
             spawnVec = new Vector3(Random.Range(gameObject.transform.position.x - 7f, gameObject.transform.position.x + 7f), gameObject.transform.position.y, Random.Range(gameObject.transform.position.z - 7f, gameObject.transform.position.z + 7f));
-        } while (spawnVec.magnitude < 2.5f);
+            foreach (Collider col in Physics.OverlapSphere(spawnVec, 3f))
+            {
+                if (col.tag == "Enemy")
+                {
+                    cold = true;
+                    Debug.Log("SPAWN TOTEM ERROR");
+                    break;
+                }
+            }
+        } while (cold == true || spawnVec.magnitude < 2.5f);
+
         return spawnVec;
     }
 }
