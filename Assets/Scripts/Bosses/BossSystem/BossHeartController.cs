@@ -15,6 +15,7 @@ public class BossHeartController : MonoBehaviour {
 
     [Header("Дополнительные атрибуты")]
     public GameObject healthBadge;
+    public GameObject particleDamage;
     public Mesh[] meshesHeart;
     public GameObject[] partOfBoss;
 
@@ -62,6 +63,8 @@ public class BossHeartController : MonoBehaviour {
             Destroy(gameObject);
         }
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
+        Instantiate(particleDamage,gameObject.transform.position+Vector3.up,Quaternion.identity);
+
     }
 
     public void UpdateHpContainers()

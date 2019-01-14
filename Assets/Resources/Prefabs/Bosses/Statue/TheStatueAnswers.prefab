@@ -275,7 +275,7 @@ MonoBehaviour:
   - {fileID: 1582719648097384, guid: b937b3ee0e597bc4d9bbfb435b2b806c, type: 2}
   - {fileID: 1557383508400708, guid: 4a86c3b024c5284449aed08b9bc5e3cc, type: 2}
   bossHeart: {fileID: 0}
-  maxTotems: 5
+  maxTotems: 8
 --- !u!114 &114584987402250282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,6 +295,8 @@ MonoBehaviour:
   dead: 0
   bossLevel: 1
   healthBadge: {fileID: 1400922444074922}
+  particleDamage: {fileID: 1445517059410980, guid: e6b7e86cb41cb4c4993c5c78859249df,
+    type: 2}
   meshesHeart:
   - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
