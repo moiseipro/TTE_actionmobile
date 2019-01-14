@@ -1,14 +1,56 @@
 fileFormatVersion: 2
-guid: 65a7a5479160cae419ae0ef28df7003e
+guid: 91d5d5c526df4b648a7ddca9f3158838
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    400000: //RootNode
-    2100000: palette
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: 1
+    100002: Castle_1
+    100004: Objects-0.000
+    100006: Objects-0.001
+    100008: Objects-1
+    100010: Objects-1.001
+    100012: Objects-2.001
+    100014: Pack_1-1.006
+    100016: Pack_1-1.028
+    400000: Castle_1
+    400002: //RootNode
+    400004: Objects-0.000
+    400006: Objects-0.001
+    400008: Objects-1
+    400010: Objects-1.001
+    400012: Objects-2.001
+    400014: Pack_1-1.006
+    400016: Pack_1-1.028
+    2100000: palette.003
+    2100002: palette.006
+    2100004: palette.005
+    2100006: palette.001
+    2100008: palette.007
+    2100010: palette.009
+    2300000: Castle_1
+    2300002: Objects-0.000
+    2300004: Objects-0.001
+    2300006: Objects-1
+    2300008: Objects-1.001
+    2300010: Objects-2.001
+    2300012: Pack_1-1.006
+    2300014: Pack_1-1.028
+    3300000: Castle_1
+    3300002: Objects-0.000
+    3300004: Objects-0.001
+    3300006: Objects-1
+    3300008: Objects-1.001
+    3300010: Objects-2.001
+    3300012: Pack_1-1.006
+    3300014: Pack_1-1.028
+    4300000: Objects-1.001
+    4300002: Objects-2.001
+    4300004: Objects-0.000
+    4300006: Objects-0.001
+    4300008: Objects-1
+    4300010: Castle_1
+    4300012: Pack_1-1.028
+    4300014: Pack_1-1.006
   externalObjects: {}
   materials:
     importMaterials: 1

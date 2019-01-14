@@ -5,37 +5,36 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: Castle_2
-    100004: Objects-1
-    100006: Objects-2
-    100008: Objects-3
-    100010: Objects-4
+    100004: Fasteners
+    100006: Roop
+    100008: Spool_0
+    100010: Spool_1
     400000: //RootNode
     400002: Castle_2
-    400004: Objects-1
-    400006: Objects-2
-    400008: Objects-3
-    400010: Objects-4
-    2100000: palette.003
-    2100002: palette.001
-    2100004: palette.002
-    2100006: palette.004
-    2100008: palette
-    2100010: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B"
+    400004: Fasteners
+    400006: Roop
+    400008: Spool_0
+    400010: Spool_1
+    2100000: palette.005
+    2100002: palette.003
+    2100004: palette.001
+    2100006: palette.002
+    2100008: palette.004
     2300000: Castle_2
-    2300002: Objects-1
-    2300004: Objects-2
-    2300006: Objects-3
-    2300008: Objects-4
+    2300002: Fasteners
+    2300004: Roop
+    2300006: Spool_0
+    2300008: Spool_1
     3300000: Castle_2
-    3300002: Objects-1
-    3300004: Objects-2
-    3300006: Objects-3
-    3300008: Objects-4
-    4300000: Objects-3
-    4300002: Objects-1
-    4300004: Objects-2
-    4300006: Objects-4
-    4300008: Castle_2
+    3300002: Fasteners
+    3300004: Roop
+    3300006: Spool_0
+    3300008: Spool_1
+    4300000: Castle_2
+    4300002: Fasteners
+    4300004: Spool_0
+    4300006: Spool_1
+    4300008: Roop
   externalObjects: {}
   materials:
     importMaterials: 1
