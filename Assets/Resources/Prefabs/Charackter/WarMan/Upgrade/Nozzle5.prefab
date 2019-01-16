@@ -132,7 +132,7 @@ MonoBehaviour:
   turnValue: 0
   turnAngleValue: 0
   reloadResist: 0
-  bulletSpeed: 2
+  bulletSpeed: 3
   bulletFallSpeed: 0
   bulletHP: 1
   bulletDamage: 0

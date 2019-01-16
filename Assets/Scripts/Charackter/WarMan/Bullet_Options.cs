@@ -25,16 +25,41 @@ public class Bullet_Options : MonoBehaviour {
 
     //Полет пули
     void Move() {
-        if(type == 3) gameObject.transform.Translate((Vector3.forward+new Vector3(Random.Range(-1,2),0, Random.Range(0, 2))) * speed * Time.deltaTime);
-        else gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        gameObject.transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+        //if(type == 3) gameObject.transform.Translate((Vector3.forward+new Vector3(Random.Range(-1,2),0, Random.Range(0, 2))) * speed * Time.deltaTime);
+        if (type == 3)
+        {
+            gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+            Vector3 rotVec = new Vector3(GameObject.FindWithTag("Weapon").transform.position.x + GameObject.FindWithTag("Weapon").transform.forward.x * speed, gameObject.transform.position.y * rotationSpeed * Time.deltaTime, GameObject.FindWithTag("Weapon").transform.position.z + GameObject.FindWithTag("Weapon").transform.forward.z * speed);
+            //rotVec.y = gameObject.transform.rotation.y * rotationSpeed * Time.deltaTime;
+            //transform.rotation = Quaternion.LookRotation(GameObject.FindWithTag("Weapon").transform.forward.normalized);
+            transform.LookAt(rotVec);
+            //gameObject.transform.Rotate(GameObject.FindWithTag("Weapon").transform.right * rotationSpeed * Time.deltaTime, Space.Self);
+        }
+        else {
+            gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            gameObject.transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("entered " + other);
 
-        if (other.tag == "Object" || other.tag == "Map") Destroy(this.gameObject, 0.1f);
+        if (other.tag == "Object" || other.tag == "Map") {
+            if (type == 2)
+            {
+                for (int i = 0; i < hpBullet; i++) {
+                    GameObject bull = Instantiate(gameObject, gameObject.transform.position + Vector3.up / 10f, Quaternion.identity);
+                    bull.transform.Rotate(Vector3.up * Random.Range(0, 360f));
+                    bull.transform.Rotate(Vector3.right * -30);
+                    bull.GetComponent<Bullet_Options>().hpBullet = 0;
+                    bull.GetComponent<Bullet_Options>().damage *= 0.6f;
+                    bull.GetComponent<Bullet_Options>().rotationSpeed = rotationSpeed * 4f;
+                    bull.transform.localScale *= 0.9f; 
+                }
+            }
+            Destroy(this.gameObject, 0.1f);
+        }
         else if ((other.tag == "Enemy" || other.tag == "Boss") && type != -1)
         {
             if (hpBullet < 1) Destroy(this.gameObject);

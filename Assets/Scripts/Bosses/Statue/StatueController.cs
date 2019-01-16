@@ -131,13 +131,13 @@ public class StatueController : MonoBehaviour {
         do
         {
             cold = false;
-            spawnVec = new Vector3(Random.Range(gameObject.transform.position.x - 7f, gameObject.transform.position.x + 7f), gameObject.transform.position.y, Random.Range(gameObject.transform.position.z - 7f, gameObject.transform.position.z + 7f));
+            spawnVec = new Vector3(Random.Range(gameObject.transform.position.x - 6.5f, gameObject.transform.position.x + 6.5f), gameObject.transform.position.y, Random.Range(gameObject.transform.position.z - 6.5f, gameObject.transform.position.z + 6.5f));
             foreach (Collider col in Physics.OverlapSphere(spawnVec, 3f))
             {
                 if (col.tag == "Enemy")
                 {
                     cold = true;
-                    Debug.Log("SPAWN TOTEM ERROR");
+                    //Debug.Log("SPAWN TOTEM ERROR");
                     break;
                 }
             }

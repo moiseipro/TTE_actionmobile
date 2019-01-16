@@ -134,7 +134,7 @@ MonoBehaviour:
   reloadResist: 0
   bulletSpeed: 2
   bulletFallSpeed: 0
-  bulletHP: 1
+  bulletHP: 2
   bulletDamage: 1.5
 --- !u!114 &114470436041168742
 MonoBehaviour:
