@@ -14,8 +14,11 @@ public class SceneController : MonoBehaviour {
     public Camera mainCamera;
     GameObject player;
 
+    private int levelGame = 0;
+
     // Use this for initialization
     void Start () {
+        levelGame = PlayerPrefs.GetInt("Level");
         foreach(GameObject item in GameObject.FindGameObjectsWithTag("Item"))
         {
             if (item.GetComponent<GUIcontroller>().ObjectEquipt == false) Destroy(item);
@@ -23,6 +26,7 @@ public class SceneController : MonoBehaviour {
 
         GenerationMap();
         GameObject boss = Instantiate(bossPrefabs[0], new Vector3(0, 0, 0), Quaternion.AngleAxis(180,Vector3.up));
+        boss.GetComponent<BossHeartController>().bossLevel = levelGame;
         if (!GameObject.FindWithTag("Player"))
         {
             player = Instantiate(playerPrefabs[0], new Vector3(0, 0, -9f), Quaternion.identity);
@@ -65,12 +69,16 @@ public class SceneController : MonoBehaviour {
 
     public void ReloadLevel()
     {
+        Destroy(player);
+        //player.GetComponent<HeartSystem>().HealAll();
+        PlayerPrefs.SetInt("Level", 0);
         SceneManager.LoadScene("Game");
     }
 
     public void NextLevel()
     {
+        levelGame++;
+        PlayerPrefs.SetInt("Level", levelGame);
         SceneManager.LoadScene("Game");
-        //PlayerPrefs.SetFloat("");
     }
 }

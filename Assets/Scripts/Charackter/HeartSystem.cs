@@ -10,6 +10,7 @@ public class HeartSystem : MonoBehaviour {
     public int curHealth;
     private int maxHealth;
     private int healthPerHeart = 2;
+    [HideInInspector] public bool isDead = false;
 
     public Image[] heartImages;
     public Sprite[] heartSprite;
@@ -21,9 +22,7 @@ public class HeartSystem : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        curHealth = startHearts * healthPerHeart;
-        maxHealth = maxHeart * healthPerHeart;
-        CheckHealthAmount();
+        HealAll();
     }
 	
 	// Update is called once per frame
@@ -83,16 +82,27 @@ public class HeartSystem : MonoBehaviour {
         if (curHealth < 1)
         {
             Debug.Log("Персонаж СМЭРТЬ");
+            GetComponent<Animator>().SetTrigger("Dead");
+            isDead = true;
         }
+    }
+
+    public void HealAll()
+    {
+        curHealth = startHearts * healthPerHeart;
+        maxHealth = maxHeart * healthPerHeart;
+        if (isDead == true && curHealth > 0)
+        {
+            isDead = false;
+            GetComponent<Animator>().SetTrigger("Alive");
+        }
+        CheckHealthAmount();
     }
 
     public void AddHeartContainer()
     {
         startHearts++;
         startHearts = Mathf.Clamp(startHearts, 0, maxHeart);
-
-        //curHealth = startHearts * healthPerHeart;
-        //maxHealth = maxHeart * healthPerHeart;
 
         CheckHealthAmount();
     }

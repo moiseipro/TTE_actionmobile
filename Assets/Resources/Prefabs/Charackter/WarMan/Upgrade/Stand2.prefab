@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: Stand
-  upgradeName: 
+  upgradeName: "\u0428\u0438\u0440\u043E\u043A\u0430\u044F \u043F\u043E\u0434\u0449\u0435\u0447\u043A\u0430"
   Rang: 0.83
   turnValue: 0
   turnAngleValue: -4

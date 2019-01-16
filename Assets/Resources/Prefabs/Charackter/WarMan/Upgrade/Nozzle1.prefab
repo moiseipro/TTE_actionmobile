@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535934297988320}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.713, y: 1.3529997, z: 4.41}
+  m_LocalPosition: {x: 1.13, y: 1.3529997, z: 4.41}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
   outlineWidth: 6
   precomputeOutline: 0
   bakeKeys: []
@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: Nozzle1
-  upgradeName: 
-  Rang: 0.65
+  upgradeName: "\u041E\u0431\u044B\u0447\u043D\u043E\u0435 \u0434\u0443\u043B\u043E"
+  Rang: 0.82
   turnValue: 1
   turnAngleValue: 8
   reloadResist: -0.05

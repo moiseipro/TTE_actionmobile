@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101317881511698}
   m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.478, y: 1.3529997, z: 4.32}
+  m_LocalPosition: {x: 5.15, y: 1.3529997, z: 4.32}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: Nozzle3
-  upgradeName: 
+  upgradeName: "\u0413\u043B\u0443\u0448\u0438\u0442\u0435\u043B\u044C"
   Rang: 0.83
   turnValue: 0
   turnAngleValue: 5

@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeType: Nozzle6
-  upgradeName: 
+  upgradeName: "\u041D\u0430\u0441\u0430\u0434\u043A\u0430 \"\u041E\u0441\u043A\u043E\u043B\u043E\u0447\u043D\u0430\u044F\""
   Rang: 0.77
   turnValue: 0
   turnAngleValue: 0

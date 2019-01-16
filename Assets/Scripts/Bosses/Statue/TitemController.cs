@@ -133,7 +133,7 @@ public class TitemController : MonoBehaviour {
             periodDamage = true;
             GameObject muha = Instantiate(attributeTotems, transform.position + Vector3.up/2f, Quaternion.identity);
             muha.GetComponent<FlyController>().damage = damage;
-            StartCoroutine(PlayerDamagePerTime(2f));
+            StartCoroutine(PlayerDamagePerTime(4f));
         }
     }
 

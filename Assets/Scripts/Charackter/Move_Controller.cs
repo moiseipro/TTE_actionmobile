@@ -29,7 +29,10 @@ public class Move_Controller : MonoBehaviour {
 	
 	void Update () {
         GamingGravity();
-        MovePlayer();
+        if(gameObject.GetComponent<HeartSystem>().isDead == false)
+        {
+            MovePlayer();
+        }
 	}
 
     //Метод перемещения персонажа

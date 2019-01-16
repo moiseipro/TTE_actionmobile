@@ -11,7 +11,7 @@ public class BossHeartController : MonoBehaviour {
     [HideInInspector] public float armor;
     [HideInInspector] public bool immortality = false;
     [HideInInspector] public bool dead = false;
-    public int bossLevel = 1;
+    public int bossLevel = 0;
 
     [Header("Дополнительные атрибуты")]
     public GameObject healthBadge;

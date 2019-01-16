@@ -25,14 +25,13 @@ public class Bullet_Options : MonoBehaviour {
 
     //Полет пули
     void Move() {
-        //if(type == 3) gameObject.transform.Translate((Vector3.forward+new Vector3(Random.Range(-1,2),0, Random.Range(0, 2))) * speed * Time.deltaTime);
         if (type == 3)
         {
             gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
             Vector3 rotVec = new Vector3(GameObject.FindWithTag("Weapon").transform.position.x + GameObject.FindWithTag("Weapon").transform.forward.x * speed, gameObject.transform.position.y * rotationSpeed * Time.deltaTime, GameObject.FindWithTag("Weapon").transform.position.z + GameObject.FindWithTag("Weapon").transform.forward.z * speed);
+            transform.LookAt(rotVec);
             //rotVec.y = gameObject.transform.rotation.y * rotationSpeed * Time.deltaTime;
             //transform.rotation = Quaternion.LookRotation(GameObject.FindWithTag("Weapon").transform.forward.normalized);
-            transform.LookAt(rotVec);
             //gameObject.transform.Rotate(GameObject.FindWithTag("Weapon").transform.right * rotationSpeed * Time.deltaTime, Space.Self);
         }
         else {

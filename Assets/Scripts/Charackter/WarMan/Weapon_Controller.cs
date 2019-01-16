@@ -47,7 +47,7 @@ public class Weapon_Controller : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if ((GetComponent<Move_Controller>().joystickFire.Horizontal != 0 || GetComponent<Move_Controller>().joystickFire.Vertical != 0) && !reload)
+        if (GetComponent<HeartSystem>().isDead == false && (GetComponent<Move_Controller>().joystickFire.Horizontal != 0 || GetComponent<Move_Controller>().joystickFire.Vertical != 0) && !reload)
         {
             
             float currentTurnAngle = turnAngle/2f;

@@ -12,7 +12,7 @@ public class StatueController : MonoBehaviour {
     //int calledTotems = 0; //Вызвано тотемов
 
     float health;
-    float reloadTimeTotems = 10f;
+    float reloadTimeTotems = 15f;
 
     //Проверка на вызов тотемов
     bool atackTotemReload = false,
@@ -26,7 +26,8 @@ public class StatueController : MonoBehaviour {
 
     void Start () {
         bossHeart = GetComponent<BossHeartController>();
-        maxTotems = maxTotems + bossHeart.bossLevel;
+        reloadTimeTotems -= bossHeart.bossLevel;
+        maxTotems += bossHeart.bossLevel;
         StartCoroutine(ReloadTotem(2));
     }
 	

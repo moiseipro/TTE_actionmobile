@@ -37,14 +37,19 @@ public class GUIcontroller : MonoBehaviour {
     public void ObjectSee(Transform posItem) {
         ObjectIsSee = true;
         PredItem = posItem;
+        customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().customButton;
         if (GetComponent<Upgrade_Item>().Rang > 1.5){
-            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().buttonUI3;
+            customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
+            customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
         } else if (GetComponent<Upgrade_Item>().Rang > 1.1) {
-            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().buttonUI2;
+            customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
+            customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
         } else if (GetComponent<Upgrade_Item>().Rang > 0.7) {
-            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().buttonUI1;
+            customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
+            customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
         } else if (GetComponent<Upgrade_Item>().Rang >= 0.5) {
-            customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().customButton;
+            customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
+            customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
         }
     }
 
