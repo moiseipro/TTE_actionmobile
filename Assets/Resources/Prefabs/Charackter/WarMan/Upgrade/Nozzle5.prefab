@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114210545108929980}
   - component: {fileID: 114890523755929740}
   - component: {fileID: 114302007936393780}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Nozzle5
   m_TagString: Item
   m_Icon: {fileID: 0}

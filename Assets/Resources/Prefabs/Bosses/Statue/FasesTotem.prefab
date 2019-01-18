@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeTotems: {fileID: 0}
   totemName: faces
+  idTotem: 2
   maxHealth: 30
   id: 0
   damage: 2

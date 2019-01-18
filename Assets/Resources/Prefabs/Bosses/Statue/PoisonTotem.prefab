@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeTotems: {fileID: 0}
   totemName: poison
+  idTotem: 3
   maxHealth: 20
   id: 0
   damage: 1

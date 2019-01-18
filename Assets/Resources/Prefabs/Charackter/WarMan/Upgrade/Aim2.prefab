@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114785268073820606}
   - component: {fileID: 114381752871345538}
   - component: {fileID: 114745494241439008}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aim2
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
   outlineWidth: 6
   precomputeOutline: 0
   bakeKeys: []
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: Aim
   upgradeName: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u043B\u0443\u043F\u0430"
-  Rang: 0.64
+  Rang: 0.83
   turnValue: 0
   turnAngleValue: -6
   reloadResist: 0

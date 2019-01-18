@@ -2162,10 +2162,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1309508631791204, guid: d343647a241d36846b061528b4628995, type: 2}
-      propertyPath: m_Name
-      value: Castle_1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d343647a241d36846b061528b4628995, type: 2}
   m_IsPrefabAsset: 0

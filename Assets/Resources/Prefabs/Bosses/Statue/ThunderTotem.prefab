@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeTotems: {fileID: 0}
   totemName: thunder
+  idTotem: 5
   maxHealth: 20
   id: 0
   damage: 0

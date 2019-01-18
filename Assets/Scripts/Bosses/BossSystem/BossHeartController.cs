@@ -85,7 +85,7 @@ public class BossHeartController : MonoBehaviour {
             if (health / maxHealth * 100 > 70) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[0];
             else if (health / maxHealth * 100 > 50) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[1];
             else if (health / maxHealth * 100 > 30) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[2];
-            else if (health / maxHealth * 100 <= 30 && health / maxHealth * 100 > 1) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[3];
+            else if (health / maxHealth * 100 <= 30 && health / maxHealth * 100 > 0.01f) healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = meshesHeart[3];
             else healthBadge.GetComponentInChildren<MeshFilter>().sharedMesh = null;
         }
     }

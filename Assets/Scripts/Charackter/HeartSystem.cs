@@ -82,8 +82,8 @@ public class HeartSystem : MonoBehaviour {
         if (curHealth < 1)
         {
             Debug.Log("Персонаж СМЭРТЬ");
-            GetComponent<Animator>().SetTrigger("Dead");
-            isDead = true;
+            //GetComponent<Animator>().SetTrigger("Dead");
+            //isDead = true;
         }
     }
 

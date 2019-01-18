@@ -158,6 +158,7 @@ MonoBehaviour:
   attributeTotems: {fileID: 1585427802441400, guid: f5c2e05ae12fb0f4882ab68d24a428fc,
     type: 2}
   totemName: lamp
+  idTotem: 7
   maxHealth: 25
   id: 0
   damage: 2

@@ -69,7 +69,7 @@ public class Bullet_Options : MonoBehaviour {
                 {
                     gameObject.transform.position = other.transform.position + Vector3.up;
                     gameObject.transform.Rotate(Vector3.up * Random.Range(0, 360f));
-                    gameObject.transform.Rotate(Vector3.right * -10);
+                    gameObject.transform.Rotate(Vector3.right * -5);
                 }
             }
             other.SendMessage("AddDamage", damage);

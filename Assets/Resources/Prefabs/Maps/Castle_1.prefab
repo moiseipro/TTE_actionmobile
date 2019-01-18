@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4305537184291030}
   - component: {fileID: 33831202841094328}
   - component: {fileID: 23462658477468274}
+  - component: {fileID: 64954461662802864}
   m_Layer: 0
   m_Name: Objects-2.001
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,9 +39,10 @@ GameObject:
   - component: {fileID: 4817355273729886}
   - component: {fileID: 33612626188766800}
   - component: {fileID: 23144014152173488}
+  - component: {fileID: 64428675051250070}
   m_Layer: 0
   m_Name: Objects-1
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,9 +76,10 @@ GameObject:
   - component: {fileID: 4523879261383164}
   - component: {fileID: 33160588225026346}
   - component: {fileID: 23148783978102818}
+  - component: {fileID: 64378945561464460}
   m_Layer: 0
   m_Name: Objects-0.000
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,9 +94,10 @@ GameObject:
   - component: {fileID: 4274035679290306}
   - component: {fileID: 33478476596901988}
   - component: {fileID: 23415592347181580}
+  - component: {fileID: 64064629978613348}
   m_Layer: 0
   m_Name: Pack_1-1.028
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,9 +112,10 @@ GameObject:
   - component: {fileID: 4529884422541902}
   - component: {fileID: 33245886960516322}
   - component: {fileID: 23366266945404768}
+  - component: {fileID: 64906866792106628}
   m_Layer: 0
   m_Name: Objects-1.001
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,9 +130,10 @@ GameObject:
   - component: {fileID: 4960340304066758}
   - component: {fileID: 33278538919436690}
   - component: {fileID: 23115994949464892}
+  - component: {fileID: 64997265104288718}
   m_Layer: 0
   m_Name: Objects-0.001
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,9 +148,10 @@ GameObject:
   - component: {fileID: 4751704700268290}
   - component: {fileID: 33135790444936034}
   - component: {fileID: 23211003965867956}
+  - component: {fileID: 64245881834760990}
   m_Layer: 0
   m_Name: Pack_1-1.006
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309508631791204}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 61.54, y: 0, z: -26.99}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4523879261383164}
@@ -611,6 +618,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64064629978613348
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1618513815248688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300012, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}
+--- !u!64 &64245881834760990
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971930782566836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300014, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}
 --- !u!64 &64306352166177088
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -625,3 +660,73 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300010, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}
+--- !u!64 &64378945561464460
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354462160205200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300004, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}
+--- !u!64 &64428675051250070
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296572516034882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300008, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}
+--- !u!64 &64906866792106628
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1694637298591280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}
+--- !u!64 &64954461662802864
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272407393324718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}
+--- !u!64 &64997265104288718
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810930891503024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: 91d5d5c526df4b648a7ddca9f3158838, type: 3}

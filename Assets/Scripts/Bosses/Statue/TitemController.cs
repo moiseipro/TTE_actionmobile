@@ -5,8 +5,10 @@ using UnityEngine;
 public class TitemController : MonoBehaviour {
 
     public GameObject attributeTotems;
+    GameObject bossG, playerTarget;
 
     public string totemName;
+    public int idTotem;
     public float maxHealth;
     private float health;
     [HideInInspector]
@@ -20,6 +22,8 @@ public class TitemController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        bossG = GameObject.FindWithTag("Boss");
+        playerTarget = GameObject.FindWithTag("Player");
         health = maxHealth;
         if (totemName == "faces")
         {
@@ -61,7 +65,7 @@ public class TitemController : MonoBehaviour {
 
     public void atackTotem() {
         GameObject Bull = GameObject.Instantiate(attributeTotems, transform.position + Vector3.up, transform.rotation);
-        Bull.transform.LookAt(GameObject.FindWithTag("Player").transform);
+        Bull.transform.LookAt(playerTarget.GetComponent<Transform>());
         Bull.GetComponent<Bullet_Options>().speed = 10;
         Bull.GetComponent<Bullet_Options>().rotationSpeed = 0;
         Bull.GetComponent<Bullet_Options>().damage = damage;
@@ -78,7 +82,7 @@ public class TitemController : MonoBehaviour {
 
     public IEnumerator facesTotemLaser()
     {
-        while (health > 1)
+        while (bossG.GetComponent<BossHeartController>().dead == false && health > 1)
         {
             linerender.SetPosition(0, gameObject.transform.position + Vector3.up);
             linerender.SetPosition(1, LineRendererCastDirection(Vector3.forward));
@@ -92,7 +96,7 @@ public class TitemController : MonoBehaviour {
 
     void healTotem()
     {
-        Vector3 vect = GameObject.FindWithTag("Boss").transform.position - transform.position;
+        Vector3 vect = bossG.transform.position - transform.position;
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up * 1.8f, transform.TransformDirection(vect.normalized), out hit, Mathf.Infinity))
         {
@@ -117,13 +121,13 @@ public class TitemController : MonoBehaviour {
 
     void skullTotem()
     {
-        GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speedDebaf += GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
+        playerTarget.GetComponent<Move_Controller>().speedDebaf += GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
     }
 
     void thunderTotem()
     {
-        Vector3 pos = gameObject.transform.position - GameObject.FindWithTag("Player").transform.position;
-        GameObject.FindWithTag("Player").GetComponent<CharacterController>().Move(pos.normalized*1.5f * Time.deltaTime);
+        Vector3 pos = gameObject.transform.position - playerTarget.transform.position;
+        playerTarget.GetComponent<CharacterController>().Move(pos.normalized*1.5f * Time.deltaTime);
     }
 
     void lampTotem()
@@ -190,15 +194,16 @@ public class TitemController : MonoBehaviour {
         {
             health = 0;
             Debug.Log("тотем СМЭРТЬ");
-            GameObject.FindWithTag("Boss").GetComponent<StatueController>().DeliteTotem(id);
+            bossG.GetComponent<StatueController>().DeliteTotem(id);
             DeadTotem();
         }
     }
 
     public void DeadTotem()
     {
-        if (totemName == "guard") GameObject.FindWithTag("Boss").GetComponent<StatueController>().bossHeart.immortality = false;
-        else if (totemName == "skull") GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speedDebaf -= GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
+        if (totemName == "guard") bossG.GetComponent<StatueController>().bossHeart.immortality = false;
+        else if (totemName == "skull") playerTarget.GetComponent<Move_Controller>().speedDebaf -= GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
+        else if (totemName == "faces") StopAllCoroutines();
         Destroy(gameObject);
     }
 }

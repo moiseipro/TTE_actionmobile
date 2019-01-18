@@ -249,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeTotems: {fileID: 1876769154253984}
   totemName: heal
+  idTotem: 6
   maxHealth: 30
   id: 0
   damage: 0
