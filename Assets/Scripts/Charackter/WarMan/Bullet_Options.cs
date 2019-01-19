@@ -56,10 +56,13 @@ public class Bullet_Options : MonoBehaviour {
                     bull.GetComponent<Bullet_Options>().rotationSpeed = rotationSpeed * 4f;
                     bull.transform.localScale *= 0.9f; 
                 }
+            }else if (type == -2)
+            {
+                GameObject turquoiseSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/TurquoiseSlime") as GameObject,gameObject.transform.position,Quaternion.identity);
             }
             Destroy(this.gameObject, 0.1f);
         }
-        else if ((other.tag == "Enemy" || other.tag == "Boss") && type != -1)
+        else if ((other.tag == "Enemy" || other.tag == "Boss") && type > -1)
         {
             if (hpBullet < 1) Destroy(this.gameObject);
             else
@@ -74,11 +77,18 @@ public class Bullet_Options : MonoBehaviour {
             }
             other.SendMessage("AddDamage", damage);
         }
-        else if (other.tag == "Player" && type == -1)
+        else if (other.tag == "Player")
         {
-            other.GetComponent<HeartSystem>().TakeDamage(-(int)damage);
-            Destroy(this.gameObject);
+            if (type == -1)
+            {
+                other.GetComponent<HeartSystem>().TakeDamage(-(int)damage);
+                Destroy(this.gameObject);
+            } else if (type == -2)
+            {
+                other.GetComponent<HeartSystem>().TakeDamage(-(int)damage);
+                GameObject turquoiseSlime = Resources.Load("Assets/Resources/Prefabs/Bosses/Slime/TurquoiseSlime") as GameObject;
+                Destroy(this.gameObject);
+            }
         }
-        
     }
 }

@@ -19,9 +19,17 @@ public class BossHeartController : MonoBehaviour {
     public Mesh[] meshesHeart;
     public GameObject[] partOfBoss;
 
+    [HideInInspector] public GameObject Player;
+
     // Use this for initialization
     void Start () {
-        health = maxHealth + bossLevel*10;
+        StartScript();
+    }
+
+    public void StartScript()
+    {
+        Player = GameObject.FindWithTag("Player");
+        health = maxHealth + bossLevel * 10;
         armor = maxArmor;
     }
 	
@@ -49,13 +57,14 @@ public class BossHeartController : MonoBehaviour {
             dead = true;
             Debug.Log("СМЭРТЬ");
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
             for (int i = 0; i < Random.Range(8, 15); i++)
             {
                 GameObject part = Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
                 float randomScale = Random.Range(100, 200);
                 part.GetComponent<Transform>().localScale = new Vector3(randomScale, randomScale, randomScale);
                 part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
-                Destroy(part, Random.Range(5f, 15f));
+                Destroy(part, Random.Range(5f, 10f));
                 yield return new WaitForSeconds(0.2f);
             }
             GameObject Item = Instantiate(GameObject.FindWithTag("Manager").GetComponent<DropItemController>().DropItem(), gameObject.transform.position + Vector3.up, transform.rotation);

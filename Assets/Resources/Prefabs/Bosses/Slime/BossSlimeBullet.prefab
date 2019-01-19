@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4092209673682340}
   - component: {fileID: 33973515158371448}
   - component: {fileID: 23728652178944658}
+  - component: {fileID: 114500296487052552}
+  - component: {fileID: 65157934216534748}
   m_Layer: 0
   m_Name: BossSlimeBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322763204506536}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.25, y: 0.35000002, z: 0.050000064}
+  m_LocalPosition: {x: -26.474981, y: 2.0059996, z: -3.6}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322763204506536}
   m_Mesh: {fileID: 4300014, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
+--- !u!65 &65157934216534748
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1322763204506536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.5, z: 0.7}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114500296487052552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1322763204506536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add4a49d5ee8a694e89a8ba2176296a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: -2
+  damage: 5
+  radiusForDamage: 0
+  speed: 6
+  rotationSpeed: 6
+  hpBullet: 1

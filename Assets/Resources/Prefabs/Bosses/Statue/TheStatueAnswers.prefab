@@ -310,3 +310,4 @@ MonoBehaviour:
   partOfBoss:
   - {fileID: 1617417445301354, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
   - {fileID: 1940708856470386, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}
+  Player: {fileID: 0}
