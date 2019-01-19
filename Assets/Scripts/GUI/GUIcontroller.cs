@@ -41,15 +41,21 @@ public class GUIcontroller : MonoBehaviour {
         if (GetComponent<Upgrade_Item>().Rang > 1.5){
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
+            customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
         } else if (GetComponent<Upgrade_Item>().Rang > 1.1) {
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
-        } else if (GetComponent<Upgrade_Item>().Rang > 0.7) {
+            customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
+        }
+        else if (GetComponent<Upgrade_Item>().Rang > 0.7) {
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
-        } else if (GetComponent<Upgrade_Item>().Rang >= 0.5) {
+            customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
+        }
+        else if (GetComponent<Upgrade_Item>().Rang >= 0.5) {
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
+            customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
         }
     }
 

@@ -44,7 +44,7 @@ public class Bullet_Options : MonoBehaviour {
     {
         //Debug.Log("entered " + other);
 
-        if (other.tag == "Object" || other.tag == "Map") {
+        if (other.tag == "Object" || other.tag == "Map" ) {
             if (type == 2)
             {
                 for (int i = 0; i < hpBullet; i++) {

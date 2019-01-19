@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BaseDiffuseMat
-  m_Shader: {fileID: 4800000, guid: 181c415ba9eab444680dfd671db82e5f, type: 3}
-  m_ShaderKeywords: COLOR_ON PHONG_ON _EMISSION
-  m_LightmapFlags: 0
+  m_Name: AlphaMat
+  m_Shader: {fileID: 4800000, guid: 6709de559cbc2ca4680c3f41bc26e236, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -18,12 +18,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_7D49C105:
-        m_Texture: {fileID: 2800000, guid: 387a32eb3262ab848b3e0bf2599ab7c1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_C5504EBB:
-        m_Texture: {fileID: 2800000, guid: f04b926d43544ac41a96938213f2be83, type: 3}
+    - Texture2D_E33B8C07:
+        m_Texture: {fileID: 2800000, guid: ebca382616232d8439e9f23ceb2c7b2a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -31,10 +27,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -50,23 +42,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _EmitMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Illum:
-        m_Texture: {fileID: 2800000, guid: f8b49aa4729993941a243b3eee25f16f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f8b49aa4729993941a243b3eee25f16f, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -78,47 +58,35 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3A5D2A5E: 0
-    - Vector1_D7A348D5: 0
-    - Vector1_F82D650C: 1.2
-    - _AmbiencePower: 1
-    - _Brightness: 2
-    - _BumpDepth: 1
+    - Vector1_A0DC3AE5: 0
+    - _AlphaClip: 0
+    - _Blend: 0
     - _BumpScale: 1
-    - _ColorToggle: 1
-    - _Contrast: 1.33
+    - _Cull: 2
     - _Cutoff: 0.5
-    - _Detail: 0
     - _DetailNormalMapScale: 1
-    - _DetailStrength: 1
-    - _DiffusePower: 1
     - _DstBlend: 0
-    - _Emission: 0
-    - _EmissionStrength: 1
-    - _EmitStrength: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Mask: 0
     - _Metallic: 0
-    - _Mode: 0
-    - _Normal: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Phong: 1
-    - _RimPower: 8.11
-    - _Shininess: 0.07
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularPower: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _UVSec: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 0.9147998, b: 0, a: 1}
-    - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightPosition: {r: 0, g: 20, b: -9, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - Color_1E9546BE: {r: 0, g: 1, b: 0.03342295, a: 0}
+    - Color_6167E271: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

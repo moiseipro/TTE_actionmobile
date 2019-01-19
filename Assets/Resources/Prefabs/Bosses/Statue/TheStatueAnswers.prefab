@@ -289,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   health: 0
-  maxArmor: 30
+  maxArmor: 0
   armor: 0
   immortality: 0
   dead: 0

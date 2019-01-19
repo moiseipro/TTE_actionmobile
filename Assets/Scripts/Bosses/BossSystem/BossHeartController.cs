@@ -21,12 +21,12 @@ public class BossHeartController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        health = maxHealth;
+        health = maxHealth + bossLevel*10;
         armor = maxArmor;
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         UpdateHpContainers();
     }
 
