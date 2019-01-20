@@ -11,7 +11,7 @@ public class MobController : MonoBehaviour {
     public int damage;
     public Mesh[] mobMesh;
     protected Rigidbody rb;
-    protected GameObject Player;
+    protected GameObject Player, Boss;
 	
 	// Update is called once per frame
 	void Update () {

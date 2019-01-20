@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4750391235373196}
   - component: {fileID: 33443506016257850}
   - component: {fileID: 23995739246957762}
+  - component: {fileID: 54642002279080294}
+  - component: {fileID: 65434590146178872}
+  - component: {fileID: 114837801240867238}
   m_Layer: 0
   m_Name: PinkSlime
   m_TagString: Untagged
@@ -83,3 +86,49 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1168013118472548}
   m_Mesh: {fileID: 4300016, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
+--- !u!54 &54642002279080294
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1168013118472548}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!65 &65434590146178872
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1168013118472548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1, y: 0.6, z: 1}
+  m_Center: {x: 0, y: 0.3, z: -0.02500002}
+--- !u!114 &114837801240867238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1168013118472548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c0c2898e9ac914d9a9d489bab5e6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  movSpeed: 4
+  damage: 1
+  mobMesh:
+  - {fileID: 4300016, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
+  - {fileID: 4300018, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
+  heal: 10
+  slimeID: 0

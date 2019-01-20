@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 1235539865972268}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0, y: 0, z: 0.08}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4414966773073808}
   m_Father: {fileID: 0}
@@ -289,9 +289,11 @@ MonoBehaviour:
   armor: 0
   immortality: 0
   dead: 0
-  bossLevel: 0
+  bossLevel: 1
+  damage: 1
   healthBadge: {fileID: 1001102194750922}
-  particleDamage: {fileID: 0}
+  particleDamage: {fileID: 1445517059410980, guid: e6b7e86cb41cb4c4993c5c78859249df,
+    type: 2}
   meshesHeart:
   - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
@@ -314,9 +316,5 @@ MonoBehaviour:
   - {fileID: 4300006, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
   - {fileID: 4300004, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
   - {fileID: 4300002, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
-  bossAttribute:
-  - {fileID: 1322763204506536, guid: d63a1a7d0551bfc4f816ed6178854d29, type: 2}
-  - {fileID: 1168013118472548, guid: 78d98a5ee152aca46bc4d3cf66e418d6, type: 2}
-  - {fileID: 1372638646257480, guid: 357fb5695966bd643a725e19cb020770, type: 2}
-  - {fileID: 1855585136456390, guid: 308304321aa866a43bb6493f11dcfd00, type: 2}
-  movSpeed: 5
+  isAbsorb: 0
+  movSpeed: 6

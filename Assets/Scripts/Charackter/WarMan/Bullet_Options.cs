@@ -58,7 +58,16 @@ public class Bullet_Options : MonoBehaviour {
                 }
             }else if (type == -2)
             {
-                GameObject turquoiseSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/TurquoiseSlime") as GameObject,gameObject.transform.position,Quaternion.identity);
+                switch (Random.Range(0, 3))
+                {
+                    case 0:
+                        GameObject turquoiseSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/TurquoiseSlime") as GameObject, gameObject.transform.position, Quaternion.identity);
+                        break;
+                    case 1:
+                        GameObject pinkSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/PinkSlime") as GameObject, gameObject.transform.position, Quaternion.identity);
+                        break;
+                }
+                
             }
             Destroy(this.gameObject, 0.1f);
         }

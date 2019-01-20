@@ -5,6 +5,7 @@ using UnityEngine;
 public class MobSlimeController : MobController {
 
     float jumpKd = 1f;
+    public float heal = 10f;
 
     bool dead = false;
 
@@ -13,8 +14,14 @@ public class MobSlimeController : MobController {
         health = maxHealth;
         rb = gameObject.GetComponent<Rigidbody>();
         Player = GameObject.FindWithTag("Player");
+        Boss = GameObject.FindWithTag("Boss");
         StartCoroutine(Move());
 	}
+
+    void Update()
+    {
+        
+    }
 
     void FixedUpdate()
     {
@@ -22,6 +29,10 @@ public class MobSlimeController : MobController {
         Vector3 rotVec = Vector3.RotateTowards(transform.forward, movVec, 0.1f, 0f);
         rotVec.y = 0;
         transform.rotation = Quaternion.LookRotation(rotVec);
+        if(Boss != null && Boss.GetComponent<SlimeController>().isAbsorb == true)
+        {
+            rb.AddForce((Boss.transform.position - gameObject.transform.position + Vector3.up * 0.01f) * movSpeed, ForceMode.Force);
+        }
     }
 
     IEnumerator Move()
@@ -30,7 +41,7 @@ public class MobSlimeController : MobController {
         {
             yield return new WaitForSeconds(1f);
             AnimationChoose(1);
-            rb.AddForce((gameObject.transform.forward + Vector3.up)*movSpeed, ForceMode.Impulse);
+            rb.AddForce((gameObject.transform.forward + Vector3.up*0.8f)*movSpeed, ForceMode.Impulse);
             yield return new WaitForSeconds(1f);
             AnimationChoose(0);
         }
@@ -39,9 +50,20 @@ public class MobSlimeController : MobController {
     {
         if (other.gameObject.tag == "Player")
         {
-            dead = false;
-            GameObject.FindWithTag("Player").GetComponent<HeartSystem>().TakeDamage(-damage);
-            Destroy(this.gameObject, 0.1f);
+            dead = true;
+            Player.GetComponent<HeartSystem>().TakeDamage(-damage);
+            Destroy(this.gameObject);
+        } else if (other.gameObject.tag == "Boss")
+        {
+            if (Boss.GetComponent<SlimeController>().isAbsorb == false)
+            {
+                rb.AddForce((gameObject.transform.position - Boss.transform.position + Vector3.up * 0.5f).normalized * movSpeed, ForceMode.Impulse);
+                //AddDamage(maxHealth / 4f);
+            } else
+            {
+                Boss.GetComponent<BossHeartController>().HealBoss(heal);
+                Destroy(gameObject);
+            }
         }
     }
 

@@ -14,6 +14,7 @@ public class BossHeartController : MonoBehaviour {
     public int bossLevel = 0;
 
     [Header("Дополнительные атрибуты")]
+    public int damage = 1;
     public GameObject healthBadge;
     public GameObject particleDamage;
     public Mesh[] meshesHeart;
@@ -30,7 +31,6 @@ public class BossHeartController : MonoBehaviour {
     {
         Player = GameObject.FindWithTag("Player");
         health = maxHealth + bossLevel * 10;
-        armor = maxArmor;
     }
 	
 	// Update is called once per frame

@@ -6,31 +6,32 @@ public class SlimeController : BossHeartController {
 
     Rigidbody rb;
     public Mesh[] slimeMesh;
-    public GameObject[] bossAttribute;
 
 
     bool isMadded = false,
          isMove = false,
          isPreparing = false;
+    [HideInInspector] public bool isAbsorb = false;
 
     float skillBossKd = 10f;
-    float maxPreparingTime = 5f;
+    float maxPreparingTime = 2f;
     public float movSpeed = 10f;
 
     // Use this for initialization
     void Start () {
         StartScript();
+        maxArmor = health / 3f;
         rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         UpdateHpContainers();
-        if (isMadded == false && RadiusStartAtack(7))
+        if (isMadded == false && RadiusStartAtack(8))
         {
             isMadded = true;
             StartCoroutine(Move());
-        } else if (isPreparing == false && isMove == true && isMadded == true && RadiusStartAtack(4))
+        } else if (isPreparing == false && isMove == true && isMadded == true && RadiusStartAtack(5))
         {
             isMove = false;
             isPreparing = true;
@@ -56,7 +57,7 @@ public class SlimeController : BossHeartController {
         while (isMove)
         {
             AnimationChoose(0);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.5f);
             //transform.LookAt(Player.transform);
             //rb.AddForce(Player.transform.position-gameObject.transform.position, ForceMode.Impulse);
             rb.AddForce((gameObject.transform.forward * movSpeed) + Vector3.up, ForceMode.Impulse);
@@ -70,13 +71,27 @@ public class SlimeController : BossHeartController {
     {
         AnimationChoose(3);
         yield return new WaitForSeconds(Random.Range(maxPreparingTime/2f,maxPreparingTime));
-        StartCoroutine(SpitSlime());
+        switch(Random.Range(0, 4)) {
+            case 0:
+                StartCoroutine(SpitSlime());
+                break;
+            case 1:
+                StartCoroutine(ArmorBoom());
+                break;
+            case 2:
+                StartCoroutine(AbsorbSlime());
+                break;
+            case 3:
+                isPreparing = false;
+                StartCoroutine(Move());
+                break;
+        }
     }
 
     IEnumerator SpitSlime()
     {
         AnimationChoose(2);
-        GameObject bullSlime = GameObject.Instantiate(bossAttribute[0], transform.position + Vector3.up/2f, transform.rotation);
+        GameObject bullSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/BossSlimeBullet") as GameObject, transform.position + Vector3.up/2f, transform.rotation);
         bullSlime.transform.Rotate(Vector3.right * -15);
         bullSlime.GetComponent<Bullet_Options>().speed = 6;
         bullSlime.GetComponent<Bullet_Options>().rotationSpeed = 30;
@@ -84,7 +99,48 @@ public class SlimeController : BossHeartController {
         bullSlime.GetComponent<Bullet_Options>().type = -2;
         Destroy(bullSlime, 5f);
         Debug.Log("Слизь полетела");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
+        isPreparing = false;
+        StartCoroutine(Move());
+    }
+
+    IEnumerator ArmorBoom()
+    {
+        AnimationChoose(4);
+        armor = maxArmor;
+        Debug.Log("Слизь разбушевалась");
+        while (armor > 1)
+        {
+            yield return new WaitForSeconds(1f);
+            GameObject bullSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/BossSlimeBullet") as GameObject, transform.position + Vector3.up, Quaternion.identity);
+            bullSlime.transform.Rotate(Vector3.up * Random.Range(0, 360f), Space.Self);
+            bullSlime.transform.Rotate(Vector3.right * -25, Space.Self);
+            bullSlime.GetComponent<Bullet_Options>().speed = 6;
+            bullSlime.GetComponent<Bullet_Options>().rotationSpeed = 30;
+            bullSlime.GetComponent<Bullet_Options>().damage = 2;
+            bullSlime.GetComponent<Bullet_Options>().type = -2;
+            Destroy(bullSlime, 5f);
+        }
+        yield return new WaitForSeconds(0.2f);
+        isPreparing = false;
+        StartCoroutine(Move());
+    }
+
+    IEnumerator AbsorbSlime()
+    {
+        AnimationChoose(5);
+        isAbsorb = true;
+        float timeHealth = health;
+        Debug.Log("Слизь втягивает");
+        while (isAbsorb == true && timeHealth-health <50)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Vector3 pos = transform.position - transform.forward - Player.transform.position;
+            Player.GetComponent<CharacterController>().Move(pos.normalized * 2.5f * Time.deltaTime);
+            rb.AddForce((Player.transform.position - Player.transform.forward-transform.position + Vector3.up* 0.05f) * movSpeed/3f, ForceMode.Force);
+        }
+        yield return new WaitForSeconds(0.2f);
+        isAbsorb = false;
         isPreparing = false;
         StartCoroutine(Move());
     }
@@ -111,6 +167,18 @@ public class SlimeController : BossHeartController {
         else
         {
             Debug.Log("Такой анимации нет");
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<HeartSystem>().TakeDamage(-damage);
+            Vector3 pos = other.gameObject.transform.position - gameObject.transform.position;
+            other.gameObject.GetComponent<CharacterController>().Move(pos.normalized * 1.5f);
+            Debug.Log("Врезался в босса");
+            isAbsorb = false;
         }
     }
 }
