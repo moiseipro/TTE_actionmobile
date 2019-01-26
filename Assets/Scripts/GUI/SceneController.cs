@@ -25,7 +25,7 @@ public class SceneController : MonoBehaviour {
         }
 
         GenerationMap();
-        GameObject boss = Instantiate(bossPrefabs[0], new Vector3(0, 0, 0), Quaternion.AngleAxis(180,Vector3.up));
+        GameObject boss = Instantiate(bossPrefabs[Random.Range(0, bossPrefabs.Length)], new Vector3(0, 0, 0), Quaternion.AngleAxis(180, Vector3.up));
         boss.GetComponent<BossHeartController>().bossLevel = levelGame;
         if (!GameObject.FindWithTag("Player"))
         {

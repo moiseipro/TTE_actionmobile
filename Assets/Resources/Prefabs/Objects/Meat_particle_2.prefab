@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23319089114500594}
   - component: {fileID: 54134337961655480}
   - component: {fileID: 65902610117710856}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Meat_particle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

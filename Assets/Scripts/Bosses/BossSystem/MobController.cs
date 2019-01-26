@@ -18,6 +18,13 @@ public class MobController : MonoBehaviour {
 		
 	}
 
+    public void SearchForCh()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+        Player = GameObject.FindWithTag("Player");
+        Boss = GameObject.FindWithTag("Boss");
+    }
+
     public void AddDamage(float damage)
     {
         health -= damage;

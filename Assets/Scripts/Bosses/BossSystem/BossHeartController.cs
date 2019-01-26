@@ -30,7 +30,7 @@ public class BossHeartController : MonoBehaviour {
     public void StartScript()
     {
         Player = GameObject.FindWithTag("Player");
-        health = maxHealth + bossLevel * 10;
+        health = maxHealth + bossLevel * 20;
     }
 	
 	// Update is called once per frame

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114837801240867238}
   m_Layer: 0
   m_Name: PinkSlime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,4 +131,3 @@ MonoBehaviour:
   - {fileID: 4300016, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
   - {fileID: 4300018, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
   heal: 10
-  slimeID: 0

@@ -12,9 +12,7 @@ public class MobSlimeController : MobController {
 	// Use this for initialization
 	void Start () {
         health = maxHealth;
-        rb = gameObject.GetComponent<Rigidbody>();
-        Player = GameObject.FindWithTag("Player");
-        Boss = GameObject.FindWithTag("Boss");
+        SearchForCh();
         StartCoroutine(Move());
 	}
 
@@ -51,8 +49,9 @@ public class MobSlimeController : MobController {
         if (other.gameObject.tag == "Player")
         {
             dead = true;
+            Player.GetComponent<MonoBehaviour>().StartCoroutine(Player.GetComponent<Move_Controller>().SpeedDebaf(15f, 3f));
             Player.GetComponent<HeartSystem>().TakeDamage(-damage);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         } else if (other.gameObject.tag == "Boss")
         {
             if (Boss.GetComponent<SlimeController>().isAbsorb == false)

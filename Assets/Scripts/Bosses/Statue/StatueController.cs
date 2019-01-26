@@ -65,7 +65,7 @@ public class StatueController : MonoBehaviour {
                 maxTotems = 0;
                 for (int i = calledTotems.Count-1; i >=0; i--)
                 {
-                    calledTotems[i].GetComponent<TitemController>().DeadTotem();
+                    Destroy(calledTotems[i]);
                     DeliteTotem(i);
                 }
             }

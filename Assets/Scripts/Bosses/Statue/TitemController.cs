@@ -121,7 +121,7 @@ public class TitemController : MonoBehaviour {
 
     void skullTotem()
     {
-        playerTarget.GetComponent<Move_Controller>().speedDebaf += GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
+        playerTarget.GetComponent<Move_Controller>().StaticSpeedDebaf(17f);
     }
 
     void thunderTotem()
@@ -195,15 +195,14 @@ public class TitemController : MonoBehaviour {
             health = 0;
             Debug.Log("тотем СМЭРТЬ");
             bossG.GetComponent<StatueController>().DeliteTotem(id);
-            DeadTotem();
+            Destroy(gameObject);
         }
     }
 
-    public void DeadTotem()
+    private void OnDestroy()
     {
         if (totemName == "guard") bossG.GetComponent<StatueController>().bossHeart.immortality = false;
-        else if (totemName == "skull") playerTarget.GetComponent<Move_Controller>().speedDebaf -= GameObject.FindWithTag("Player").GetComponent<Move_Controller>().speed * 0.17f;
+        else if (totemName == "skull") playerTarget.GetComponent<Move_Controller>().StaticSpeedDebaf(0f);
         else if (totemName == "faces") StopAllCoroutines();
-        Destroy(gameObject);
     }
 }

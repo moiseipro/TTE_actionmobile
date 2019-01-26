@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4705941490303700}
   - component: {fileID: 33903769346955336}
   - component: {fileID: 23696183486761716}
+  - component: {fileID: 135929419051911022}
+  - component: {fileID: 114545361099963974}
   m_Layer: 0
   m_Name: SlimePuddle
   m_TagString: Untagged
@@ -83,3 +85,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855585136456390}
   m_Mesh: {fileID: 4300000, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
+--- !u!114 &114545361099963974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855585136456390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6e77b75a520c949a1780256f36e0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &135929419051911022
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855585136456390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9
+  m_Center: {x: 0, y: 0.15, z: 0}

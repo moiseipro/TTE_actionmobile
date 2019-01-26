@@ -6,7 +6,7 @@ public class Move_Controller : MonoBehaviour {
 
     //Характеристики движения
     public float speed;
-    [HideInInspector] public float speedDebaf;
+    [HideInInspector] public float speedDebaf, staticSpeedDebaf;
     public float jump;
     private float gravity;
 
@@ -35,19 +35,32 @@ public class Move_Controller : MonoBehaviour {
         }
 	}
 
+    public IEnumerator SpeedDebaf(float persent, float time)
+    {
+        float subSpeed = speed * persent / 100;
+        speedDebaf += subSpeed;
+        yield return new WaitForSeconds(time);
+        speedDebaf -= subSpeed;
+    }
+
+    public void StaticSpeedDebaf(float persent)
+    {
+        staticSpeedDebaf = speed * persent / 100;
+    }
+
     //Метод перемещения персонажа
     private void MovePlayer() {
         //Перемещение персонажа по осям
         moveVector = Vector3.zero;
         rotVector = Vector3.zero;
-        moveVector.x = Input.GetAxis("Horizontal") * (speed - speedDebaf);
-        moveVector.z = Input.GetAxis("Vertical") * (speed - speedDebaf);
+        moveVector.x = Input.GetAxis("Horizontal") * (speed - (speedDebaf + staticSpeedDebaf));
+        moveVector.z = Input.GetAxis("Vertical") * (speed - (speedDebaf + staticSpeedDebaf));
         rotVector.x = joystickFire.Horizontal;
         rotVector.z = joystickFire.Vertical;
         if (moveVector.x == 0 && moveVector.z == 0)
         {
-            moveVector.x = joystickMove.Horizontal * (speed - speedDebaf);
-            moveVector.z = joystickMove.Vertical* (speed - speedDebaf);
+            moveVector.x = joystickMove.Horizontal * (speed - (speedDebaf + staticSpeedDebaf));
+            moveVector.z = joystickMove.Vertical* (speed - (speedDebaf + staticSpeedDebaf));
         }
 
         //Повороты персонажа в сторону стрельбы

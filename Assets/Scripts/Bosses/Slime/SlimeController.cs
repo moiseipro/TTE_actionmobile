@@ -13,21 +13,22 @@ public class SlimeController : BossHeartController {
          isPreparing = false;
     [HideInInspector] public bool isAbsorb = false;
 
+    int predSkillUse = 0;
     float skillBossKd = 10f;
-    float maxPreparingTime = 2f;
+    float maxPreparingTime = 1f;
     public float movSpeed = 10f;
 
     // Use this for initialization
     void Start () {
         StartScript();
-        maxArmor = health / 3f;
+        maxArmor = health / 2.5f;
         rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         UpdateHpContainers();
-        if (isMadded == false && RadiusStartAtack(8))
+        if (isMadded == false && RadiusStartAtack(7))
         {
             isMadded = true;
             StartCoroutine(Move());
@@ -67,11 +68,27 @@ public class SlimeController : BossHeartController {
         StartCoroutine(Preparing());
     }
 
+    IEnumerator BoostMove()
+    {
+        //AnimationChoose(0);
+        //yield return new WaitForSeconds(1.5f);
+        //transform.LookAt(Player.transform);
+        rb.AddForce((Player.transform.position - gameObject.transform.position)*1.4f + Vector3.up, ForceMode.Impulse);
+        //rb.AddForce((gameObject.transform.forward * movSpeed) + Vector3.up, ForceMode.Impulse);
+        AnimationChoose(1);
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(Preparing());
+    }
+
     IEnumerator Preparing()
     {
         AnimationChoose(3);
-        yield return new WaitForSeconds(Random.Range(maxPreparingTime/2f,maxPreparingTime));
-        switch(Random.Range(0, 4)) {
+        yield return new WaitForSeconds(Random.Range(maxPreparingTime/5f,maxPreparingTime));
+        int skillNumber = Random.Range(0, 4);
+        if (predSkillUse == 1) skillNumber = 3;
+        else if(predSkillUse == skillNumber) skillNumber = Random.Range(0, 3);
+        predSkillUse = skillNumber;
+        switch (skillNumber) {
             case 0:
                 StartCoroutine(SpitSlime());
                 break;
@@ -79,11 +96,10 @@ public class SlimeController : BossHeartController {
                 StartCoroutine(ArmorBoom());
                 break;
             case 2:
-                StartCoroutine(AbsorbSlime());
+                StartCoroutine(BoostMove());
                 break;
             case 3:
-                isPreparing = false;
-                StartCoroutine(Move());
+                StartCoroutine(AbsorbSlime());
                 break;
         }
     }
@@ -109,9 +125,11 @@ public class SlimeController : BossHeartController {
         AnimationChoose(4);
         armor = maxArmor;
         Debug.Log("Слизь разбушевалась");
-        while (armor > 1)
+        int valueSlimeSpawn = Random.Range(5,10), i = 0;
+        while (armor > 1 && i < valueSlimeSpawn)
         {
             yield return new WaitForSeconds(1f);
+            i++;
             GameObject bullSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/BossSlimeBullet") as GameObject, transform.position + Vector3.up, Quaternion.identity);
             bullSlime.transform.Rotate(Vector3.up * Random.Range(0, 360f), Space.Self);
             bullSlime.transform.Rotate(Vector3.right * -25, Space.Self);
@@ -122,6 +140,11 @@ public class SlimeController : BossHeartController {
             Destroy(bullSlime, 5f);
         }
         yield return new WaitForSeconds(0.2f);
+        if (i >= valueSlimeSpawn) {
+            GameObject puddleSlime = Instantiate(Resources.Load("Prefabs/Bosses/Slime/SlimePuddle") as GameObject, transform.position, Quaternion.identity);
+            Destroy(puddleSlime, 15f);
+            armor = 0;
+        }
         isPreparing = false;
         StartCoroutine(Move());
     }
@@ -132,7 +155,7 @@ public class SlimeController : BossHeartController {
         isAbsorb = true;
         float timeHealth = health;
         Debug.Log("Слизь втягивает");
-        while (isAbsorb == true && timeHealth-health <50)
+        while (isAbsorb == true && timeHealth-health <30 + bossLevel*2f)
         {
             yield return new WaitForSeconds(0.01f);
             Vector3 pos = transform.position - transform.forward - Player.transform.position;
