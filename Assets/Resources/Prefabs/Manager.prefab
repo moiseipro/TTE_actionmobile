@@ -170,7 +170,9 @@ MonoBehaviour:
   - {fileID: 1175206578392752, guid: 33623173088e4b944b0de3792b0ad95a, type: 2}
   - {fileID: 1472987136546444, guid: bf9c93110c403134da9a0466782756f7, type: 2}
   - {fileID: 1450203926389774, guid: b74c56e3b78d6464a911470b6015cfb2, type: 2}
+  roomPrefabs:
   - {fileID: 1285177219979268, guid: 5417529022f745f4496795b6d8cc83a5, type: 2}
+  - {fileID: 1379431274068160, guid: 65345e7ae5f32af43a2ccca74a067f03, type: 2}
   - {fileID: 1134526230967748, guid: f364e01f098ead14baddf266d16d356f, type: 2}
   additPrefabs:
   - {fileID: 1190894659773734, guid: b1e04bcbeebbf804cab69471e0b3a17d, type: 2}

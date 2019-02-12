@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour {
     public GameObject[] bossPrefabs;
     public GameObject[] mapPrefabs;
     public GameObject[] bridgePrefabs;
+    public GameObject[] roomPrefabs;
     public GameObject[] additPrefabs;
     public GameObject[] objectPrefab;
     public GameObject[] playerPrefabs;
@@ -19,16 +20,16 @@ public class SceneController : MonoBehaviour {
     private int levelGame = 0;
     int soedValue = 0;
     private bool playerSpawn = false, bosssSpawn = false;
-    private bool startConnect = false, endConnect = false, bossIsland = false, stopGenerator = false;
+    private bool startConnect = false, endConnect = false, bossIsland = false, stopGenerator = false, startAndEndConnected = false;
 
     public int maxMapSize;
     private int[,] mapMas = new int[5, 5];
     private int[] rotMas = new int[4];
     private int stepNext;
     private float[] masAngle = { -90, 0, 90, 180 };
-    private int xPos, zPos, predXPos, predZPos,
+    private int xPos, zPos, predXPos, predZPos, portalX, portalZ,
         freeCell = 0, lockCell = 0,
-        stepVal = 0;
+        stepVal = 0, maxBossIslandGeneration = 0, generationRoomChanse = 5;
     string debugMat = "";
 
     Vector3 hitToPath;
@@ -45,11 +46,13 @@ public class SceneController : MonoBehaviour {
 
     void GenerationMap()
     {
+        int countGen = 0;
         GenerationMapMas();
         GenerationPortals();
-        while(!stopGenerator)
+        while(!stopGenerator && countGen < 100)
         {
             GenerationMapGrid();
+            countGen++;
         }
         debugMat = "";
         for (int i = 0; i < 5; i++)
@@ -65,25 +68,66 @@ public class SceneController : MonoBehaviour {
 
     void GenerationMapGrid()
     {
-        CheckGridForPath();
+        if(startAndEndConnected == false) CheckClosestWay();
+        else CheckGridForPath();
         GenerationIsland();
         print(debugMat);
-        print(xPos + " " + zPos + " nextStep: " + stepNext + " free and lock Cell: " + freeCell + ", " + lockCell + " stepVal: " + stepVal);
+        print(xPos + " " + zPos + " nextStep: " + stepNext + " free and lock Cell: " + freeCell + ", " + lockCell + " stepVal: " + stepVal + "\n" + portalX + " " + portalZ);
+    }
+
+    void FindBossIsland()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                if (mapMas[i, j] == 4)
+                {
+                    xPos = i;
+                    zPos = j;
+                    predXPos = i;
+                    predZPos = j;
+                    mapMas[i, j] = 2;
+                    CheckGridForPath();
+                    if(rotMas[0] == 0)
+                    {
+                        xPos = i-1;
+                        zPos = j;
+                    } else if (rotMas[1] == 0)
+                    {
+                        xPos = i + 1;
+                        zPos = j;
+                    } else if (rotMas[2] == 0)
+                    {
+                        xPos = i;
+                        zPos = j + 1;
+                    } else if (rotMas[3] == 0)
+                    {
+                        xPos = i;
+                        zPos = j - 1;
+                    }
+                } 
+            }
+        }
+        CheckGridForPath();
     }
 
     void GenerationIsland()
     {
+        stepNext = Random.Range(0, 4);
         if (mapMas[xPos, zPos] == 0)
         {
-            int counter = 0;
+            bool counter = false;
             if (lockCell != 3 && freeCell != 3)
             {
                 if (freeCell == 2)
                 {
                     if (!bossIsland)
                     {
-                        mapMas[xPos, zPos] = Random.Range(3, 5);
+                        if (maxBossIslandGeneration > 2) mapMas[xPos, zPos] = 4;
+                        else mapMas[xPos, zPos] = Random.Range(3, 5);
                         if (mapMas[xPos, zPos] == 4) bossIsland = true;
+                        maxBossIslandGeneration++;
                     }
                     else
                     {
@@ -99,7 +143,7 @@ public class SceneController : MonoBehaviour {
                                 }
                             }
                             stepNext = minRot;
-                            counter = 20;
+                            counter = true;
                         }
                         else mapMas[xPos, zPos] = 3;
                     }
@@ -108,24 +152,56 @@ public class SceneController : MonoBehaviour {
                 {
                     if (!bossIsland)
                     {
-                        mapMas[xPos, zPos] = Random.Range(2, 5);
+                        if (maxBossIslandGeneration > 2) mapMas[xPos, zPos] = 4;
+                        else mapMas[xPos, zPos] = Random.Range(2, 5);
                         if (mapMas[xPos, zPos] == 4) bossIsland = true;
+                        maxBossIslandGeneration++;
                     }
-                    else mapMas[xPos, zPos] = 2;
+                    else
+                    {
+                        if (lockCell == 2)
+                        {
+                            int minRot = 0;
+                            mapMas[xPos, zPos] = 2;
+                            for (int i = 0; i < 4; i++)
+                            {
+                                if (rotMas[i] > -1 && (rotMas[minRot] < 0 || rotMas[minRot] > rotMas[i]))
+                                {
+                                    minRot = i;
+                                }
+                            }
+                            stepNext = minRot;
+                            counter = true;
+                        }
+                        else if (lockCell == 3)
+                        {
+                            mapMas[xPos, zPos] = 1;
+                        }
+                        else
+                        {
+                            mapMas[xPos, zPos] = 2;
+                            /*mapMas[xPos, zPos] = Random.Range(0, 11);
+                            if (mapMas[xPos, zPos] > 3)
+                            {
+                                mapMas[xPos, zPos] = 2;
+                            } else
+                            {
+                                mapMas[xPos, zPos] = 3;
+                            }*/
+                            
+                        }
+                    }
                 }
-                else if (freeCell == 0)
+                if (rotMas[0] == 0 || rotMas[1] == 0 || rotMas[2] == 0 || rotMas[3] == 0)
                 {
-                    mapMas[xPos, zPos] = 1;
-                }
-                while (rotMas[stepNext] != 0 && counter < 20){
-                    stepNext = Random.Range(0, 4);
-                    counter++;
+                    while (rotMas[stepNext] != 0 && counter == false)
+                    {
+                        stepNext = Random.Range(0, 4);
+                    }
                 } 
-
             }
             else
             {
-                stopGenerator = true;
                 if(freeCell == 3)
                 {
                     int maxRot = 0;
@@ -139,17 +215,30 @@ public class SceneController : MonoBehaviour {
                     }
                     stepNext = maxRot;
                 }
-                
+                if (lockCell == 3)
+                {
+                    stopGenerator = true;
+                    mapMas[xPos, zPos] = 1;
+                    int maxRot = 0;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (rotMas[i] > rotMas[maxRot])
+                        {
+                            maxRot = i;
+                        }
+                    }
+                    stepNext = maxRot;
+                }
+
             }
         } else
         {
-            stopGenerator = true;
+            if(startAndEndConnected == true) stopGenerator = true;
+            startAndEndConnected = true;
+            FindBossIsland();
             return;
         }
 
-
-
-        //rotMas[stepNext] = 2;
 
         if (mapMas[xPos, zPos] == 4)
         {
@@ -174,6 +263,7 @@ public class SceneController : MonoBehaviour {
                 }
                 else if (rotMas[2] > 0)
                 {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
                     if (rotMas[1] > 0)
                     {
                         bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
@@ -193,6 +283,19 @@ public class SceneController : MonoBehaviour {
                     {
                         bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
                     }
+                }
+                
+                if (rotMas[1] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                }
+                else if (rotMas[2] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                }
+                else if (rotMas[3] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
                 }
                 if (rotMas[1] == -1)
                 {
@@ -239,6 +342,19 @@ public class SceneController : MonoBehaviour {
                         bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                     }
                 }
+                
+                if (rotMas[0] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                }
+                else if (rotMas[2] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                }
+                else if (rotMas[3] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                }
                 if (rotMas[0] == -1)
                 {
                     bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
@@ -261,7 +377,7 @@ public class SceneController : MonoBehaviour {
                         bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
                     } else if (rotMas[1] > 0)
                     {
-                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                     }
 
                 }
@@ -286,6 +402,19 @@ public class SceneController : MonoBehaviour {
                     {
                         bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                     }
+                }
+                
+                if (rotMas[0] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                }
+                else if (rotMas[1] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                }
+                else if (rotMas[3] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
                 }
                 if (rotMas[0] == -1)
                 {
@@ -336,6 +465,19 @@ public class SceneController : MonoBehaviour {
                         bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
                     }
                 }
+                
+                if (rotMas[0] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                }
+                else if (rotMas[2] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                }
+                else if (rotMas[1] == -2)
+                {
+                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                }
                 if (rotMas[0] == -1)
                 {
                     bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
@@ -352,85 +494,406 @@ public class SceneController : MonoBehaviour {
 
         } else if (mapMas[xPos, zPos] == 2)
         {
+            int bridgeRoom = Random.Range(0,11);
             if (stepNext == 0)
             {
                 if (rotMas[1] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                        generationRoomChanse++;
+                    } else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    }
+                    
                 }
                 else if (rotMas[2] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    }
+                    
                 }
                 else if (rotMas[3] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                    }
                 }
             } else if (stepNext == 1)
             {
                 if (rotMas[0] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    }
                 }
                 else if (rotMas[2] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    }
                 }
                 else if (rotMas[3] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                    }
                 }
             } else if (stepNext == 2)
             {
                 if (rotMas[1] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    }
                 }
                 else if (rotMas[0] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    }
                 }
                 else if (rotMas[3] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    }
                 }
             } else if (stepNext == 3)
             {
                 if (rotMas[1] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                    }
                 }
                 else if (rotMas[2] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                    }
                 }
                 else if (rotMas[0] > 0)
                 {
-                    GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
-                    bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                    if (bridgeRoom > generationRoomChanse)
+                    {
+                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        room.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                        generationRoomChanse++;
+                    }
+                    else
+                    {
+                        GameObject bridge = Instantiate(bridgePrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        bridge.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                    }
                 }
             }
+        } else if (mapMas[xPos, zPos] == 1)
+        {
+            GameObject room = Instantiate(roomPrefabs[0], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+            if(rotMas[0] > 0) room.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+            else if (rotMas[1] > 0) room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+            else if (rotMas[2] > 0) room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+            else if (rotMas[3] > 0) room.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
         }
-        if (mapMas[predXPos, predZPos] == 2 || mapMas[predXPos, predZPos] == 1) mapMas[predXPos, predZPos] = -1;
-        else if (mapMas[predXPos, predZPos] == 3) mapMas[predXPos, predZPos] = 1;
+
+        predCoordFix();
+
         predXPos = xPos;
         predZPos = zPos;
+        if (rotMas[0] == 5 && rotMas[2] == 5)
+        {
+            startAndEndConnected = true;
+            FindBossIsland();
+            return;
+        }else if ((rotMas[0] == 5 || rotMas[1] == 5 || rotMas[2] == 5 || rotMas[3] == 5) && stepVal > 0)
+        {
+            //stopGenerator = true;
+            predCoordFix();
+            if (startAndEndConnected == true) stopGenerator = true;
+            startAndEndConnected = true;
+            FindBossIsland();
+            return;
+        }
         if (stepNext == 0) xPos--;
         else if (stepNext == 1) xPos++;
         else if (stepNext == 2) zPos++;
         else if (stepNext == 3) zPos--;
         stepVal++;
+    }
+
+    void predCoordFix()
+    {
+        if (mapMas[predXPos, predZPos] == 2 || mapMas[predXPos, predZPos] == 1 || (mapMas[predXPos, predZPos] == 3 && freeCell == 2)) mapMas[predXPos, predZPos] = -1;
+        else if (mapMas[predXPos, predZPos] == 3) mapMas[predXPos, predZPos] = 1;
+    }
+
+    void CheckClosestWay()
+    {
+        if (xPos == portalX && zPos == portalZ)
+        {
+            //stopGenerator = true;
+            startAndEndConnected = true;
+            FindBossIsland();
+            return;
+        }
+
+        freeCell = 0;
+        lockCell = 0;
+        
+        if ((xPos - 1) >= portalX)
+        {
+            if (mapMas[xPos - 1, zPos] == -1)
+            {
+                rotMas[0] = -1;
+                lockCell++;
+            }
+            else if (mapMas[xPos - 1, zPos] == 5)
+            {
+                rotMas[0] = 5;
+                freeCell++;
+                maxBossIslandGeneration += 2;
+            }
+            else if (mapMas[xPos - 1, zPos] > 0)
+            {
+                rotMas[0] = 1;
+                freeCell++;
+            } else rotMas[0] = 0;
+        } else
+        {
+            if (mapMas[xPos - 1, zPos] == 0)
+            {
+                rotMas[0] = -2;
+                lockCell++;
+            }
+            else if (mapMas[xPos - 1, zPos] == 5)
+            {
+                rotMas[0] = 5;
+                freeCell++;
+                maxBossIslandGeneration += 2;
+            }
+            else if (mapMas[xPos - 1, zPos] > 0)
+            {
+                rotMas[0] = 1;
+                freeCell++;
+            }
+            else
+            {
+                rotMas[0] = -1;
+                lockCell++;
+            }
+        }
+        if ((xPos + 1) <= portalX)
+        {
+            if (mapMas[xPos + 1, zPos] == -1)
+            {
+                rotMas[1] = -1;
+                lockCell++;
+            }
+            else if (mapMas[xPos + 1, zPos] == 5)
+            {
+                rotMas[1] = 5;
+                freeCell++;
+                maxBossIslandGeneration+=2;
+            }
+            else if (mapMas[xPos + 1, zPos] > 0)
+            {
+                rotMas[1] = 1;
+                freeCell++;
+            }else rotMas[1] = 0;
+        } else
+        {
+            if (mapMas[xPos + 1, zPos] == 0)
+            {
+                rotMas[1] = -2;
+                lockCell++;
+            }
+            else if (mapMas[xPos + 1, zPos] == 5)
+            {
+                rotMas[1] = 5;
+                freeCell++;
+                maxBossIslandGeneration += 2;
+            }
+            else if (mapMas[xPos + 1, zPos] > 0)
+            {
+                rotMas[1] = 1;
+                freeCell++;
+            }
+            else
+            {
+                rotMas[1] = -1;
+                lockCell++;
+            }
+        }
+        if ((zPos + 1) <= portalZ)
+        {
+            if (mapMas[xPos, zPos + 1] == -1)
+            {
+                rotMas[2] = -1;
+                lockCell++;
+            }
+            else if (mapMas[xPos, zPos + 1] == 5)
+            {
+                rotMas[2] = 5;
+                freeCell++;
+                maxBossIslandGeneration += 2;
+            }
+            else if (mapMas[xPos, zPos + 1] > 0)
+            {
+                rotMas[2] = 1;
+                freeCell++;
+            } else rotMas[2] = 0;
+        } else
+        {
+            if (mapMas[xPos, zPos + 1] == 0)
+            {
+                rotMas[2] = -2;
+                lockCell++;
+            }
+            else if (mapMas[xPos, zPos + 1] == 5)
+            {
+                rotMas[2] = 5;
+                freeCell++;
+                maxBossIslandGeneration += 2;
+            }
+            else if (mapMas[xPos, zPos + 1] > 0)
+            {
+                rotMas[2] = 1;
+                freeCell++;
+            }
+            else
+            {
+                rotMas[2] = -1;
+                lockCell++;
+            }
+        }
+        if ((zPos - 1) >= portalZ)
+        {
+            if (mapMas[xPos, zPos - 1] == -1)
+            {
+                rotMas[3] = -1;
+                lockCell++;
+            }
+            else if (mapMas[xPos, zPos - 1] == 5)
+            {
+                rotMas[3] = 5;
+                freeCell++;
+                maxBossIslandGeneration += 2;
+            }
+            else if (mapMas[xPos, zPos - 1] > 0)
+            {
+                rotMas[3] = 1;
+                freeCell++;
+            } else rotMas[3] = 0;
+        } else
+        {
+            if (mapMas[xPos, zPos - 1] == 0)
+            {
+                rotMas[3] = -2;
+                lockCell++;
+            }
+            else if (mapMas[xPos, zPos - 1] == 5)
+            {
+                rotMas[3] = 5;
+                freeCell++;
+                maxBossIslandGeneration += 2;
+            }
+            else if (mapMas[xPos, zPos - 1] > 0)
+            {
+                rotMas[3] = 1;
+                freeCell++;
+            }
+            else
+            {
+                rotMas[3] = -1;
+                lockCell++;
+            }
+        }
+        debugMat += " " + rotMas[0] + " " + rotMas[1] + " " + rotMas[2] + " " + rotMas[3] + "\n";
     }
 
     void CheckGridForPath()
@@ -445,11 +908,11 @@ public class SceneController : MonoBehaviour {
                 {
                     rotMas[i] = 0;
                     //freeCell++;
-                } else if (mapMas[xPos - 1, zPos] == 1)
+                } else if (mapMas[xPos - 1, zPos] == 5)
                 {
-                    rotMas[i] = 2;
+                    rotMas[i] = 5;
                     freeCell++;
-                } else if (mapMas[xPos - 1, zPos] > 1)
+                } else if (mapMas[xPos - 1, zPos] > 0)
                 {
                     rotMas[i] = 1;
                     freeCell++;
@@ -465,11 +928,11 @@ public class SceneController : MonoBehaviour {
                 {
                     rotMas[i] = 0;
                     //freeCell++;
-                } else if (mapMas[xPos + 1, zPos] == 1)
+                } else if (mapMas[xPos + 1, zPos] == 5)
                 {
-                    rotMas[i] = 2;
+                    rotMas[i] = 5;
                     freeCell++;
-                } else if (mapMas[xPos + 1, zPos] > 1)
+                } else if (mapMas[xPos + 1, zPos] > 0)
                 {
                     rotMas[i] = 1;
                     freeCell ++;
@@ -485,11 +948,11 @@ public class SceneController : MonoBehaviour {
                 {
                     rotMas[i] = 0;
                     //freeCell++;
-                } else if (mapMas[xPos, zPos + 1] == 1)
+                } else if (mapMas[xPos, zPos + 1] == 5)
                 {
-                    rotMas[i] = 2;
+                    rotMas[i] = 5;
                     freeCell++;
-                } else if (mapMas[xPos, zPos + 1] > 1)
+                } else if (mapMas[xPos, zPos + 1] > 0)
                 {
                     rotMas[i] = 1;
                     freeCell++;
@@ -505,11 +968,11 @@ public class SceneController : MonoBehaviour {
                 {
                     rotMas[i] = 0;
                     //freeCell++;
-                } else if (mapMas[xPos, zPos - 1] == 1)
+                } else if (mapMas[xPos, zPos - 1] == 5)
                 {
-                    rotMas[i] = 2;
+                    rotMas[i] = 5;
                     freeCell++;
-                } else if (mapMas[xPos, zPos - 1] > 1)
+                } else if (mapMas[xPos, zPos - 1] > 0)
                 {
                     rotMas[i] = 1;
                     freeCell++;
@@ -530,7 +993,7 @@ public class SceneController : MonoBehaviour {
         {
             for (int j = 0; j < 5; j++)
             {
-                if(mapMas[i, j] == 1)
+                if(mapMas[i, j] == 5)
                 {
                     GameObject portal = Instantiate(additPrefabs[0], new Vector3(27 * i, -5, 27 * j), Quaternion.identity);
                     if(i==0) portal.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
@@ -553,8 +1016,9 @@ public class SceneController : MonoBehaviour {
                 {
                     if (startConnect == false && (i!=0 || j!=0) && i!=4 && j!=4 && Random.Range(0, randomNumX - i) == 0)
                     {
-                        mapMas[i, j] = 1;
+                        mapMas[i, j] = 5;
                         startConnect = true;
+                        SpawnPlayer(i, j);
                         if (i == 0)
                         {
                             xPos = i+1;
@@ -573,8 +1037,13 @@ public class SceneController : MonoBehaviour {
                 {
                     if (endConnect == false && (i != 4 || j != 4) && i != 0 && j != 0 && Random.Range(0, randomNumZ) == 0)
                     {
-                        mapMas[i, j] = 1;
+                        mapMas[i, j] = 5;
                         endConnect = true;
+                        
+                            portalZ = j;
+
+                            portalX = i;
+
                     } else mapMas[i, j] = -1;
                     randomNumZ--;
                 }
@@ -599,7 +1068,7 @@ public class SceneController : MonoBehaviour {
     {
         if (!GameObject.FindWithTag("Player"))
         {
-            player = Instantiate(playerPrefabs[0], new Vector3(x, 0, z), Quaternion.identity);
+            player = Instantiate(playerPrefabs[0], new Vector3(x*27, 1, z*27), Quaternion.identity);
         }
         else
         {
@@ -609,7 +1078,7 @@ public class SceneController : MonoBehaviour {
         player.GetComponent<HeartSystem>().CheckHealthAmount();
         player.GetComponent<Move_Controller>().joystickMove = GameObject.Find("MovePlayer").GetComponent<Joystick>();
         player.GetComponent<Move_Controller>().joystickFire = GameObject.Find("FirePlayer").GetComponent<Joystick>();
-        player.transform.position = new Vector3(x, 0, z);
+        player.transform.position = new Vector3(x * 27, 1, z * 27);
         playerSpawn = true;
         mainCamera.GetComponent<Camera_Controller>().Player = player;
     }
