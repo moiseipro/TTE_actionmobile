@@ -242,10 +242,19 @@ public class SceneController : MonoBehaviour {
 
         if (mapMas[xPos, zPos] == 4)
         {
-            GameObject island = Instantiate(mapPrefabs[0],new Vector3(27*xPos,-5,27*zPos),Quaternion.identity);
+            GameObject island = Instantiate(mapPrefabs[Random.Range(0,mapPrefabs.Length)],new Vector3(27*xPos,-5,27*zPos),Quaternion.identity);
         } else if (mapMas[xPos, zPos] == 3)
         {
-            GameObject bridge = Instantiate(bridgePrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+            int bridgeRoom = Random.Range(0,11);
+            GameObject bridge;
+            if (bridgeRoom > generationRoomChanse)
+            {
+                bridge = Instantiate(roomPrefabs[5], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                generationRoomChanse++;
+            } else
+            {
+                bridge = Instantiate(bridgePrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+            }
             if(stepNext == 0)
             {
                 if (rotMas[1] > 0)
@@ -501,7 +510,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[Random.Range(1,4)], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                         generationRoomChanse++;
                     } else
@@ -515,7 +524,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
                     }
                     else
@@ -529,7 +538,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -545,7 +554,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[Random.Range(1,4)], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -559,7 +568,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -573,7 +582,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -589,7 +598,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -603,7 +612,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -617,7 +626,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[Random.Range(1,4)], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -633,7 +642,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -647,7 +656,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[1], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[Random.Range(1,4)], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -661,7 +670,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (bridgeRoom > generationRoomChanse)
                     {
-                        GameObject room = Instantiate(roomPrefabs[2], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
+                        GameObject room = Instantiate(roomPrefabs[4], new Vector3(27 * xPos, -5, 27 * zPos), Quaternion.identity);
                         room.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
                         generationRoomChanse++;
                     }
@@ -685,7 +694,7 @@ public class SceneController : MonoBehaviour {
 
         predXPos = xPos;
         predZPos = zPos;
-        if (rotMas[0] == 5 && rotMas[2] == 5)
+        if ((rotMas[0] == 5 && rotMas[2] == 5) || (rotMas[1] == 5 && rotMas[3] == 5))
         {
             startAndEndConnected = true;
             FindBossIsland();

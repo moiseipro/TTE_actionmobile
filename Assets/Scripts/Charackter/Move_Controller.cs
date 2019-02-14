@@ -16,6 +16,7 @@ public class Move_Controller : MonoBehaviour {
     //Ссылки на компоненты
     private CharacterController ch_controller;
     private Animator ch_animator;
+    private GameObject manager;
 
     //Ссылки на объекты
     public Joystick joystickMove;
@@ -25,6 +26,9 @@ public class Move_Controller : MonoBehaviour {
     void Start () {
         ch_controller = GetComponent<CharacterController>();
         ch_animator = GetComponent<Animator>();
+        manager = GameObject.FindWithTag("Manager");
+        manager.transform.rotation = Quaternion.identity;
+        manager.transform.rotation = Quaternion.AngleAxis(50, Vector3.up);
     }
 	
 	void Update () {
@@ -62,26 +66,26 @@ public class Move_Controller : MonoBehaviour {
             moveVector.x = joystickMove.Horizontal * (speed - (speedDebaf + staticSpeedDebaf));
             moveVector.z = joystickMove.Vertical* (speed - (speedDebaf + staticSpeedDebaf));
         }
-
         //Повороты персонажа в сторону стрельбы
+        rotVector = manager.transform.TransformVector(rotVector);
         if (Vector3.Angle(Vector3.forward, rotVector) > 1f || Vector3.Angle(Vector3.forward, rotVector) == 0) {
             Vector3 direct = Vector3.RotateTowards(transform.forward, rotVector, speed, 0.0f);
             transform.rotation = Quaternion.LookRotation(direct);
         }
-
+        
         /*if (GameObject.Find("Body").GetComponent<Transform>().rotation.z < 30 && GameObject.Find("Body").GetComponent<Transform>().rotation.z > -30)
         {
             Vector3 rotvect = new Vector3(moveVector.z, 0, moveVector.x * -1f);
             GameObject.Find("Body").GetComponent<Transform>().Rotate(rotvect);
         }*/
-       
+
 
 
         moveVector.y = gravity;
 
         ch_animator.SetFloat("Direction", moveVector.magnitude); // Управление анимацией бега через длину вектора
         //Debug.Log(ch_animator.GetFloat("Direction"));
-        ch_controller.Move((moveVector) * Time.deltaTime); //Движения по направлению
+        ch_controller.Move((manager.transform.TransformVector(moveVector)) * Time.deltaTime); //Движения по направлению
     }
 
     //Метод гравитации

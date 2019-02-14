@@ -120,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301870341732256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.074, y: 0.903, z: -2.594}
+  m_LocalPosition: {x: 1.28, y: 0.247, z: -5.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4174618776289788}
@@ -133,7 +133,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542665637616242}
-  m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.00000008146034, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
@@ -368,6 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4.5
   speedDebaf: 0
+  staticSpeedDebaf: 0
   jump: 5
   joystickMove: {fileID: 0}
   joystickFire: {fileID: 0}
@@ -415,6 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHearts: 7
   curHealth: 0
+  isDead: 0
   heartImages:
   - {fileID: 0}
   - {fileID: 0}
@@ -455,7 +457,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.6
   m_SlopeLimit: 45
-  m_StepOffset: 0.15
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.85, z: 0}

@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23708882059768566}
   - component: {fileID: 54264581130156638}
   - component: {fileID: 64225277361914544}
+  - component: {fileID: 114841092056315392}
   m_Layer: 0
   m_Name: 1eAR
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285177219979268}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 61.54, y: 0, z: -54.01}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 27}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23708882059768566
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -114,3 +115,29 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 40451ba2cd7bc3d48b52caabe6348e72, type: 3}
+--- !u!114 &114841092056315392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285177219979268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286531599dcd52e40998387a34378687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabObjects:
+  - {fileID: 1551776184545164, guid: d3f64225ccfa7cd458caaadd59987ae4, type: 2}
+  - {fileID: 1249620435640324, guid: 7fff4dbc88a45624aa8d47cbdabe98bc, type: 2}
+  - {fileID: 1766760973730758, guid: 353becbc1758650488c597f762b3735a, type: 2}
+  - {fileID: 1790760415045282, guid: 5138c4eb98908fe438ec6f05b3430604, type: 2}
+  - {fileID: 1377576934432498, guid: 91bc202589dcd424fb1424e71abeeac6, type: 2}
+  - {fileID: 1887985620184776, guid: 9f07fa91850a3d54f9e671f7ef177479, type: 2}
+  - {fileID: 1614432202539352, guid: adb24a17ba1d4ed4fbe0c95ad260b89e, type: 2}
+  - {fileID: 1651704018672416, guid: e56e572f1c83d6147ad03d78e6d0865b, type: 2}
+  - {fileID: 1717680291501674, guid: 40e3d2a9026d96248b2e9875c322e154, type: 2}
+  spawnPoints:
+  - {x: 1.02, y: 0, z: 3.37}
+  - {x: 2.12, y: 0, z: 0}
+  - {x: -3.19, y: 0, z: 2.53}
+  - {x: -1.51, y: 0, z: 0.03}
