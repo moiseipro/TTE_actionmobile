@@ -35,7 +35,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044953149602004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.42261827, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -179,17 +179,28 @@ MonoBehaviour:
   additPrefabs:
   - {fileID: 1190894659773734, guid: b1e04bcbeebbf804cab69471e0b3a17d, type: 2}
   objectPrefab:
-  - {fileID: 1766760973730758, guid: 353becbc1758650488c597f762b3735a, type: 2}
+  - {fileID: 1551776184545164, guid: d3f64225ccfa7cd458caaadd59987ae4, type: 2}
+  - {fileID: 1645693335406746, guid: f82bee86255f09b46bdcc234f899c0f8, type: 2}
+  - {fileID: 1038289154320348, guid: 91ecbaf03aa2fac4780951bffd1599cb, type: 2}
+  - {fileID: 1286557414542246, guid: 1e02948d50a8eef4fb658d62678efb2b, type: 2}
+  objectInterPrefab:
   - {fileID: 1068295755743108, guid: d214c8a3900ce114cbf22e854383f698, type: 2}
   - {fileID: 1135312797983544, guid: 2e455b3f467def942839ff60612c6edf, type: 2}
   - {fileID: 1249620435640324, guid: 7fff4dbc88a45624aa8d47cbdabe98bc, type: 2}
-  - {fileID: 1038289154320348, guid: 91ecbaf03aa2fac4780951bffd1599cb, type: 2}
-  - {fileID: 1790760415045282, guid: 5138c4eb98908fe438ec6f05b3430604, type: 2}
   - {fileID: 1377576934432498, guid: 91bc202589dcd424fb1424e71abeeac6, type: 2}
   - {fileID: 1887985620184776, guid: 9f07fa91850a3d54f9e671f7ef177479, type: 2}
   - {fileID: 1614432202539352, guid: adb24a17ba1d4ed4fbe0c95ad260b89e, type: 2}
   - {fileID: 1536329400680112, guid: 7ef0aa3c94ab2664ea957355f715994e, type: 2}
+  - {fileID: 1651704018672416, guid: e56e572f1c83d6147ad03d78e6d0865b, type: 2}
   - {fileID: 1717680291501674, guid: 40e3d2a9026d96248b2e9875c322e154, type: 2}
+  objectTrapPrefab:
+  - {fileID: 1766102563765640, guid: 114b7e0197880ce4897456efecbd6927, type: 2}
+  objectChestPrefab:
+  - {fileID: 1766760973730758, guid: 353becbc1758650488c597f762b3735a, type: 2}
+  - {fileID: 1391746390883328, guid: da826fa294fc1e240b3cd4097fc4713d, type: 2}
+  - {fileID: 1484758637581786, guid: 15ef219c174467f41887d4baa4b2fd90, type: 2}
+  - {fileID: 1446759917792616, guid: e07701073c33529479943b52530a56af, type: 2}
+  - {fileID: 1790760415045282, guid: 5138c4eb98908fe438ec6f05b3430604, type: 2}
   playerPrefabs:
   - {fileID: 1301870341732256, guid: 08968e53b273e254bbb170494247f00b, type: 2}
   mainCamera: {fileID: 0}
