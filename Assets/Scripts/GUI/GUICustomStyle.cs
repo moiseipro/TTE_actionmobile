@@ -6,13 +6,4 @@ public class GUICustomStyle : MonoBehaviour {
 
     public GUIStyle customButton;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

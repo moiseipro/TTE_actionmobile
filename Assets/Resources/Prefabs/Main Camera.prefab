@@ -43,7 +43,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 50, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.000004, y: 50, z: 0}
 --- !u!20 &20749343073760714
 Camera:
   m_ObjectHideFlags: 1

@@ -126,18 +126,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286531599dcd52e40998387a34378687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabObjects:
-  - {fileID: 1551776184545164, guid: d3f64225ccfa7cd458caaadd59987ae4, type: 2}
-  - {fileID: 1249620435640324, guid: 7fff4dbc88a45624aa8d47cbdabe98bc, type: 2}
-  - {fileID: 1766760973730758, guid: 353becbc1758650488c597f762b3735a, type: 2}
-  - {fileID: 1790760415045282, guid: 5138c4eb98908fe438ec6f05b3430604, type: 2}
-  - {fileID: 1377576934432498, guid: 91bc202589dcd424fb1424e71abeeac6, type: 2}
-  - {fileID: 1887985620184776, guid: 9f07fa91850a3d54f9e671f7ef177479, type: 2}
-  - {fileID: 1614432202539352, guid: adb24a17ba1d4ed4fbe0c95ad260b89e, type: 2}
-  - {fileID: 1651704018672416, guid: e56e572f1c83d6147ad03d78e6d0865b, type: 2}
-  - {fileID: 1717680291501674, guid: 40e3d2a9026d96248b2e9875c322e154, type: 2}
-  spawnPoints:
-  - {x: 1.02, y: 0, z: 3.37}
-  - {x: 2.12, y: 0, z: 0}
-  - {x: -3.19, y: 0, z: 2.53}
-  - {x: -1.51, y: 0, z: 0.03}
+  specialObject: []
+  specialColor: {r: 0, g: 1, b: 0, a: 1}
+  spawnSpecialPoints: []
+  spawnPercent: 0
+  staticColor: {r: 1, g: 0, b: 0, a: 1}
+  spawnStaticPoints: []
+  destrColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  spawnDestrPoints: []
+  trapColor: {r: 0, g: 0, b: 1, a: 1}
+  spawnTrapPoints: []
+  chestColor: {r: 1, g: 1, b: 1, a: 1}
+  spawnChestPoints: []
+  spawnChestPercent: 0

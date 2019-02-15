@@ -24,7 +24,7 @@ public class Camera_Controller : MonoBehaviour {
         }*/
         if (Player != null)
         {
-            NewPos = new Vector3(Player.transform.position.x + offset.x, offset.y, Player.transform.position.z + offset.z);
+            NewPos = new Vector3(Player.transform.position.x + offset.x, Player.transform.position.y + offset.y, Player.transform.position.z + offset.z);
             transform.position = Vector3.Lerp(transform.position, NewPos, camSpeed * Time.deltaTime); //Плавное следование камеры за персонажем
         }
     }

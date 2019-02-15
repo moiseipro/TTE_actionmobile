@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -536,19 +536,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4588622821098348, guid: 2527e7966b196da48ac9a8d5be3c7ca5, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.42261827
+      value: 0.38302222
       objectReference: {fileID: 0}
     - target: {fileID: 4588622821098348, guid: 2527e7966b196da48ac9a8d5be3c7ca5, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.38302222
       objectReference: {fileID: 0}
     - target: {fileID: 4588622821098348, guid: 2527e7966b196da48ac9a8d5be3c7ca5, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.17860618
       objectReference: {fileID: 0}
     - target: {fileID: 4588622821098348, guid: 2527e7966b196da48ac9a8d5be3c7ca5, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9063079
+      value: 0.82139385
       objectReference: {fileID: 0}
     - target: {fileID: 4588622821098348, guid: 2527e7966b196da48ac9a8d5be3c7ca5, type: 2}
       propertyPath: m_RootOrder
