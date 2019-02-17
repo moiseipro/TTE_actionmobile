@@ -25,7 +25,7 @@ public class CustomizeMap : MonoBehaviour {
     public Color trapColor = Color.blue;
     public Vector3[] spawnTrapPoints;
     [Header("Для сундуков и подобного")]
-    public Color chestColor = Color.white;
+    public Color chestColor = Color.magenta;
     public Vector3[] spawnChestPoints;
     [Tooltip("Оцентка для появления лучшего сундука чем обычно")]
     [Range(0, 10)]
@@ -61,7 +61,7 @@ public class CustomizeMap : MonoBehaviour {
             foreach (Vector3 vec in spawnTrapPoints)
             {
                 GameObject obj = Instantiate(gameManager.objectTrapPrefab[Random.Range(0, gameManager.objectTrapPrefab.Length)], transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
-                obj.transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
+                //obj.transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
             }
         }
 

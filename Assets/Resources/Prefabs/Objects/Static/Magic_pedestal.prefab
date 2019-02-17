@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4203565228990984}
   - component: {fileID: 33372906035578440}
   - component: {fileID: 23879251309827762}
+  - component: {fileID: 65844350047234776}
   m_Layer: 0
   m_Name: Magic_pedestal
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,3 +157,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910808326367612}
   m_Mesh: {fileID: 4300070, guid: 018a7a60cc7a5a245aaa87f8c67f38c3, type: 3}
+--- !u!65 &65844350047234776
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038289154320348}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016, y: 0.008, z: 0.016}
+  m_Center: {x: 0, y: 0.004, z: 0}

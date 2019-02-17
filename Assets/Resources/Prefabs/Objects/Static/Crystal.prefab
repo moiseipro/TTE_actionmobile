@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4381964723208636}
   - component: {fileID: 33472667918905942}
   - component: {fileID: 23821916725085524}
+  - component: {fileID: 65413127583944276}
   m_Layer: 0
   m_Name: Crystal
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645693335406746}
   m_Mesh: {fileID: 4300014, guid: 018a7a60cc7a5a245aaa87f8c67f38c3, type: 3}
+--- !u!65 &65413127583944276
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645693335406746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.032, z: 0.020000001}
+  m_Center: {x: 0, y: 0.016, z: 0}

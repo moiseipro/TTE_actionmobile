@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4694587757331764}
   - component: {fileID: 33995439194808566}
   - component: {fileID: 23683721280312714}
+  - component: {fileID: 65041715915458244}
   m_Layer: 0
   m_Name: Pedestal
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1790760415045282}
   m_Mesh: {fileID: 4300086, guid: 018a7a60cc7a5a245aaa87f8c67f38c3, type: 3}
+--- !u!65 &65041715915458244
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790760415045282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016, y: 0.010000001, z: 0.016}
+  m_Center: {x: 0, y: 0.0050000004, z: 0}

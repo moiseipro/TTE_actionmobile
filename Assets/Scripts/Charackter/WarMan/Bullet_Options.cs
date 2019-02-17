@@ -44,6 +44,7 @@ public class Bullet_Options : MonoBehaviour {
     {
         //Debug.Log("entered " + other);
 
+        if (other.tag == "Object") other.SendMessage("TakeDamage");
         if (other.tag == "Object" || other.tag == "Map" ) {
             if (type == 2)
             {

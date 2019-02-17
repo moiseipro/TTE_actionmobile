@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Map
   - Boss
+  - Trap
   layers:
   - Default
   - TransparentFX

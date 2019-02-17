@@ -20,7 +20,8 @@ public class SceneController : MonoBehaviour {
     public Camera mainCamera;
     GameObject player;
 
-    private int levelGame = 0;
+    [HideInInspector]
+    public int levelGame = 0;
     int soedValue = 0;
     private bool playerSpawn = false, bosssSpawn = false;
     private bool startConnect = false, endConnect = false, bossIsland = false, stopGenerator = false, startAndEndConnected = false;
@@ -1069,18 +1070,18 @@ public class SceneController : MonoBehaviour {
         }
     }
 
-    void SpawnBoss(int x, int z)
-    {
-        GameObject boss = Instantiate(bossPrefabs[Random.Range(0, bossPrefabs.Length)], new Vector3(x, 0, z), Quaternion.AngleAxis(180, Vector3.up));
-        boss.GetComponent<BossHeartController>().bossLevel = levelGame;
-        bosssSpawn = true;
-    }
-
     void SpawnPlayer(int x, int z)
     {
         if (!GameObject.FindWithTag("Player"))
         {
-            player = Instantiate(playerPrefabs[0], new Vector3(x*27, 1, z*27), Quaternion.identity);
+            if (x == 0)
+            {
+                player = Instantiate(playerPrefabs[0], new Vector3((x * 27)+7.5f, 1, z * 27), Quaternion.identity);
+                player.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
+            } else if (z == 0)
+            {
+                player = Instantiate(playerPrefabs[0], new Vector3(x * 27, 1, (z * 27) + 7.5f), Quaternion.identity);
+            } 
         }
         else
         {
@@ -1090,15 +1091,20 @@ public class SceneController : MonoBehaviour {
         player.GetComponent<HeartSystem>().CheckHealthAmount();
         player.GetComponent<Move_Controller>().joystickMove = GameObject.Find("MovePlayer").GetComponent<Joystick>();
         player.GetComponent<Move_Controller>().joystickFire = GameObject.Find("FirePlayer").GetComponent<Joystick>();
-        player.transform.position = new Vector3(x * 27, 1, z * 27);
+        if (x == 0)
+        {
+            player.transform.position = new Vector3((x * 27) + 7.5f, 1, z * 27);
+            player.transform.rotation = Quaternion.identity;
+            player.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
+        }
+        else if (z == 0)
+        {
+            player.transform.position = new Vector3(x * 27, 1, (z * 27) + 7.5f);
+            player.transform.rotation = Quaternion.identity;
+        }
         playerSpawn = true;
         mainCamera.GetComponent<Camera_Controller>().Player = player;
     }
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void ReloadLevel()
     {
