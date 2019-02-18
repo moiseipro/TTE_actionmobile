@@ -45,7 +45,9 @@ public class Bullet_Options : MonoBehaviour {
         //Debug.Log("entered " + other);
 
         if (other.tag == "Object") other.SendMessage("TakeDamage");
-        if (other.tag == "Object" || other.tag == "Map" ) {
+        if (other.tag == "LootBox") other.SendMessage("OpenChest");
+        if (other.tag == "Object" || other.tag == "Map" || other.tag == "LootBox")
+        {
             if (type == 2)
             {
                 for (int i = 0; i < hpBullet; i++) {

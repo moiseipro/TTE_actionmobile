@@ -25,9 +25,13 @@ public class DropItemController : MonoBehaviour {
         } else if (dropChance >= 0.5) {
             newItem.GetComponent<Outline>().OutlineColor = Color.white;
         }
-        newItem.GetComponent<Upgrade_Item>().Rang = dropChance;
+        newItem.GetComponent<CharackterItem>().Rang = dropChance;
         return newItem;
     }
 
+    //public GameObject DropItemPerChance(int )
+    //{
+
+    //}
 
 }

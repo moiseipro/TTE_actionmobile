@@ -111,9 +111,9 @@ public class Weapon_Controller : MonoBehaviour {
             Vector3 pos = new Vector3(0f, 0.0025f, 0.0065f);
             UpgradeNozzle.transform.localPosition = Vector3.Lerp(UpgradeNozzle.transform.localPosition, pos, 5f * Time.deltaTime);
             UpgradeNozzle.transform.rotation = Quaternion.Lerp(UpgradeNozzle.transform.rotation, Weapon.transform.rotation, 5f * Time.deltaTime);
-            if (UpgradeNozzle.GetComponent<Upgrade_Item>().upgradeType.Contains("4")) bulletID = 3;
-            else if (UpgradeNozzle.GetComponent<Upgrade_Item>().upgradeType.Contains("5")) bulletID = 2;
-            else if (UpgradeNozzle.GetComponent<Upgrade_Item>().upgradeType.Contains("6")) bulletID = 1;
+            if (UpgradeNozzle.GetComponent<Upgrade_Item>().chi.upgradeType.Contains("4")) bulletID = 3;
+            else if (UpgradeNozzle.GetComponent<Upgrade_Item>().chi.upgradeType.Contains("5")) bulletID = 2;
+            else if (UpgradeNozzle.GetComponent<Upgrade_Item>().chi.upgradeType.Contains("6")) bulletID = 1;
             else bulletID = 0;
         }
         if (UpgradeBottomAim != null)

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23783355747161994}
   - component: {fileID: 54292564195501806}
   - component: {fileID: 65194534339091148}
+  - component: {fileID: 114698785704434576}
   - component: {fileID: 114222426747296890}
   - component: {fileID: 114470436041168742}
   - component: {fileID: 114569788514816844}
@@ -126,9 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88ec9d803b7af9408516eb956a6f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: Nozzle6
-  upgradeName: "\u041D\u0430\u0441\u0430\u0434\u043A\u0430 \"\u041E\u0441\u043A\u043E\u043B\u043E\u0447\u043D\u0430\u044F\""
-  Rang: 1.05
   turnValue: 0
   turnAngleValue: 0
   reloadResist: 0
@@ -136,6 +134,7 @@ MonoBehaviour:
   bulletFallSpeed: 0
   bulletHP: 2
   bulletDamage: 1.5
+  chi: {fileID: 0}
 --- !u!114 &114470436041168742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,8 +161,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 6
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &114698785704434576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266805858952922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeType: Nozzle6
+  upgradeName: 
+  Rang: 0.57

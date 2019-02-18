@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23839595251436804}
   - component: {fileID: 54782441090695186}
   - component: {fileID: 65080015429312964}
+  - component: {fileID: 114032402594005900}
   - component: {fileID: 114877857750325916}
   - component: {fileID: 114697401250538810}
   - component: {fileID: 114829194563950492}
@@ -115,6 +116,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.005, y: 0.005, z: 0.005}
   m_Center: {x: -0.0015, y: 0, z: 0}
+--- !u!114 &114032402594005900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282026327287782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeType: Left
+  upgradeName: 
+  Rang: 0
 --- !u!114 &114697401250538810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,9 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88ec9d803b7af9408516eb956a6f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: Left
-  upgradeName: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
-  Rang: 1.19
   turnValue: 0
   turnAngleValue: 0
   reloadResist: 0.1
@@ -167,3 +180,4 @@ MonoBehaviour:
   bulletFallSpeed: -2
   bulletHP: 1
   bulletDamage: 0
+  chi: {fileID: 0}

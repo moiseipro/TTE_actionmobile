@@ -154,7 +154,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044953149602004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ca9ab8630de0b948876fbaa7c4343e5, type: 3}
   m_Name: 
@@ -197,11 +197,12 @@ MonoBehaviour:
   - {fileID: 1766102563765640, guid: 114b7e0197880ce4897456efecbd6927, type: 2}
   objectChestPrefab:
   - {fileID: 1766760973730758, guid: 353becbc1758650488c597f762b3735a, type: 2}
-  - {fileID: 1391746390883328, guid: da826fa294fc1e240b3cd4097fc4713d, type: 2}
-  - {fileID: 1484758637581786, guid: 15ef219c174467f41887d4baa4b2fd90, type: 2}
-  - {fileID: 1446759917792616, guid: e07701073c33529479943b52530a56af, type: 2}
-  - {fileID: 1790760415045282, guid: 5138c4eb98908fe438ec6f05b3430604, type: 2}
+  - {fileID: 1015819920216734, guid: 9221a5c5c3ec60a4a8d87ead1ef4e95f, type: 2}
+  - {fileID: 1131009971971040, guid: 3ccf9c021925a6c4597d989526fd6dd0, type: 2}
+  - {fileID: 1897928042158058, guid: b873510d78f1df44b9e10f9e695ed33d, type: 2}
+  - {fileID: 1593514937315980, guid: 604126fa6dcc5754d86813be072bf056, type: 2}
   playerPrefabs:
   - {fileID: 1301870341732256, guid: 08968e53b273e254bbb170494247f00b, type: 2}
   mainCamera: {fileID: 0}
+  levelGame: 0
   maxMapSize: 6

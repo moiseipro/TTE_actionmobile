@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23751622758006992}
   - component: {fileID: 54517160513187886}
   - component: {fileID: 65143557919210894}
+  - component: {fileID: 114416748053503402}
   - component: {fileID: 114785268073820606}
   - component: {fileID: 114381752871345538}
   - component: {fileID: 114745494241439008}
@@ -129,6 +130,21 @@ MonoBehaviour:
   ObjectIsSee: 0
   ObjectEquipt: 0
   mat: {fileID: 2100000, guid: e2e63880eab216d4c8ff60fa64cb6092, type: 2}
+--- !u!114 &114416748053503402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914632531110252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeType: Aim
+  upgradeName: 
+  Rang: 0
 --- !u!114 &114745494241439008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,9 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88ec9d803b7af9408516eb956a6f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: Aim
-  upgradeName: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u043B\u0443\u043F\u0430"
-  Rang: 0.83
   turnValue: 0
   turnAngleValue: -6
   reloadResist: 0
@@ -167,3 +180,4 @@ MonoBehaviour:
   bulletFallSpeed: -8
   bulletHP: 0
   bulletDamage: 0
+  chi: {fileID: 0}

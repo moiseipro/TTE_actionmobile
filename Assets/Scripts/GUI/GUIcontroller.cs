@@ -38,21 +38,21 @@ public class GUIcontroller : MonoBehaviour {
         ObjectIsSee = true;
         PredItem = posItem;
         customButton = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().customButton;
-        if (GetComponent<Upgrade_Item>().Rang > 1.5){
+        if (GetComponent<CharackterItem>().Rang > 1.5){
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
             customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_3") as Texture2D;
-        } else if (GetComponent<Upgrade_Item>().Rang > 1.1) {
+        } else if (GetComponent<CharackterItem>().Rang > 1.1) {
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
             customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_2") as Texture2D;
         }
-        else if (GetComponent<Upgrade_Item>().Rang > 0.7) {
+        else if (GetComponent<CharackterItem>().Rang > 0.7) {
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
             customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_1") as Texture2D;
         }
-        else if (GetComponent<Upgrade_Item>().Rang >= 0.5) {
+        else if (GetComponent<CharackterItem>().Rang >= 0.5) {
             customButton.normal.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
             customButton.hover.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
             customButton.active.background = Resources.Load("Sprites/UI/ItemPanel/UI_Item_0") as Texture2D;
@@ -69,9 +69,9 @@ public class GUIcontroller : MonoBehaviour {
         {
             positionItem = new Rect(predItemScreenPos.x - WidthPanel, (Screen.height - predItemScreenPos.y - HeightPanel -50f), WidthPanel, HeightPanel);
             positionLine = new Rect(predItemScreenPos.x - WidthPanel/2f, predItemScreenPos.y +50f, WidthPanel, HeightPanel);
-            if(GUI.Button(positionItem, GetComponent<Upgrade_Item>().upgradeName, customButton))
+            if(GUI.Button(positionItem, GetComponent<CharackterItem>().upgradeName, customButton))
             {
-                GetComponent<Upgrade_Item>().TakeItem();
+                GetComponent<Upgrade_Item>().TakeItem(); // После добавления нового персонажа нужно пересмотреть
                 ObjectIsSee = false;
             }
         }

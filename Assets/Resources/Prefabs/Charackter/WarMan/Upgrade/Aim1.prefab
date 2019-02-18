@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23465573142900982}
   - component: {fileID: 54077309163739948}
   - component: {fileID: 65640318307274644}
+  - component: {fileID: 114438653224486832}
   - component: {fileID: 114792518078151068}
   - component: {fileID: 114234727836860282}
   - component: {fileID: 114827572366014752}
@@ -129,6 +130,21 @@ MonoBehaviour:
   ObjectIsSee: 0
   ObjectEquipt: 0
   mat: {fileID: 2100000, guid: e2e63880eab216d4c8ff60fa64cb6092, type: 2}
+--- !u!114 &114438653224486832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547208025563614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeType: Aim
+  upgradeName: 
+  Rang: 0.79
 --- !u!114 &114792518078151068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,10 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88ec9d803b7af9408516eb956a6f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: Aim
-  upgradeName: "\u041F\u0430\u043B\u043A\u0430 \u043F\u043E\u0445\u043E\u0436\u0430\u044F
-    \u043D\u0430 \u043F\u0440\u0438\u0446\u0435\u043B"
-  Rang: 0.5
   turnValue: 0
   turnAngleValue: -5
   reloadResist: 0
@@ -151,6 +163,7 @@ MonoBehaviour:
   bulletFallSpeed: -5
   bulletHP: 0
   bulletDamage: 0
+  chi: {fileID: 0}
 --- !u!114 &114827572366014752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
   outlineWidth: 6
   precomputeOutline: 0
   bakeKeys: []

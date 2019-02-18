@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23174626251579054}
   - component: {fileID: 54562384091664466}
   - component: {fileID: 65867371537177816}
+  - component: {fileID: 114138415388011644}
   - component: {fileID: 114069460528275382}
   - component: {fileID: 114144693087440266}
   - component: {fileID: 114145040970213692}
@@ -126,9 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88ec9d803b7af9408516eb956a6f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: Nozzle3
-  upgradeName: "\u0413\u043B\u0443\u0448\u0438\u0442\u0435\u043B\u044C"
-  Rang: 0.83
   turnValue: 0
   turnAngleValue: 5
   reloadResist: -0.1
@@ -136,6 +134,22 @@ MonoBehaviour:
   bulletFallSpeed: 1.5
   bulletHP: 1
   bulletDamage: 1
+  chi: {fileID: 0}
+--- !u!114 &114138415388011644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101317881511698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeType: Nozzle3
+  upgradeName: 
+  Rang: 0.89
 --- !u!114 &114144693087440266
 MonoBehaviour:
   m_ObjectHideFlags: 1
