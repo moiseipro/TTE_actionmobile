@@ -19,8 +19,6 @@ public class Weapon_Controller : MonoBehaviour {
     [Tooltip("Объект правой части надетый на оружие")]
     public GameObject UpgradeRight;
 
-    //Уровень оружия
-    public int WeaponLevel = 1;
     //Скорость стрельбы
     public float timeReload = 0.8f; 
     //Кол-во пуль

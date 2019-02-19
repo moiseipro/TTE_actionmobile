@@ -380,3 +380,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockanim: {fileID: 95690398403041528}
+  idChest: 0

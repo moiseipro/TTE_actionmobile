@@ -148,6 +148,12 @@ MonoBehaviour:
   - {fileID: 1161203416975822, guid: 371bb8e7ecd0a9347a961caee96978b8, type: 2}
   - {fileID: 1767554667011770, guid: ed6dc0c1fab34914fbe5bc591cd3a6d5, type: 2}
   - {fileID: 1587251625626510, guid: c2dc48ec5dd5c5247b4415274016ccff, type: 2}
+  dropItemHeal:
+  - {fileID: 1613243928698030, guid: 14863d11cb0861e41a64be97436e76c6, type: 2}
+  dropItemMoney: []
+  dropItemGrenade: []
+  dropItemKey: []
+  dropItemAddHealth: []
 --- !u!114 &114918626271941826
 MonoBehaviour:
   m_ObjectHideFlags: 1

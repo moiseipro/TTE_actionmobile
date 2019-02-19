@@ -28,7 +28,7 @@ public class LootBoxHealth : MonoBehaviour {
     {
         anim.enabled = false;
         rg.isKinematic = false;
-        rg.AddForce(Random.Range(-1.5f, 1.5f), 2f, Random.Range(-1.5f, 1.5f), ForceMode.Impulse);
+        rg.AddForce(Random.Range(-3f, 3f), 4f, Random.Range(-3f, 3f), ForceMode.Impulse);
         rg.AddTorque(Random.Range(-3f, 3f), Random.Range(-3f, 3f), Random.Range(-3f, 3f), ForceMode.Impulse);
         Destroy(gameObject, 3f);
     }
