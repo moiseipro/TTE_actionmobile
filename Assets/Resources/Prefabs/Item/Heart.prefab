@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135582621275991308}
   - component: {fileID: 54706787477846476}
   - component: {fileID: 95823950435447456}
-  - component: {fileID: 114618017277809706}
+  - component: {fileID: 114363880696657392}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -38,8 +38,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1613243928698030}
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.677357, y: 1.019, z: 24.336813}
+  m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.3600006, y: 1.139, z: 2.0900002}
   m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,8 +52,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1613243928698030}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -120,7 +120,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114618017277809706
+--- !u!114 &114363880696657392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1613243928698030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2bbd28f16963a43a507699cdc36042, type: 3}
+  m_Script: {fileID: 11500000, guid: 245d32d4d6665c34cb46043364f6a90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healVal: 0
+  addHeartVal: 1
 --- !u!135 &135582621275991308
 SphereCollider:
   m_ObjectHideFlags: 1

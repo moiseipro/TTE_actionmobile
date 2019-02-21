@@ -20,8 +20,6 @@ public class GUIcontroller : MonoBehaviour {
     float HeightPanel = 300f;
     float ItemsValue;
 
-    public Material mat;
-
     // Use this for initialization
     void Start () {
         PredItem = GetComponent<Transform>();
@@ -83,34 +81,5 @@ public class GUIcontroller : MonoBehaviour {
         }*/
 
 
-    }
-
-    void OnDrawGizmos()
-    {
-        if (ObjectIsSee == true && ObjectEquipt == false)
-            RenderLines(new Vector3[0]);
-    }
-
-    void OnRenderObject()
-    {
-        if (ObjectIsSee == true && ObjectEquipt == false)
-            RenderLines(new Vector3[0]);
-    }
-
-    void OnPostRender()
-    {
-        if (ObjectIsSee == true && ObjectEquipt == false)
-            RenderLines(new Vector3[0]);
-    }
-
-    void RenderLines(Vector3[] points)
-    {
-        GL.Begin(GL.LINES);
-        mat.SetPass(0);
-        GL.Color(Color.red);
-        GL.Color(mat.color);
-        GL.Vertex(ThisObject.position);
-        GL.Vertex(Camera.main.ScreenToWorldPoint(positionLine.position));
-        GL.End();
     }
 }

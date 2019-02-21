@@ -5,29 +5,7 @@ using UnityEngine;
 public class Outline_Objects : MonoBehaviour {
 
     public float RadiusSphere = 1f;
-    
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        //Включает скрипт обводки, если объект касается тригера
-        if (other.GetComponent<Outline>())
-        {
-            other.GetComponent<Outline>().enabled = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        //Выключает скрипт обводки, если объект выходит из тригера
-        if (other.GetComponent<Outline>())
-        {
-            other.GetComponent<Outline>().enabled = false;
-        }
-    }*/
-
-    private void Update()
-    {
-    }
+   
 
     Transform PredItem = null;
 
@@ -47,12 +25,5 @@ public class Outline_Objects : MonoBehaviour {
             Debug.Log(hitCol.name + " потерян");
             hitCol.GetComponent<GUIcontroller>().ObjectIsSee = false;
         }
-    }
-
-    //Рисует сферу вокруг точки
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = new Color(1,1,0.015f,0.3f);
-        Gizmos.DrawSphere(transform.position, RadiusSphere);
     }
 }

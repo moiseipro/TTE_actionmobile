@@ -26,7 +26,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!1 &1196815550997438
 GameObject:
@@ -40,13 +40,13 @@ GameObject:
   - component: {fileID: 23926440172908368}
   - component: {fileID: 54535868606311234}
   - component: {fileID: 64327571278082672}
-  - component: {fileID: 114874043768634976}
+  - component: {fileID: 114363607991887808}
   m_Layer: 0
   m_Name: Castle_2
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!1 &1206640771404038
 GameObject:
@@ -63,7 +63,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!1 &1388617791523110
 GameObject:
@@ -80,7 +80,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!1 &1917426181195652
 GameObject:
@@ -97,7 +97,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!4 &4124545418535532
 Transform:
@@ -323,7 +323,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 83b70ff072575fc4c97b0d4c8825017f, type: 2}
+  - {fileID: 2100000, guid: ae1ff5bbcfdcbc0419d40886250a07a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -388,7 +388,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -407,7 +407,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: a1cad566c8822144c8443aa25e7825b1, type: 3}
---- !u!114 &114874043768634976
+--- !u!114 &114363607991887808
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,19 +415,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196815550997438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 286531599dcd52e40998387a34378687, type: 3}
+  m_Script: {fileID: 11500000, guid: cd4b1ee3b99ff3145bce0fcb99abf626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialColor: {r: 0, g: 1, b: 0, a: 1}
-  specialObject: []
-  spawnSpecialPoints: []
-  spawnPercent: 0
-  staticColor: {r: 1, g: 0, b: 0, a: 1}
-  spawnStaticPoints: []
-  destrColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  spawnDestrPoints: []
-  trapColor: {r: 0, g: 0, b: 1, a: 1}
-  spawnTrapPoints: []
-  chestColor: {r: 1, g: 0, b: 1, a: 1}
-  spawnChestPoints: []
-  spawnChestPercent: 0

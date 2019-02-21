@@ -149,18 +149,24 @@ MonoBehaviour:
   - {fileID: 1767554667011770, guid: ed6dc0c1fab34914fbe5bc591cd3a6d5, type: 2}
   - {fileID: 1587251625626510, guid: c2dc48ec5dd5c5247b4415274016ccff, type: 2}
   dropItemHeal:
-  - {fileID: 1613243928698030, guid: 14863d11cb0861e41a64be97436e76c6, type: 2}
+  - {fileID: 1562345292303924, guid: f261ee9524f14174d8aa9ee092d449b1, type: 2}
+  - {fileID: 1343985836060378, guid: e40486ed1ca180746a6a2b53eed27cf8, type: 2}
+  - {fileID: 1257779014887730, guid: 991b780e05a122149894ca69cd1ffbd7, type: 2}
+  - {fileID: 1272490814638300, guid: 6a03e950a6276e14f8d09974e56a8635, type: 2}
+  - {fileID: 1839930034576710, guid: 4e72447fcc9e2fc458539109fc4b26a2, type: 2}
+  - {fileID: 1953296598972686, guid: 19418bb14f02f164588bd6a9f9b7a76a, type: 2}
   dropItemMoney: []
   dropItemGrenade: []
   dropItemKey: []
-  dropItemAddHealth: []
+  dropItemAddHealth:
+  - {fileID: 1613243928698030, guid: 14863d11cb0861e41a64be97436e76c6, type: 2}
 --- !u!114 &114918626271941826
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044953149602004}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ca9ab8630de0b948876fbaa7c4343e5, type: 3}
   m_Name: 
