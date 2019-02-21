@@ -294,6 +294,7 @@ MonoBehaviour:
   immortality: 0
   dead: 0
   bossLevel: 1
+  damage: 1
   healthBadge: {fileID: 1400922444074922}
   particleDamage: {fileID: 1445517059410980, guid: e6b7e86cb41cb4c4993c5c78859249df,
     type: 2}

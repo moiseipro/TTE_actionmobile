@@ -24,11 +24,6 @@ public class HeartSystem : MonoBehaviour {
     void Start () {
         HealAll();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void CheckHealthAmount()
     {
@@ -99,9 +94,9 @@ public class HeartSystem : MonoBehaviour {
         CheckHealthAmount();
     }
 
-    public void AddHeartContainer()
+    public void AddHeartContainer(int amount)
     {
-        startHearts++;
+        startHearts += amount;
         startHearts = Mathf.Clamp(startHearts, 0, maxHeart);
 
         CheckHealthAmount();

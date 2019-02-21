@@ -15,6 +15,7 @@ public class Move_Controller : MonoBehaviour {
 
     //Ссылки на компоненты
     private CharacterController ch_controller;
+    private HeartSystem hs;
     private Animator ch_animator;
     private GameObject manager;
 
@@ -26,16 +27,21 @@ public class Move_Controller : MonoBehaviour {
     void Start () {
         ch_controller = GetComponent<CharacterController>();
         ch_animator = GetComponent<Animator>();
+        hs = GetComponent<HeartSystem>();
         manager = GameObject.FindWithTag("Manager");
         manager.transform.rotation = Quaternion.identity;
         manager.transform.rotation = Quaternion.AngleAxis(50, Vector3.up);
     }
 	
 	void Update () {
-        GamingGravity();
-        if(gameObject.GetComponent<HeartSystem>().isDead == false)
+        if(hs.isDead == false)
         {
+            GamingGravity();
             MovePlayer();
+            if (gameObject.transform.position.y < -8)
+            {
+                hs.TakeDamage(-100);
+            }
         }
 	}
 
