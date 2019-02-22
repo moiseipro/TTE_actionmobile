@@ -32,13 +32,20 @@ public class LootBoxController : MonoBehaviour {
 
     public void GetLoot()
     {
+        StartCoroutine(DropTimer());
+    }
+
+    IEnumerator DropTimer()
+    {
         int rdrop = Random.Range(0, 5);
-        for(int i = 0; i < rdrop; i++)
+        for (int i = 0; i < rdrop; i++)
         {
+            Vector3 ops = new Vector3(player.transform.position.x + Random.Range(-2.5f, 2.5f), player.transform.position.y, player.transform.position.z + Random.Range(-2.5f,2.5f));
             GameObject itemDop = Instantiate(dic.DropItemChest(boostChance), gameObject.transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-            itemDop.GetComponent<Rigidbody>().AddForce(Random.Range(-2f, 2f), 3f, Random.Range(-2f, 2f), ForceMode.Impulse);
+            itemDop.GetComponent<Rigidbody>().AddForce((ops - gameObject.transform.position) * 1.5f, ForceMode.Impulse);
+            yield return new WaitForSeconds(0.5f);
         }
         GameObject item = Instantiate(dic.DropItem(), gameObject.transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-        item.GetComponent<Rigidbody>().AddForce((player.transform.position-gameObject.transform.position)*1.5f,ForceMode.Impulse);
+        item.GetComponent<Rigidbody>().AddForce((player.transform.position - gameObject.transform.position) * 1.5f, ForceMode.Impulse);
     }
 }
