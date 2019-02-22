@@ -8,7 +8,6 @@ public class DropItemController : MonoBehaviour {
     [Header("Общие предметы для персонажей")]
     public GameObject[] dropItemHeal;
     public GameObject[] dropItemMoney;
-    public GameObject[] dropItemGrenade;
     public GameObject[] dropItemKey;
     public GameObject[] dropItemAddHealth;
 
@@ -42,7 +41,7 @@ public class DropItemController : MonoBehaviour {
         if (dropChance > 99-num)
         {
             newDopItem = dropItemKey[Random.Range(0, dropItemKey.Length)];
-        } else if (dropChance > 65)
+        } else if (dropChance > 45)
         {
             int dropTwoLevel = Random.Range(0, 11);
             if(dropTwoLevel > 7)
@@ -52,13 +51,7 @@ public class DropItemController : MonoBehaviour {
                 newDopItem = dropItemMoney[Random.Range(0, dropItemMoney.Length)];
             }
             
-        } else if (dropChance > 35)
-        {
-            newDopItem = dropItemGrenade[Random.Range(0, dropItemGrenade.Length)];
         }
-
-
-
 
         return newDopItem;
     }

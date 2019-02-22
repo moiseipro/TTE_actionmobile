@@ -9,25 +9,27 @@ public class MobSlimeController : MobController {
 
     bool dead = false;
 
+    SlimeController sc;
+    BossHeartController bhc;
+    Move_Controller playerMC;
+
 	// Use this for initialization
 	void Start () {
-        health = maxHealth;
         SearchForCh();
+        sc = Boss.GetComponent<SlimeController>();
+        bhc = Boss.GetComponent<BossHeartController>();
+        playerMC = Player.GetComponent<Move_Controller>();
+        health = maxHealth;
         StartCoroutine(Move());
 	}
 
-    void Update()
-    {
-        
-    }
-
     void FixedUpdate()
     {
-        Vector3 movVec = Player.transform.position - gameObject.transform.position + GameObject.FindWithTag("Player").GetComponent<Move_Controller>().GetVectorMove() / 10f;
+        Vector3 movVec = Player.transform.position - gameObject.transform.position + playerMC.GetVectorMove() / 10f;
         Vector3 rotVec = Vector3.RotateTowards(transform.forward, movVec, 0.1f, 0f);
         rotVec.y = 0;
         transform.rotation = Quaternion.LookRotation(rotVec);
-        if(Boss != null && Boss.GetComponent<SlimeController>().isAbsorb == true)
+        if(Boss != null && sc.isAbsorb == true)
         {
             rb.AddForce((Boss.transform.position - gameObject.transform.position + Vector3.up * 0.01f) * movSpeed, ForceMode.Force);
         }
@@ -54,13 +56,13 @@ public class MobSlimeController : MobController {
             Destroy(gameObject);
         } else if (other.gameObject.tag == "Boss")
         {
-            if (Boss.GetComponent<SlimeController>().isAbsorb == false)
+            if (sc.isAbsorb == false)
             {
                 rb.AddForce((gameObject.transform.position - Boss.transform.position + Vector3.up * 0.5f).normalized * movSpeed, ForceMode.Impulse);
                 //AddDamage(maxHealth / 4f);
             } else
             {
-                Boss.GetComponent<BossHeartController>().HealBoss(heal);
+                bhc.HealBoss(heal);
                 Destroy(gameObject);
             }
         }

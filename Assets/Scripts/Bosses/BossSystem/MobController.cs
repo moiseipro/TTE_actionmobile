@@ -12,11 +12,6 @@ public class MobController : MonoBehaviour {
     public Mesh[] mobMesh;
     protected Rigidbody rb;
     protected GameObject Player, Boss;
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void SearchForCh()
     {

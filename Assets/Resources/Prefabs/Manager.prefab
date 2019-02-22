@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4539130632109690}
   - component: {fileID: 114639293523168874}
   - component: {fileID: 114918626271941826}
+  - component: {fileID: 114670923917410720}
   - component: {fileID: 114609702228048826}
   m_Layer: 0
   m_Name: Manager
@@ -155,11 +156,23 @@ MonoBehaviour:
   - {fileID: 1272490814638300, guid: 6a03e950a6276e14f8d09974e56a8635, type: 2}
   - {fileID: 1839930034576710, guid: 4e72447fcc9e2fc458539109fc4b26a2, type: 2}
   - {fileID: 1953296598972686, guid: 19418bb14f02f164588bd6a9f9b7a76a, type: 2}
-  dropItemMoney: []
-  dropItemGrenade: []
-  dropItemKey: []
+  dropItemMoney:
+  - {fileID: 1312734849471628, guid: 7097e4a54a166114fa27f10629ba3940, type: 2}
+  dropItemKey:
+  - {fileID: 1734697700445228, guid: f0605e03eea292a44bf71add516dab3b, type: 2}
   dropItemAddHealth:
   - {fileID: 1613243928698030, guid: 14863d11cb0861e41a64be97436e76c6, type: 2}
+--- !u!114 &114670923917410720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044953149602004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c871eaddef1034c9a545dfb43d479f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114918626271941826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,15 +217,19 @@ MonoBehaviour:
   - {fileID: 1614432202539352, guid: adb24a17ba1d4ed4fbe0c95ad260b89e, type: 2}
   - {fileID: 1536329400680112, guid: 7ef0aa3c94ab2664ea957355f715994e, type: 2}
   - {fileID: 1651704018672416, guid: e56e572f1c83d6147ad03d78e6d0865b, type: 2}
-  - {fileID: 1717680291501674, guid: 40e3d2a9026d96248b2e9875c322e154, type: 2}
+  - {fileID: 0}
   objectTrapPrefab:
   - {fileID: 1766102563765640, guid: 114b7e0197880ce4897456efecbd6927, type: 2}
   objectChestPrefab:
-  - {fileID: 1766760973730758, guid: 353becbc1758650488c597f762b3735a, type: 2}
   - {fileID: 1015819920216734, guid: 9221a5c5c3ec60a4a8d87ead1ef4e95f, type: 2}
   - {fileID: 1131009971971040, guid: 3ccf9c021925a6c4597d989526fd6dd0, type: 2}
   - {fileID: 1897928042158058, guid: b873510d78f1df44b9e10f9e695ed33d, type: 2}
   - {fileID: 1593514937315980, guid: 604126fa6dcc5754d86813be072bf056, type: 2}
+  - {fileID: 1563147292358732, guid: 7e34121b3b2ff744eacb5f4960643352, type: 2}
+  - {fileID: 1341811228494722, guid: 0c867e0d2c0d1d24fbda054172f3537c, type: 2}
+  - {fileID: 1374593533531644, guid: 0227184bb63b29a4fadaff4f365ded77, type: 2}
+  - {fileID: 1245171464532262, guid: f24ab7fa32d8e654ebd06eefca06f033, type: 2}
+  - {fileID: 1107556164555784, guid: eb862dd2bcc67b441b2e678c183000f7, type: 2}
   playerPrefabs:
   - {fileID: 1301870341732256, guid: 08968e53b273e254bbb170494247f00b, type: 2}
   mainCamera: {fileID: 0}

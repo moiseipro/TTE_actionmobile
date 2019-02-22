@@ -9,9 +9,11 @@ public class ObjectController : MonoBehaviour {
 
     SceneController gameManager;
     Animator anim;
+    ParticleSystem ps;
 
     private void Start()
     {
+        ps = GetComponentInChildren<ParticleSystem>();
         gameManager = GameObject.FindWithTag("Manager").GetComponent<SceneController>();
         anim = GetComponent<Animator>();
         health = maxHealth;
@@ -19,8 +21,20 @@ public class ObjectController : MonoBehaviour {
 
     public void TakeDamage()
     {
-        if (health > 0) health--;
-        else if (health == 0) Destroy(gameObject,0.2f);
-        anim.SetTrigger("Damage");
+        if (health > 0)
+        {
+            anim.SetTrigger("Damage");
+            health--;
+        }
+        else if (health == 0)
+        {
+            anim.SetTrigger("Dead");
+            ps.Play();
+        }
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }

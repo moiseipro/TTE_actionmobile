@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeartForAddHeart : MonoBehaviour {
+public class MoneyController : MonoBehaviour {
 
-    public int addHeartVal;
+    public int minMoneyVal, maxMoneyVal;
 
     Rigidbody rg;
     SphereCollider sc;
     Animator anim;
-    HeartSystem hs;
+    PlayerManager pm;
 
     // Use this for initialization
     void Start()
@@ -17,7 +17,7 @@ public class HeartForAddHeart : MonoBehaviour {
         rg = GetComponent<Rigidbody>();
         sc = GetComponent<SphereCollider>();
         anim = GetComponent<Animator>();
-        hs = GameObject.FindWithTag("Player").GetComponent<HeartSystem>();
+        pm = GameObject.FindWithTag("Manager").GetComponent<PlayerManager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,7 +34,8 @@ public class HeartForAddHeart : MonoBehaviour {
         if (other.tag == "Player")
         {
             anim.SetTrigger("Add");
-            hs.AddHeartContainer(addHeartVal);
+            int moneyVal = Random.Range(minMoneyVal,maxMoneyVal);
+            pm.AddMoney(moneyVal);
         }
     }
 

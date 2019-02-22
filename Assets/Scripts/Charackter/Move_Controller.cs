@@ -18,6 +18,7 @@ public class Move_Controller : MonoBehaviour {
     private HeartSystem hs;
     private Animator ch_animator;
     private GameObject manager;
+    private PlayerManager playerManager;
 
     //Ссылки на объекты
     public Joystick joystickMove;
@@ -29,6 +30,7 @@ public class Move_Controller : MonoBehaviour {
         ch_animator = GetComponent<Animator>();
         hs = GetComponent<HeartSystem>();
         manager = GameObject.FindWithTag("Manager");
+        playerManager = manager.GetComponent<PlayerManager>();
         manager.transform.rotation = Quaternion.identity;
         manager.transform.rotation = Quaternion.AngleAxis(50, Vector3.up);
     }
@@ -78,12 +80,6 @@ public class Move_Controller : MonoBehaviour {
             Vector3 direct = Vector3.RotateTowards(transform.forward, rotVector, speed, 0.0f);
             transform.rotation = Quaternion.LookRotation(direct);
         }
-        
-        /*if (GameObject.Find("Body").GetComponent<Transform>().rotation.z < 30 && GameObject.Find("Body").GetComponent<Transform>().rotation.z > -30)
-        {
-            Vector3 rotvect = new Vector3(moveVector.z, 0, moveVector.x * -1f);
-            GameObject.Find("Body").GetComponent<Transform>().Rotate(rotvect);
-        }*/
 
 
 
