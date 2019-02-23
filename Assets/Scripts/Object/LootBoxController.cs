@@ -53,5 +53,6 @@ public class LootBoxController : MonoBehaviour {
         }
         GameObject item = Instantiate(dic.DropItem(maxChance), gameObject.transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
         item.GetComponent<Rigidbody>().AddForce((player.transform.position - gameObject.transform.position) * 1.5f, ForceMode.Impulse);
+
     }
 }

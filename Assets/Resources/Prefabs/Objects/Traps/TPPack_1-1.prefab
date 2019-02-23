@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33346662621782948}
   - component: {fileID: 23605656496619994}
   m_Layer: 0
-  m_Name: Thorns_1-1
+  m_Name: Thorns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,9 +38,12 @@ GameObject:
   - component: {fileID: 4274398621815316}
   - component: {fileID: 33742145252449284}
   - component: {fileID: 23347970410990004}
+  - component: {fileID: 65543870753481350}
+  - component: {fileID: 95842514927884756}
+  - component: {fileID: 114554520730465902}
   m_Layer: 0
   m_Name: TPPack_1-1
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272635926067094}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.01, z: -1.3909073e-10}
+  m_LocalPosition: {x: -0, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4274398621815316}
@@ -65,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996856280246308}
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.85744, y: 4, z: -32.957813}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -18.5181, y: -0.12, z: 17.49}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4053171419051838}
   m_Father: {fileID: 0}
@@ -156,3 +159,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996856280246308}
   m_Mesh: {fileID: 4300004, guid: 7e22a5fd8faad8b46bd76c4c01b4c30e, type: 3}
+--- !u!65 &65543870753481350
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996856280246308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011, y: 0.01, z: 0.011}
+  m_Center: {x: 0, y: 0.005, z: 0}
+--- !u!95 &95842514927884756
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996856280246308}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c79ccabbbe35e34582b7f9b22752a72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114554520730465902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996856280246308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e279c215027d74f9e5b4db367cbe9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDamage: 1
+  damage: 1

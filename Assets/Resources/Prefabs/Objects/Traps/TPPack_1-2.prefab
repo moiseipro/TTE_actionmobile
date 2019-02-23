@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33066467069184446}
   - component: {fileID: 23428759245391144}
   m_Layer: 0
-  m_Name: Thorns1-2
+  m_Name: Thorns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,9 +38,12 @@ GameObject:
   - component: {fileID: 4085244326439216}
   - component: {fileID: 33451976979395682}
   - component: {fileID: 23411856214736850}
+  - component: {fileID: 65904321123876412}
+  - component: {fileID: 95309819324786202}
+  - component: {fileID: 114307643771031168}
   m_Layer: 0
   m_Name: TPPack_1-2
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374258928379846}
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.85744, y: 4, z: -32.957813}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -20.699524, y: -0.12, z: 17.522093}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4290046732263014}
   m_Father: {fileID: 0}
@@ -66,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071806498142614}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.01, z: 0.0000000013510254}
+  m_LocalPosition: {x: 0, y: 0.001, z: 0.000000001351025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4085244326439216}
@@ -79,8 +82,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374258928379846}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -114,8 +117,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071806498142614}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -156,3 +159,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374258928379846}
   m_Mesh: {fileID: 4300000, guid: 7e22a5fd8faad8b46bd76c4c01b4c30e, type: 3}
+--- !u!65 &65904321123876412
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374258928379846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.013, y: 0.01, z: 0.013}
+  m_Center: {x: 0, y: 0.005, z: 0}
+--- !u!95 &95309819324786202
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374258928379846}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86b2825ee77cdc142a0f92f854063d26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114307643771031168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374258928379846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e279c215027d74f9e5b4db367cbe9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDamage: 1
+  damage: 2

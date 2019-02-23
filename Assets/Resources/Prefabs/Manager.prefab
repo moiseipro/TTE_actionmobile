@@ -179,7 +179,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044953149602004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ca9ab8630de0b948876fbaa7c4343e5, type: 3}
   m_Name: 
@@ -217,7 +217,7 @@ MonoBehaviour:
   - {fileID: 1536329400680112, guid: 7ef0aa3c94ab2664ea957355f715994e, type: 2}
   - {fileID: 1651704018672416, guid: e56e572f1c83d6147ad03d78e6d0865b, type: 2}
   objectTrapPrefab:
-  - {fileID: 1766102563765640, guid: 114b7e0197880ce4897456efecbd6927, type: 2}
+  - {fileID: 1996856280246308, guid: 90dc2ffc2a8792449a6d86c02c25edb0, type: 2}
   objectChestPrefab:
   - {fileID: 1015819920216734, guid: 9221a5c5c3ec60a4a8d87ead1ef4e95f, type: 2}
   - {fileID: 1131009971971040, guid: 3ccf9c021925a6c4597d989526fd6dd0, type: 2}

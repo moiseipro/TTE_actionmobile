@@ -5,6 +5,7 @@ using UnityEngine;
 public class FloorTrap : MonoBehaviour {
 
     public bool isDamage = true;
+    public int damage;
 
     public void ActivateDamage()
     {
@@ -20,7 +21,7 @@ public class FloorTrap : MonoBehaviour {
     {
         if(other.tag == "Player" && isDamage == true)
         {
-            other.gameObject.GetComponent<HeartSystem>().TakeDamage(-2);
+            other.gameObject.GetComponent<HeartSystem>().TakeDamage(-damage);
             isDamage = false;
         }
     }
