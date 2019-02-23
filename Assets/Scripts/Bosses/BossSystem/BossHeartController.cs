@@ -15,12 +15,15 @@ public class BossHeartController : MonoBehaviour {
 
     [Header("Дополнительные атрибуты")]
     public int damage = 1;
+    [Range(0.5f, 2f)]
+    public float maxDropItemChance = 1f;
     public GameObject healthBadge;
     public GameObject particleDamage;
     public Mesh[] meshesHeart;
     public GameObject[] partOfBoss;
 
     [HideInInspector] public GameObject Player;
+    private DropItemController dropItemController;
 
     // Use this for initialization
     void Start () {
@@ -30,6 +33,7 @@ public class BossHeartController : MonoBehaviour {
     public void StartScript()
     {
         Player = GameObject.FindWithTag("Player");
+        dropItemController = GameObject.FindWithTag("Manager").GetComponent<DropItemController>();
         health = maxHealth + bossLevel * 20;
     }
 	
@@ -67,7 +71,7 @@ public class BossHeartController : MonoBehaviour {
                 Destroy(part, Random.Range(5f, 10f));
                 yield return new WaitForSeconds(0.2f);
             }
-            GameObject Item = Instantiate(GameObject.FindWithTag("Manager").GetComponent<DropItemController>().DropItem(), gameObject.transform.position + Vector3.up, transform.rotation);
+            GameObject Item = Instantiate(dropItemController.DropItem(maxDropItemChance), gameObject.transform.position + Vector3.up, transform.rotation);
             Item.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
             Destroy(gameObject);
         }

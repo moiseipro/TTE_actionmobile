@@ -30,7 +30,7 @@ GameObject:
   m_TagString: LootBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1158605840015506
 GameObject:
@@ -51,7 +51,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1161388090975370
 GameObject:
@@ -68,7 +68,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1407537855425524
 GameObject:
@@ -83,7 +83,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4047650037480290
 Transform:
@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015819920216734}
   m_LocalRotation: {x: 0.000000024900514, y: -0.9521355, z: 0.000000077561396, w: 0.3056764}
-  m_LocalPosition: {x: -12.69, y: -0.00000047683716, z: 29.04}
+  m_LocalPosition: {x: -12.34, y: -0.00000047683716, z: 37.28}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4787383486979796}
@@ -318,8 +318,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16000007, y: 0.08, z: 0.120000064}
-  m_Center: {x: 5.684342e-16, y: 0.04, z: 1.9895197e-15}
+  m_Size: {x: 0.16000007, y: 0.1, z: 0.120000064}
+  m_Center: {x: 5.684342e-16, y: 0.05, z: 1.9895197e-15}
 --- !u!95 &95504080771519872
 Animator:
   serializedVersion: 3
@@ -381,3 +381,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockanim: {fileID: 95690398403041528}
   boostChance: 0
+  maxChance: 0.6

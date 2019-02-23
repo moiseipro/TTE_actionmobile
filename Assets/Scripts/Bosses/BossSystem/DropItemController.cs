@@ -11,11 +11,13 @@ public class DropItemController : MonoBehaviour {
     public GameObject[] dropItemKey;
     public GameObject[] dropItemAddHealth;
 
+    private const float minDropChance = 0.5f;
+    private const float maxDropChance = 2f;
 
-    public GameObject DropItem()
+    public GameObject DropItem(float maxChance)
     {
         GameObject newItem = dropItemWarMan[Random.Range(0, dropItemWarMan.Length)];
-        float dropChance = Random.Range(0.5f, 2f);
+        float dropChance = Random.Range(minDropChance, Random.Range(maxChance, maxDropChance));
         if (dropChance > 1.5f) dropChance = Random.Range(0.7f, dropChance);
         else if (dropChance > 1.2f) dropChance = Random.Range(0.6f, dropChance);
         else if (dropChance > 1f) dropChance = Random.Range(0.5f, dropChance);
@@ -41,10 +43,10 @@ public class DropItemController : MonoBehaviour {
         if (dropChance > 99-num)
         {
             newDopItem = dropItemKey[Random.Range(0, dropItemKey.Length)];
-        } else if (dropChance > 45)
+        } else if (dropChance > 25)
         {
             int dropTwoLevel = Random.Range(0, 11);
-            if(dropTwoLevel > 7)
+            if(dropTwoLevel > 8)
             {
                 newDopItem = dropItemAddHealth[Random.Range(0, dropItemAddHealth.Length)];
             } else {
