@@ -18,22 +18,19 @@ public class Move_Controller : MonoBehaviour {
     private CharacterController ch_controller;
     private HeartSystem hs;
     private Animator ch_animator;
-    private GameObject manager;
     private PlayerManager playerManager;
 
     //Ссылки на объекты
     public Joystick joystickMove;
     public Joystick joystickFire;
+    public GameObject manager;
 
 
     void Start () {
         ch_controller = GetComponent<CharacterController>();
         ch_animator = GetComponent<Animator>();
         hs = GetComponent<HeartSystem>();
-        manager = GameObject.FindWithTag("Manager");
         playerManager = manager.GetComponent<PlayerManager>();
-        manager.transform.rotation = Quaternion.identity;
-        manager.transform.rotation = Quaternion.AngleAxis(50, Vector3.up);
     }
 	
 	void Update () {
@@ -70,7 +67,8 @@ public class Move_Controller : MonoBehaviour {
             moveVector.z = joystickMove.Vertical* (speed - (speedDebaf + staticSpeedDebaf));
         }
         //Повороты персонажа в сторону стрельбы
-        rotVector = manager.transform.TransformVector(rotVector);
+        if(manager !=null) rotVector = manager.transform.TransformVector(rotVector);
+
         if (Vector3.Angle(Vector3.forward, rotVector) > 1f || Vector3.Angle(Vector3.forward, rotVector) == 0) {
             Vector3 direct = Vector3.RotateTowards(transform.forward, rotVector, speed, 0.0f);
             transform.rotation = Quaternion.LookRotation(direct);

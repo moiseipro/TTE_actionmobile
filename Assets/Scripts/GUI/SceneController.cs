@@ -20,8 +20,7 @@ public class SceneController : MonoBehaviour {
     public Camera mainCamera;
     GameObject player;
 
-    [HideInInspector]
-    public int levelGame = 0;
+    
     int soedValue = 0;
     private bool playerSpawn = false, bosssSpawn = false;
     private bool startConnect = false, endConnect = false, bossIsland = false, stopGenerator = false, startAndEndConnected = false;
@@ -40,8 +39,9 @@ public class SceneController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        levelGame = PlayerPrefs.GetInt("Level");
-        foreach(GameObject item in GameObject.FindGameObjectsWithTag("Item"))
+        gameObject.transform.rotation = Quaternion.identity;
+        gameObject.transform.rotation = Quaternion.AngleAxis(50, Vector3.up);
+        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Item"))
         {
             if (item.GetComponent<GUIcontroller>().ObjectEquipt == false) Destroy(item);
         }
@@ -1009,6 +1009,7 @@ public class SceneController : MonoBehaviour {
                 if(mapMas[i, j] == 5)
                 {
                     GameObject portal = Instantiate(additPrefabs[0], new Vector3(27 * i, -5, 27 * j), Quaternion.identity);
+                    portal.GetComponentInChildren<PortalController>().portalID = 1;
                     if(i==0) portal.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
                     else if (i == 4) portal.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                     else if (j == 0) portal.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
@@ -1091,6 +1092,8 @@ public class SceneController : MonoBehaviour {
         player.GetComponent<HeartSystem>().CheckHealthAmount();
         player.GetComponent<Move_Controller>().joystickMove = GameObject.Find("MovePlayer").GetComponent<Joystick>();
         player.GetComponent<Move_Controller>().joystickFire = GameObject.Find("FirePlayer").GetComponent<Joystick>();
+        player.GetComponent<Move_Controller>().manager = gameObject;
+
         if (x == 0)
         {
             player.transform.position = new Vector3((x * 27) + 7.5f, 1, z * 27);
@@ -1104,20 +1107,5 @@ public class SceneController : MonoBehaviour {
         }
         playerSpawn = true;
         mainCamera.GetComponent<Camera_Controller>().Player = player;
-    }
-
-    public void ReloadLevel()
-    {
-        Destroy(player);
-        //player.GetComponent<HeartSystem>().HealAll();
-        PlayerPrefs.SetInt("Level", 0);
-        SceneManager.LoadScene("Game");
-    }
-
-    public void NextLevel()
-    {
-        levelGame++;
-        PlayerPrefs.SetInt("Level", levelGame);
-        SceneManager.LoadScene("Game");
     }
 }

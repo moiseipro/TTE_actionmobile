@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 23209990582056584}
   - component: {fileID: 54353269243861620}
   - component: {fileID: 65583970576269794}
-  - component: {fileID: 114584987402250282}
   - component: {fileID: 114540915502634622}
   m_Layer: 0
   m_Name: TheStatueAnswers
@@ -275,7 +274,6 @@ MonoBehaviour:
   damage: 1
   maxDropItemChance: 1
   healthBadge: {fileID: 1400922444074922}
-  particleDamage: {fileID: 0}
   meshesHeart:
   - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
@@ -301,40 +299,3 @@ MonoBehaviour:
   - {fileID: 1582719648097384, guid: b937b3ee0e597bc4d9bbfb435b2b806c, type: 2}
   - {fileID: 1557383508400708, guid: 4a86c3b024c5284449aed08b9bc5e3cc, type: 2}
   maxTotems: 3
---- !u!114 &114584987402250282
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1746645506671686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d98017d919d65d49aab06586b8694cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 200
-  health: 0
-  maxArmor: 0
-  armor: 0
-  immortality: 0
-  dead: 0
-  bossLevel: 1
-  damage: 1
-  maxDropItemChance: 1
-  healthBadge: {fileID: 1400922444074922}
-  particleDamage: {fileID: 0}
-  meshesHeart:
-  - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
-  - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
-  - {fileID: 4300002, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
-  - {fileID: 4300000, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
-  - {fileID: 4300006, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
-  - {fileID: 4300004, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
-  - {fileID: 4300002, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
-  - {fileID: 4300000, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
-  - {fileID: 4300000, guid: f625186e5c45b364399b8d191e292c9a, type: 3}
-  partOfBoss:
-  - {fileID: 1617417445301354, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
-  - {fileID: 1940708856470386, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}
-  Player: {fileID: 0}
-  bossIsland: {fileID: 0}

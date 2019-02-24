@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
 
-    private int moneyValue, keyValue;
+    private GameObject player;
+    private int moneyValue, keyValue,
+        playerLevel;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    [HideInInspector]
+    public int levelGame = 0;
+
+    // Use this for initialization
+    void Start () {
+        levelGame = PlayerPrefs.GetInt("Level");
+        player = GameObject.FindWithTag("Player");
+    }
 	
     public void AddMoney(int val)
     {
@@ -21,8 +29,19 @@ public class PlayerManager : MonoBehaviour {
         moneyValue++;
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+
+    public void ReloadLevel()
+    {
+        Destroy(player);
+        //player.GetComponent<HeartSystem>().HealAll();
+        PlayerPrefs.SetInt("Level", 0);
+        SceneManager.LoadScene("Game");
+    }
+
+    public void NextLevel()
+    {
+        levelGame++;
+        PlayerPrefs.SetInt("Level", levelGame);
+        SceneManager.LoadScene("Game");
+    }
 }

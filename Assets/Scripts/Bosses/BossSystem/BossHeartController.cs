@@ -30,7 +30,7 @@ public class BossHeartController : MonoBehaviour {
     {
         if (BossFight == false)
         {
-            foreach (Collider col in Physics.OverlapSphere(transform.position, 7f))
+            foreach (Collider col in Physics.OverlapSphere(transform.position, 8f))
             {
                 if (col.tag == "Player")
                 {
@@ -51,7 +51,7 @@ public class BossHeartController : MonoBehaviour {
         bossIsland = GameObject.FindWithTag("Arena").GetComponent<BossIsland>();
     }
 
-    public IEnumerator AddDamage(float dam)
+    public void AddDamage(float dam)
     {
         if (immortality == false)
         {
@@ -70,22 +70,28 @@ public class BossHeartController : MonoBehaviour {
             dead = true;
             Debug.Log("СМЭРТЬ");
             bossIsland.BossFightStop();
+            StartCoroutine(DropLoot());
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            for (int i = 0; i < Random.Range(8, 15); i++)
-            {
-                GameObject part = Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
-                float randomScale = Random.Range(100, 200);
-                part.GetComponent<Transform>().localScale = new Vector3(randomScale, randomScale, randomScale);
-                part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
-                Destroy(part, Random.Range(5f, 10f));
-                yield return new WaitForSeconds(0.2f);
-            }
-            GameObject Item = Instantiate(dropItemController.DropItem(maxDropItemChance), gameObject.transform.position + Vector3.up, transform.rotation);
-            Item.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
-            Destroy(gameObject);
+            
         }
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
+    }
+
+    IEnumerator DropLoot()
+    {
+        for (int i = 0; i < Random.Range(8, 15); i++)
+        {
+            GameObject part = Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
+            float randomScale = Random.Range(100, 200);
+            part.GetComponent<Transform>().localScale = new Vector3(randomScale, randomScale, randomScale);
+            part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
+            Destroy(part, Random.Range(5f, 10f));
+            yield return new WaitForSeconds(0.2f);
+        }
+        GameObject Item = Instantiate(dropItemController.DropItem(maxDropItemChance), gameObject.transform.position + Vector3.up, transform.rotation);
+        Item.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
+        Destroy(gameObject);
     }
 
     public void UpdateHpContainers()
