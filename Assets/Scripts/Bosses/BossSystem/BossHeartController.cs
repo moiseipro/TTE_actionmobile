@@ -18,16 +18,29 @@ public class BossHeartController : MonoBehaviour {
     [Range(0.5f, 2f)]
     public float maxDropItemChance = 1f;
     public GameObject healthBadge;
-    public GameObject particleDamage;
     public Mesh[] meshesHeart;
     public GameObject[] partOfBoss;
 
     [HideInInspector] public GameObject Player;
+    [HideInInspector] public BossIsland bossIsland;
     private DropItemController dropItemController;
+    protected bool BossFight = false;
 
-    // Use this for initialization
-    void Start () {
-        StartScript();
+    public void BossFightStartRadius()
+    {
+        if (BossFight == false)
+        {
+            foreach (Collider col in Physics.OverlapSphere(transform.position, 7f))
+            {
+                if (col.tag == "Player")
+                {
+                    Debug.Log("Бой с боссом начался");
+                    BossFight = true;
+                    bossIsland.BossFightStart();
+                    break;
+                }
+            }
+        }
     }
 
     public void StartScript()
@@ -35,11 +48,7 @@ public class BossHeartController : MonoBehaviour {
         Player = GameObject.FindWithTag("Player");
         dropItemController = GameObject.FindWithTag("Manager").GetComponent<DropItemController>();
         health = maxHealth + bossLevel * 20;
-    }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        UpdateHpContainers();
+        bossIsland = GameObject.FindWithTag("Arena").GetComponent<BossIsland>();
     }
 
     public IEnumerator AddDamage(float dam)
@@ -60,6 +69,7 @@ public class BossHeartController : MonoBehaviour {
             health = Mathf.Clamp(health, 0, maxHealth);
             dead = true;
             Debug.Log("СМЭРТЬ");
+            bossIsland.BossFightStop();
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             for (int i = 0; i < Random.Range(8, 15); i++)
@@ -76,8 +86,6 @@ public class BossHeartController : MonoBehaviour {
             Destroy(gameObject);
         }
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
-        Instantiate(particleDamage,gameObject.transform.position+Vector3.up,Quaternion.identity);
-
     }
 
     public void UpdateHpContainers()

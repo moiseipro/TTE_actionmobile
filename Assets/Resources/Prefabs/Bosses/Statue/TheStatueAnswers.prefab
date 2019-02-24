@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746645506671686}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.005572796, y: 0, z: 0}
+  m_LocalPosition: {x: -0.12677091, y: 0, z: -2.218725}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4784431146439690}
@@ -265,6 +265,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16dc33bad0d7c604083dff00ff2cd95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 200
+  health: 0
+  maxArmor: 0
+  armor: 0
+  immortality: 0
+  dead: 0
+  bossLevel: 1
+  damage: 1
+  maxDropItemChance: 1
+  healthBadge: {fileID: 1400922444074922}
+  particleDamage: {fileID: 0}
+  meshesHeart:
+  - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
+  - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
+  - {fileID: 4300002, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
+  - {fileID: 4300000, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
+  - {fileID: 4300006, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300004, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300002, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300000, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
+  - {fileID: 4300000, guid: f625186e5c45b364399b8d191e292c9a, type: 3}
+  partOfBoss:
+  - {fileID: 1617417445301354, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
+  - {fileID: 1940708856470386, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}
+  Player: {fileID: 0}
+  bossIsland: {fileID: 0}
   totems:
   - {fileID: 1463305633729434, guid: 7fb98b45cbb5d9d40b710590838fc613, type: 2}
   - {fileID: 1747342166052442, guid: b046d8b9e8204614daa892f3ce05d4ba, type: 2}
@@ -274,7 +300,6 @@ MonoBehaviour:
   - {fileID: 1661125589180170, guid: 4ae22a87bbea216448b79d2616e6f765, type: 2}
   - {fileID: 1582719648097384, guid: b937b3ee0e597bc4d9bbfb435b2b806c, type: 2}
   - {fileID: 1557383508400708, guid: 4a86c3b024c5284449aed08b9bc5e3cc, type: 2}
-  bossHeart: {fileID: 0}
   maxTotems: 3
 --- !u!114 &114584987402250282
 MonoBehaviour:
@@ -295,9 +320,9 @@ MonoBehaviour:
   dead: 0
   bossLevel: 1
   damage: 1
+  maxDropItemChance: 1
   healthBadge: {fileID: 1400922444074922}
-  particleDamage: {fileID: 1445517059410980, guid: e6b7e86cb41cb4c4993c5c78859249df,
-    type: 2}
+  particleDamage: {fileID: 0}
   meshesHeart:
   - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
@@ -312,3 +337,4 @@ MonoBehaviour:
   - {fileID: 1617417445301354, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
   - {fileID: 1940708856470386, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}
   Player: {fileID: 0}
+  bossIsland: {fileID: 0}

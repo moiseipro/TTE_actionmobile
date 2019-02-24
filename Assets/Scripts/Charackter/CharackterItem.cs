@@ -22,7 +22,7 @@ public class CharackterItem : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "Map")
+        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "Map" || collision.gameObject.tag == "Arena")
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             gameObject.GetComponent<BoxCollider>().isTrigger = true;

@@ -201,7 +201,7 @@ public class TitemController : MonoBehaviour {
 
     private void OnDestroy()
     {
-        if (totemName == "guard") bossG.GetComponent<StatueController>().bossHeart.immortality = false;
+        if (totemName == "guard") bossG.GetComponent<StatueController>().immortality = false;
         else if (totemName == "skull") playerTarget.GetComponent<Move_Controller>().StaticSpeedDebaf(0f);
         else if (totemName == "faces") StopAllCoroutines();
     }

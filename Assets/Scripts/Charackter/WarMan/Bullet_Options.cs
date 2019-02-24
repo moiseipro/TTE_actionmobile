@@ -46,7 +46,7 @@ public class Bullet_Options : MonoBehaviour {
 
         if (other.tag == "Object") other.SendMessage("TakeDamage");
         if (other.tag == "LootBox") other.SendMessage("OpenChest");
-        if (other.tag == "Object" || other.tag == "Map" || other.tag == "LootBox")
+        if (other.tag == "Object" || other.tag == "Map" || other.tag == "Arena" || other.tag == "LootBox")
         {
             if (type == 2)
             {

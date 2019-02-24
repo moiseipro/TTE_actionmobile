@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatueController : MonoBehaviour {
+public class StatueController : BossHeartController {
 
     public GameObject[] totems;
     private List<GameObject> calledTotems = new List<GameObject>();
-    [HideInInspector] public BossHeartController bossHeart;
 
     public int maxTotems; // Максимальное количество тотемов
     int maxCallTotems = 12; //Вызвано тотемов
 
-    float health;
     float reloadTimeTotems = 20f;
 
     //Проверка на вызов тотемов
@@ -25,21 +23,23 @@ public class StatueController : MonoBehaviour {
     lampTotemReload = false;
 
     void Start () {
-        bossHeart = GetComponent<BossHeartController>();
-        reloadTimeTotems -= bossHeart.bossLevel;
-        maxTotems += bossHeart.bossLevel;
+        StartScript();
+        reloadTimeTotems -= bossLevel;
+        maxTotems += bossLevel;
         maxTotems = Mathf.Clamp(maxTotems,3,maxCallTotems);
         reloadTimeTotems = Mathf.Clamp(reloadTimeTotems, 5, 20);
     }
 	
 	void FixedUpdate () {
+        BossFightStartRadius();
+        UpdateHpContainers();
         foreach (GameObject totem in calledTotems)
         {
             if (totem != null)
             {
                 if (totem.GetComponent<TitemController>().totemName == "guard")
                 {
-                    bossHeart.immortality = true;
+                    immortality = true;
                 }
             }
         }
@@ -60,7 +60,7 @@ public class StatueController : MonoBehaviour {
                     }
                 }
             }
-            if (bossHeart.dead == true && calledTotems != null)
+            if (dead == true && calledTotems != null)
             {
                 maxTotems = 0;
                 for (int i = calledTotems.Count-1; i >=0; i--)
@@ -70,8 +70,8 @@ public class StatueController : MonoBehaviour {
                 }
             }
             int whatCall = Random.Range(0, 3);
-            if (guardTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.1f) CallTotem(1);
-            else if (healTotemReload == false && bossHeart.health < bossHeart.maxHealth / 1.5f) CallTotem(6);
+            if (guardTotemReload == false && health < maxHealth / 1.1f) CallTotem(1);
+            else if (healTotemReload == false && health < maxHealth / 1.5f) CallTotem(6);
             else if (whatCall == 0 && atackTotemReload == false) CallTotem(0);
             else if (whatCall == 0 && facesTotemReload == false) CallTotem(2);
             else if (whatCall == 1 && poisonTotemReload == false) CallTotem(3);
@@ -136,7 +136,7 @@ public class StatueController : MonoBehaviour {
         for(int i=0; i< calledTotems.Count; i++)
         {
             calledTotems[i].GetComponent<TitemController>().id = i;
-            if (bossHeart.dead == false && calledTotems[i].GetComponent<TitemController>().totemName == "faces") StartCoroutine(calledTotems[i].GetComponent<TitemController>().facesTotemLaser());
+            if (dead == false && calledTotems[i].GetComponent<TitemController>().totemName == "faces") StartCoroutine(calledTotems[i].GetComponent<TitemController>().facesTotemLaser());
         }
     }
 

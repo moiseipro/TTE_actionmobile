@@ -27,6 +27,7 @@ public class SlimeController : BossHeartController {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        BossFightStartRadius();
         UpdateHpContainers();
         if (isMadded == false && RadiusStartAtack(7))
         {

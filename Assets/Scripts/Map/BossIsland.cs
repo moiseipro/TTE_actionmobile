@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossIsland : MonoBehaviour {
 
     SceneController gameManager;
+    public GameObject[] gates;
 
     // Use this for initialization
     void Start () {
@@ -12,6 +13,21 @@ public class BossIsland : MonoBehaviour {
 
         GameObject boss = Instantiate(gameManager.bossPrefabs[Random.Range(0, gameManager.bossPrefabs.Length)], gameObject.transform.position + new Vector3(0, 5f, 0f), Quaternion.identity);
         boss.transform.rotation = Quaternion.AngleAxis(Random.Range(180, 270), Vector3.up);
-        boss.GetComponent<BossHeartController>().bossLevel = gameManager.levelGame;
+    }
+
+    public void BossFightStart()
+    {
+        for(int i = 0; i < gates.Length; i++)
+        {
+            gates[i].GetComponent<Animator>().SetTrigger("StartFight");
+        }
+    }
+
+    public void BossFightStop()
+    {
+        for (int i = 0; i < gates.Length; i++)
+        {
+            gates[i].GetComponent<Animator>().SetTrigger("StopFight");
+        }
     }
 }
