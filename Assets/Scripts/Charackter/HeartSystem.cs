@@ -25,6 +25,12 @@ public class HeartSystem : MonoBehaviour {
         HealAll();
     }
 
+    public bool CheckFull()
+    {
+        if (curHealth < startHearts*healthPerHeart) return true;
+        else return false;
+    }
+
     public void CheckHealthAmount()
     {
         for (int i = 0; i < maxHeart; i++)

@@ -37,8 +37,11 @@ public class HeartForHeal : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            anim.SetTrigger("Add");
-            hs.TakeDamage(healVal);
+            if (hs.CheckFull())
+            {
+                anim.SetTrigger("Add");
+                hs.TakeDamage(healVal);
+            }
         }
     }
 
