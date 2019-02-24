@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4837716374429028}
   - component: {fileID: 33838152136855664}
   - component: {fileID: 23275823871636900}
+  - component: {fileID: 65310524098765480}
+  - component: {fileID: 95096807506758302}
+  - component: {fileID: 114351520832613634}
   m_Layer: 0
   m_Name: TPPack_1-0
   m_TagString: Trap
@@ -114,6 +117,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132319830963550}
   m_Mesh: {fileID: 4300008, guid: 7e22a5fd8faad8b46bd76c4c01b4c30e, type: 3}
+--- !u!65 &65310524098765480
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132319830963550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015000001, y: 0.025, z: 0.015000001}
+  m_Center: {x: 0, y: 0.0125, z: 0}
+--- !u!95 &95096807506758302
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132319830963550}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e056fe777bb959469032938813f15c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114351520832613634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132319830963550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22b385d1c43c9b47922ee3836e58cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDamage: 1
+  damage: 1
+  timeDamage: 3
 --- !u!198 &198710571149080894
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -126,7 +173,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

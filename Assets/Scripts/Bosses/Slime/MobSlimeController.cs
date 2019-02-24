@@ -12,6 +12,7 @@ public class MobSlimeController : MobController {
     SlimeController sc;
     BossHeartController bhc;
     Move_Controller playerMC;
+    BaffController baffController;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class MobSlimeController : MobController {
         sc = Boss.GetComponent<SlimeController>();
         bhc = Boss.GetComponent<BossHeartController>();
         playerMC = Player.GetComponent<Move_Controller>();
+        baffController = Player.GetComponent<BaffController>();
         health = maxHealth;
         StartCoroutine(Move());
 	}
@@ -51,7 +53,8 @@ public class MobSlimeController : MobController {
         if (other.gameObject.tag == "Player")
         {
             dead = true;
-            Player.GetComponent<MonoBehaviour>().StartCoroutine(Player.GetComponent<Move_Controller>().SpeedDebaf(15f, 3f));
+            //Player.GetComponent<MonoBehaviour>().StartCoroutine(Player.GetComponent<Move_Controller>().SpeedDebaf(15f, 3f));
+            baffController.CreateBaff(3,15,2);
             Player.GetComponent<HeartSystem>().TakeDamage(-damage);
             Destroy(gameObject);
         } else if (other.gameObject.tag == "Boss")

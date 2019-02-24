@@ -6,12 +6,18 @@ public class SlimePuddle : MonoBehaviour {
 
     GameObject target;
 
+    BaffController baffController;
+
+    private void Start()
+    {
+        baffController = GameObject.FindWithTag("Player").GetComponent<BaffController>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            target = other.gameObject;
-            other.GetComponent<Move_Controller>().StaticSpeedDebaf(40f);
+            baffController.StaticBaff(40, 2);
         }
     }
 
@@ -19,12 +25,12 @@ public class SlimePuddle : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Move_Controller>().StaticSpeedDebaf(0f);
+            baffController.StaticBaff(0, 2);
         }
     }
     private void OnDestroy()
     {
-        if(target!=null) target.GetComponent<Move_Controller>().StaticSpeedDebaf(0f);
+        baffController.StaticBaff(0, 2);
     }
 
 }

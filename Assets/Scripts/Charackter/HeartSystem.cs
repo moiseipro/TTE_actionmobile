@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HeartSystem : MonoBehaviour {
 
-    private int maxHeart = 10;
+    private int maxHeart = 18;
     public int startHearts = 7;
     public int curHealth;
     private int maxHealth;
@@ -17,7 +17,7 @@ public class HeartSystem : MonoBehaviour {
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     // Use this for initialization

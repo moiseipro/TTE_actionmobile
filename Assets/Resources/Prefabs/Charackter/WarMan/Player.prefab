@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4160112936990094}
   - component: {fileID: 95582354090062852}
   - component: {fileID: 143019716011842806}
+  - component: {fileID: 114271363208495554}
   - component: {fileID: 114138514269002170}
   - component: {fileID: 114185511300188418}
   - component: {fileID: 114585913581247300}
@@ -367,6 +368,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  minSpeed: 1
+  maxSpeed: 8
   speedDebaf: 0
   staticSpeedDebaf: 0
   jump: 5
@@ -402,6 +405,17 @@ MonoBehaviour:
   bulletFallSpeed: 20
   bulletHP: 0
   bulletDamage: 1
+--- !u!114 &114271363208495554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301870341732256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c3b911c6b91754b974295ce8263055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114585913581247300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,10 +427,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8dd5f3e17fb9c428e1e6691960128a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHearts: 3
+  startHearts: 4
   curHealth: 0
   isDead: 0
   heartImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

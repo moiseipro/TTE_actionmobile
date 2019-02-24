@@ -98,7 +98,8 @@ public class Bullet_Options : MonoBehaviour {
             } else if (type == -2)
             {
                 other.GetComponent<HeartSystem>().TakeDamage(-(int)damage);
-                other.GetComponent<MonoBehaviour>().StartCoroutine(other.GetComponent<Move_Controller>().SpeedDebaf(30f, 4f));
+                other.GetComponent<BaffController>().CreateBaff(4,30,2);
+                //other.GetComponent<MonoBehaviour>().StartCoroutine(other.GetComponent<Move_Controller>().SpeedDebaf(30f, 4f));
                 //GameObject turquoiseSlime = Resources.Load("Assets/Resources/Prefabs/Bosses/Slime/TurquoiseSlime") as GameObject;
                 Destroy(this.gameObject);
             }
