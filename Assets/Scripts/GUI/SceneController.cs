@@ -15,6 +15,7 @@ public class SceneController : MonoBehaviour {
     public GameObject[] objectInterPrefab;
     public GameObject[] objectTrapPrefab;
     public GameObject[] objectChestPrefab;
+    public GameObject[] objectLightPrefab;
     public GameObject[] playerPrefabs;
 
     public Camera mainCamera;

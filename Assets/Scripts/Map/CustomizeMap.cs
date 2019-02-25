@@ -15,6 +15,9 @@ public class CustomizeMap : MonoBehaviour {
     [Range(0, 100)]
     public int spawnPercent;
     [Space(20)]
+    [Header("Для освещения")]
+    public Color lightColor = Color.white;
+    public Vector3[] spawnLightPoints;
     [Header("Для статичных объектов")]
     public Color staticColor = Color.red;
     public Vector3[] spawnStaticPoints;
@@ -73,6 +76,15 @@ public class CustomizeMap : MonoBehaviour {
                 obj.transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
             }
         }
+
+        if (spawnLightPoints != null)
+        {
+            foreach (Vector3 vec in spawnLightPoints)
+            {
+                GameObject obj = Instantiate(gameManager.objectLightPrefab[Random.Range(0, gameManager.objectLightPrefab.Length)], transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
+                obj.transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
+            }
+        }
     }
 
     void OnDrawGizmos()
@@ -108,6 +120,15 @@ public class CustomizeMap : MonoBehaviour {
         if (spawnChestPoints != null)
         {
             foreach (Vector3 vec in spawnChestPoints)
+            {
+                Gizmos.DrawSphere(transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), 1);
+            }
+        }
+
+        Gizmos.color = lightColor;
+        if (spawnLightPoints != null)
+        {
+            foreach (Vector3 vec in spawnLightPoints)
             {
                 Gizmos.DrawSphere(transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), 1);
             }

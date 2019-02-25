@@ -375,6 +375,7 @@ MonoBehaviour:
   jump: 5
   joystickMove: {fileID: 0}
   joystickFire: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!114 &114185511300188418
 MonoBehaviour:
   m_ObjectHideFlags: 1

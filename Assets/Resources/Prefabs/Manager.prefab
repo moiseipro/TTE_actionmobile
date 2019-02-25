@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c871eaddef1034c9a545dfb43d479f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelGame: 0
 --- !u!114 &114918626271941826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,8 +231,13 @@ MonoBehaviour:
   - {fileID: 1374593533531644, guid: 0227184bb63b29a4fadaff4f365ded77, type: 2}
   - {fileID: 1245171464532262, guid: f24ab7fa32d8e654ebd06eefca06f033, type: 2}
   - {fileID: 1107556164555784, guid: eb862dd2bcc67b441b2e678c183000f7, type: 2}
+  objectLightPrefab:
+  - {fileID: 1561181655058184, guid: da6545bca50d6764d94bc6908df64b7c, type: 2}
+  - {fileID: 1428265734570824, guid: 23369f609ee64064e927b7b012b08aed, type: 2}
+  - {fileID: 1264371888842312, guid: 7532d696a6e721b4585b4e70ffdb7710, type: 2}
+  - {fileID: 1596212181551768, guid: 67426a8bb5b33f24c977c7cd963c2e8b, type: 2}
+  - {fileID: 1208389251986216, guid: eab8aaa3869d2744cb59592e7b9cd329, type: 2}
   playerPrefabs:
   - {fileID: 1301870341732256, guid: 08968e53b273e254bbb170494247f00b, type: 2}
   mainCamera: {fileID: 0}
-  levelGame: 0
   maxMapSize: 6
