@@ -42,9 +42,10 @@ GameObject:
   - component: {fileID: 23180643686093260}
   - component: {fileID: 64829534525002850}
   - component: {fileID: 54377738125520150}
+  - component: {fileID: 114530862951006388}
   m_Layer: 0
   m_Name: 3eTAR[1]
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967294
@@ -218,3 +219,39 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: cd63b2df1fd4b23439c6a8fa380e25e7, type: 3}
+--- !u!114 &114530862951006388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417324617263390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286531599dcd52e40998387a34378687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialColor: {r: 0, g: 1, b: 0, a: 1}
+  specialObject: []
+  spawnSpecialPoints: []
+  spawnPercent: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  spawnLightPoints:
+  - {x: 3, y: -0.5, z: -4}
+  - {x: -3, y: -0.5, z: -4}
+  - {x: 1.5, y: -0.5, z: 0}
+  - {x: -1.5, y: -0.5, z: 0}
+  staticColor: {r: 1, g: 0, b: 0, a: 1}
+  spawnStaticPoints: []
+  destrColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  spawnDestrPoints:
+  - {x: 1.65, y: -0.5, z: -2.35}
+  - {x: -1.65, y: -0.5, z: -2.35}
+  trapColor: {r: 0, g: 0, b: 1, a: 1}
+  spawnTrapPoints:
+  - {x: 0, y: -0.5, z: 1.5}
+  - {x: 4, y: 0, z: 4}
+  - {x: -4, y: 0, z: 4}
+  chestColor: {r: 1, g: 0, b: 1, a: 1}
+  spawnChestPoints:
+  - {x: 0, y: -0.5, z: -4}
+  spawnChestPercent: 0

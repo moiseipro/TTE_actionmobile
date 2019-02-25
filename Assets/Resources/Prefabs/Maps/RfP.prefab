@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23435000351350280}
   - component: {fileID: 54937680618966828}
   - component: {fileID: 64330285078785210}
+  - component: {fileID: 114818013120456866}
   m_Layer: 0
   m_Name: RfP
   m_TagString: Map
@@ -336,6 +337,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.999999, y: 2.2204466e-16, z: 10.000001}
   m_Center: {x: 0, y: 0.000000059604645, z: 0.0000014305115}
+--- !u!114 &114818013120456866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190894659773734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286531599dcd52e40998387a34378687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialColor: {r: 0, g: 1, b: 0, a: 1}
+  specialObject: []
+  spawnSpecialPoints: []
+  spawnPercent: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  spawnLightPoints: []
+  staticColor: {r: 1, g: 0, b: 0, a: 1}
+  spawnStaticPoints: []
+  destrColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  spawnDestrPoints: []
+  trapColor: {r: 0, g: 0, b: 1, a: 1}
+  spawnTrapPoints: []
+  chestColor: {r: 1, g: 0, b: 1, a: 1}
+  spawnChestPoints: []
+  spawnChestPercent: 0
 --- !u!114 &114847129934540136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8995c90a3613e54b97e3fd58b4577ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalID: 0
 --- !u!198 &198488257664502790
 ParticleSystem:
   m_ObjectHideFlags: 1

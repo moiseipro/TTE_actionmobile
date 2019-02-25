@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 23122784987958738}
   - component: {fileID: 54565163127353076}
   - component: {fileID: 64843035337262338}
+  - component: {fileID: 114262433692756600}
   m_Layer: 0
   m_Name: TBridge
   m_TagString: Map
@@ -288,3 +289,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.04, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114262433692756600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1450203926389774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286531599dcd52e40998387a34378687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialColor: {r: 0, g: 1, b: 0, a: 1}
+  specialObject: []
+  spawnSpecialPoints: []
+  spawnPercent: 0
+  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  spawnLightPoints: []
+  staticColor: {r: 1, g: 0, b: 0, a: 1}
+  spawnStaticPoints: []
+  destrColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  spawnDestrPoints: []
+  trapColor: {r: 0, g: 0, b: 1, a: 1}
+  spawnTrapPoints:
+  - {x: 0, y: 0, z: 0.2}
+  chestColor: {r: 1, g: 0, b: 1, a: 1}
+  spawnChestPoints: []
+  spawnChestPercent: 0
