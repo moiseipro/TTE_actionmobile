@@ -44,15 +44,35 @@ public class LootBoxController : MonoBehaviour {
         else if (rdrop > 6) rdrop = Random.Range(0, 5);
         else if (rdrop > 3) rdrop = Random.Range(0, 3);
         else rdrop = Random.Range(0, 2);
+        Vector3 ops = Vector3.zero;
+        float xmin, xmax, ymin ,ymax;
+        int randomSpawn;
         for (int i = 0; i < rdrop; i++)
         {
-            Vector3 ops = new Vector3(player.transform.position.x + Random.Range(-2f, 2f), 2f, player.transform.position.z + Random.Range(-2f,2f));
+            xmin = Random.Range(-2.8f, -2f);
+            xmax = Random.Range(2f, 2.8f);
+            ymin = Random.Range(-2.8f, -2f);
+            ymax = Random.Range(2f, 2.8f);
+            randomSpawn = Random.Range(0, 11);
+            if (randomSpawn > 7) ops = new Vector3(xmin, 2f, ymin);
+            else if (randomSpawn > 5) ops = new Vector3(xmin, 2f, ymax);
+            else if (randomSpawn > 3) ops = new Vector3(xmax, 2f, ymin);
+            else ops = new Vector3(xmax, 2f, ymax);
             GameObject itemDop = Instantiate(dic.DropItemChest(boostChance), gameObject.transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-            itemDop.GetComponent<Rigidbody>().AddForce((ops - gameObject.transform.position) * 1.5f, ForceMode.Impulse);
+            itemDop.GetComponent<Rigidbody>().AddForce(ops, ForceMode.Impulse);
             yield return new WaitForSeconds(0.5f);
         }
+        xmin = Random.Range(-2.8f, -2f);
+        xmax = Random.Range(2f, 2.8f);
+        ymin = Random.Range(-2.8f, -2f);
+        ymax = Random.Range(2f, 2.8f);
+        randomSpawn = Random.Range(0, 11);
+        if (randomSpawn > 7) ops = new Vector3(xmin, 2f, ymin);
+        else if (randomSpawn > 5) ops = new Vector3(xmin, 2f, ymax);
+        else if (randomSpawn > 3) ops = new Vector3(xmax, 2f, ymin);
+        else ops = new Vector3(xmax, 2f, ymax);
         GameObject item = Instantiate(dic.DropItem(maxChance), gameObject.transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-        item.GetComponent<Rigidbody>().AddForce((player.transform.position - gameObject.transform.position) * 1.5f, ForceMode.Impulse);
+        item.GetComponent<Rigidbody>().AddForce(ops, ForceMode.Impulse);
 
     }
 }

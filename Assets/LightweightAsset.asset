@@ -21,8 +21,8 @@ MonoBehaviour:
   m_SupportsHDR: 0
   m_MSAA: 1
   m_RenderScale: 1
-  m_SupportsDynamicBatching: 0
-  m_DirectionalShadowsSupported: 1
+  m_SupportsDynamicBatching: 1
+  m_DirectionalShadowsSupported: 0
   m_ShadowAtlasResolution: 1024
   m_ShadowDistance: 25
   m_ShadowCascades: 0

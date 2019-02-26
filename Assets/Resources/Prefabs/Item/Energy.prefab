@@ -11,6 +11,22 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1839930034576710}
   m_IsPrefabAsset: 1
+--- !u!1 &1353772517824854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4949477412646104}
+  - component: {fileID: 119517400334249900}
+  m_Layer: 9
+  m_Name: BlobShadowProjector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1839930034576710
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,7 +41,7 @@ GameObject:
   - component: {fileID: 54683811779282454}
   - component: {fileID: 95290457752754822}
   - component: {fileID: 114201993489222704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Energy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,12 +55,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839930034576710}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.63809526, y: 0.3285714, z: 0.55}
+  m_LocalPosition: {x: -0.58000183, y: 0.63, z: 0.77}
   m_LocalScale: {x: 100, y: 100, z: 100}
-  m_Children: []
+  m_Children:
+  - {fileID: 4949477412646104}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4949477412646104
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353772517824854}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.0185, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.90000165, z: 0.90000165}
+  m_Children: []
+  m_Father: {fileID: 4939091259698796}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &23854582826805474
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -132,6 +162,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healVal: 2
+--- !u!119 &119517400334249900
+Projector:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353772517824854}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.1
+  m_FarClipPlane: 6
+  m_FieldOfView: 20
+  m_AspectRatio: 1
+  m_Orthographic: 0
+  m_OrthographicSize: 2
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!135 &135833280723180150
 SphereCollider:
   m_ObjectHideFlags: 1

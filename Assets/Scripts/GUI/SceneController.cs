@@ -23,7 +23,7 @@ public class SceneController : MonoBehaviour {
 
     
     int soedValue = 0;
-    private bool playerSpawn = false, bosssSpawn = false;
+    private bool playerSpawn = false, bosssSpawn = false, nextLevelPortal = false;
     private bool startConnect = false, endConnect = false, bossIsland = false, stopGenerator = false, startAndEndConnected = false;
 
     public int maxMapSize;
@@ -1010,8 +1010,18 @@ public class SceneController : MonoBehaviour {
                 if(mapMas[i, j] == 5)
                 {
                     GameObject portal = Instantiate(additPrefabs[0], new Vector3(27 * i, -5, 27 * j), Quaternion.identity);
-                    portal.GetComponentInChildren<PortalController>().portalID = 1;
+                    if (nextLevelPortal == true) portal.GetComponentInChildren<PortalController>().portalID = 1;
+                    nextLevelPortal = true;
                     if(i==0) portal.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
+                    else if (i == 4) portal.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
+                    else if (j == 0) portal.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
+                    else if (j == 4) portal.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
+                }
+                if (mapMas[i, j] == 6)
+                {
+                    GameObject portal = Instantiate(additPrefabs[0], new Vector3(27 * i, -5, 27 * j), Quaternion.identity);
+                    portal.GetComponentInChildren<PortalController>().portalID = 1;
+                    if (i == 0) portal.transform.rotation = Quaternion.AngleAxis(masAngle[0], Vector3.up);
                     else if (i == 4) portal.transform.rotation = Quaternion.AngleAxis(masAngle[2], Vector3.up);
                     else if (j == 0) portal.transform.rotation = Quaternion.AngleAxis(masAngle[3], Vector3.up);
                     else if (j == 4) portal.transform.rotation = Quaternion.AngleAxis(masAngle[1], Vector3.up);
@@ -1052,7 +1062,7 @@ public class SceneController : MonoBehaviour {
                 {
                     if (endConnect == false && (i != 4 || j != 4) && i != 0 && j != 0 && Random.Range(0, randomNumZ) == 0)
                     {
-                        mapMas[i, j] = 5;
+                        mapMas[i, j] = 6;
                         endConnect = true;
                         
                             portalZ = j;
