@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 433192029}
+  m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.4471591, g: 0.49707484, b: 0.57514596, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 1
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -832,11 +832,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e34121b3b2ff744eacb5f4960643352, type: 2}
   m_IsPrefabAsset: 0
---- !u!108 &433192029 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 108815833578606178, guid: 86a7d46af54b3614c9fed0df204f254a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1731758278}
 --- !u!1001 &480238931
 Prefab:
   m_ObjectHideFlags: 0
@@ -928,18 +923,6 @@ Prefab:
     - target: {fileID: 4161389676533908, guid: d214c8a3900ce114cbf22e854383f698, type: 2}
       propertyPath: m_RootOrder
       value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858960724113632, guid: d214c8a3900ce114cbf22e854383f698, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858960724113632, guid: d214c8a3900ce114cbf22e854383f698, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858960724113632, guid: d214c8a3900ce114cbf22e854383f698, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.00288
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d214c8a3900ce114cbf22e854383f698, type: 2}
@@ -3530,6 +3513,10 @@ Prefab:
     - target: {fileID: 4518469901518258, guid: 86a7d46af54b3614c9fed0df204f254a, type: 2}
       propertyPath: m_RootOrder
       value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883528925901112, guid: 86a7d46af54b3614c9fed0df204f254a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86a7d46af54b3614c9fed0df204f254a, type: 2}
