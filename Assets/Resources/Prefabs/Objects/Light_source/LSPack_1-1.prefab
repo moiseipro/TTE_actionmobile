@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4724094940759136}
   - component: {fileID: 33381855276297286}
   - component: {fileID: 23498810992500984}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: LSPack_1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,8 +123,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.48299512, b: 0, a: 1}
-  m_Intensity: 10
-  m_Range: 6.0644665
+  m_Intensity: 15
+  m_Range: 8
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
