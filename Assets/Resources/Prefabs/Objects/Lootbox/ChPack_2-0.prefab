@@ -11,6 +11,22 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1563147292358732}
   m_IsPrefabAsset: 1
+--- !u!1 &1039475160865102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4671361892182274}
+  - component: {fileID: 119720430100155892}
+  m_Layer: 0
+  m_Name: BlobShadowProjector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1448808790383260
 GameObject:
   m_ObjectHideFlags: 0
@@ -21,7 +37,7 @@ GameObject:
   - component: {fileID: 4471750580330222}
   - component: {fileID: 33644285681700538}
   - component: {fileID: 23364491902940798}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lid_1-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +58,7 @@ GameObject:
   - component: {fileID: 95239582500310782}
   - component: {fileID: 54364118190624910}
   - component: {fileID: 114491487204824484}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ChPack_2-0
   m_TagString: LootBox
   m_Icon: {fileID: 0}
@@ -63,7 +79,7 @@ GameObject:
   - component: {fileID: 114198931729654968}
   - component: {fileID: 54933598033603954}
   - component: {fileID: 65970653186866116}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ChestHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4644217672826712}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LockContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +128,19 @@ Transform:
   m_Father: {fileID: 4856681979612904}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &4671361892182274
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039475160865102}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0.2501998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4856681979612904}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
 --- !u!4 &4856681979612904
 Transform:
   m_ObjectHideFlags: 1
@@ -124,6 +153,7 @@ Transform:
   m_Children:
   - {fileID: 4471750580330222}
   - {fileID: 4644217672826712}
+  - {fileID: 4671361892182274}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -162.84601, z: 0}
@@ -382,3 +412,21 @@ MonoBehaviour:
   lockanim: {fileID: 95178896978468716}
   boostChance: 3
   maxChance: 1.2
+--- !u!119 &119720430100155892
+Projector:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039475160865102}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 1.4
+  m_FarClipPlane: 10
+  m_FieldOfView: 60
+  m_AspectRatio: 1.3
+  m_Orthographic: 0
+  m_OrthographicSize: 2
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 32768

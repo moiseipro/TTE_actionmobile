@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4566619092880018}
   - component: {fileID: 33695072484761642}
   - component: {fileID: 23472249050683450}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ChPack_1-3
   m_TagString: LootBox
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4700176127129324}
   - component: {fileID: 33393175556017108}
   - component: {fileID: 23044750073428062}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lid_1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
