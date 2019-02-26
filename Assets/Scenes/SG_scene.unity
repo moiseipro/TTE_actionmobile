@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.07
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -407,7 +407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4441402388972230, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f28bb494fd585348acb943fe2b03039, type: 2}
@@ -2545,11 +2545,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198674297494061938, guid: 35ea74a233220b44bbe7b8a0e7204c99,
-        type: 2}
-      propertyPath: CollisionModule.plane0
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35ea74a233220b44bbe7b8a0e7204c99, type: 2}
   m_IsPrefabAsset: 0
@@ -3017,8 +3012,8 @@ Transform:
   - {fileID: 1517952862}
   - {fileID: 304504597}
   - {fileID: 1866872025}
-  - {fileID: 288419958}
   - {fileID: 2093783162}
+  - {fileID: 288419958}
   - {fileID: 684211965}
   - {fileID: 617820654}
   - {fileID: 134079753}
@@ -9224,7 +9219,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4194618604732600, guid: 14863d11cb0861e41a64be97436e76c6, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14863d11cb0861e41a64be97436e76c6, type: 2}
@@ -9271,7 +9266,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4046784761988208, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb00e77cfeb300a449f79361d67b5b60, type: 2}
