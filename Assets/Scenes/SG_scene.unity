@@ -362,6 +362,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 198327308567902948, guid: 67426a8bb5b33f24c977c7cd963c2e8b,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67426a8bb5b33f24c977c7cd963c2e8b, type: 2}
   m_IsPrefabAsset: 0
@@ -924,6 +929,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 198074142085865672, guid: da6545bca50d6764d94bc6908df64b7c,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6545bca50d6764d94bc6908df64b7c, type: 2}
   m_IsPrefabAsset: 0
@@ -1013,6 +1023,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 198232006497870398, guid: eab8aaa3869d2744cb59592e7b9cd329,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab8aaa3869d2744cb59592e7b9cd329, type: 2}
   m_IsPrefabAsset: 0
@@ -1678,6 +1693,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 198901880359222646, guid: 746603199af7e5941a2df8ef67ec21ed,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746603199af7e5941a2df8ef67ec21ed, type: 2}
   m_IsPrefabAsset: 0
@@ -2177,6 +2197,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 198305543261370062, guid: 23369f609ee64064e927b7b012b08aed,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23369f609ee64064e927b7b012b08aed, type: 2}
   m_IsPrefabAsset: 0
@@ -2572,6 +2597,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 198288532285462998, guid: 7532d696a6e721b4585b4e70ffdb7710,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7532d696a6e721b4585b4e70ffdb7710, type: 2}
   m_IsPrefabAsset: 0
@@ -2986,9 +3016,9 @@ Transform:
   - {fileID: 1289744192}
   - {fileID: 1517952862}
   - {fileID: 304504597}
-  - {fileID: 2093783162}
   - {fileID: 1866872025}
   - {fileID: 288419958}
+  - {fileID: 2093783162}
   - {fileID: 684211965}
   - {fileID: 617820654}
   - {fileID: 134079753}
@@ -8364,6 +8394,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 198991599749718432, guid: c5a96aec31967924c828ce9bee361379,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a96aec31967924c828ce9bee361379, type: 2}
   m_IsPrefabAsset: 0
@@ -8760,6 +8795,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6aeb0055909faf4d8706252edbb7c5b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!108 &1869228054 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108045757216734638, guid: d6aeb0055909faf4d8706252edbb7c5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1869228053}
 --- !u!1001 &1887460279
 Prefab:
   m_ObjectHideFlags: 0
@@ -9317,6 +9357,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 198078427966559998, guid: befdf323626059e48b515f3d3ff9c672,
+        type: 2}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 1869228054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: befdf323626059e48b515f3d3ff9c672, type: 2}
   m_IsPrefabAsset: 0
