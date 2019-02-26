@@ -25,8 +25,24 @@ GameObject:
   - component: {fileID: 114634961597129368}
   - component: {fileID: 54129903452595998}
   - component: {fileID: 65124228022836420}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ChestHealth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1200555797149430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4700762103632238}
+  - component: {fileID: 119803002976332124}
+  m_Layer: 0
+  m_Name: BlobShadowProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4729406814514404}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LockContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +73,7 @@ GameObject:
   - component: {fileID: 4225865220006076}
   - component: {fileID: 33841698301610356}
   - component: {fileID: 23372265850716506}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Lid_1-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +94,7 @@ GameObject:
   - component: {fileID: 95846282236273688}
   - component: {fileID: 54845879241152604}
   - component: {fileID: 114979384744824632}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ChPack_1-4
   m_TagString: LootBox
   m_Icon: {fileID: 0}
@@ -110,9 +126,23 @@ Transform:
   m_Children:
   - {fileID: 4225865220006076}
   - {fileID: 4729406814514404}
+  - {fileID: 4700762103632238}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 201.30199, z: 0}
+--- !u!4 &4700762103632238
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200555797149430}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0.25019985, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4239008119966194}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
 --- !u!4 &4729406814514404
 Transform:
   m_ObjectHideFlags: 1
@@ -382,3 +412,21 @@ MonoBehaviour:
   lockanim: {fileID: 95298508846395632}
   boostChance: 2
   maxChance: 0.9
+--- !u!119 &119803002976332124
+Projector:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200555797149430}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 1.4
+  m_FarClipPlane: 10
+  m_FieldOfView: 60
+  m_AspectRatio: 1.3
+  m_Orthographic: 0
+  m_OrthographicSize: 2
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 32768
