@@ -66,6 +66,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1359365447947042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4121720347422388}
+  - component: {fileID: 119714298456177866}
+  m_Layer: 0
+  m_Name: BlobShadowProjector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4121720347422388
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359365447947042}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4476416083600084}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
 --- !u!4 &4274492406262902
 Transform:
   m_ObjectHideFlags: 1
@@ -100,10 +129,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235539865972268}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0, z: 0.08}
+  m_LocalPosition: {x: -16.952837, y: -0.12, z: 21.524424}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4414966773073808}
+  - {fileID: 4121720347422388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -291,9 +321,8 @@ MonoBehaviour:
   dead: 0
   bossLevel: 1
   damage: 1
+  maxDropItemChance: 1
   healthBadge: {fileID: 1001102194750922}
-  particleDamage: {fileID: 1445517059410980, guid: e6b7e86cb41cb4c4993c5c78859249df,
-    type: 2}
   meshesHeart:
   - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
   - {fileID: 4300004, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}
@@ -309,6 +338,7 @@ MonoBehaviour:
   - {fileID: 1666156882690540, guid: eed120d5ed08d18438777527a6368213, type: 2}
   - {fileID: 1306047126454314, guid: 9119b9db01bd11442ba3dcfe955854f7, type: 2}
   Player: {fileID: 0}
+  bossIsland: {fileID: 0}
   slimeMesh:
   - {fileID: 4300012, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
   - {fileID: 4300010, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
@@ -318,3 +348,21 @@ MonoBehaviour:
   - {fileID: 4300002, guid: dc7ae9ff1d44bfd478440866c15e593b, type: 3}
   isAbsorb: 0
   movSpeed: 6
+--- !u!119 &119714298456177866
+Projector:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359365447947042}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.01
+  m_FarClipPlane: 5
+  m_FieldOfView: 40
+  m_AspectRatio: 1
+  m_Orthographic: 1
+  m_OrthographicSize: 1.7
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 4096
