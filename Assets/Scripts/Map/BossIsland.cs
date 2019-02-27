@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossIsland : MonoBehaviour {
 
     SceneController gameManager;
-    public GameObject[] gates;
+    public GameObject gates;
 
     // Use this for initialization
     void Start () {
@@ -17,17 +17,11 @@ public class BossIsland : MonoBehaviour {
 
     public void BossFightStart()
     {
-        for(int i = 0; i < gates.Length; i++)
-        {
-            gates[i].GetComponent<Animator>().SetTrigger("StartFight");
-        }
+        gates.GetComponent<Animator>().SetTrigger("StartFight");
     }
 
     public void BossFightStop()
     {
-        for (int i = 0; i < gates.Length; i++)
-        {
-            gates[i].GetComponent<Animator>().SetTrigger("StopFight");
-        }
+        gates.GetComponent<Animator>().SetTrigger("StopFight");
     }
 }
