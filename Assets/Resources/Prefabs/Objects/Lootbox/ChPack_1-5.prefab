@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 23547355974018992}
   - component: {fileID: 65726424985370224}
   - component: {fileID: 95501607848229048}
-  - component: {fileID: 54021589400952990}
   - component: {fileID: 114468832384668974}
   m_Layer: 15
   m_Name: ChPack_1-5
@@ -296,21 +295,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297231266351064}
   m_Mesh: {fileID: 4300002, guid: e5ba09cc54b362a4ca0551b7a95f867e, type: 3}
---- !u!54 &54021589400952990
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1131009971971040}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54471588897886510
 Rigidbody:
   m_ObjectHideFlags: 1

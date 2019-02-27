@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 23260026554287808}
   - component: {fileID: 65264079582326614}
   - component: {fileID: 95186298451692204}
-  - component: {fileID: 54974318108499086}
   - component: {fileID: 114782274841693376}
   m_Layer: 15
   m_Name: ChPack_1-1
@@ -307,21 +306,6 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &54974318108499086
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897928042158058}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
