@@ -9,35 +9,43 @@ ModelImporter:
     100006: Roop
     100008: Spool_0
     100010: Spool_1
+    100012: Objects
     400000: //RootNode
     400002: Castle_2
     400004: Fasteners
     400006: Roop
     400008: Spool_0
     400010: Spool_1
+    400012: Objects
     2100000: palette.005
     2100002: palette.003
     2100004: palette.001
     2100006: palette.002
     2100008: palette.004
+    2100010: palette
     2300000: Castle_2
     2300002: Fasteners
     2300004: Roop
     2300006: Spool_0
     2300008: Spool_1
+    2300010: Objects
+    2300012: //RootNode
     3300000: Castle_2
     3300002: Fasteners
     3300004: Roop
     3300006: Spool_0
     3300008: Spool_1
+    3300010: Objects
+    3300012: //RootNode
     4300000: Castle_2
     4300002: Fasteners
     4300004: Spool_0
     4300006: Spool_1
     4300008: Roop
+    4300010: Objects
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -71,8 +79,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
