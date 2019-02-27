@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -900,6 +900,18 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 570822156}
+    - target: {fileID: 114918626271941826, guid: ec3585fe1baccc34898b1837c300d773,
+        type: 2}
+      propertyPath: mapPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1119685479027496, guid: d343647a241d36846b061528b4628995,
+        type: 2}
+    - target: {fileID: 114918626271941826, guid: ec3585fe1baccc34898b1837c300d773,
+        type: 2}
+      propertyPath: mapPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1296950111124096, guid: bec6ac6c69d3595428a3bc6c96408b82,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3585fe1baccc34898b1837c300d773, type: 2}
   m_IsPrefabAsset: 0
