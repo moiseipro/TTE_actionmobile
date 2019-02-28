@@ -1101,6 +1101,7 @@ public class SceneController : MonoBehaviour {
         }
         player.GetComponent<HeartSystem>().heartImages = GameObject.Find("HealthBar").transform.GetComponentsInChildren<Image>();
         player.GetComponent<HeartSystem>().CheckHealthAmount();
+        player.GetComponent<BaffController>().baffsImages = GameObject.Find("BaffBar").transform.GetComponentsInChildren<Image>();
         player.GetComponent<Move_Controller>().joystickMove = GameObject.Find("MovePlayer").GetComponent<Joystick>();
         player.GetComponent<Move_Controller>().joystickFire = GameObject.Find("FirePlayer").GetComponent<Joystick>();
         player.GetComponent<Move_Controller>().manager = gameObject;
