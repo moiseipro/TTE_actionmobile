@@ -200,8 +200,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301870341732256}
-  m_LocalRotation: {x: -0, y: -0.49959016, z: -0, w: 0.8662619}
-  m_LocalPosition: {x: -1.8735543, y: 0.22999954, z: 24.481043}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.95, y: 0.247, z: 22.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4310241656273092}
@@ -555,8 +555,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a814d8fd35d4abb45b227cb5fb339c2d, type: 3}
   - {fileID: 21300000, guid: 5485e2f56028a3c4cb54f5caa167377e, type: 3}
   baffEffects:
+  - {fileID: 198946593158289538}
   - {fileID: 198816551803800540}
-  - {fileID: 198816551803800540}
+  - {fileID: 198444538886306630}
   - {fileID: 198816551803800540}
 --- !u!114 &114585913581247300
 MonoBehaviour:
@@ -654,7 +655,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9720,7 +9721,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

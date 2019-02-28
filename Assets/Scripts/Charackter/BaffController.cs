@@ -20,7 +20,6 @@ public class BaffController : MonoBehaviour {
 	void Start () {
         hs = GetComponent<HeartSystem>();
         mc = GetComponent<Move_Controller>();
-        AllBaffsDisable();
     }
 
     public void AllBaffsDisable()
@@ -39,7 +38,7 @@ public class BaffController : MonoBehaviour {
     public void CreateBaff(int time, int value, int idBaff) {
         if (curBaff < maxBaff)
         {
-            if (idBaff == 0) StartCoroutine(tikDamage(time, value, idBaff));
+            if (idBaff == 0 || idBaff == 3) StartCoroutine(tikDamage(time, value, idBaff));
             else if (idBaff == 1) StartCoroutine(tikHeal(time, value, idBaff));
             else if (idBaff == 2) StartCoroutine(tikSpeedDown(time, value, idBaff));
         }
@@ -102,6 +101,7 @@ public class BaffController : MonoBehaviour {
         yield return new WaitForSeconds(time);
         mc.speedDebaf -= speedSub;
 
+        baffsImages[idBaffImage].enabled = false;
         baffEffects[id].Stop();
         curBaff--;
     }

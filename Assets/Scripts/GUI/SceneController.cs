@@ -42,11 +42,11 @@ public class SceneController : MonoBehaviour {
     void Start () {
         gameObject.transform.rotation = Quaternion.identity;
         gameObject.transform.rotation = Quaternion.AngleAxis(50, Vector3.up);
+        GenerationMap();
         foreach (GameObject item in GameObject.FindGameObjectsWithTag("Item"))
         {
             if (item.GetComponent<GUIcontroller>().ObjectEquipt == false) Destroy(item);
         }
-        GenerationMap();
     }
 
     void GenerationMap()
@@ -1102,6 +1102,7 @@ public class SceneController : MonoBehaviour {
         player.GetComponent<HeartSystem>().heartImages = GameObject.Find("HealthBar").transform.GetComponentsInChildren<Image>();
         player.GetComponent<HeartSystem>().CheckHealthAmount();
         player.GetComponent<BaffController>().baffsImages = GameObject.Find("BaffBar").transform.GetComponentsInChildren<Image>();
+        player.GetComponent<BaffController>().AllBaffsDisable();
         player.GetComponent<Move_Controller>().joystickMove = GameObject.Find("MovePlayer").GetComponent<Joystick>();
         player.GetComponent<Move_Controller>().joystickFire = GameObject.Find("FirePlayer").GetComponent<Joystick>();
         player.GetComponent<Move_Controller>().manager = gameObject;
