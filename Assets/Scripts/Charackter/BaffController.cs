@@ -12,6 +12,8 @@ public class BaffController : MonoBehaviour {
     public Sprite[] baffsSprite;
     public ParticleSystem[] baffEffects;
 
+    private int[,] baffEnabled = new int[9,1];
+
     private int maxBaff = 9;
     private int curBaff = -1;
 
@@ -26,7 +28,24 @@ public class BaffController : MonoBehaviour {
     {
         for(int i = 0; i < baffsImages.Length; i++)
         {
-            baffsImages[i].enabled = false;
+            if(baffsImages[i].enabled == true) baffsImages[i].enabled = false;
+            baffEnabled[i, 0] = -1;
+        }
+    }
+
+    public void CheckBaff(int id)
+    {
+        bool isBaff = false;
+        for(int i = 0; i < baffEnabled.Length; i++)
+        {
+            if(baffEnabled[i, 0] == id)
+            {
+                isBaff = true;
+            }
+        }
+        if (isBaff == false)
+        {
+            baffEffects[id].Stop();
         }
     }
 	
@@ -57,15 +76,18 @@ public class BaffController : MonoBehaviour {
         baffsImages[idBaffImage].enabled = true;
         baffsImages[idBaffImage].sprite = baffsSprite[id];
         baffEffects[id].Play();
+        baffEnabled[idBaffImage, 0] = id;
+
         for (int i = 0; i < time; i++)
         {
             hs.TakeDamage(-damage);
             yield return new WaitForSeconds(1f);
         }
 
+        baffEnabled[idBaffImage, 0] = -1;
         baffsImages[idBaffImage].enabled = false;
-        baffEffects[id].Stop();
         curBaff--;
+        CheckBaff(id);
     }
 
     IEnumerator tikHeal(int time, int heal, int id)
@@ -75,6 +97,7 @@ public class BaffController : MonoBehaviour {
         baffsImages[idBaffImage].enabled = true;
         baffsImages[idBaffImage].sprite = baffsSprite[id];
         baffEffects[id].Play();
+        baffEnabled[idBaffImage, 0] = id;
 
         for (int i = 0; i < time; i++)
         {
@@ -82,8 +105,9 @@ public class BaffController : MonoBehaviour {
             yield return new WaitForSeconds(1f);
         }
 
-        baffEffects[id].Stop();
+        baffEnabled[idBaffImage, 0] = -1;
         curBaff--;
+        CheckBaff(id);
     }
 
     IEnumerator tikSpeedDown(int time, int speedDown, int id)
@@ -93,6 +117,7 @@ public class BaffController : MonoBehaviour {
         baffsImages[idBaffImage].enabled = true;
         baffsImages[idBaffImage].sprite = baffsSprite[id];
         baffEffects[id].Play();
+        baffEnabled[idBaffImage, 0] = id;
 
         float speedSub = mc.speed * speedDown / 100;
         speedSub = (float)System.Math.Round((decimal)speedSub, 2);
@@ -101,9 +126,10 @@ public class BaffController : MonoBehaviour {
         yield return new WaitForSeconds(time);
         mc.speedDebaf -= speedSub;
 
+        baffEnabled[idBaffImage, 0] = -1;
         baffsImages[idBaffImage].enabled = false;
-        baffEffects[id].Stop();
         curBaff--;
+        CheckBaff(id);
     }
 
 }

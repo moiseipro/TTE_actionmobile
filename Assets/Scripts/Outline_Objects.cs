@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Outline_Objects : MonoBehaviour {
 
-    public float RadiusSphere = 1f;
-   
-
     Transform PredItem = null;
 
     private void OnTriggerEnter(Collider hitCol)

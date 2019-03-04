@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArtifactController : MonoBehaviour {
 
+    //List<>
+
 	// Use this for initialization
 	void Start () {
 		

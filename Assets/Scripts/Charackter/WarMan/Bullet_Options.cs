@@ -72,7 +72,7 @@ public class Bullet_Options : MonoBehaviour {
                 }
                 
             }
-            Destroy(this.gameObject, 0.1f);
+            Destroy(this.gameObject, 0.05f);
         }
         else if ((other.tag == "Enemy" || other.tag == "Boss") && type > -1)
         {

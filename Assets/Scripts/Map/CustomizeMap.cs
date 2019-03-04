@@ -31,7 +31,7 @@ public class CustomizeMap : MonoBehaviour {
     public Color chestColor = Color.magenta;
     public Vector3[] spawnChestPoints;
     [Tooltip("Оцентка для появления лучшего сундука чем обычно")]
-    [Range(0, 10)]
+    [Range(0, 8)]
     public int spawnChestPercent;
 
     SceneController gameManager;
@@ -43,18 +43,20 @@ public class CustomizeMap : MonoBehaviour {
 
         if (spawnStaticPoints != null)
         {
-            foreach (Vector3 vec in spawnStaticPoints)
+            int spawnStaticObj = Random.Range(0, spawnStaticPoints.Length);
+            for (int i = 0; i < spawnStaticObj; i++)
             {
-                GameObject obj = Instantiate(gameManager.objectPrefab[Random.Range(0, gameManager.objectPrefab.Length)], transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
+                GameObject obj = Instantiate(gameManager.objectPrefab[Random.Range(0, gameManager.objectPrefab.Length)], transform.TransformPoint(spawnStaticPoints[i] / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
                 obj.transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
             }
         }
 
         if (spawnDestrPoints != null)
         {
-            foreach (Vector3 vec in spawnDestrPoints)
+            int spawnDestrObj = Random.Range(0, spawnDestrPoints.Length);
+            for(int i = 0; i < spawnDestrObj; i++)
             {
-                GameObject obj = Instantiate(gameManager.objectInterPrefab[Random.Range(0, gameManager.objectInterPrefab.Length)], transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
+                GameObject obj = Instantiate(gameManager.objectInterPrefab[Random.Range(0, gameManager.objectInterPrefab.Length)], transform.TransformPoint(spawnDestrPoints[i] / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
                 obj.transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
             }
         }
@@ -72,7 +74,7 @@ public class CustomizeMap : MonoBehaviour {
         {
             foreach (Vector3 vec in spawnChestPoints)
             {
-                GameObject obj = Instantiate(gameManager.objectChestPrefab[Random.Range(0, gameManager.objectChestPrefab.Length)], transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
+                GameObject obj = Instantiate(gameManager.objectChestPrefab[Random.Range(spawnChestPercent, gameManager.objectChestPrefab.Length)], transform.TransformPoint(vec / 50) + new Vector3(0, 5f, 0f), Quaternion.identity);
                 obj.transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
             }
         }
