@@ -7,10 +7,15 @@ public class CharackterItem : MonoBehaviour {
     [HideInInspector]
     public GameObject Player;
 
+    [Header("Id предмета")]
+    public int upgradeId;
     [Header("Тип предмета")]
     public string upgradeType;
     [Header("Название предмета")]
     public string upgradeName;
+    [Header("Описание предмета")]
+    [Multiline(5)]
+    public string upgradeDescr;
     [Header("Редкость предмета")]
     [Range(0.5f, 2f)]
     public float Rang;
@@ -26,7 +31,11 @@ public class CharackterItem : MonoBehaviour {
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
-            if (Rang > 1.5)
+            if (Rang == 2)
+            {
+                GetComponent<Outline>().OutlineColor = Color.red;
+            }
+            else if (Rang > 1.5)
             {
                 GetComponent<Outline>().OutlineColor = Color.yellow;
             }

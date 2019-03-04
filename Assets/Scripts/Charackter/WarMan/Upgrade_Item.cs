@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Upgrade_Item : MonoBehaviour {
 
@@ -118,6 +119,18 @@ public class Upgrade_Item : MonoBehaviour {
                 chi.Player.GetComponent<Weapon_Controller>().UpgradeBottomAim = gameObject;
                 NewUpgradeSum();
             }
+        }
+
+        if (chi.upgradeType == "Artifact")
+        {
+            GameObject panelItems = GameObject.Find("ArtifactItems");
+            GameObject newItem = Instantiate(Resources.Load("Prefabs/UI/Item") as GameObject, panelItems.transform);
+            newItem.GetComponentInChildren<Image>().sprite = Resources.Load("Sprites/UI/ArtifactIcons/"+chi.upgradeId) as Sprite;
+            Text[] nameAndDescr = newItem.GetComponentsInChildren<Text>();
+            nameAndDescr[0].text = chi.upgradeName;
+            nameAndDescr[1].text = chi.upgradeDescr;
+            NewUpgradeSum();
+            Destroy(gameObject);
         }
     }
 

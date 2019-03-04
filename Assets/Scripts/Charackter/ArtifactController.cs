@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArtifactController : MonoBehaviour {
 
-    //List<>
+    List<int> idArtifacts = new List<int>();
 
 	// Use this for initialization
 	void Start () {

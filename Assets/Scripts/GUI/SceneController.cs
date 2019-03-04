@@ -19,6 +19,7 @@ public class SceneController : MonoBehaviour {
     public GameObject[] playerPrefabs;
 
     public Camera mainCamera;
+    public GameObject GUI;
     GameObject player;
 
     
@@ -1084,6 +1085,13 @@ public class SceneController : MonoBehaviour {
 
     void SpawnPlayer(int x, int z)
     {
+        if (!GameObject.FindWithTag("GUI"))
+        {
+            GameObject myMenu = Instantiate(GUI);
+            DontDestroyOnLoad(myMenu);
+            GameObject.Find("Pause").GetComponent<Button>().onClick.AddListener(delegate { GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().Pause(); });
+            GameObject.Find("Restart").GetComponent<Button>().onClick.AddListener(delegate { GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().ReloadLevel(); });
+        } 
         if (!GameObject.FindWithTag("Player"))
         {
             if (x == 0)

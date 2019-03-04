@@ -21,6 +21,12 @@ GameObject:
   - component: {fileID: 4325212159907328}
   - component: {fileID: 33959336741828550}
   - component: {fileID: 23504340725111236}
+  - component: {fileID: 65383696954152436}
+  - component: {fileID: 54911124865684584}
+  - component: {fileID: 114021127606671376}
+  - component: {fileID: 114033571275888748}
+  - component: {fileID: 114499165339641792}
+  - component: {fileID: 114522852782660290}
   m_Layer: 0
   m_Name: DragonsHeart
   m_TagString: Item
@@ -83,3 +89,97 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772070732436404}
   m_Mesh: {fileID: 4300006, guid: 32a8ba86d7d2b034eaf6a4d008a962d1, type: 3}
+--- !u!54 &54911124865684584
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772070732436404}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!65 &65383696954152436
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772070732436404}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.007, y: 0.01, z: 0.007}
+  m_Center: {x: -0.0000059001613, y: -0.00037549506, z: -0.0000059279846}
+--- !u!114 &114021127606671376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772070732436404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeId: 0
+  upgradeType: Artifact
+  upgradeName: "\u0421\u0435\u0440\u0434\u0446\u0435 \u0434\u0440\u0430\u043A\u043E\u043D\u0430"
+  upgradeDescr: "\u041F\u043E\u043A\u0430 \u0447\u0442\u043E \u043D\u0438\u0447\u0435\u0433\u043E
+    \u043D\u0435 \u0434\u0430\u0435\u0442"
+  Rang: 2
+--- !u!114 &114033571275888748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772070732436404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88ec9d803b7af9408516eb956a6f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnValue: 0
+  turnAngleValue: 0
+  reloadResist: 0
+  bulletSpeed: 0
+  bulletFallSpeed: 0
+  bulletHP: 0
+  bulletDamage: 0
+  chi: {fileID: 0}
+--- !u!114 &114499165339641792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772070732436404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectIsSee: 0
+  ObjectEquipt: 0
+--- !u!114 &114522852782660290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772070732436404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
