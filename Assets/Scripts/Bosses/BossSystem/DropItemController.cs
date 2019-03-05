@@ -4,19 +4,35 @@ using UnityEngine;
 
 public class DropItemController : MonoBehaviour {
 
-    public GameObject[] dropItemWarMan;
+    private GameObject[] dropItemForChar;
+    public List<GameObject> availableArtifact;
+    [HideInInspector] public SaveSystem saveSystem;
     [Header("Общие предметы для персонажей")]
     public GameObject[] dropItemHeal;
     public GameObject[] dropItemMoney;
     public GameObject[] dropItemKey;
     public GameObject[] dropItemAddHealth;
 
+    private int artifactDropChance = 30;
+
     private const float minDropChance = 0.5f;
     private const float maxDropChance = 2f;
 
+    private void Start()
+    {
+        dropItemForChar = Resources.LoadAll<GameObject>("Prefabs/Charackter/WarMan/Upgrade") as GameObject[];
+        availableArtifact.AddRange(Resources.LoadAll<GameObject>("Prefabs/Charackter/WarMan/Artifact") as GameObject[]);
+        saveSystem = GetComponent<SaveSystem>();
+        saveSystem.LoadFile();
+        for(int i = saveSystem.sa.activeArtifact.Length - 1; i > -1 ; i--)
+        {
+            if (saveSystem.sa.activeArtifact[i] == false) availableArtifact.RemoveAt(i);
+        }
+    }
+
     public GameObject DropItem(float maxChance)
     {
-        GameObject newItem = dropItemWarMan[Random.Range(0, dropItemWarMan.Length)];
+        GameObject newItem = dropItemForChar[Random.Range(0, dropItemForChar.Length)];
         float dropChance = Random.Range(minDropChance, Random.Range(maxChance, maxDropChance));
         if (dropChance > 1.5f) dropChance = Random.Range(0.7f, dropChance);
         else if (dropChance > 1.2f) dropChance = Random.Range(0.6f, dropChance);
@@ -34,6 +50,19 @@ public class DropItemController : MonoBehaviour {
         }
         newItem.GetComponent<CharackterItem>().Rang = dropChance;
         return newItem;
+    }
+
+    public GameObject DropArtifact()
+    {
+        int artifactChance = Random.Range(0,101);
+        GameObject newArtifact;
+        if (artifactChance < artifactDropChance)
+        {
+            if (availableArtifact.Count > 0) newArtifact = availableArtifact[Random.Range(0, availableArtifact.Count)];
+            else newArtifact = DropItem(2f);
+        } else newArtifact = DropItem(1.7f);
+
+        return newArtifact;
     }
 
     public GameObject DropItemChest(int num)

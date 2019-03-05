@@ -1280,7 +1280,7 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 20749343073760714, guid: 2527e7966b196da48ac9a8d5be3c7ca5,
     type: 2}
   m_PrefabInternal: {fileID: 570822155}
---- !u!1001 &743342426
+--- !u!1001 &648369859
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1324,18 +1324,6 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 570822156}
-    - target: {fileID: 114918626271941826, guid: ec3585fe1baccc34898b1837c300d773,
-        type: 2}
-      propertyPath: mapPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1119685479027496, guid: d343647a241d36846b061528b4628995,
-        type: 2}
-    - target: {fileID: 114918626271941826, guid: ec3585fe1baccc34898b1837c300d773,
-        type: 2}
-      propertyPath: mapPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1296950111124096, guid: bec6ac6c69d3595428a3bc6c96408b82,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3585fe1baccc34898b1837c300d773, type: 2}
   m_IsPrefabAsset: 0
@@ -1343,7 +1331,7 @@ Prefab:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114670923917410720, guid: ec3585fe1baccc34898b1837c300d773,
     type: 2}
-  m_PrefabInternal: {fileID: 743342426}
+  m_PrefabInternal: {fileID: 648369859}
   m_Script: {fileID: 11500000, guid: f1c871eaddef1034c9a545dfb43d479f, type: 3}
 --- !u!1001 &1440041776
 Prefab:

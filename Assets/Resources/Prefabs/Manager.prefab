@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539130632109690}
+  - component: {fileID: 114763364976476740}
   - component: {fileID: 114639293523168874}
   - component: {fileID: 114918626271941826}
   - component: {fileID: 114670923917410720}
@@ -36,7 +37,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044953149602004}
-  m_LocalRotation: {x: 0, y: 0.42261827, z: 0, w: 0.9063079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -132,23 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dcdbe6e97a99c4c969cec64249410d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropItemWarMan:
-  - {fileID: 1547208025563614, guid: f796ffc948050c84daf7184003a1f0c0, type: 2}
-  - {fileID: 1914632531110252, guid: 81377ef1bfa90f340bad131d3b929d9e, type: 2}
-  - {fileID: 1317705408527324, guid: e97ec65173bf1da479e328a0d54dca1e, type: 2}
-  - {fileID: 1249796664729420, guid: 6cf8e755dd1fd704fa61f61b2529b3a1, type: 2}
-  - {fileID: 1282026327287782, guid: ed754921b607cb9449bfdc91df4b5bac, type: 2}
-  - {fileID: 1779642669124128, guid: 2ac766f5052a58249b0695b183128b3f, type: 2}
-  - {fileID: 1535934297988320, guid: ead240b92e7def84fb9faa03ee68ae9f, type: 2}
-  - {fileID: 1950715714130080, guid: 501d75f7f5084054ebc5bbb2ae063736, type: 2}
-  - {fileID: 1101317881511698, guid: 1c68ef1f072595040b3a70118b175b35, type: 2}
-  - {fileID: 1932781463144248, guid: 27ad7941eb70d054199ad4033a249119, type: 2}
-  - {fileID: 1251127781152090, guid: 06cdf80f765a55a42aa71b03315b13da, type: 2}
-  - {fileID: 1266805858952922, guid: eb93c45ba929a224c821978c83c91b54, type: 2}
-  - {fileID: 1143810090000762, guid: 71a2d464689cc5c4eaec1106f5567575, type: 2}
-  - {fileID: 1161203416975822, guid: 371bb8e7ecd0a9347a961caee96978b8, type: 2}
-  - {fileID: 1767554667011770, guid: ed6dc0c1fab34914fbe5bc591cd3a6d5, type: 2}
-  - {fileID: 1587251625626510, guid: c2dc48ec5dd5c5247b4415274016ccff, type: 2}
+  availableArtifact: []
+  saveSystem: {fileID: 0}
   dropItemHeal:
   - {fileID: 1562345292303924, guid: f261ee9524f14174d8aa9ee092d449b1, type: 2}
   - {fileID: 1343985836060378, guid: e40486ed1ca180746a6a2b53eed27cf8, type: 2}
@@ -174,6 +160,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelGame: 0
+--- !u!114 &114763364976476740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044953149602004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2b45fae8f9db0429db19b39434a540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sa:
+    activeArtifact: 000000000000000000000000
 --- !u!114 &114918626271941826
 MonoBehaviour:
   m_ObjectHideFlags: 1

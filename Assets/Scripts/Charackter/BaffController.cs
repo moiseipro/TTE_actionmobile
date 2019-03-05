@@ -12,7 +12,7 @@ public class BaffController : MonoBehaviour {
     public Sprite[] baffsSprite;
     public ParticleSystem[] baffEffects;
 
-    private int[,] baffEnabled = new int[9,1];
+    private int[] baffEnabled = new int[9];
 
     private int maxBaff = 9;
     private int curBaff = -1;
@@ -29,7 +29,7 @@ public class BaffController : MonoBehaviour {
         for(int i = 0; i < baffsImages.Length; i++)
         {
             if(baffsImages[i].enabled == true) baffsImages[i].enabled = false;
-            baffEnabled[i, 0] = -1;
+            baffEnabled[i] = -1;
         }
     }
 
@@ -38,7 +38,7 @@ public class BaffController : MonoBehaviour {
         bool isBaff = false;
         for(int i = 0; i < baffEnabled.Length; i++)
         {
-            if(baffEnabled[i, 0] == id)
+            if(baffEnabled[i] == id)
             {
                 isBaff = true;
             }
@@ -76,7 +76,7 @@ public class BaffController : MonoBehaviour {
         baffsImages[idBaffImage].enabled = true;
         baffsImages[idBaffImage].sprite = baffsSprite[id];
         baffEffects[id].Play();
-        baffEnabled[idBaffImage, 0] = id;
+        baffEnabled[idBaffImage] = id;
 
         for (int i = 0; i < time; i++)
         {
@@ -84,7 +84,7 @@ public class BaffController : MonoBehaviour {
             yield return new WaitForSeconds(1f);
         }
 
-        baffEnabled[idBaffImage, 0] = -1;
+        baffEnabled[idBaffImage] = -1;
         baffsImages[idBaffImage].enabled = false;
         curBaff--;
         CheckBaff(id);
@@ -97,7 +97,7 @@ public class BaffController : MonoBehaviour {
         baffsImages[idBaffImage].enabled = true;
         baffsImages[idBaffImage].sprite = baffsSprite[id];
         baffEffects[id].Play();
-        baffEnabled[idBaffImage, 0] = id;
+        baffEnabled[idBaffImage] = id;
 
         for (int i = 0; i < time; i++)
         {
@@ -105,7 +105,7 @@ public class BaffController : MonoBehaviour {
             yield return new WaitForSeconds(1f);
         }
 
-        baffEnabled[idBaffImage, 0] = -1;
+        baffEnabled[idBaffImage] = -1;
         curBaff--;
         CheckBaff(id);
     }
@@ -117,7 +117,7 @@ public class BaffController : MonoBehaviour {
         baffsImages[idBaffImage].enabled = true;
         baffsImages[idBaffImage].sprite = baffsSprite[id];
         baffEffects[id].Play();
-        baffEnabled[idBaffImage, 0] = id;
+        baffEnabled[idBaffImage] = id;
 
         float speedSub = mc.speed * speedDown / 100;
         speedSub = (float)System.Math.Round((decimal)speedSub, 2);
@@ -126,7 +126,7 @@ public class BaffController : MonoBehaviour {
         yield return new WaitForSeconds(time);
         mc.speedDebaf -= speedSub;
 
-        baffEnabled[idBaffImage, 0] = -1;
+        baffEnabled[idBaffImage] = -1;
         baffsImages[idBaffImage].enabled = false;
         curBaff--;
         CheckBaff(id);

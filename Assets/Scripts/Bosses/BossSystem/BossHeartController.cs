@@ -16,7 +16,6 @@ public class BossHeartController : MonoBehaviour {
     [Header("Дополнительные атрибуты")]
     public int damage = 1;
     [Range(0.5f, 2f)]
-    public float maxDropItemChance = 1f;
     public GameObject healthBadge;
     public Mesh[] meshesHeart;
     public GameObject[] partOfBoss;
@@ -73,7 +72,8 @@ public class BossHeartController : MonoBehaviour {
             StartCoroutine(DropLoot());
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            
+            GameObject.FindWithTag("GUI").GetComponent<SaveSystem>().sa.activeArtifact[0] = true; // для тестов сохранения артефактов
+            GameObject.FindWithTag("GUI").GetComponent<SaveSystem>().SaveFile();
         }
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
     }
@@ -89,8 +89,8 @@ public class BossHeartController : MonoBehaviour {
             Destroy(part, Random.Range(5f, 10f));
             yield return new WaitForSeconds(0.2f);
         }
-        GameObject Item = Instantiate(dropItemController.DropItem(maxDropItemChance), gameObject.transform.position + Vector3.up, transform.rotation);
-        Item.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
+        GameObject Item = Instantiate(dropItemController.DropArtifact(), gameObject.transform.position + Vector3.up, transform.rotation);
+        Item.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-3, 3), Random.Range(1, 7), Random.Range(-3, 3)), ForceMode.Impulse);
         Destroy(gameObject);
     }
 
