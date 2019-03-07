@@ -20,6 +20,11 @@ public class PlayerManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         levelGame = PlayerPrefs.GetInt("Level");
+        
+    }
+
+    public void GUIspawn()
+    {
         player = GameObject.FindWithTag("Player");
         key = GameObject.Find("KeyPlate").GetComponentInChildren<Text>();
         nugget = GameObject.Find("NuggetPlate").GetComponentInChildren<Text>();

@@ -1101,19 +1101,23 @@ public class SceneController : MonoBehaviour {
             } else if (z == 0)
             {
                 player = Instantiate(playerPrefabs[0], new Vector3(x * 27, 1, (z * 27) + 7.5f), Quaternion.identity);
-            } 
+            }
+            player.GetComponent<BaffController>().baffsImages = GameObject.Find("BaffBar").transform.GetComponentsInChildren<Image>();
+            player.GetComponent<BaffController>().AllBaffsDisable();
+            player.GetComponent<HeartSystem>().heartImages = GameObject.Find("HealthBar").transform.GetComponentsInChildren<Image>();
+            player.GetComponent<HeartSystem>().CheckHealthAmount();
+            player.GetComponent<Move_Controller>().joystickMove = GameObject.Find("MovePlayer").GetComponent<Joystick>();
+            player.GetComponent<Move_Controller>().joystickFire = GameObject.Find("FirePlayer").GetComponent<Joystick>();
         }
         else
         {
             player = GameObject.FindWithTag("Player");
         }
-        player.GetComponent<HeartSystem>().heartImages = GameObject.Find("HealthBar").transform.GetComponentsInChildren<Image>();
-        player.GetComponent<HeartSystem>().CheckHealthAmount();
-        player.GetComponent<BaffController>().baffsImages = GameObject.Find("BaffBar").transform.GetComponentsInChildren<Image>();
-        player.GetComponent<BaffController>().AllBaffsDisable();
-        player.GetComponent<Move_Controller>().joystickMove = GameObject.Find("MovePlayer").GetComponent<Joystick>();
-        player.GetComponent<Move_Controller>().joystickFire = GameObject.Find("FirePlayer").GetComponent<Joystick>();
+        
         player.GetComponent<Move_Controller>().manager = gameObject;
+        GetComponent<PlayerManager>().GUIspawn();
+        player.GetComponent<Move_Controller>().joystickMove.enabled = true;
+        player.GetComponent<Move_Controller>().joystickFire.enabled = true;
 
         if (x == 0)
         {
