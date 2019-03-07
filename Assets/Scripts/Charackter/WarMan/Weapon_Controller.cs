@@ -38,10 +38,10 @@ public class Weapon_Controller : MonoBehaviour {
 
     int bulletID; // Вид пули
     private bool reload = false; //Перезарядка
+    private bool fullComplect = false; // Для достижения
+    [HideInInspector]public PlayerManager pm;
+    private const string achiv1 = "CgkIxpeq_8sQEAIQAA"; // ID ачивки по сбору всех предметов персонажа
 
-    void Start () {
-		
-	}
 
     void FixedUpdate()
     {
@@ -80,6 +80,12 @@ public class Weapon_Controller : MonoBehaviour {
     }
 
     void UpgradeConnect() {
+        if(fullComplect == false && UpgradeAim != null && UpgradeStand != null && UpgradeLeft != null && UpgradeRight != null && UpgradeNozzle != null && UpgradeBottomAim != null)
+        {
+            fullComplect = true;
+            pm.GetAchivement(achiv1);
+            Debug.Log("Ачивка по сбору предметов персонажа");
+        }
         if (UpgradeAim != null)
         {
             Vector3 pos = new Vector3(0, 0.004f, 0.00294f);

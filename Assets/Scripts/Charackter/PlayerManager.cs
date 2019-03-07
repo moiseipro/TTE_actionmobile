@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -20,7 +23,19 @@ public class PlayerManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         levelGame = PlayerPrefs.GetInt("Level");
-        
+
+        PlayGamesPlatform.Activate();
+        Social.localUser.Authenticate((bool success) => {
+            if (success) Debug.Log("Удачный вход!");
+            else Debug.Log("Неудачный вход!");
+        });
+    }
+
+    public void GetAchivement(string id)
+    {
+        Social.ReportProgress(id, 100.0f, (bool success) => {
+            if (success) Debug.Log("Получено достижение: " + id);
+        });
     }
 
     public void GUIspawn()
