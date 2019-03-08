@@ -39,13 +39,20 @@ public class Weapon_Controller : MonoBehaviour {
     int bulletID; // Вид пули
     private bool reload = false; //Перезарядка
     private bool fullComplect = false; // Для достижения
+    private Move_Controller mc;
+    private HeartSystem hs;
     [HideInInspector]public PlayerManager pm;
     private const string achiv1 = "CgkIxpeq_8sQEAIQAA"; // ID ачивки по сбору всех предметов персонажа
 
+    private void Start()
+    {
+        mc = GetComponent<Move_Controller>();
+        hs = GetComponent<HeartSystem>();
+    }
 
     void FixedUpdate()
     {
-        if (GetComponent<HeartSystem>().isDead == false && (GetComponent<Move_Controller>().joystickFire.Horizontal != 0 || GetComponent<Move_Controller>().joystickFire.Vertical != 0) && !reload)
+        if (hs.isDead == false && (mc.joystickFire.Horizontal != 0 || mc.joystickFire.Vertical != 0) && !reload)
         {
             
             float currentTurnAngle = turnAngle/2f;

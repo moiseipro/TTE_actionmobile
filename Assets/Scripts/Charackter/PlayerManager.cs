@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        GUIspawn(); // для тестов можно удалять
         levelGame = PlayerPrefs.GetInt("Level");
 
         PlayGamesPlatform.Activate();

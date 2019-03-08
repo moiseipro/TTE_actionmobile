@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 65853678708437846}
   - component: {fileID: 114286995717320962}
   - component: {fileID: 114812355675253960}
-  - component: {fileID: 114004381859292888}
   - component: {fileID: 114463689013414522}
+  - component: {fileID: 114004381859292888}
   m_Layer: 0
   m_Name: LeftDecoration
   m_TagString: Untagged

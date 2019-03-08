@@ -12,7 +12,7 @@ public class Move_Controller : MonoBehaviour {
     private float gravity;
 
     private Vector3 moveVector; // Вектор направления движения
-    private Vector3 rotVector;
+    [HideInInspector] public Vector3 rotVector;
 
     //Ссылки на компоненты
     private CharacterController ch_controller;

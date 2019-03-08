@@ -236,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1744830255638320}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.003, y: 0.0055000004, z: -8.960638e-10}
+  m_LocalPosition: {x: 0.003, y: 0.0055, z: -8.960638e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4295195391473900}
@@ -316,7 +316,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008412169419620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.003, y: 0.0055000004, z: 0}
+  m_LocalPosition: {x: -0.003, y: 0.0055, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4753078727814506}
@@ -644,6 +644,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa10a63ffdc3b874a99b81cc027a7f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 1799142667021268}
+  body: {fileID: 1467395532929504}
+  pets:
+  - {fileID: 1350509969225394, guid: f7365e5075d554945a8a95857777b966, type: 2}
+  - {fileID: 1196168528643098, guid: d740dd2dab5087e41b9fc7f2c4b8a58d, type: 2}
+  - {fileID: 1589705435287984, guid: fec51f97cf2547b429ac6f4c11c85bcd, type: 2}
+  upgradeHat: {fileID: 0}
+  upgradeCloak: {fileID: 0}
+  upgradeCrystalBall: {fileID: 0}
+  upgradeLeftDecoration: {fileID: 0}
+  upgradeRightDecoration: {fileID: 0}
+  calledPets: []
+  petDamage: 1
+  petSpeed: 6
+  petRange: 4
+  petMaximumTargets: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
 --- !u!114 &114952880832098476
 MonoBehaviour:
   m_ObjectHideFlags: 1

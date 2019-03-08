@@ -12,7 +12,7 @@ public class FlyController : MobController {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 movVec = Player.transform.position - gameObject.transform.position + GameObject.FindWithTag("Player").GetComponent<Move_Controller>().GetVectorMove()/10f;
+        Vector3 movVec = Player.transform.position - gameObject.transform.position + Player.GetComponent<Move_Controller>().GetVectorMove()/10f;
         Vector3 rotVec = Vector3.RotateTowards(transform.forward, movVec.normalized, 10f, 2f);
         movVec.y = 0;
         rotVec.y = 0;

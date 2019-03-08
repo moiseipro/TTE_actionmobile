@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 65548445195303072}
   - component: {fileID: 114175999284623686}
   - component: {fileID: 114148703983756186}
-  - component: {fileID: 114170686216788002}
   - component: {fileID: 114844269450606812}
+  - component: {fileID: 114170686216788002}
   m_Layer: 0
   m_Name: CrystalBall2
   m_TagString: Untagged

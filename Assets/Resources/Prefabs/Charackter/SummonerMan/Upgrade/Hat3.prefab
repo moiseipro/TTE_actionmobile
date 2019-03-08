@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 65854259316115092}
   - component: {fileID: 114038654779840166}
   - component: {fileID: 114485086649967146}
-  - component: {fileID: 114272667392287802}
   - component: {fileID: 114158071405278620}
+  - component: {fileID: 114272667392287802}
   m_Layer: 0
   m_Name: Hat3
   m_TagString: Untagged
