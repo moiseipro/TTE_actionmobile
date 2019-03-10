@@ -272,7 +272,6 @@ MonoBehaviour:
   dead: 0
   bossLevel: 1
   damage: 1
-  maxDropItemChance: 1
   healthBadge: {fileID: 1400922444074922}
   meshesHeart:
   - {fileID: 4300006, guid: 29db1c5b42f254f47a99da13bd85cf4f, type: 3}

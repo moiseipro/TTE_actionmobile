@@ -45,6 +45,7 @@ public class Summoner_Controller : MonoBehaviour {
         {
             calledPets.Add(Instantiate(pets[0],new Vector3(transform.position.x,3f,transform.position.z),Quaternion.identity));
             calledPets.Add(Instantiate(pets[1], new Vector3(transform.position.x, 3f, transform.position.z), Quaternion.identity));
+            calledPets.Add(Instantiate(pets[2], new Vector3(transform.position.x, 3f, transform.position.z), Quaternion.identity));
         }
 	}
 
@@ -62,10 +63,11 @@ public class Summoner_Controller : MonoBehaviour {
                 Vector3 plusPos = Vector3.zero;
                 if (i == 0) plusPos = Vector3.left;
                 else if (i == 1) plusPos = Vector3.right;
+                else if (i == 2) plusPos = Vector3.back;
                 Vector3 movVec = transform.position + mc.rotVector*petRange + plusPos * 2f - calledPets[i].transform.position;
                 Vector3 rotVec = Vector3.RotateTowards(calledPets[i].transform.forward / 10f, movVec, movVec.magnitude * Time.deltaTime, 0);
                 rotVec.y = 0f;
-                Debug.Log(movVec.magnitude);
+                //Debug.Log(movVec.magnitude);
                 calledPets[i].transform.Translate(calledPets[i].transform.forward * petSpeed * (movVec.magnitude/4) * Time.deltaTime, Space.World);
                 calledPets[i].transform.rotation = Quaternion.LookRotation(rotVec);
 
@@ -77,10 +79,11 @@ public class Summoner_Controller : MonoBehaviour {
                 Vector3 plusPos = Vector3.zero;
                 if (i == 0) plusPos = Vector3.left;
                 else if (i == 1) plusPos = Vector3.right;
+                else if(i == 2) plusPos = Vector3.back;
                 Vector3 movVec = transform.position + plusPos * 2f - calledPets[i].transform.position;
                 Vector3 rotVec = Vector3.RotateTowards(calledPets[i].transform.forward / 10f, movVec, 7 * Time.deltaTime, 0);
                 rotVec.y = 0f;
-                Debug.Log(movVec.magnitude);
+                //Debug.Log(movVec.magnitude);
                 if (movVec.magnitude > 3.05f)
                 {
                     calledPets[i].transform.Translate(calledPets[i].transform.forward * movVec.magnitude * Time.deltaTime, Space.World);
