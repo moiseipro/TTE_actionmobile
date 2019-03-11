@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4585078476283444}
   - component: {fileID: 33516250648745776}
   - component: {fileID: 23479077765996792}
-  - component: {fileID: 54393093548689304}
-  - component: {fileID: 65854259316115092}
-  - component: {fileID: 114038654779840166}
-  - component: {fileID: 114485086649967146}
-  - component: {fileID: 114158071405278620}
-  - component: {fileID: 114272667392287802}
+  - component: {fileID: 54134888829306292}
+  - component: {fileID: 65679950879577812}
+  - component: {fileID: 114319670295282960}
+  - component: {fileID: 114138480976387324}
+  - component: {fileID: 114633051893977630}
+  - component: {fileID: 114692577570293888}
   m_Layer: 0
   m_Name: Hat3
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,8 +40,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923516134401528}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.3000005, z: -2.8500001}
+  m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.65, y: 1.367, z: -0.8}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923516134401528}
   m_Mesh: {fileID: 4300068, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54393093548689304
+--- !u!54 &54134888829306292
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65854259316115092
+--- !u!65 &65679950879577812
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008, y: 0.006, z: 0.007}
   m_Center: {x: 0, y: -5.820766e-10, z: 0}
---- !u!114 &114038654779840166
+--- !u!114 &114138480976387324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923516134401528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114319670295282960
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,11 +148,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   upgradeId: 0
-  upgradeType: 
+  upgradeType: Hat
   upgradeName: 
   upgradeDescr: 
   Rang: 0
---- !u!114 &114158071405278620
+--- !u!114 &114633051893977630
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectIsSee: 0
   ObjectEquipt: 0
---- !u!114 &114272667392287802
+--- !u!114 &114692577570293888
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,14 +182,3 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114485086649967146
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923516134401528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

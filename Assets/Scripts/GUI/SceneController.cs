@@ -1115,7 +1115,6 @@ public class SceneController : MonoBehaviour {
         }
         
         player.GetComponent<Move_Controller>().manager = gameObject;
-        player.GetComponent<Weapon_Controller>().pm = GetComponent<PlayerManager>();
         GetComponent<PlayerManager>().GUIspawn();
         player.GetComponent<Move_Controller>().joystickMove.enabled = true;
         player.GetComponent<Move_Controller>().joystickFire.enabled = true;

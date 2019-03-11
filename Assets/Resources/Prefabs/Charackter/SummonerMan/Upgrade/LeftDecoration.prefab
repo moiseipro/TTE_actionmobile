@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4358246993916808}
   - component: {fileID: 33932309732312964}
   - component: {fileID: 23565739859381204}
-  - component: {fileID: 54351630314689298}
-  - component: {fileID: 65853678708437846}
-  - component: {fileID: 114286995717320962}
-  - component: {fileID: 114812355675253960}
-  - component: {fileID: 114463689013414522}
-  - component: {fileID: 114004381859292888}
+  - component: {fileID: 54205275064356750}
+  - component: {fileID: 65807296083249482}
+  - component: {fileID: 114816823335518370}
+  - component: {fileID: 114579955112343356}
+  - component: {fileID: 114040861174849312}
+  - component: {fileID: 114795847900594778}
   m_Layer: 0
   m_Name: LeftDecoration
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173182237516200}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45000002, y: 0.2000003, z: -1.5500001}
+  m_LocalPosition: {x: 0.45000002, y: 0.6, z: -1.5500001}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173182237516200}
   m_Mesh: {fileID: 4300066, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54351630314689298
+--- !u!54 &54205275064356750
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65853678708437846
+--- !u!65 &65807296083249482
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,39 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.003, y: 0.004, z: 0.003}
   m_Center: {x: 0, y: -1.1641532e-10, z: 0}
---- !u!114 &114004381859292888
+--- !u!114 &114040861174849312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173182237516200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectIsSee: 0
+  ObjectEquipt: 0
+--- !u!114 &114579955112343356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173182237516200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114795847900594778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +165,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114286995717320962
+--- !u!114 &114816823335518370
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,31 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   upgradeId: 0
-  upgradeType: 
+  upgradeType: LeftDecoration
   upgradeName: 
   upgradeDescr: 
   Rang: 0
---- !u!114 &114463689013414522
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173182237516200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectIsSee: 0
-  ObjectEquipt: 0
---- !u!114 &114812355675253960
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173182237516200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

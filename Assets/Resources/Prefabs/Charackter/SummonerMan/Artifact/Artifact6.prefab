@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4932533252587450}
   - component: {fileID: 33429248401618734}
   - component: {fileID: 23875355304329160}
-  - component: {fileID: 54299432300890110}
-  - component: {fileID: 65083000199170706}
-  - component: {fileID: 114197729952400844}
-  - component: {fileID: 114793353173053944}
-  - component: {fileID: 114539036245185106}
-  - component: {fileID: 114981437322007548}
+  - component: {fileID: 54675933024056278}
+  - component: {fileID: 65277060980757718}
+  - component: {fileID: 114905677310507158}
+  - component: {fileID: 114311182980815946}
+  - component: {fileID: 114923789072676802}
+  - component: {fileID: 114443611397768648}
   m_Layer: 0
   m_Name: Artifact6
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940141076250388}
   m_Mesh: {fileID: 4300052, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54299432300890110
+--- !u!54 &54675933024056278
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65083000199170706
+--- !u!65 &65277060980757718
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.007, y: 0.003, z: 0.009000001}
   m_Center: {x: -0.000000029802322, y: 0.0015, z: -0.000000029802322}
---- !u!114 &114197729952400844
+--- !u!114 &114311182980815946
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,16 +124,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1940141076250388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  upgradeId: 0
-  upgradeType: 
-  upgradeName: 
-  upgradeDescr: 
-  Rang: 0
---- !u!114 &114539036245185106
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114443611397768648
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +152,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114793353173053944
+--- !u!114 &114905677310507158
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,10 +160,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1940141076250388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114981437322007548
+  Player: {fileID: 0}
+  upgradeId: 0
+  upgradeType: Artifact
+  upgradeName: 
+  upgradeDescr: 
+  Rang: 0
+--- !u!114 &114923789072676802
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

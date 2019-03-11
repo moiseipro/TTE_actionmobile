@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4819402406064050}
   - component: {fileID: 33795437169979174}
   - component: {fileID: 23767002306209572}
-  - component: {fileID: 54552272082002390}
-  - component: {fileID: 65878840704161074}
-  - component: {fileID: 114274548900476088}
-  - component: {fileID: 114816171927779078}
-  - component: {fileID: 114559661935380780}
-  - component: {fileID: 114289993650880060}
+  - component: {fileID: 54726674299256542}
+  - component: {fileID: 65323660440624928}
+  - component: {fileID: 114361232001891810}
+  - component: {fileID: 114292025704467990}
+  - component: {fileID: 114331385886368718}
+  - component: {fileID: 114246563515616778}
   m_Layer: 0
   m_Name: RightDecoration
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806283182276930}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45000002, y: 0.18571444, z: -0.95000005}
+  m_LocalPosition: {x: 0.45000002, y: 0.679, z: -0.95000005}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806283182276930}
   m_Mesh: {fileID: 4300064, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54552272082002390
+--- !u!54 &54726674299256542
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65878840704161074
+--- !u!65 &65323660440624928
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,24 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.003, y: 0.0039999997, z: 0.003}
   m_Center: {x: 0, y: 0.00014285714, z: -0.000000029802322}
---- !u!114 &114274548900476088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1806283182276930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  upgradeId: 0
-  upgradeType: 
-  upgradeName: 
-  upgradeDescr: 
-  Rang: 0
---- !u!114 &114289993650880060
+--- !u!114 &114246563515616778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +133,26 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114559661935380780
+--- !u!114 &114292025704467990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806283182276930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114331385886368718
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectIsSee: 0
   ObjectEquipt: 0
---- !u!114 &114816171927779078
+--- !u!114 &114361232001891810
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +173,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1806283182276930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeId: 0
+  upgradeType: RightDecoration
+  upgradeName: 
+  upgradeDescr: 
+  Rang: 0

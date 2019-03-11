@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4606587119903560}
   - component: {fileID: 33502594373291812}
   - component: {fileID: 23655000460560896}
-  - component: {fileID: 54701961088170534}
-  - component: {fileID: 65953541430155390}
-  - component: {fileID: 114765241757593796}
-  - component: {fileID: 114924990213443856}
-  - component: {fileID: 114418089102299488}
-  - component: {fileID: 114335580797009042}
+  - component: {fileID: 54484494955209960}
+  - component: {fileID: 65035824489681314}
+  - component: {fileID: 114993147891775162}
+  - component: {fileID: 114372714158679058}
+  - component: {fileID: 114452069530847968}
+  - component: {fileID: 114330700387021474}
   m_Layer: 0
   m_Name: CrystalBall3
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951802074836118}
   m_Mesh: {fileID: 4300032, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54701961088170534
+--- !u!54 &54484494955209960
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65953541430155390
+--- !u!65 &65035824489681314
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.003, y: 0.004, z: 0.003}
   m_Center: {x: 0, y: 0.002, z: 0}
---- !u!114 &114335580797009042
+--- !u!114 &114330700387021474
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,26 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114418089102299488
+--- !u!114 &114372714158679058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951802074836118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114452069530847968
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectIsSee: 0
   ObjectEquipt: 0
---- !u!114 &114765241757593796
+--- !u!114 &114993147891775162
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,18 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   upgradeId: 0
-  upgradeType: 
+  upgradeType: CrystalBall
   upgradeName: 
   upgradeDescr: 
   Rang: 0
---- !u!114 &114924990213443856
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951802074836118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

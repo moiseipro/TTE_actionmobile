@@ -69,7 +69,8 @@ public class GUIcontroller : MonoBehaviour {
             positionLine = new Rect(predItemScreenPos.x - WidthPanel/2f, predItemScreenPos.y +50f, WidthPanel, HeightPanel);
             if(GUI.Button(positionItem, GetComponent<CharackterItem>().upgradeName, customButton))
             {
-                GetComponent<Upgrade_Item>().TakeItem(); // После добавления нового персонажа нужно пересмотреть
+                if(GetComponent<Upgrade_Item>()) GetComponent<Upgrade_Item>().TakeItem(); // После добавления нового персонажа нужно пересмотреть
+                else if (GetComponent<Summoner_Item>()) GetComponent<Summoner_Item>().TakeItem();
                 ObjectIsSee = false;
             }
         }

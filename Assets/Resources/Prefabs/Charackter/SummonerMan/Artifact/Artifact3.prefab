@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4816503370276968}
   - component: {fileID: 33383364741501556}
   - component: {fileID: 23736784081206184}
-  - component: {fileID: 54141410016526376}
-  - component: {fileID: 65526625642983266}
-  - component: {fileID: 114470364294276646}
-  - component: {fileID: 114923206937497032}
-  - component: {fileID: 114974854010078854}
-  - component: {fileID: 114878151654774668}
+  - component: {fileID: 54631724320813070}
+  - component: {fileID: 65003776232345834}
+  - component: {fileID: 114225674260438454}
+  - component: {fileID: 114425315523148434}
+  - component: {fileID: 114416534012633654}
+  - component: {fileID: 114809386961441176}
   m_Layer: 0
   m_Name: Artifact3
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1213159061008806}
   m_Mesh: {fileID: 4300058, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54141410016526376
+--- !u!54 &54631724320813070
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65526625642983266
+--- !u!65 &65003776232345834
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.007, y: 0.003, z: 0.008}
   m_Center: {x: 0.0005000001, y: 0.0015, z: 0}
---- !u!114 &114470364294276646
+--- !u!114 &114225674260438454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,11 +129,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   upgradeId: 0
-  upgradeType: 
+  upgradeType: Artifact
   upgradeName: 
   upgradeDescr: 
   Rang: 0
---- !u!114 &114878151654774668
+--- !u!114 &114416534012633654
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectIsSee: 0
   ObjectEquipt: 0
---- !u!114 &114923206937497032
+--- !u!114 &114425315523148434
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +157,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114974854010078854
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114809386961441176
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

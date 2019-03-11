@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4683545171929822}
   - component: {fileID: 33078341484210062}
   - component: {fileID: 23879848790744180}
-  - component: {fileID: 54143057134327608}
-  - component: {fileID: 65359176030003380}
-  - component: {fileID: 114998990994810322}
-  - component: {fileID: 114659010492064646}
-  - component: {fileID: 114972108613514248}
-  - component: {fileID: 114121542471626138}
+  - component: {fileID: 54958569094921628}
+  - component: {fileID: 65815922947394886}
+  - component: {fileID: 114064632869507760}
+  - component: {fileID: 114975376591185778}
+  - component: {fileID: 114931669539066826}
+  - component: {fileID: 114313093433248404}
   m_Layer: 0
   m_Name: CrystalBall4
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531968804926024}
   m_Mesh: {fileID: 4300034, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54143057134327608
+--- !u!54 &54958569094921628
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65359176030003380
+--- !u!65 &65815922947394886
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0050000004, y: 0.0060000005, z: 0.003}
   m_Center: {x: 0, y: 0.002, z: 0.000000029802322}
---- !u!114 &114121542471626138
+--- !u!114 &114064632869507760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531968804926024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeId: 0
+  upgradeType: CrystalBall
+  upgradeName: 
+  upgradeDescr: 
+  Rang: 0
+--- !u!114 &114313093433248404
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,18 +150,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114659010492064646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1531968804926024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114972108613514248
+--- !u!114 &114931669539066826
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectIsSee: 0
   ObjectEquipt: 0
---- !u!114 &114998990994810322
+--- !u!114 &114975376591185778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,12 +171,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1531968804926024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  upgradeId: 0
-  upgradeType: 
-  upgradeName: 
-  upgradeDescr: 
-  Rang: 0
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}

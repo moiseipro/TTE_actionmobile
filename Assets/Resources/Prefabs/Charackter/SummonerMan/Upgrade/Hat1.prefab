@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4507610057215540}
   - component: {fileID: 33464135484910266}
   - component: {fileID: 23118722193497916}
-  - component: {fileID: 54639334442935442}
-  - component: {fileID: 65837757021697334}
-  - component: {fileID: 114768248006752810}
-  - component: {fileID: 114044712746046626}
-  - component: {fileID: 114230662361571302}
-  - component: {fileID: 114746672550212104}
+  - component: {fileID: 54633005258289632}
+  - component: {fileID: 65306400344027526}
+  - component: {fileID: 114712155892417298}
+  - component: {fileID: 114248682856098412}
+  - component: {fileID: 114878837640163522}
+  - component: {fileID: 114879792000457536}
   m_Layer: 0
   m_Name: Hat1
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1185476567810842}
   m_Mesh: {fileID: 4300072, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54639334442935442
+--- !u!54 &54633005258289632
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65837757021697334
+--- !u!65 &65306400344027526
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008, y: 0.003, z: 0.009000001}
   m_Center: {x: 0, y: -0.0014999982, z: -0.0010000318}
---- !u!114 &114044712746046626
+--- !u!114 &114248682856098412
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114230662361571302
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114712155892417298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185476567810842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  upgradeId: 0
+  upgradeType: Hat
+  upgradeName: 
+  upgradeDescr: 
+  Rang: 0
+--- !u!114 &114878837640163522
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectIsSee: 0
   ObjectEquipt: 0
---- !u!114 &114746672550212104
+--- !u!114 &114879792000457536
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,20 +182,3 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114768248006752810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1185476567810842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82158603bafbbc4db53f729936ab04c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  upgradeId: 0
-  upgradeType: 
-  upgradeName: 
-  upgradeDescr: 
-  Rang: 0

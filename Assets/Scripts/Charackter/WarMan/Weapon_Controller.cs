@@ -41,7 +41,6 @@ public class Weapon_Controller : MonoBehaviour {
     private bool fullComplect = false; // Для достижения
     private Move_Controller mc;
     private HeartSystem hs;
-    [HideInInspector]public PlayerManager pm;
     private const string achiv1 = "CgkIxpeq_8sQEAIQAA"; // ID ачивки по сбору всех предметов персонажа
 
     private void Start()
@@ -90,7 +89,7 @@ public class Weapon_Controller : MonoBehaviour {
         if(fullComplect == false && UpgradeAim != null && UpgradeStand != null && UpgradeLeft != null && UpgradeRight != null && UpgradeNozzle != null && UpgradeBottomAim != null)
         {
             fullComplect = true;
-            pm.GetAchivement(achiv1);
+            GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().GetAchivement(achiv1);
             Debug.Log("Ачивка по сбору предметов персонажа");
         }
         if (UpgradeAim != null)

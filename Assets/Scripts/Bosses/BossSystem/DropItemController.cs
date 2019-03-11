@@ -20,8 +20,16 @@ public class DropItemController : MonoBehaviour {
 
     private void Start()
     {
-        dropItemForChar = Resources.LoadAll<GameObject>("Prefabs/Charackter/WarMan/Upgrade") as GameObject[];
-        availableArtifact.AddRange(Resources.LoadAll<GameObject>("Prefabs/Charackter/WarMan/Artifact") as GameObject[]);
+        if (PlayerPrefs.GetInt("PalyerCharackter") == 0)
+        {
+
+            dropItemForChar = Resources.LoadAll<GameObject>("Prefabs/Charackter/WarMan/Upgrade") as GameObject[];
+            availableArtifact.AddRange(Resources.LoadAll<GameObject>("Prefabs/Charackter/WarMan/Artifact") as GameObject[]);
+        } else if (PlayerPrefs.GetInt("PalyerCharackter") == 1)
+        {
+            dropItemForChar = Resources.LoadAll<GameObject>("Prefabs/Charackter/SummonerMan/Upgrade") as GameObject[];
+            availableArtifact.AddRange(Resources.LoadAll<GameObject>("Prefabs/Charackter/SummonerMan/Artifact") as GameObject[]);
+        }
         saveSystem = GetComponent<SaveSystem>();
         saveSystem.LoadFile();
         for(int i = saveSystem.sa.activeArtifact.Length - 1; i > -1 ; i--)

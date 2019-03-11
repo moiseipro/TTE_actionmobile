@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4692666086256466}
   - component: {fileID: 33228401164859378}
   - component: {fileID: 23451411812120108}
-  - component: {fileID: 54059443093839500}
-  - component: {fileID: 65656901860223636}
-  - component: {fileID: 114901429830327620}
-  - component: {fileID: 114975800553369322}
-  - component: {fileID: 114964317042265310}
-  - component: {fileID: 114655125273931070}
+  - component: {fileID: 54814910447456544}
+  - component: {fileID: 65940700186573122}
+  - component: {fileID: 114759301333723526}
+  - component: {fileID: 114451081351882078}
+  - component: {fileID: 114491955515082758}
+  - component: {fileID: 114884078735902318}
   m_Layer: 0
   m_Name: Artifact5
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913707192923792}
   m_Mesh: {fileID: 4300054, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54059443093839500
+--- !u!54 &54814910447456544
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65656901860223636
+--- !u!65 &65940700186573122
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.007, y: 0.003, z: 0.008}
   m_Center: {x: 0.0005000001, y: 0.0015, z: 0}
---- !u!114 &114655125273931070
+--- !u!114 &114451081351882078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913707192923792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114491955515082758
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectIsSee: 0
   ObjectEquipt: 0
---- !u!114 &114901429830327620
+--- !u!114 &114759301333723526
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,11 +161,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   upgradeId: 0
-  upgradeType: 
+  upgradeType: Artifact
   upgradeName: 
   upgradeDescr: 
   Rang: 0
---- !u!114 &114964317042265310
+--- !u!114 &114884078735902318
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,14 +182,3 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114975800553369322
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913707192923792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -21,15 +21,15 @@ GameObject:
   - component: {fileID: 4684839468377474}
   - component: {fileID: 33697312781209450}
   - component: {fileID: 23633647171035706}
-  - component: {fileID: 54231416373614578}
-  - component: {fileID: 65908125029212248}
-  - component: {fileID: 114540320930680448}
-  - component: {fileID: 114649098887688386}
-  - component: {fileID: 114460274927770568}
-  - component: {fileID: 114277023059371766}
+  - component: {fileID: 54400758048553634}
+  - component: {fileID: 65947007050415154}
+  - component: {fileID: 114756896581976958}
+  - component: {fileID: 114644905712428800}
+  - component: {fileID: 114679839019693002}
+  - component: {fileID: 114355722988296722}
   m_Layer: 0
   m_Name: Artifact2
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1108704994225008}
   m_Mesh: {fileID: 4300060, guid: 176d509463a187a46abfbb44c091ce78, type: 3}
---- !u!54 &54231416373614578
+--- !u!54 &54400758048553634
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65908125029212248
+--- !u!65 &65947007050415154
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,20 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.004, y: 0.004, z: 0.010000001}
   m_Center: {x: -0.000000029802322, y: 0.002, z: 0}
---- !u!114 &114277023059371766
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108704994225008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectIsSee: 0
-  ObjectEquipt: 0
---- !u!114 &114460274927770568
+--- !u!114 &114355722988296722
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +133,39 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &114540320930680448
+--- !u!114 &114644905712428800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108704994225008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petDamageBoost: 0
+  petSpeed: 5
+  petRange: 4
+  petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
+  petTimeReloadDragon: 0.5
+  petTimeReloadGargoyle: 1
+  chi: {fileID: 0}
+--- !u!114 &114679839019693002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108704994225008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d611ef077ca8f64197f148feb062fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectIsSee: 0
+  ObjectEquipt: 0
+--- !u!114 &114756896581976958
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,18 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   upgradeId: 0
-  upgradeType: 
+  upgradeType: Artifact
   upgradeName: 
   upgradeDescr: 
   Rang: 0
---- !u!114 &114649098887688386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108704994225008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

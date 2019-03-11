@@ -600,6 +600,7 @@ MonoBehaviour:
   speedDebaf: 0
   staticSpeedDebaf: 0
   jump: 5
+  rotVector: {x: 0, y: 0, z: 0}
   joystickMove: {fileID: 0}
   joystickFire: {fileID: 0}
   manager: {fileID: 0}
@@ -656,12 +657,14 @@ MonoBehaviour:
   upgradeLeftDecoration: {fileID: 0}
   upgradeRightDecoration: {fileID: 0}
   calledPets: []
-  petDamage: 1
+  petDamageBoost: 2
   petSpeed: 6
   petRange: 4
   petMaximumTargets: 1
+  petMaximumTargetsDragon: 1
   petTimeReloadDragon: 0.5
   petTimeReloadGargoyle: 1
+  pm: {fileID: 0}
 --- !u!114 &114952880832098476
 MonoBehaviour:
   m_ObjectHideFlags: 1

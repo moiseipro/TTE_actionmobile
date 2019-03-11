@@ -53,6 +53,7 @@ public class PetController : MonoBehaviour {
                 for (int i = 0; i < target.Count; i++)
                 {
                     GameObject bull = Instantiate(petBullet, transform.position, transform.rotation);
+                    bull.GetComponent<PetBullet>().damage = damage;
                     bull.transform.localScale = new Vector3(50, 50, 50);
                     if (target[i] != null) bull.transform.LookAt(target[i].transform);
                     else target.RemoveAt(i);

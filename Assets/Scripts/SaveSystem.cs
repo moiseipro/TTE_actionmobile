@@ -12,7 +12,7 @@ public class SaveSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        PlayerPrefs.SetInt("PalyerCharackter", 1); // Для теста пока нет меню
         LoadFile();
     }
 
@@ -21,7 +21,7 @@ public class SaveSystem : MonoBehaviour {
 #if UNITY_ANDROID && !UNITY_EDITOR
         path = Path.Combine(Application.persistentDataPath, "Save.json");
 #else
-        path = Path.Combine(Application.dataPath, "Save.json");
+        path = Path.Combine(Application.dataPath, "Save"+ PlayerPrefs.GetInt("PalyerCharackter") +".json");
 #endif
         if (File.Exists(path))
         {
