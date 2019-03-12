@@ -46,7 +46,7 @@ public class PetController : MonoBehaviour {
 
     private void Update()
     {
-        if (target.Count > 0)
+        if (target.Count > 0 && isBattle == true)
         {
             if (reload == false && type == 0)
             {
@@ -85,6 +85,18 @@ public class PetController : MonoBehaviour {
                     reload = true;
                     StartCoroutine(ReloadAtack());
                 }
+            } else if (reload == false && type == 2)
+            {
+                for (int i = 0; i < target.Count; i++)
+                {
+                    GameObject bull = Instantiate(petBullet, transform.position, transform.rotation);
+                    bull.GetComponent<PetBullet>().damage = damage;
+                    if (target[i] != null) bull.GetComponent<Rigidbody>().AddForce((target[i].transform.position - gameObject.transform.position)/3f + Vector3.up * 5f, ForceMode.Impulse);
+                    else target.RemoveAt(i);
+                    Destroy(bull, 5f);
+                }
+                reload = true;
+                StartCoroutine(ReloadAtack());
             }
         } else
         {

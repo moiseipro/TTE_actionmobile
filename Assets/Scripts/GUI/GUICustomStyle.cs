@@ -5,5 +5,6 @@ using UnityEngine;
 public class GUICustomStyle : MonoBehaviour {
 
     public GUIStyle customButton;
+    public GUIStyle customText;
 
 }

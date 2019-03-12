@@ -12,12 +12,34 @@ public class PetBullet : MonoBehaviour {
         if (other.tag == "Object") other.SendMessage("TakeDamage");
         if (other.tag == "Object" || other.tag == "Map" || other.tag == "Arena" || other.tag == "LootBox")
         {
+            if (id == 1)
+            {
+                foreach (Collider col in Physics.OverlapSphere(transform.position, 2.6f))
+                {
+                    if (col.tag == "Enemy" || col.tag == "Boss")
+                    {
+                        col.SendMessage("AddDamage", damage);
+                    }
+                    else if (col.tag == "Object")
+                    {
+                        col.SendMessage("TakeDamage");
+                    }
+                }
+            }
             Destroy(this.gameObject, 0.05f);
         }
         else if ((other.tag == "Enemy" || other.tag == "Boss"))
         {
-            other.SendMessage("AddDamage", damage);
+            if (id == 0)
+            {
+                other.SendMessage("AddDamage", damage);
+            }
         }
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 
     // Update is called once per frame
@@ -26,10 +48,6 @@ public class PetBullet : MonoBehaviour {
         {
             gameObject.transform.Translate(Vector3.forward * 5 * Time.deltaTime);
             gameObject.transform.Rotate(Vector3.right * 10 * Time.deltaTime);
-        } else if (id == 1)
-        {
-            gameObject.transform.Translate(Vector3.forward * 5 * Time.deltaTime);
-            gameObject.transform.Rotate(Vector3.right * 20 * Time.deltaTime);
-        }
+        } 
     }
 }

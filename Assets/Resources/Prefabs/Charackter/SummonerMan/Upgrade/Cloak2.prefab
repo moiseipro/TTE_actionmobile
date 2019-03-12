@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   outlineWidth: 6
   precomputeOutline: 0
   bakeKeys: []
@@ -144,13 +144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petDamageBoost: 0
-  petSpeed: 5
-  petRange: 4
-  petMaximumTargets: 1
+  petDamageBoost: 4
+  petSpeed: 0.25
+  petRange: 0.5
+  petMaximumTargets: 0
   petMaximumTargetsDragon: 1
-  petTimeReloadDragon: 0.5
-  petTimeReloadGargoyle: 1
+  petTimeReloadDragon: 0
+  petTimeReloadGargoyle: -0.15
   chi: {fileID: 0}
 --- !u!114 &114635003421958820
 MonoBehaviour:
@@ -168,7 +168,7 @@ MonoBehaviour:
   upgradeType: Cloak
   upgradeName: 
   upgradeDescr: 
-  Rang: 0
+  Rang: 1.55
 --- !u!114 &114798121485543650
 MonoBehaviour:
   m_ObjectHideFlags: 1

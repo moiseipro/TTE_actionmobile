@@ -87,6 +87,7 @@ public class Summoner_Controller : MonoBehaviour {
         {
             for (int i = 0; i < calledPets.Count; i++)
             {
+                calledPets[i].GetComponent<PetController>().isBattle = true;
                 Vector3 plusPos = Vector3.zero;
                 if (i == 0) plusPos = Vector3.left;
                 else if (i == 1) plusPos = Vector3.right;
@@ -104,6 +105,7 @@ public class Summoner_Controller : MonoBehaviour {
         {
             for(int i = 0; i < calledPets.Count; i++)
             {
+                calledPets[i].GetComponent<PetController>().isBattle = false;
                 Vector3 plusPos = Vector3.zero;
                 if (i == 0) plusPos = Vector3.left;
                 else if (i == 1) plusPos = Vector3.right;

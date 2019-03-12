@@ -144,13 +144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37234e99b5f376e4384f8a386af4782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petDamageBoost: 0
-  petSpeed: 5
-  petRange: 4
+  petDamageBoost: 8
+  petSpeed: 0
+  petRange: 0
   petMaximumTargets: 1
   petMaximumTargetsDragon: 1
-  petTimeReloadDragon: 0.5
-  petTimeReloadGargoyle: 1
+  petTimeReloadDragon: -0.05
+  petTimeReloadGargoyle: -0.1
   chi: {fileID: 0}
 --- !u!114 &114331385886368718
 MonoBehaviour:
@@ -181,4 +181,4 @@ MonoBehaviour:
   upgradeType: RightDecoration
   upgradeName: 
   upgradeDescr: 
-  Rang: 0
+  Rang: 0.56

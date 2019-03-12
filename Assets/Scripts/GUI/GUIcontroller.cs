@@ -11,6 +11,7 @@ public class GUIcontroller : MonoBehaviour {
     Rect positionLine;
     Transform PredItem, ThisObject;
     GUIStyle customButton;
+    GUIStyle customText;
 
     public bool ObjectIsSee = false;
     public bool ObjectEquipt = false;
@@ -22,6 +23,7 @@ public class GUIcontroller : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        customText = GameObject.FindWithTag("Manager").GetComponent<GUICustomStyle>().customText;
         PredItem = GetComponent<Transform>();
         ThisObject = GetComponent<Transform>();
         WidthPanel = HeightPanel * 1.5f;
@@ -67,20 +69,14 @@ public class GUIcontroller : MonoBehaviour {
         {
             positionItem = new Rect(predItemScreenPos.x - WidthPanel, (Screen.height - predItemScreenPos.y - HeightPanel -50f), WidthPanel, HeightPanel);
             positionLine = new Rect(predItemScreenPos.x - WidthPanel/2f, predItemScreenPos.y +50f, WidthPanel, HeightPanel);
-            if(GUI.Button(positionItem, GetComponent<CharackterItem>().upgradeName, customButton))
+            
+            if(GUI.Button(positionItem, GetComponent<CharackterItem>().upgradeName , customButton))
             {
                 if(GetComponent<Upgrade_Item>()) GetComponent<Upgrade_Item>().TakeItem(); // После добавления нового персонажа нужно пересмотреть
                 else if (GetComponent<Summoner_Item>()) GetComponent<Summoner_Item>().TakeItem();
                 ObjectIsSee = false;
             }
+            GUI.Label(positionItem,GetComponent<CharackterItem>().upgradeDescr,customText);
         }
-        
-        /*if (cameraRelative.z > 0 && ObjectIsSee == true && ObjectEquipt == false)
-        {
-                position = new Rect((screenPosition.x - WidthPanel / 2f), (Screen.height - screenPosition.y - HeightPanel), WidthPanel, HeightPanel);
-                GUI.Box(position, name);
-        }*/
-
-
     }
 }

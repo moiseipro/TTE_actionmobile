@@ -168,7 +168,7 @@ MonoBehaviour:
   upgradeType: Artifact
   upgradeName: 
   upgradeDescr: 
-  Rang: 0
+  Rang: 2
 --- !u!114 &114923789072676802
 MonoBehaviour:
   m_ObjectHideFlags: 1
