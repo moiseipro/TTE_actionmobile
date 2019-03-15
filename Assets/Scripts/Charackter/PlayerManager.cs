@@ -24,12 +24,6 @@ public class PlayerManager : MonoBehaviour {
     void Start () {
         GUIspawn(); // для тестов можно удалять
         levelGame = PlayerPrefs.GetInt("Level");
-
-        PlayGamesPlatform.Activate();
-        Social.localUser.Authenticate((bool success) => {
-            if (success) Debug.Log("Удачный вход!");
-            else Debug.Log("Неудачный вход!");
-        });
     }
 
     public void GetAchivement(string id)

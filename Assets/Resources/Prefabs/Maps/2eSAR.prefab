@@ -668,8 +668,6 @@ MonoBehaviour:
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   spawnLightPoints:
   - {x: 2.3, y: 0, z: 3}
-  - {x: -2.3, y: 0, z: 3}
-  - {x: 2.3, y: 0, z: -3}
   - {x: -2.3, y: 0, z: -3}
   staticColor: {r: 1, g: 0, b: 0, a: 1}
   spawnStaticPoints: []

@@ -72,8 +72,6 @@ public class BossHeartController : MonoBehaviour {
             StartCoroutine(DropLoot());
             gameObject.GetComponent<BoxCollider>().isTrigger = true;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            GameObject.FindWithTag("Manager").GetComponent<SaveSystem>().sa.activeArtifact[0] = true; // для тестов сохранения артефактов
-            GameObject.FindWithTag("Manager").GetComponent<SaveSystem>().SaveFile();
         }
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
     }

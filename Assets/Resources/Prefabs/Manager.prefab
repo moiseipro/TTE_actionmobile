@@ -37,7 +37,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044953149602004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.42261827, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -305,6 +305,7 @@ MonoBehaviour:
   - {fileID: 1208389251986216, guid: eab8aaa3869d2744cb59592e7b9cd329, type: 2}
   playerPrefabs:
   - {fileID: 1301870341732256, guid: 08968e53b273e254bbb170494247f00b, type: 2}
+  - {fileID: 1674539966615296, guid: 7479e095d4ca8c8428a0cb1b159cf5bd, type: 2}
   mainCamera: {fileID: 0}
   GUI: {fileID: 1842435791450968, guid: f9aa38c4301b97946b17b514dd334d00, type: 2}
   maxMapSize: 6

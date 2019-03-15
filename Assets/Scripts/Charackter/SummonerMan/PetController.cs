@@ -41,7 +41,7 @@ public class PetController : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Enemy" || other.tag == "Boss" || other.tag == "Object") target.Remove(other.gameObject);
+        if (other.tag == "Enemy" || other.tag == "Boss" || other.tag == "Object" || other.tag == "Map") target.Remove(other.gameObject);
     }
 
     private void Update()

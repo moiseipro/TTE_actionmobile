@@ -1096,11 +1096,11 @@ public class SceneController : MonoBehaviour {
         {
             if (x == 0)
             {
-                player = Instantiate(playerPrefabs[0], new Vector3((x * 27)+7.5f, 1, z * 27), Quaternion.identity);
+                player = Instantiate(playerPrefabs[PlayerPrefs.GetInt("PalyerCharackter")], new Vector3((x * 27)+7.5f, 1, z * 27), Quaternion.identity);
                 player.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
             } else if (z == 0)
             {
-                player = Instantiate(playerPrefabs[0], new Vector3(x * 27, 1, (z * 27) + 7.5f), Quaternion.identity);
+                player = Instantiate(playerPrefabs[PlayerPrefs.GetInt("PalyerCharackter")], new Vector3(x * 27, 1, (z * 27) + 7.5f), Quaternion.identity);
             }
             player.GetComponent<BaffController>().baffsImages = GameObject.Find("BaffBar").transform.GetComponentsInChildren<Image>();
             player.GetComponent<BaffController>().AllBaffsDisable();

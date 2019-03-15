@@ -140,13 +140,13 @@ public class Summoner_Item : MonoBehaviour {
         oldUpgradeItem.GetComponent<GUIcontroller>().ObjectEquipt = false;
         oldUpgradeItem.GetComponent<Rigidbody>().isKinematic = false;
         oldUpgradeItem.GetComponent<BoxCollider>().isTrigger = false;
-        chi.Player.GetComponent<Summoner_Controller>().petDamageBoost -= petDamageBoost * chi.Rang;
-        chi.Player.GetComponent<Summoner_Controller>().petSpeed -= petSpeed * chi.Rang;
-        chi.Player.GetComponent<Summoner_Controller>().petRange -= petRange * chi.Rang;
-        chi.Player.GetComponent<Summoner_Controller>().petMaximumTargets -= petMaximumTargets;
-        chi.Player.GetComponent<Summoner_Controller>().petMaximumTargetsDragon -= petMaximumTargetsDragon;
-        chi.Player.GetComponent<Summoner_Controller>().petTimeReloadDragon -= petTimeReloadDragon * chi.Rang;
-        chi.Player.GetComponent<Summoner_Controller>().petTimeReloadGargoyle -= petTimeReloadGargoyle * chi.Rang;
+        chi.Player.GetComponent<Summoner_Controller>().petDamageBoost -= oldUpgradeItem.petDamageBoost * oldUpgradeItem.chi.Rang;
+        chi.Player.GetComponent<Summoner_Controller>().petSpeed -= oldUpgradeItem.petSpeed * oldUpgradeItem.chi.Rang;
+        chi.Player.GetComponent<Summoner_Controller>().petRange -= oldUpgradeItem.petRange * oldUpgradeItem.chi.Rang;
+        chi.Player.GetComponent<Summoner_Controller>().petMaximumTargets -= oldUpgradeItem.petMaximumTargets;
+        chi.Player.GetComponent<Summoner_Controller>().petMaximumTargetsDragon -= oldUpgradeItem.petMaximumTargetsDragon;
+        chi.Player.GetComponent<Summoner_Controller>().petTimeReloadDragon -= oldUpgradeItem.petTimeReloadDragon * oldUpgradeItem.chi.Rang;
+        chi.Player.GetComponent<Summoner_Controller>().petTimeReloadGargoyle -= oldUpgradeItem.petTimeReloadGargoyle * oldUpgradeItem.chi.Rang;
         oldUpgradeItem.transform.SetParent(null);
         oldUpgradeItem.transform.position += oldUpgradeItem.gameObject.transform.forward + Vector3.up;
     }

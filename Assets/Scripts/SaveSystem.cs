@@ -12,7 +12,6 @@ public class SaveSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        PlayerPrefs.SetInt("PalyerCharackter", 0); // Для теста пока нет меню
         LoadFile();
     }
 
@@ -49,5 +48,6 @@ public class SaveSystem : MonoBehaviour {
 [Serializable]
 public class SaveArtifact
 {
+    public bool open;
     public bool[] activeArtifact = new bool[12];
 }

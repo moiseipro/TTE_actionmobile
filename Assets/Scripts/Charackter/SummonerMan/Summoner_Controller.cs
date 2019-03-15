@@ -50,9 +50,9 @@ public class Summoner_Controller : MonoBehaviour {
         hs = GetComponent<HeartSystem>();
         if (calledPets.Count == 0)
         {
-            calledPets.Add(Instantiate(pets[0],new Vector3(transform.position.x,3f,transform.position.z),Quaternion.identity));
-            calledPets.Add(Instantiate(pets[1], new Vector3(transform.position.x, 3f, transform.position.z), Quaternion.identity));
-            calledPets.Add(Instantiate(pets[2], new Vector3(transform.position.x, 3f, transform.position.z), Quaternion.identity));
+            AddPet(0);
+            AddPet(1);
+            AddPet(2);
         }
 	}
 
@@ -79,6 +79,8 @@ public class Summoner_Controller : MonoBehaviour {
     public void AddPet(int num)
     {
         calledPets.Add(Instantiate(pets[num], new Vector3(transform.position.x, 3f, transform.position.z), Quaternion.identity));
+        DontDestroyOnLoad(calledPets[calledPets.Count - 1]);
+        UpgradePets();
     }
 
     void Update () {
