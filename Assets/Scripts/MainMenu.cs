@@ -13,11 +13,6 @@ public class MainMenu : MonoBehaviour {
     public Button achievementsBut;
     public Button playBut;
 
-    private string[] allAchivementsID =
-    {
-        "CgkIxpeq_8sQEAIQAA",""
-    };
-
     public SaveArtifact sa = new SaveArtifact();
 
     private string path;
@@ -41,13 +36,11 @@ public class MainMenu : MonoBehaviour {
                             {
                                 sa.activeArtifact[0] = true;
                                 sa.activeArtifact[1] = true;
-                                sa.activeArtifact[2] = true;
                             }
                             else
                             {
                                 sa.activeArtifact[0] = false;
                                 sa.activeArtifact[1] = false;
-                                sa.activeArtifact[2] = false;
                             }
                         }
                     }
@@ -84,7 +77,7 @@ public class MainMenu : MonoBehaviour {
                 sa.activeArtifact[i] = false;
             }
             if (PlayerPrefs.GetInt("PalyerCharackter") == 0) sa.open = true;
-            if (PlayerPrefs.GetInt("PalyerCharackter") == 1) sa.open = true;
+            //if (PlayerPrefs.GetInt("PalyerCharackter") == 1) sa.open = true;
             SaveFile();
         }
 

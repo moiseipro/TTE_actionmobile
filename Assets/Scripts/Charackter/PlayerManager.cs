@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour {
 
     private GameObject player;
     private Text key, nugget;
-    private int moneyValue, keyValue,
+    [HideInInspector]public int moneyValue, keyValue,
         playerLevel;
     private bool isPause = false;
     private RectTransform artifactPanel, pause, statsPanel;

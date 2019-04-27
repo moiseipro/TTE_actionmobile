@@ -79,7 +79,6 @@ public class Move_Controller : MonoBehaviour {
         moveVector.y = gravity;
 
         ch_animator.SetFloat("Direction", moveVector.magnitude); // Управление анимацией бега через длину вектора
-        //Debug.Log(ch_animator.GetFloat("Direction"));
         ch_controller.Move((manager.transform.TransformVector(moveVector)) * Time.deltaTime); //Движения по направлению
     }
 

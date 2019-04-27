@@ -111,9 +111,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialColor: {r: 0, g: 1, b: 0, a: 1}
-  specialObject: []
-  spawnSpecialPoints: []
-  spawnPercent: 0
+  specialObject:
+  - {fileID: 1120571090117294, guid: 849b7c20763b2b043a652c6745879f66, type: 2}
+  spawnSpecialPoints:
+  - {x: 0, y: 0, z: 1.5}
+  spawnPercent: 70
   lightColor: {r: 1, g: 1, b: 1, a: 1}
   spawnLightPoints:
   - {x: 0, y: 0, z: 1}

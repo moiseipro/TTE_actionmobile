@@ -20,7 +20,6 @@ public class HeartSystem : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    // Use this for initialization
     void Start () {
         HealAll();
     }
@@ -31,6 +30,7 @@ public class HeartSystem : MonoBehaviour {
         else return false;
     }
 
+    //Метод проверки количества здоровья
     public void CheckHealthAmount()
     {
         for (int i = 0; i < maxHeart; i++)
@@ -45,7 +45,8 @@ public class HeartSystem : MonoBehaviour {
         }
         UpdateHearts();
     }
-
+    
+    //Метод обновления спрайтов на контейнерах здоровья
     void UpdateHearts()
     {
         bool empty = false;

@@ -9,9 +9,10 @@ public class SaveSystem : MonoBehaviour {
     public SaveArtifact sa = new SaveArtifact();
 
     private string path;
+    private string path2;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         LoadFile();
     }
 
@@ -42,6 +43,33 @@ public class SaveSystem : MonoBehaviour {
         File.WriteAllText(path, JsonUtility.ToJson(sa));
     }
 
+    public bool SaveFileOpenCh(int idChar)
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        path2 = Path.Combine(Application.persistentDataPath, "Save"+ idChar +".json");
+#else
+        path2 = Path.Combine(Application.dataPath, "Save" + idChar + ".json");
+#endif
+        if (File.Exists(path2))
+        {
+            sa = JsonUtility.FromJson<SaveArtifact>(File.ReadAllText(path2));
+            if (sa.open == true) return true;
+            else sa.open = true;
+        }
+        else
+        {
+            for (int i = 0; i < sa.activeArtifact.Length; i++)
+            {
+
+                sa.activeArtifact[i] = false;
+            }
+            sa.open = true;
+        }
+
+        File.WriteAllText(path2, JsonUtility.ToJson(sa));
+        return false;
+    }
+
 }
 
 
@@ -49,5 +77,5 @@ public class SaveSystem : MonoBehaviour {
 public class SaveArtifact
 {
     public bool open;
-    public bool[] activeArtifact = new bool[12];
+    public bool[] activeArtifact = new bool[6];
 }
