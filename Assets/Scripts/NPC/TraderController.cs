@@ -14,24 +14,7 @@ public class TraderController : MonoBehaviour {
     void Start () {
         ss = GameObject.FindWithTag("Manager").GetComponent<SaveSystem>();
         playerManager = GameObject.FindWithTag("Manager").GetComponent<PlayerManager>();
-        playerManager.keyValue += 40;
     }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "Player")
-        {
-            if (playerManager.keyValue >= 40)
-            {
-                if (!ss.SaveFileOpenCh(idCharOpen))
-                {
-                    cage.OpenCage();
-                    playerManager.keyValue -= 40;
-                };
-            };
-
-        }
-    }*/
 
     private void OnTriggerEnter(Collider other)
     {

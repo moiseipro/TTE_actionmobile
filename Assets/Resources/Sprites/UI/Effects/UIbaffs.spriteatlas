@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UIbaffs
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 652b314bf86b62645812a8a1ec270dc6, type: 3}
+    - {fileID: 2800000, guid: ecde7b06270d4d24ba62d32cee4f8fc7, type: 3}
+    - {fileID: 2800000, guid: 041d097a7184c814f8f94dfc70c634f7, type: 3}
+    - {fileID: 2800000, guid: fcedb91e6b0782f4cbedace4db89ec80, type: 3}
+    - {fileID: 2800000, guid: c9ccdec103d0dea4cb1f90ab4694bd64, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c9ccdec103d0dea4cb1f90ab4694bd64, type: 3}
+  - {fileID: 21300000, guid: ecde7b06270d4d24ba62d32cee4f8fc7, type: 3}
+  - {fileID: 21300000, guid: 041d097a7184c814f8f94dfc70c634f7, type: 3}
+  - {fileID: 21300000, guid: 652b314bf86b62645812a8a1ec270dc6, type: 3}
+  - {fileID: 21300000, guid: fcedb91e6b0782f4cbedace4db89ec80, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - flame
+  - health-increase
+  - snail
+  - wingfoot
+  - poison-bottle
+  m_Tag: UIbaffs
+  m_IsVariant: 0
