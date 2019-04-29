@@ -1,14 +1,40 @@
 fileFormatVersion: 2
-guid: 156e40a80d0e6a9448889044c1854bfd
+guid: 8e80ac3234945ee459c6a8cae5a4bb6f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: DOPack_2-0
+    100004: DOPack_2-1
+    100006: DOPack_2-2
+    100008: DOPack_2-3
+    100010: DOPack_2-4
     400000: //RootNode
-    2100000: palette.009
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: IOPack_2.004
+    400002: DOPack_2-0
+    400004: DOPack_2-1
+    400006: DOPack_2-2
+    400008: DOPack_2-3
+    400010: DOPack_2-4
+    2100000: palette.008
+    2100002: palette.007
+    2100004: palette.006
+    2100006: palette.005
+    2100008: palette.004
+    2300000: DOPack_2-0
+    2300002: DOPack_2-1
+    2300004: DOPack_2-2
+    2300006: DOPack_2-3
+    2300008: DOPack_2-4
+    3300000: DOPack_2-0
+    3300002: DOPack_2-1
+    3300004: DOPack_2-2
+    3300006: DOPack_2-3
+    3300008: DOPack_2-4
+    4300000: DOPack_2-4
+    4300002: DOPack_2-3
+    4300004: DOPack_2-2
+    4300006: DOPack_2-1
+    4300008: DOPack_2-0
   externalObjects: {}
   materials:
     importMaterials: 0
