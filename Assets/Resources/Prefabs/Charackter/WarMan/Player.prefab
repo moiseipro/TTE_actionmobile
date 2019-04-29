@@ -217,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301870341732256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.95, y: 0.247, z: 22.93}
+  m_LocalPosition: {x: -15.55, y: 0.247, z: 21.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4173149521009716}
@@ -563,6 +563,7 @@ MonoBehaviour:
   speedDebaf: 0
   staticSpeedDebaf: 0
   jump: 5
+  rotVector: {x: 0, y: 0, z: 0}
   joystickMove: {fileID: 0}
   joystickFire: {fileID: 0}
   manager: {fileID: 0}
@@ -618,14 +619,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   baffsSprite:
-  - {fileID: 21300000, guid: 0c6271a290ef75b4c97d58746c86c5b8, type: 3}
-  - {fileID: 21300000, guid: a814d8fd35d4abb45b227cb5fb339c2d, type: 3}
-  - {fileID: 21300000, guid: 5485e2f56028a3c4cb54f5caa167377e, type: 3}
+  - {fileID: 21300000, guid: c9ccdec103d0dea4cb1f90ab4694bd64, type: 3}
+  - {fileID: 21300000, guid: fcedb91e6b0782f4cbedace4db89ec80, type: 3}
+  - {fileID: 21300000, guid: 041d097a7184c814f8f94dfc70c634f7, type: 3}
   baffEffects:
   - {fileID: 198946593158289538}
   - {fileID: 198816551803800540}
   - {fileID: 198444538886306630}
-  - {fileID: 198816551803800540}
 --- !u!114 &114585913581247300
 MonoBehaviour:
   m_ObjectHideFlags: 1

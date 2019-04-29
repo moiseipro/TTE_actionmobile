@@ -2395,66 +2395,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[0]
-      value: 
-      objectReference: {fileID: 2119524499}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[1]
-      value: 
-      objectReference: {fileID: 2119524498}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[2]
-      value: 
-      objectReference: {fileID: 934507877}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[3]
-      value: 
-      objectReference: {fileID: 282174921}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[4]
-      value: 
-      objectReference: {fileID: 737884127}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[5]
-      value: 
-      objectReference: {fileID: 753514541}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[6]
-      value: 
-      objectReference: {fileID: 1602154778}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[7]
-      value: 
-      objectReference: {fileID: 191237877}
-    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: baffsImages.Array.data[8]
-      value: 
-      objectReference: {fileID: 1382723558}
-    - target: {fileID: 114138514269002170, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: joystickMove
-      value: 
-      objectReference: {fileID: 620867734}
-    - target: {fileID: 114138514269002170, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: joystickFire
-      value: 
-      objectReference: {fileID: 54382691}
-    - target: {fileID: 114138514269002170, guid: 08968e53b273e254bbb170494247f00b,
-        type: 2}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 8324755}
     - target: {fileID: 114585913581247300, guid: 08968e53b273e254bbb170494247f00b,
         type: 2}
       propertyPath: heartImages.Array.data[0]
@@ -2545,10 +2485,66 @@ Prefab:
       propertyPath: heartImages.Array.data[17]
       value: 
       objectReference: {fileID: 1049647264}
-    - target: {fileID: 1301870341732256, guid: 08968e53b273e254bbb170494247f00b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114138514269002170, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: joystickMove
+      value: 
+      objectReference: {fileID: 620867734}
+    - target: {fileID: 114138514269002170, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: joystickFire
+      value: 
+      objectReference: {fileID: 54382691}
+    - target: {fileID: 114138514269002170, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 8324755}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 2119524499}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 2119524498}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 934507877}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 282174921}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[4]
+      value: 
+      objectReference: {fileID: 737884127}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[5]
+      value: 
+      objectReference: {fileID: 753514541}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[6]
+      value: 
+      objectReference: {fileID: 1602154778}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[7]
+      value: 
+      objectReference: {fileID: 191237877}
+    - target: {fileID: 114271363208495554, guid: 08968e53b273e254bbb170494247f00b,
+        type: 2}
+      propertyPath: baffsImages.Array.data[8]
+      value: 
+      objectReference: {fileID: 1382723558}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08968e53b273e254bbb170494247f00b, type: 2}
   m_IsPrefabAsset: 0
@@ -2745,66 +2741,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[0]
-      value: 
-      objectReference: {fileID: 2119524499}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[1]
-      value: 
-      objectReference: {fileID: 2119524498}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[2]
-      value: 
-      objectReference: {fileID: 934507877}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[3]
-      value: 
-      objectReference: {fileID: 282174921}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[4]
-      value: 
-      objectReference: {fileID: 737884127}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[5]
-      value: 
-      objectReference: {fileID: 753514541}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[6]
-      value: 
-      objectReference: {fileID: 1602154778}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[7]
-      value: 
-      objectReference: {fileID: 191237877}
-    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: baffsImages.Array.data[8]
-      value: 
-      objectReference: {fileID: 1382723558}
-    - target: {fileID: 114433186924832534, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: joystickMove
-      value: 
-      objectReference: {fileID: 620867734}
-    - target: {fileID: 114433186924832534, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: joystickFire
-      value: 
-      objectReference: {fileID: 54382691}
-    - target: {fileID: 114433186924832534, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
-        type: 2}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 8324755}
     - target: {fileID: 114277906419323566, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
         type: 2}
       propertyPath: heartImages.Array.data[0]
@@ -2895,10 +2831,66 @@ Prefab:
       propertyPath: heartImages.Array.data[17]
       value: 
       objectReference: {fileID: 1049647264}
-    - target: {fileID: 1674539966615296, guid: 7479e095d4ca8c8428a0cb1b159cf5bd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 114433186924832534, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: joystickMove
+      value: 
+      objectReference: {fileID: 620867734}
+    - target: {fileID: 114433186924832534, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: joystickFire
+      value: 
+      objectReference: {fileID: 54382691}
+    - target: {fileID: 114433186924832534, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 8324755}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 2119524499}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 2119524498}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 934507877}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 282174921}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[4]
+      value: 
+      objectReference: {fileID: 737884127}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[5]
+      value: 
+      objectReference: {fileID: 753514541}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[6]
+      value: 
+      objectReference: {fileID: 1602154778}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[7]
+      value: 
+      objectReference: {fileID: 191237877}
+    - target: {fileID: 114476241157290710, guid: 7479e095d4ca8c8428a0cb1b159cf5bd,
+        type: 2}
+      propertyPath: baffsImages.Array.data[8]
+      value: 
+      objectReference: {fileID: 1382723558}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7479e095d4ca8c8428a0cb1b159cf5bd, type: 2}
   m_IsPrefabAsset: 0
