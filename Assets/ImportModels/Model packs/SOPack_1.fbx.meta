@@ -1,14 +1,22 @@
 fileFormatVersion: 2
-guid: 156e40a80d0e6a9448889044c1854bfd
+guid: ac8d3751094839d4fa003f58e217d201
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: SOPack_1-0
+    100004: SOPack_1-1
     400000: //RootNode
-    2100000: palette.009
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: IOPack_2.004
+    400002: SOPack_1-0
+    400004: SOPack_1-1
+    2100000: palette.001
+    2100002: palette
+    2300000: SOPack_1-0
+    2300002: SOPack_1-1
+    3300000: SOPack_1-0
+    3300002: SOPack_1-1
+    4300000: SOPack_1-1
+    4300002: SOPack_1-0
   externalObjects: {}
   materials:
     importMaterials: 0
