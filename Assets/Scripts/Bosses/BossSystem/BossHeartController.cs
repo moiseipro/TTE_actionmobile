@@ -15,7 +15,6 @@ public class BossHeartController : MonoBehaviour {
 
     [Header("Дополнительные атрибуты")]
     public int damage = 1;
-    [Range(0.5f, 2f)]
     public GameObject healthBadge;
     public Mesh[] meshesHeart;
     public GameObject[] partOfBoss;
