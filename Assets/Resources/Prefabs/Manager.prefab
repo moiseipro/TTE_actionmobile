@@ -58,15 +58,15 @@ MonoBehaviour:
   customButton:
     m_Name: Button
     m_Normal:
-      m_Background: {fileID: 2800000, guid: ad84f91b3823cd34ebc2987775029955, type: 3}
+      m_Background: {fileID: 2800000, guid: fea26de0a352d6b42803dfa46143c78b, type: 3}
       m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_TextColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
     m_Hover:
-      m_Background: {fileID: 2800000, guid: ad84f91b3823cd34ebc2987775029955, type: 3}
+      m_Background: {fileID: 2800000, guid: fea26de0a352d6b42803dfa46143c78b, type: 3}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Active:
-      m_Background: {fileID: 2800000, guid: ad84f91b3823cd34ebc2987775029955, type: 3}
+      m_Background: {fileID: 2800000, guid: fea26de0a352d6b42803dfa46143c78b, type: 3}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Focused:
@@ -109,7 +109,7 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 0}
+    m_Font: {fileID: 12800000, guid: b1fb9cf7f98e0bd488070208ca9aeb91, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_Alignment: 1
@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Normal:
       m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
@@ -176,8 +176,8 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 0}
-    m_FontSize: 25
+    m_Font: {fileID: 12800000, guid: 3bb5db7f74b470c44a70961354d78227, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
@@ -226,6 +226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c871eaddef1034c9a545dfb43d479f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyValue: 0
+  keyValue: 0
+  playerLevel: 0
   levelGame: 0
 --- !u!114 &114763364976476740
 MonoBehaviour:
@@ -239,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sa:
+    open: 0
     activeArtifact: 000000000000000000000000
 --- !u!114 &114918626271941826
 MonoBehaviour:
@@ -252,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossPrefabs:
-  - {fileID: 1746645506671686, guid: 8edf86fee528a6540ad60eb1aa115538, type: 2}
+  - {fileID: 1605508178923264, guid: 3ae80bc13b85df647ab7c7706a9336a8, type: 2}
   - {fileID: 1235539865972268, guid: a725a07e2ac41994eb3247c0262d541f, type: 2}
   mapPrefabs:
   - {fileID: 1119685479027496, guid: d343647a241d36846b061528b4628995, type: 2}

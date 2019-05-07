@@ -38,9 +38,10 @@ GameObject:
   - component: {fileID: 33500117547207536}
   - component: {fileID: 23737284854892020}
   - component: {fileID: 65417021397135942}
+  - component: {fileID: 114985303668933720}
   m_Layer: 0
   m_Name: LeftHand
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,9 +75,10 @@ GameObject:
   - component: {fileID: 33393436815342156}
   - component: {fileID: 23875422513532778}
   - component: {fileID: 65057515486107474}
+  - component: {fileID: 114171467994726524}
   m_Layer: 0
   m_Name: RightHand
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +98,7 @@ GameObject:
   - component: {fileID: 114587334754310070}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,9 +130,10 @@ GameObject:
   - component: {fileID: 33246175134435100}
   - component: {fileID: 23898589846820888}
   - component: {fileID: 65517606145729268}
+  - component: {fileID: 114181535492083982}
   m_Layer: 0
   m_Name: Legs
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +242,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1603016303111726}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -309,7 +312,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1343597271863772}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -344,7 +347,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1574466822972132}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -379,7 +382,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751901410184760}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -544,6 +547,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114171467994726524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574466822972132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824a1b59575c5e648a1bd2cf0a0b9b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 60
+  boss: {fileID: 1605508178923264}
+--- !u!114 &114181535492083982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751901410184760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824a1b59575c5e648a1bd2cf0a0b9b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  boss: {fileID: 1605508178923264}
 --- !u!114 &114318886249017974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -574,11 +603,15 @@ MonoBehaviour:
   - {fileID: 4300002, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
   - {fileID: 4300000, guid: 7c783c42c702b8b4ab996af5e14df63b, type: 3}
   - {fileID: 4300000, guid: f625186e5c45b364399b8d191e292c9a, type: 3}
-  partOfBoss: []
+  partOfBoss:
+  - {fileID: 1537692968962002, guid: efea75e765a1153429b4a0e4fcd6fa8f, type: 2}
+  - {fileID: 1666156882690540, guid: eed120d5ed08d18438777527a6368213, type: 2}
+  - {fileID: 1306047126454314, guid: 9119b9db01bd11442ba3dcfe955854f7, type: 2}
   Player: {fileID: 0}
   bossIsland: {fileID: 0}
   movSpeed: 1
   rotSpeed: 5
+  targetSplit: {fileID: 0}
 --- !u!114 &114587334754310070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -600,3 +633,16 @@ MonoBehaviour:
   leftHand: {fileID: 4734844395727098}
   rightHand: {fileID: 4755064311789808}
   player: {fileID: 0}
+--- !u!114 &114985303668933720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1343597271863772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824a1b59575c5e648a1bd2cf0a0b9b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 60
+  boss: {fileID: 1605508178923264}

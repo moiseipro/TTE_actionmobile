@@ -29,6 +29,7 @@ public class SlimeController : BossHeartController {
 	void FixedUpdate () {
         BossFightStartRadius();
         UpdateHpContainers();
+        if (transform.position.y < -5) transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 2f, Player.transform.position.z);
         if (isMadded == false && RadiusStartAtack(7))
         {
             isMadded = true;

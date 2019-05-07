@@ -69,8 +69,8 @@ public class BossHeartController : MonoBehaviour {
             Debug.Log("СМЭРТЬ");
             bossIsland.BossFightStop();
             StartCoroutine(DropLoot());
-            gameObject.GetComponent<BoxCollider>().isTrigger = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            if(gameObject.GetComponent<BoxCollider>()) gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            if(gameObject.GetComponent<Rigidbody>()) gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
     }
