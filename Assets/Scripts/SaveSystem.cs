@@ -34,6 +34,8 @@ public class SaveSystem : MonoBehaviour {
 
                 sa.activeArtifact[i] = false;
             }
+            sa.maxXp = 1000;
+            sa.level = 1;
             SaveFile();
         }
     }
@@ -64,6 +66,8 @@ public class SaveSystem : MonoBehaviour {
                 sa.activeArtifact[i] = false;
             }
             sa.open = true;
+            sa.maxXp = 1000;
+            sa.level = 1;
         }
 
         File.WriteAllText(path2, JsonUtility.ToJson(sa));
@@ -78,4 +82,7 @@ public class SaveArtifact
 {
     public bool open;
     public bool[] activeArtifact = new bool[6];
+    public int level;
+    public int curXp;
+    public int maxXp;
 }

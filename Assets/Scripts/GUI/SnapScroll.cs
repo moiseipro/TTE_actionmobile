@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class SnapScroll : MonoBehaviour {
 
-    public int chCount;
+    private int chCount;
     public int panelOffset;
     public float timeSnap;
     public float alphaOffset;
-    public GameObject chPanelPrefab;
+    public GameObject[] chPanelPrefab;
 
     public int selectPanelID;
     public bool isDrag = false;
@@ -18,6 +18,7 @@ public class SnapScroll : MonoBehaviour {
     private GameObject[] instPanels;
     private Vector2[] panelsPos;
     private Image[] panelImage;
+    private Text[] panelText;
 
     private RectTransform contRect;
     private Vector2 contVect;
@@ -28,21 +29,28 @@ public class SnapScroll : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        chCount = chPanelPrefab.Length;
         mainMenu = GameObject.FindWithTag("GUI").GetComponent<MainMenu>();
         panelsPos = new Vector2[chCount];
         instPanels = new GameObject[chCount];
         panelImage = new Image[chCount];
+        panelText = new Text[chCount];
         contRect = GetComponent<RectTransform>();
+        selectPanelID = PlayerPrefs.GetInt("PalyerCharackter");
         for (int i = 0; i< chCount; i++)
         {
-            instPanels[i] = Instantiate(chPanelPrefab, transform, false);
+            PlayerPrefs.SetInt("PalyerCharackter", i);
+            instPanels[i] = Instantiate(chPanelPrefab[i], transform, false);
             panelImage[i] = instPanels[i].GetComponent<Image>();
+            panelText[i] = instPanels[i].GetComponentInChildren<Text>();
+            mainMenu.LoadFile();
+            panelText[i].text = mainMenu.sa.level.ToString();
             if (i == 0) continue;
-            instPanels[i].transform.localPosition = new Vector2(instPanels[i-1].transform.localPosition.x + chPanelPrefab.GetComponent<RectTransform>().sizeDelta.x + panelOffset, 
+            instPanels[i].transform.localPosition = new Vector2(instPanels[i-1].transform.localPosition.x + chPanelPrefab[i].GetComponent<RectTransform>().sizeDelta.x + panelOffset, 
                 instPanels[i].transform.localPosition.y);
             panelsPos[i] = -instPanels[i].transform.localPosition;
         }
-        selectPanelID = PlayerPrefs.GetInt("PalyerCharackter");   
+        PlayerPrefs.SetInt("PalyerCharackter", selectPanelID);
     }
 
     private void FixedUpdate()

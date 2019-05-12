@@ -76,7 +76,10 @@ public class MainMenu : MonoBehaviour {
 
                 sa.activeArtifact[i] = false;
             }
+            sa.maxXp = 1000;
+            sa.level = 1;
             if (PlayerPrefs.GetInt("PalyerCharackter") == 0) sa.open = true;
+            else sa.open = false;
             //if (PlayerPrefs.GetInt("PalyerCharackter") == 1) sa.open = true;
             SaveFile();
         }

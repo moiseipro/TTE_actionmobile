@@ -258,6 +258,7 @@ MonoBehaviour:
   bossPrefabs:
   - {fileID: 1605508178923264, guid: 3ae80bc13b85df647ab7c7706a9336a8, type: 2}
   - {fileID: 1235539865972268, guid: a725a07e2ac41994eb3247c0262d541f, type: 2}
+  - {fileID: 1746645506671686, guid: 8edf86fee528a6540ad60eb1aa115538, type: 2}
   mapPrefabs:
   - {fileID: 1119685479027496, guid: d343647a241d36846b061528b4628995, type: 2}
   - {fileID: 1296950111124096, guid: bec6ac6c69d3595428a3bc6c96408b82, type: 2}
