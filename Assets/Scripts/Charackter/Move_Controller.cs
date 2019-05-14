@@ -79,14 +79,18 @@ public class Move_Controller : MonoBehaviour {
         moveVector.y = gravity;
 
         ch_animator.SetFloat("Direction", moveVector.magnitude); // Управление анимацией бега через длину вектора
-        ch_controller.Move((manager.transform.TransformVector(moveVector)) * Time.deltaTime); //Движения по направлению
+        if (!hs.isDead) ch_controller.Move((manager.transform.TransformVector(moveVector)) * Time.deltaTime); //Движения по направлению
     }
 
     //Метод гравитации
     private void GamingGravity() {
-        if (!ch_controller.isGrounded) gravity -= 15f * Time.deltaTime;
-        else gravity = -1f;
-        if (Input.GetKeyDown(KeyCode.Space) && ch_controller.isGrounded) gravity = jump; //Используется для тестирования.
+        if (hs.isDead) gravity = 0;
+        else
+        {
+            if (!ch_controller.isGrounded) gravity -= 15f * Time.deltaTime;
+            else gravity = -1f;
+            if (Input.GetKeyDown(KeyCode.Space) && ch_controller.isGrounded) gravity = jump; //Используется для тестирования
+        }
     }
 
     public Vector3 GetVectorMove()

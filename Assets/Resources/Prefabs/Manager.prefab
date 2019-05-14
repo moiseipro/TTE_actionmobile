@@ -244,6 +244,9 @@ MonoBehaviour:
   sa:
     open: 0
     activeArtifact: 000000000000000000000000
+    level: 0
+    curXp: 0
+    maxXp: 0
 --- !u!114 &114918626271941826
 MonoBehaviour:
   m_ObjectHideFlags: 1

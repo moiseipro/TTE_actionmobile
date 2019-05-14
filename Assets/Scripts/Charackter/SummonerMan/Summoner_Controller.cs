@@ -168,4 +168,12 @@ public class Summoner_Controller : MonoBehaviour {
             upgradeRightDecoration.transform.rotation = Quaternion.Lerp(upgradeRightDecoration.transform.rotation, body.transform.rotation, 5f * Time.deltaTime);
         }
     }
+
+    private void OnDestroy()
+    {
+        for (int i = 0; i < calledPets.Count; i++)
+        {
+            Destroy(calledPets[i]);
+        }
+    }
 }
