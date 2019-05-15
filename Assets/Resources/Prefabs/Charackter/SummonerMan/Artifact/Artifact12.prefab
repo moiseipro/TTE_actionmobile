@@ -162,8 +162,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   upgradeId: 0
   upgradeType: Artifact
-  upgradeName: 
-  upgradeDescr: 
+  upgradeName: "\u0424\u043B\u044F\u0433\u0430"
+  upgradeDescr: "\u0422\u0443\u0442 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C
+    \u043D\u0430\u043B\u0438\u0442\u043E\n\u0432\u0441\u0435 \u0447\u0442\u043E \u0443\u0433\u043E\u0434\u043D\u043E"
   Rang: 2
 --- !u!114 &114970918879668734
 MonoBehaviour:

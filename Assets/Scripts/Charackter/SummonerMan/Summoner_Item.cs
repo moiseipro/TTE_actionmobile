@@ -106,8 +106,8 @@ public class Summoner_Item : MonoBehaviour {
         if (chi.upgradeType == "Artifact")
         {
             GameObject panelItems = GameObject.Find("ArtifactItems");
-            GameObject newItem = Instantiate(Resources.Load("Prefabs/UI/Item") as GameObject, panelItems.transform);
-            newItem.GetComponentInChildren<Image>().sprite = Resources.Load("Sprites/UI/ArtifactIcons/" + chi.upgradeId) as Sprite;
+            GameObject newItem = Instantiate(Resources.Load<GameObject>("Prefabs/UI/Item"), panelItems.transform);
+            //newItem.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("Sprites/UI/ArtifactIcons/" + chi.upgradeId);
             Text[] nameAndDescr = newItem.GetComponentsInChildren<Text>();
             nameAndDescr[0].text = chi.upgradeName;
             nameAndDescr[1].text = chi.upgradeDescr;

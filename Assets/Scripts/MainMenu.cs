@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour {
 
     public Button achievementsBut;
     public Button playBut;
+    public Text keyValue;
 
     public SaveArtifact sa = new SaveArtifact();
 
@@ -20,7 +21,7 @@ public class MainMenu : MonoBehaviour {
     
     void Start()
     {
-
+        keyValue.text = PlayerPrefs.GetInt("MyKeys").ToString();
         PlayGamesPlatform.Activate();
         Social.localUser.Authenticate((bool success) => {
             if (success)

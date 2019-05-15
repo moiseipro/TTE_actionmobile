@@ -85,5 +85,4 @@ public class SaveArtifact
     public int level;
     public int curXp;
     public int maxXp;
-    public int keys;
 }

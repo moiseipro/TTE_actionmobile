@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33740526527250240}
   - component: {fileID: 23155836609497776}
   - component: {fileID: 65457062245258340}
+  - component: {fileID: 114879951489951126}
   m_Layer: 0
   m_Name: Split2
   m_TagString: Trap
@@ -96,3 +97,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.018000001, y: 0.004, z: 0.036000002}
   m_Center: {x: 0.000000014901161, y: 0.002, z: 0.018000001}
+--- !u!114 &114879951489951126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137890539869098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41803edcc19b394a8c42d70dba36d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

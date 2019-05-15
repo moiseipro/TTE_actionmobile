@@ -13,8 +13,8 @@ public class PlayerManager : MonoBehaviour {
     private GameObject player,gameGUI;
     private HeartSystem hs;
     private SaveSystem ss;
-    private Text key, nugget, nuggetFinish, keyFinish, levelFinish, xpCount;
-    private Image levelProgressBar;
+    private Text key, nugget, nuggetFinish, keyFinish, levelFinish, xpCount, curLevel;
+    private Image levelProgressBar, pauseImage;
     [HideInInspector]public int moneyValue, keyValue,
         playerLevel;
     float pV1,pV2,pV3;
@@ -25,16 +25,16 @@ public class PlayerManager : MonoBehaviour {
     [HideInInspector]
     public int levelGame = 0;
     private bool deathLevelUp;
-    private float predXp;
+    private float predXp, curSavedXp, maxSavedXp;
 
     // Use this for initialization
     void Start () {
         GUIspawn();
         moneyValue = PlayerPrefs.GetInt("MyNuggets");
-        keyValue = PlayerPrefs.GetInt("MyKeys"); pV2 = keyValue;
+        keyValue = PlayerPrefs.GetInt("playKeys"); pV2 = keyValue;
         levelGame = PlayerPrefs.GetInt("Level");
         nugget.text = moneyValue.ToString();
-        key.text = keyValue.ToString();
+        key.text = (keyValue + PlayerPrefs.GetInt("MyKeys")).ToString();
     }
 
     public void GetAchivement(string id)
@@ -55,13 +55,16 @@ public class PlayerManager : MonoBehaviour {
         keyFinish = GameObject.Find("KeyFinish").GetComponentInChildren<Text>();
         levelFinish = GameObject.Find("WorldFinish").GetComponentInChildren<Text>();
         xpCount = GameObject.Find("XpCounter").GetComponentInChildren<Text>();
+        curLevel = GameObject.Find("curLevel").GetComponentInChildren<Text>();
         nugget.text = moneyValue.ToString();
         key.text = keyValue.ToString();
         artifactPanel = GameObject.Find("ArtifactPanel").GetComponent<RectTransform>();
         pause = GameObject.Find("Pause").GetComponent<RectTransform>();
+        pauseImage = GameObject.Find("Pause").GetComponent<Image>();
         statsPanel = GameObject.Find("StatsPanel").GetComponent<RectTransform>();
         gameOver = GameObject.Find("GameOver").GetComponent<RectTransform>();
         levelProgressBar = GameObject.Find("LevelProgressBar").GetComponent<Image>();
+        
         ss = GetComponent<SaveSystem>();
     }
 	
@@ -73,9 +76,8 @@ public class PlayerManager : MonoBehaviour {
 
     public void AddKey()
     {
-        keyValue++;
-        PlayerPrefs.SetInt("MyKeys", keyValue);
-        key.text = keyValue.ToString();
+        keyValue++; 
+        key.text = (keyValue + PlayerPrefs.GetInt("MyKeys")).ToString();
     }
 
 
@@ -84,25 +86,36 @@ public class PlayerManager : MonoBehaviour {
         if (isPause == true)
         {
             artifactPanel.anchoredPosition = Vector2.MoveTowards(artifactPanel.anchoredPosition, new Vector2(-225, 0), speedUI);
-            pause.anchoredPosition = Vector2.MoveTowards(pause.anchoredPosition, new Vector2(645, -645), speedUI);
+            pause.anchoredPosition = Vector2.MoveTowards(pause.anchoredPosition, new Vector2(-645, -645), speedUI);
+            pause.sizeDelta = Vector2.Lerp(pause.sizeDelta, new Vector2(320, 100), 2);
             statsPanel.anchoredPosition = Vector2.MoveTowards(statsPanel.anchoredPosition, new Vector2(225, -115), speedUI);
         } else if(isPause == false)
         {
             artifactPanel.anchoredPosition = Vector2.MoveTowards(artifactPanel.anchoredPosition, new Vector2(225, 0), speedUI);
-            pause.anchoredPosition = Vector2.MoveTowards(pause.anchoredPosition, new Vector2(720, -75), speedUI);
+            pause.anchoredPosition = Vector2.MoveTowards(pause.anchoredPosition, new Vector2(-60, -225), speedUI);
+            pause.sizeDelta = Vector2.Lerp(pause.sizeDelta, new Vector2(100, 100), 2);
             statsPanel.anchoredPosition = Vector2.MoveTowards(statsPanel.anchoredPosition, new Vector2(-225, -115), speedUI);
         }
         if(!deathLevelUp && hs.isDead)
         {
             deathLevelUp = true;
             ss.LoadFile();
+            curLevel.text = ss.sa.level.ToString();
             predXp = ss.sa.curXp;
             ss.sa.curXp += moneyValue + levelGame * 5 + keyValue * 10;
-            ss.sa.curXp = Mathf.Clamp(ss.sa.curXp, 0, ss.sa.maxXp);
+            curSavedXp = ss.sa.curXp;
+            maxSavedXp = ss.sa.maxXp;
+            if (ss.sa.curXp >= ss.sa.maxXp)
+            {
+                int xpBox = ss.sa.curXp - ss.sa.maxXp;
+                ss.sa.maxXp = (int)(ss.sa.maxXp * 1.2f);
+                ss.sa.curXp = xpBox;
+                ss.sa.level++;
+            }
             ss.SaveFile();
             PlayerPrefs.SetInt("Level", 0);
             PlayerPrefs.SetInt("MyNuggets", 0);
-            PlayerPrefs.SetInt("MyKeys", 0);
+            PlayerPrefs.SetInt("MyKeys", PlayerPrefs.GetInt("MyKeys") + keyValue);
         }
         if (hs.isDead)
         {
@@ -115,8 +128,12 @@ public class PlayerManager : MonoBehaviour {
             keyFinish.text = (Math.Ceiling(pV2)).ToString();
             pV3 = Mathf.Lerp(pV3, levelGame, 1.5f * Time.deltaTime);
             levelFinish.text = (Math.Ceiling(pV3)).ToString();
-            predXp = Mathf.Lerp(predXp, ss.sa.curXp, 1.5f * Time.deltaTime);
-            levelProgressBar.fillAmount = predXp / ss.sa.maxXp;
+            predXp = Mathf.Lerp(predXp, curSavedXp, 1.5f * Time.deltaTime);
+            levelProgressBar.fillAmount = predXp / maxSavedXp;
+            if(levelProgressBar.fillAmount >= 0.99)
+            {
+                UpdateLevel();
+            }
             xpCount.text = Math.Ceiling(predXp).ToString() + " / " + ss.sa.maxXp;
         } else
         {
@@ -124,15 +141,25 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
+    private void UpdateLevel()
+    {
+        predXp = 0;
+        curSavedXp = ss.sa.curXp;
+        maxSavedXp = ss.sa.maxXp;
+        curLevel.text = ss.sa.level.ToString();
+    }
+
     public void Pause()
     {
         if (isPause == false)
         {
             isPause = true;
+            pauseImage.sprite = Resources.Load<Sprite>("Sprites/UI/GameMenu/PausePlay");
             StartCoroutine(StartPause());
         } else if(isPause == true)
         {
             isPause = false;
+            pauseImage.sprite = Resources.Load<Sprite>("Sprites/UI/GameMenu/PauseStop");
             Time.timeScale = 1;
         }
     }
@@ -156,14 +183,12 @@ public class PlayerManager : MonoBehaviour {
         levelGame++;
         PlayerPrefs.SetInt("Level", levelGame);
         PlayerPrefs.SetInt("MyNuggets", moneyValue);
+        PlayerPrefs.SetInt("playKeys", keyValue);
         SceneManager.LoadScene("Game");
     }
 
     public void MainMenu()
     {
-        PlayerPrefs.SetInt("Level", 0);
-        PlayerPrefs.SetInt("MyNuggets", 0);
-        PlayerPrefs.SetInt("MyKeys", 0);
         Destroy(player);
         Destroy(gameGUI);
         SceneManager.LoadScene("Menu");
