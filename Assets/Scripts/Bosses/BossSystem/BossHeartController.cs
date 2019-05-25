@@ -47,6 +47,7 @@ public class BossHeartController : MonoBehaviour {
         dropItemController = GameObject.FindWithTag("Manager").GetComponent<DropItemController>();
         health = maxHealth + bossLevel * 20;
         bossIsland = GameObject.FindWithTag("Arena").GetComponent<BossIsland>();
+        bossLevel = GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().levelGame;
     }
 
     public void AddDamage(float dam)
@@ -77,13 +78,18 @@ public class BossHeartController : MonoBehaviour {
 
     IEnumerator DropLoot()
     {
-        for (int i = 0; i < Random.Range(8, 15); i++)
+        for (int i = 0; i < Random.Range(6, 10); i++)
         {
-            GameObject part = Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
-            float randomScale = Random.Range(100, 200);
-            part.GetComponent<Transform>().localScale = new Vector3(randomScale, randomScale, randomScale);
-            part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-5, 5), Random.Range(1, 7), Random.Range(-5, 5)), ForceMode.Impulse);
-            Destroy(part, Random.Range(5f, 10f));
+            GameObject part;
+            int dropChance = Random.Range(0, 11);
+            if (dropChance < 6)
+            {
+                float randomScale = Random.Range(100, 200);
+                part = Instantiate(partOfBoss[Random.Range(0, partOfBoss.Length)], gameObject.transform.position + Vector3.up, transform.rotation);
+                part.GetComponent<Transform>().localScale = new Vector3(randomScale, randomScale, randomScale);
+                Destroy(part, Random.Range(5f, 10f));
+            } else part = Instantiate(dropItemController.DropItemChest(bossLevel), gameObject.transform.position + Vector3.up, transform.rotation);
+            part.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-4, 4), Random.Range(1, 5), Random.Range(-4, 4)), ForceMode.Impulse);
             yield return new WaitForSeconds(0.2f);
         }
         GameObject Item = Instantiate(dropItemController.DropArtifact(), gameObject.transform.position + Vector3.up, transform.rotation);

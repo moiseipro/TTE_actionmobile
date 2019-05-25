@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1312734849471628}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -24.96, y: 1.25, z: 30.72}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 121, y: 121, z: 121}
   m_Children:
   - {fileID: 4920267642045682}
   m_Father: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minMoneyVal: 2
-  maxMoneyVal: 10
+  maxMoneyVal: 6
 --- !u!119 &119469478833438436
 Projector:
   m_ObjectHideFlags: 1

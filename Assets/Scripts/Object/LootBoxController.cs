@@ -41,7 +41,7 @@ public class LootBoxController : MonoBehaviour {
     {
         int rdrop = Random.Range(0, boostChance);
         if (rdrop > 9) rdrop = Random.Range(2, 5);
-        else if (rdrop > 6) rdrop = Random.Range(0, 5);
+        else if (rdrop > 6) rdrop = Random.Range(1, 5);
         else if (rdrop > 3) rdrop = Random.Range(0, 3);
         else rdrop = Random.Range(0, 2);
         Vector3 ops = Vector3.zero;

@@ -10,11 +10,13 @@ public class ObjectController : MonoBehaviour {
     SceneController gameManager;
     Animator anim;
     ParticleSystem ps;
+    DropItemController dic;
 
     private void Start()
     {
         ps = GetComponentInChildren<ParticleSystem>();
         gameManager = GameObject.FindWithTag("Manager").GetComponent<SceneController>();
+        dic = GameObject.FindWithTag("Manager").GetComponent<DropItemController>();
         anim = GetComponent<Animator>();
         health = maxHealth;
     }
@@ -28,6 +30,7 @@ public class ObjectController : MonoBehaviour {
         }
         else if (health == 0)
         {
+            health = -1;
             anim.SetTrigger("Dead");
             ps.Play();
         }
@@ -35,6 +38,12 @@ public class ObjectController : MonoBehaviour {
 
     public void DestroyObject()
     {
+        int dropChanse = Random.Range(0, 11);
+        if (dropChanse > 6)
+        {
+            GameObject itemDop = Instantiate(dic.DropItemChest(1), gameObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+            itemDop.GetComponent<Rigidbody>().AddForce(new Vector3(0, 3f, 0), ForceMode.Impulse);
+        }
         Destroy(gameObject);
     }
 }

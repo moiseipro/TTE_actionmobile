@@ -35,13 +35,13 @@ public class MainMenu : MonoBehaviour {
                         {
                             if (achiev.id == "CgkIxpeq_8sQEAIQAA")
                             {
-                                sa.activeArtifact[0] = true;
                                 sa.activeArtifact[1] = true;
+                                sa.activeArtifact[2] = true;
                             }
                             else
                             {
-                                sa.activeArtifact[0] = false;
                                 sa.activeArtifact[1] = false;
+                                sa.activeArtifact[2] = false;
                             }
                         }
                     }
@@ -77,7 +77,8 @@ public class MainMenu : MonoBehaviour {
 
                 sa.activeArtifact[i] = false;
             }
-            sa.maxXp = 1000;
+            sa.activeArtifact[0] = true;
+            sa.maxXp = 300;
             sa.level = 1;
             if (PlayerPrefs.GetInt("PalyerCharackter") == 0) sa.open = true;
             else sa.open = false;

@@ -26,7 +26,7 @@ public class HeartForHeal : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Map" || collision.gameObject.tag == "Object")
+        if (collision.gameObject.tag == "Map" || collision.gameObject.tag == "Object" || collision.gameObject.tag == "Arena")
         {
             rg.isKinematic = true;
             sc.isTrigger = true;

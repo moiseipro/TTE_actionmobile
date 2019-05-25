@@ -48,11 +48,6 @@ public class BaffController : MonoBehaviour {
             baffEffects[id].Stop();
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void CreateBaff(int time, int value, int idBaff) {
         if (curBaff < maxBaff)

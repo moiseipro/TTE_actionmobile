@@ -47,13 +47,45 @@ public class DropItemController : MonoBehaviour {
         else if (dropChance > 1f) dropChance = Random.Range(0.5f, dropChance);
         dropChance = (float)System.Math.Round((decimal)dropChance,2);
 
-        if (dropChance > 1.5){
+        if (dropChance == 2)
+        {
+            newItem.GetComponent<Outline>().OutlineColor = Color.red;
+        }else if (dropChance > 1.5){
             newItem.GetComponent<Outline>().OutlineColor = Color.yellow;
         } else if (dropChance > 1.1) {
             newItem.GetComponent<Outline>().OutlineColor = Color.blue;
         } else if (dropChance > 0.7) {
             newItem.GetComponent<Outline>().OutlineColor = Color.green;
         } else if (dropChance >= 0.5) {
+            newItem.GetComponent<Outline>().OutlineColor = Color.white;
+        }
+        newItem.GetComponent<CharackterItem>().Rang = dropChance;
+        return newItem;
+    }
+
+    public GameObject DropCertainItem(float rare)
+    {
+        GameObject newItem = dropItemForChar[Random.Range(0, dropItemForChar.Length)];
+        float dropChance = rare;
+
+        if (dropChance == 2)
+        {
+            newItem.GetComponent<Outline>().OutlineColor = Color.red;
+        }
+        else if (dropChance > 1.5)
+        {
+            newItem.GetComponent<Outline>().OutlineColor = Color.yellow;
+        }
+        else if (dropChance > 1.1)
+        {
+            newItem.GetComponent<Outline>().OutlineColor = Color.blue;
+        }
+        else if (dropChance > 0.7)
+        {
+            newItem.GetComponent<Outline>().OutlineColor = Color.green;
+        }
+        else if (dropChance >= 0.5)
+        {
             newItem.GetComponent<Outline>().OutlineColor = Color.white;
         }
         newItem.GetComponent<CharackterItem>().Rang = dropChance;
@@ -70,6 +102,14 @@ public class DropItemController : MonoBehaviour {
             else newArtifact = DropItem(2f);
         } else newArtifact = DropItem(1.7f);
 
+        return newArtifact;
+    }
+
+    public GameObject DropOnlyArtifact()
+    {
+        GameObject newArtifact;
+        if (availableArtifact.Count > 0) newArtifact = availableArtifact[Random.Range(0, availableArtifact.Count)];
+        else newArtifact = DropItem(2f);
         return newArtifact;
     }
 
@@ -91,6 +131,16 @@ public class DropItemController : MonoBehaviour {
             }
             
         }
+
+        return newDopItem;
+    }
+
+    public GameObject DropItemBox(int num)
+    {
+        GameObject newDopItem = dropItemAddHealth[Random.Range(0, dropItemAddHealth.Length)];
+
+        if(num == 1) newDopItem = dropItemKey[Random.Range(0, dropItemKey.Length)];
+        else if (num == 2) newDopItem = dropItemHeal[Random.Range(0, dropItemHeal.Length)];
 
         return newDopItem;
     }

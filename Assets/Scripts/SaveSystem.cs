@@ -34,7 +34,8 @@ public class SaveSystem : MonoBehaviour {
 
                 sa.activeArtifact[i] = false;
             }
-            sa.maxXp = 1000;
+            sa.activeArtifact[0] = true;
+            sa.maxXp = 300;
             sa.level = 1;
             SaveFile();
         }
@@ -65,8 +66,9 @@ public class SaveSystem : MonoBehaviour {
 
                 sa.activeArtifact[i] = false;
             }
+            sa.activeArtifact[0] = true;
             sa.open = true;
-            sa.maxXp = 1000;
+            sa.maxXp = 300;
             sa.level = 1;
         }
 
