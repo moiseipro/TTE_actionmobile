@@ -656,7 +656,7 @@ MonoBehaviour:
   upgradeLeftDecoration: {fileID: 0}
   upgradeRightDecoration: {fileID: 0}
   calledPets: []
-  petDamageBoost: 2
+  petDamageBoost: 5
   petSpeed: 6
   petRange: 4
   petMaximumTargets: 1

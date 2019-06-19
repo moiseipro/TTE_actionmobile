@@ -7,7 +7,6 @@ public class SlimeController : BossHeartController {
     Rigidbody rb;
     public Mesh[] slimeMesh;
 
-
     bool isMadded = false,
          isMove = false,
          isPreparing = false;
@@ -18,14 +17,12 @@ public class SlimeController : BossHeartController {
     float maxPreparingTime = 1f;
     public float movSpeed = 10f;
 
-    // Use this for initialization
     void Start () {
         StartScript();
         maxArmor = health / 2.5f;
         rb = GetComponent<Rigidbody>();
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
         BossFightStartRadius();
         UpdateHpContainers();
@@ -54,6 +51,7 @@ public class SlimeController : BossHeartController {
         }
     }
 
+    //Движение слизи
     IEnumerator Move()
     {
         isMove = true;
@@ -82,6 +80,7 @@ public class SlimeController : BossHeartController {
         StartCoroutine(Preparing());
     }
 
+    //Подготовка атаки
     IEnumerator Preparing()
     {
         AnimationChoose(3);
@@ -170,6 +169,7 @@ public class SlimeController : BossHeartController {
         StartCoroutine(Move());
     }
 
+    //Проверка на попадания персонажа в радиус атаки
     bool RadiusStartAtack(float radius)
     {
         foreach (Collider col in Physics.OverlapSphere(transform.position, radius))
@@ -183,6 +183,7 @@ public class SlimeController : BossHeartController {
         return false;
     }
 
+    // Контроллер анимаций босса
     public void AnimationChoose(int num)
     {
         if (num < slimeMesh.Length && num >=0)

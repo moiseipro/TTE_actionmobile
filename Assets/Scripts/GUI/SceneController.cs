@@ -1090,6 +1090,7 @@ public class SceneController : MonoBehaviour {
             GameObject myMenu = Instantiate(GUI);
             DontDestroyOnLoad(myMenu);
             GameObject.Find("Pause").GetComponent<Button>().onClick.AddListener(delegate { GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().Pause(); });
+            GameObject.Find("DeathButton").GetComponent<Button>().onClick.AddListener(delegate { GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().DeathPlayer(); });
             //GameObject.Find("Restart").GetComponent<Button>().onClick.AddListener(delegate { GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().ReloadLevel(); });
             GameObject.Find("Exet").GetComponent<Button>().onClick.AddListener(delegate { GameObject.FindWithTag("Manager").GetComponent<PlayerManager>().MainMenu(); });
         } 

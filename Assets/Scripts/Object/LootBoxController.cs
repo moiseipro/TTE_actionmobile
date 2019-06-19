@@ -73,6 +73,5 @@ public class LootBoxController : MonoBehaviour {
         else ops = new Vector3(xmax, 2f, ymax);
         GameObject item = Instantiate(dic.DropItem(maxChance), gameObject.transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
         item.GetComponent<Rigidbody>().AddForce(ops, ForceMode.Impulse);
-
     }
 }

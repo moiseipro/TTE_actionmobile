@@ -76,7 +76,7 @@ public class BossHeartController : MonoBehaviour {
         healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
     }
 
-    IEnumerator DropLoot()
+    public IEnumerator DropLoot()
     {
         for (int i = 0; i < Random.Range(6, 10); i++)
         {

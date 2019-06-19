@@ -74,8 +74,6 @@ public class Move_Controller : MonoBehaviour {
             transform.rotation = Quaternion.LookRotation(direct);
         }
 
-
-
         moveVector.y = gravity;
 
         ch_animator.SetFloat("Direction", moveVector.magnitude); // Управление анимацией бега через длину вектора

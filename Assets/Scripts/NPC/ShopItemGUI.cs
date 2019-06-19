@@ -102,12 +102,12 @@ public class ShopItemGUI : MonoBehaviour {
 
             if (GUI.Button(positionItem, name, customButton))
             {
-                //if (pm.moneyValue >= price)
-                //{
+                if (pm.moneyValue >= price)
+                {
                     DropShop();
                     ObjectIsSee = false;
-                    //pm.AddMoney(-price);
-                //}
+                    pm.AddMoney(-price);
+                }
             }
             GUI.Label(positionItem, price.ToString(), customText);
         }

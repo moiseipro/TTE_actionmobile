@@ -193,4 +193,10 @@ public class PlayerManager : MonoBehaviour {
         Destroy(gameGUI);
         SceneManager.LoadScene("Menu");
     }
+
+    public void DeathPlayer()
+    {
+        Pause();
+        GameObject.FindWithTag("Player").GetComponent<HeartSystem>().TakeDamage(-100);
+    }
 }

@@ -34,19 +34,52 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 041d097a7184c814f8f94dfc70c634f7, type: 3}
     - {fileID: 2800000, guid: fcedb91e6b0782f4cbedace4db89ec80, type: 3}
     - {fileID: 2800000, guid: c9ccdec103d0dea4cb1f90ab4694bd64, type: 3}
+    - {fileID: 2800000, guid: 43f3cf9064e4a8f40a7b0af0aab87e83, type: 3}
+    - {fileID: 2800000, guid: aeb3b8b64b911e24d948ead47b9119b1, type: 3}
+    - {fileID: 2800000, guid: c14eb6e7978177e41a2f690f3c481fcf, type: 3}
+    - {fileID: 2800000, guid: 1405779f8118a654a980f3bd844077ee, type: 3}
+    - {fileID: 2800000, guid: 8017c9e11d0821f4eb6d6866efe8a3f9, type: 3}
+    - {fileID: 2800000, guid: 8539b6ec1500be646b6fcc30a1f8cd11, type: 3}
+    - {fileID: 2800000, guid: 02b751e31a2b59149a21a0bd76325353, type: 3}
+    - {fileID: 2800000, guid: 4b99038931491e642a13ed2261a718b6, type: 3}
+    - {fileID: 2800000, guid: 15d7910db7a6dcb4e8b8f14e89a49684, type: 3}
+    - {fileID: 2800000, guid: ee3f6cc786b01b74590b55c2f33d0249, type: 3}
+    - {fileID: 2800000, guid: e0c441913ca881f408c900180133b268, type: 3}
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 43f3cf9064e4a8f40a7b0af0aab87e83, type: 3}
+  - {fileID: 21300000, guid: e0c441913ca881f408c900180133b268, type: 3}
   - {fileID: 21300000, guid: c9ccdec103d0dea4cb1f90ab4694bd64, type: 3}
+  - {fileID: 21300000, guid: 8017c9e11d0821f4eb6d6866efe8a3f9, type: 3}
+  - {fileID: 21300000, guid: 02b751e31a2b59149a21a0bd76325353, type: 3}
   - {fileID: 21300000, guid: ecde7b06270d4d24ba62d32cee4f8fc7, type: 3}
+  - {fileID: 21300000, guid: aeb3b8b64b911e24d948ead47b9119b1, type: 3}
+  - {fileID: 21300000, guid: ee3f6cc786b01b74590b55c2f33d0249, type: 3}
+  - {fileID: 21300000, guid: c14eb6e7978177e41a2f690f3c481fcf, type: 3}
+  - {fileID: 21300000, guid: 4b99038931491e642a13ed2261a718b6, type: 3}
   - {fileID: 21300000, guid: 041d097a7184c814f8f94dfc70c634f7, type: 3}
   - {fileID: 21300000, guid: 652b314bf86b62645812a8a1ec270dc6, type: 3}
+  - {fileID: 21300000, guid: 8539b6ec1500be646b6fcc30a1f8cd11, type: 3}
+  - {fileID: 21300000, guid: 15d7910db7a6dcb4e8b8f14e89a49684, type: 3}
   - {fileID: 21300000, guid: fcedb91e6b0782f4cbedace4db89ec80, type: 3}
+  - {fileID: 21300000, guid: 1405779f8118a654a980f3bd844077ee, type: 3}
   m_PackedSpriteNamesToIndex:
+  - PausePlay
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 11"
   - flame
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 3"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 7"
   - health-increase
+  - PauseStop
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 10"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 1"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 8"
   - snail
   - wingfoot
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 5"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 9"
   - poison-bottle
+  - "\u0420\u0435\u0441\u0443\u0440\u0441 2"
   m_Tag: UIbaffs
   m_IsVariant: 0

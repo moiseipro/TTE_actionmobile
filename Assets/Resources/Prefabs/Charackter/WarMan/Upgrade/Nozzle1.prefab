@@ -164,8 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  upgradeId: 0
   upgradeType: Nozzle1
-  upgradeName: 
+  upgradeName: "\u0414\u0432\u043E\u0439\u043D\u043E\u0435 \u0434\u0443\u043B\u043E"
+  upgradeDescr: "\u041C\u043E\u0436\u0435\u0442 \u0441\u0442\u0440\u0435\u043B\u044F\u0442\u044C
+    \u0441\u0440\u0430\u0437\u0443 \u0434\u0432\u0443\u043C\u044F \n\u043F\u0430\u0442\u0440\u043E\u043D\u0430\u043C\u0438"
   Rang: 0.72
 --- !u!114 &114729267850217668
 MonoBehaviour:

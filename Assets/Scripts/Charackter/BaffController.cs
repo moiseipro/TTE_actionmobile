@@ -49,6 +49,7 @@ public class BaffController : MonoBehaviour {
         }
     }
 
+    //Создает временный эффект
     public void CreateBaff(int time, int value, int idBaff) {
         if (curBaff < maxBaff)
         {
@@ -59,6 +60,7 @@ public class BaffController : MonoBehaviour {
         else Debug.Log("Наложено максимальное кол-во бафов");
     }
 
+    //Создает постоянный эффект
     public void StaticBaff(int value, int idBaff)
     {
         if (idBaff == 2) mc.staticSpeedDebaf = mc.speed * value / 100;

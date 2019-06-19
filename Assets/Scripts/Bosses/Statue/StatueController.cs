@@ -44,41 +44,62 @@ public class StatueController : BossHeartController {
             }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
+    
+    new public void AddDamage(float dam)
     {
-        if (other.tag == "Bullet" && other.GetComponent<Bullet_Options>().type != -1)
+        if (immortality == false)
         {
-            
-            foreach (GameObject totem in calledTotems)
+            if (armor > 0)
             {
-                if (totem != null)
-                {
-                    if (totem.GetComponent<TitemController>().totemName == "atack")
-                    {
-                        totem.GetComponent<TitemController>().atackTotem();
-                    }
-                }
+                armor -= dam;
+                Debug.Log(armor);
             }
-            if (dead == true && calledTotems != null)
+            else if (health > 0)
             {
-                maxTotems = 0;
-                for (int i = calledTotems.Count-1; i >=0; i--)
-                {
-                    Destroy(calledTotems[i]);
-                    DeliteTotem(i);
-                }
+                health -= dam;
+                Debug.Log(health);
             }
-            int whatCall = Random.Range(0, 3);
-            if (guardTotemReload == false && health < maxHealth / 1.1f) CallTotem(1);
-            else if (healTotemReload == false && health < maxHealth / 1.5f) CallTotem(6);
-            else if (whatCall == 0 && atackTotemReload == false) CallTotem(0);
-            else if (whatCall == 0 && facesTotemReload == false) CallTotem(2);
-            else if (whatCall == 1 && poisonTotemReload == false) CallTotem(3);
-            else if (whatCall == 1 && tunderTotemReload == false) CallTotem(5);
-            else if (whatCall == 2 && skullTotemReload == false) CallTotem(4);
-            else if (whatCall == 2 && lampTotemReload == false) CallTotem(7);
         }
+        if (health < 1 && !dead)
+        {
+            health = Mathf.Clamp(health, 0, maxHealth);
+            dead = true;
+            Debug.Log("СМЭРТЬ");
+            bossIsland.BossFightStop();
+            StartCoroutine(DropLoot());
+            if (gameObject.GetComponent<BoxCollider>()) gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            if (gameObject.GetComponent<Rigidbody>()) gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        }
+        healthBadge.GetComponent<Animator>().SetTrigger("HitTrigger");
+
+        foreach (GameObject totem in calledTotems)
+        {
+            if (totem != null)
+            {
+                if (totem.GetComponent<TitemController>().totemName == "atack")
+                {
+                    totem.GetComponent<TitemController>().atackTotem();
+                }
+            }
+        }
+        if (dead == true && calledTotems != null)
+        {
+            maxTotems = 0;
+            for (int i = calledTotems.Count - 1; i >= 0; i--)
+            {
+                Destroy(calledTotems[i]);
+                DeliteTotem(i);
+            }
+        }
+        int whatCall = Random.Range(0, 3);
+        if (guardTotemReload == false && health < maxHealth / 1.1f) CallTotem(1);
+        else if (healTotemReload == false && health < maxHealth / 1.5f) CallTotem(6);
+        else if (whatCall == 0 && atackTotemReload == false) CallTotem(0);
+        else if (whatCall == 0 && facesTotemReload == false) CallTotem(2);
+        else if (whatCall == 1 && poisonTotemReload == false) CallTotem(3);
+        else if (whatCall == 1 && tunderTotemReload == false) CallTotem(5);
+        else if (whatCall == 2 && skullTotemReload == false) CallTotem(4);
+        else if (whatCall == 2 && lampTotemReload == false) CallTotem(7);
     }
 
     IEnumerator ReloadTotem(int totemID)

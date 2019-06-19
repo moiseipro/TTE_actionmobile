@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour {
     public Button achievementsBut;
     public Button playBut;
     public Text keyValue;
+    public GameObject learnPan;
 
     public SaveArtifact sa = new SaveArtifact();
 
@@ -27,34 +28,38 @@ public class MainMenu : MonoBehaviour {
             if (success)
             {
                 Debug.Log("Удачный вход!");
-                achievementsBut.enabled = true;
-                PlayGamesPlatform.Instance.LoadAchievements((IAchievement[] allAchiev) => {
-                    foreach (IAchievement achiev in allAchiev)
-                    {
-                        if (achiev.percentCompleted == 100.0)
-                        {
-                            if (achiev.id == "CgkIxpeq_8sQEAIQAA")
-                            {
-                                sa.activeArtifact[1] = true;
-                                sa.activeArtifact[2] = true;
-                            }
-                            else
-                            {
-                                sa.activeArtifact[1] = false;
-                                sa.activeArtifact[2] = false;
-                            }
-                        }
-                    }
-                });
+                achievementsBut.interactable = true;
             }
             else
             {
                 Debug.Log("Неудачный вход!");
-                achievementsBut.enabled = false;
+                achievementsBut.interactable = false;
             }
         });
 
-        
+
+
+        /*if (Social.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.LoadAchievements((IAchievement[] allAchiev) => {
+                foreach (IAchievement achiev in allAchiev)
+                {
+                    if (achiev.percentCompleted == 100.0)
+                    {
+                        if (achiev.id == "CgkIxpeq_8sQEAIQAA")
+                        {
+                            sa.activeArtifact[1] = true;
+                            sa.activeArtifact[2] = true;
+                        }
+                        else
+                        {
+                            sa.activeArtifact[1] = false;
+                            sa.activeArtifact[2] = false;
+                        }
+                    }
+                }
+            });
+        }*/
     }
 
     public void LoadFile()
@@ -80,14 +85,14 @@ public class MainMenu : MonoBehaviour {
             sa.activeArtifact[0] = true;
             sa.maxXp = 300;
             sa.level = 1;
-            if (PlayerPrefs.GetInt("PalyerCharackter") == 0) sa.open = true;
+            if (PlayerPrefs.GetInt("PalyerCharackter") == 0 || PlayerPrefs.GetInt("PalyerCharackter") == 1) sa.open = true;
             else sa.open = false;
             //if (PlayerPrefs.GetInt("PalyerCharackter") == 1) sa.open = true;
             SaveFile();
         }
 
-        if (sa.open) playBut.enabled = true;
-        else playBut.enabled = false;
+        if (sa.open) playBut.interactable = true;
+        else playBut.interactable = false;
     }
 
     public void SaveFile()
@@ -100,4 +105,21 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("LoadScene");
     }
     
+    public void ShowAchivements()
+    {
+        Social.ShowAchievementsUI();
+    }
+
+    public void ShowLearnPanel()
+    {
+        learnPan.SetActive(true);
+    }
+    public void CloseLearnPanel()
+    {
+        learnPan.SetActive(false);
+    }
+    public void ExetGame()
+    {
+        Application.Quit();
+    }
 }
